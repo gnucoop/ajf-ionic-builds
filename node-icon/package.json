@@ -1,0 +1,8 @@
+{
+  "name": "@ajf/ionic/node-icon",
+  "typings": "../node-icon.d.ts",
+  "main": "../bundles/ionic-node-icon.umd.js",
+  "module": "../esm5/node-icon.es5.js",
+  "es2015": "../esm2015/node-icon.js",
+  "sideEffects": false
+}

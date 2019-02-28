@@ -1,0 +1,8 @@
+{
+  "name": "@ajf/ionic/forms",
+  "typings": "../forms.d.ts",
+  "main": "../bundles/ionic-forms.umd.js",
+  "module": "../esm5/forms.es5.js",
+  "es2015": "../esm2015/forms.js",
+  "sideEffects": false
+}

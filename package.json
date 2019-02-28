@@ -1,0 +1,43 @@
+{
+  "name": "@ajf/ionic",
+  "version": "7.0.0-alpha.17-ff4de9a",
+  "description": "",
+  "main": "./bundles/ionic.umd.js",
+  "module": "./esm5/ionic.es5.js",
+  "es2015": "./esm2015/ionic.js",
+  "typings": "./ionic.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gnucoop/ajf.git"
+  },
+  "keywords": [],
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/gnucoop/ajf/issues"
+  },
+  "homepage": "https://github.com/gnucoop/ajf#readme",
+  "peerDependencies": {
+    "@angular/core": ">=7.0.0",
+    "@angular/common": ">=7.0.0",
+    "@angular/router": ">=7.0.0",
+    "@ionic/angular": ">=4.0.0",
+    "@ajf/core": "7.0.0-alpha.17-ff4de9a",
+    "flag-icon-css": "^3.2.1",
+    "ionic-selectable": "^4.4.0"
+  },
+  "dependencies": {
+    "tslib": "^1.7.1"
+  },
+  "schematics": "./schematics/collection.json",
+  "ng-update": {
+    "migrations": "./schematics/migration.json",
+    "packageGroup": [
+      "@ajf/ionic",
+      "@ajf/core"
+    ]
+  },
+  "sideEffects": false,
+  "releaseGitCommitSha": "ff4de9af7b3bc5588c7dd6236edfedf65997f660",
+  "releaseGitBranch": "master",
+  "releaseGitUser": "trik <marco.marche@gnucoop.com>"
+}
