@@ -134,8 +134,8 @@ AjfFormField.decorators = [
                     'valueChanged'
                 ],
                 queries: {
-                    singleChoiceSelect: new ViewChild('singleChoiceSelect'),
-                    multipleChoiceSelect: new ViewChild('multipleChoiceSelect')
+                    singleChoiceSelect: new ViewChild('singleChoiceSelect', { static: false }),
+                    multipleChoiceSelect: new ViewChild('multipleChoiceSelect', { static: false })
                 }
             },] },
 ];
@@ -234,7 +234,7 @@ AjfFormRenderer.decorators = [
                     'orientationChange',
                 ],
                 queries: {
-                    formSlider: new ViewChild('formSlider'),
+                    formSlider: new ViewChild('formSlider', { static: false }),
                     fields: new ViewChildren(AjfFormField)
                 }
             },] },
@@ -320,15 +320,5 @@ AjfFormsModule.decorators = [
             },] },
 ];
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-
-export { AjfFormField, AjfFormRenderer, AjfFormsModule, AJF_SEARCH_ALERT_TRESHOLD, AjfChoicesMapPipe as ɵa, AjfFormPage as ɵb };
+export { AJF_SEARCH_ALERT_TRESHOLD, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfChoicesMapPipe as ɵa, AjfFormPage as ɵb };
 //# sourceMappingURL=forms.js.map

@@ -131,9 +131,9 @@
         return AjfCalendarModule;
     }());
 
+    exports.AjfCalendarComponent = AjfCalendarComponent;
     exports.AjfCalendarModule = AjfCalendarModule;
     exports.CALENDAR_CONTROL_VALUE_ACCESSOR = CALENDAR_CONTROL_VALUE_ACCESSOR;
-    exports.AjfCalendarComponent = AjfCalendarComponent;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

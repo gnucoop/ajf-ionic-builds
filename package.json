@@ -1,6 +1,6 @@
 {
   "name": "@ajf/ionic",
-  "version": "7.0.0-beta.6-d9e270a",
+  "version": "8.0.0-beta.1-839626a",
   "description": "",
   "main": "./bundles/ionic.umd.js",
   "module": "./esm5/ionic.es5.js",
@@ -17,11 +17,11 @@
   },
   "homepage": "https://github.com/gnucoop/ajf#readme",
   "peerDependencies": {
-    "@angular/core": ">=7.0.0",
-    "@angular/common": ">=7.0.0",
-    "@angular/router": ">=7.0.0",
+    "@angular/core": "^8.0.0",
+    "@angular/common": "^8.0.0",
+    "@angular/router": "^8.0.0",
     "@ionic/angular": ">=4.0.0",
-    "@ajf/core": "7.0.0-beta.6-d9e270a",
+    "@ajf/core": "8.0.0-beta.1-839626a",
     "flag-icon-css": "^3.2.1",
     "ionic-selectable": "^4.4.0"
   },
@@ -37,7 +37,7 @@
     ]
   },
   "sideEffects": false,
-  "releaseGitCommitSha": "d9e270af2fc31232cca8a871b7385525097c2310",
+  "releaseGitCommitSha": "839626a8fba9d11f3e724f0f17f4b9bca80b8235",
   "releaseGitBranch": "",
   "releaseGitUser": " <>"
 }

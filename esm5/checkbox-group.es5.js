@@ -97,15 +97,5 @@ var AjfCheckboxGroupModule = /** @class */ (function () {
     return AjfCheckboxGroupModule;
 }());
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-
 export { AjfCheckboxGroupItem, AjfCheckboxGroupModule };
 //# sourceMappingURL=checkbox-group.es5.js.map
