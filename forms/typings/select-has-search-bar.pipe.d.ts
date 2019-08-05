@@ -19,5 +19,8 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?n(exports,require("@angular/core")):"function"==typeof define&&define.amd?define("@ajf/ionic",["exports","@angular/core"],n):n(((e=e||self).ajf=e.ajf||{},e.ajf.ionic={}),e.ng.core)}(this,function(e,n){"use strict";var o=new n.Version("8.0.1-04a65ad");e.VERSION=o,Object.defineProperty(e,"__esModule",{value:!0})});
-//# sourceMappingURL=ionic.umd.min.js.map
+import { PipeTransform } from '@angular/core';
+import { AjfFieldWithChoicesInstance } from '@ajf/core/forms';
+export declare class AjfSelectHasSearchBarPipe implements PipeTransform {
+    transform(instance: AjfFieldWithChoicesInstance, searchTreshold: number): boolean;
+}

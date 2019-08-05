@@ -19,14 +19,14 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-import { InjectionToken, Component, ViewEncapsulation, ChangeDetectionStrategy, ViewChild, ChangeDetectorRef, Optional, Inject, EventEmitter, ViewChildren, Pipe, Directive, NgModule } from '@angular/core';
+import { InjectionToken, Component, ViewEncapsulation, ChangeDetectionStrategy, ViewChild, ChangeDetectorRef, Optional, Inject, EventEmitter, ViewChildren, Directive, Pipe, NgModule } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { AlertController, IonicModule } from '@ionic/angular';
 import { AjfFormField as AjfFormField$1, AjfFormRendererService, AjfFormRenderer as AjfFormRenderer$1, AjfFormsModule as AjfFormsModule$1 } from '@ajf/core/forms';
 import { delayWhen, switchMap } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { IonicSelectableModule } from 'ionic-selectable';
+import { GicModule } from '@gic/angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { AjfCommonModule } from '@ajf/core/common';
 import { AjfCalendarModule } from '@ajf/ionic/calendar';
@@ -123,7 +123,7 @@ class AjfFormField extends AjfFormField$1 {
 }
 AjfFormField.decorators = [
     { type: Component, args: [{selector: 'ajf-field',
-                template: "<ng-container *ngIf=\"control|async as curControl\"><div [ngSwitch]=\"fieldInstance.field.fieldType\" [ngClass]=\"'ajf-field-' + fieldInstance.completeName\" [class.ajf-validated]=\"fieldInstance|ajfFieldIsValid\"><ion-input *ngSwitchCase=\"ajfFieldTypes.String\" type=\"text\" [formControl]=\"curControl\"></ion-input><ng-container *ngSwitchCase=\"ajfFieldTypes.Text\"><ion-textarea [formControl]=\"curControl\"></ion-textarea></ng-container><ion-input *ngSwitchCase=\"ajfFieldTypes.Number\" type=\"number\" [formControl]=\"curControl\"></ion-input><ion-toggle *ngSwitchCase=\"ajfFieldTypes.Boolean\" [formControl]=\"curControl\"></ion-toggle><ng-container *ngSwitchCase=\"ajfFieldTypes.SingleChoice\"><ng-container *ngIf=\"(!fwc.forceExpanded && fwcInst.filteredChoices && fwcInst.filteredChoices.length > searchTreshold) || fwc.forceNarrow\"><div class=\"ajf-item-container\"><ionic-selectable *ngIf=\"fwcInst.filteredChoices|ajfChoicesMap as cm\" #singleChoiceSelect [canSearch]=\"hasSearch()\" [items]=\"cm.array\" [placeholder]=\"fieldInstance.field.label\" [formControl]=\"curControl\"><ng-template ionicSelectableItemTemplate let-choice=\"item\">{{ cm.map[choice] | translate }}</ng-template><ng-template ionicSelectableValueTemplate let-selChoice=\"value\">{{ cm.map[selChoice] | translate }}</ng-template></ionic-selectable></div></ng-container><div class=\"ajf-choices-container\" *ngIf=\"!fwc.forceNarrow && (fwcInst.field.forceExpanded || (fwcInst.filteredChoices && fwcInst.filteredChoices.length <= searchTreshold))\"><ion-radio-group [formControl]=\"curControl\"><ion-item *ngFor=\"let choice of fwcInst.filteredChoices\"><ion-label>{{ choice.label | translate}}</ion-label><ion-radio [value]=\"choice.value\"></ion-radio></ion-item></ion-radio-group></div></ng-container><ng-container *ngSwitchCase=\"ajfFieldTypes.MultipleChoice\"><ng-container *ngIf=\"(!fwc.forceExpanded && fwcInst.filteredChoices && fwcInst.filteredChoices.length > searchTreshold) || fwcInst.field.forceNarrow\"><div class=\"ajf-item-container\"><ionic-selectable *ngIf=\"fwcInst.filteredChoices|ajfChoicesMap as cm\" #multipleChoiceSelect [isMultiple]=\"true\" [canSearch]=\"hasSearch()\" [items]=\"cm.array\" [placeholder]=\"fieldInstance.field.label\" [formControl]=\"curControl\"><ng-template ionicSelectableItemTemplate let-choice=\"item\">{{ cm.map[choice] | translate }}</ng-template><ng-template ionicSelectableValueTemplate let-selChoices=\"value\"><div class=\"ionic-selectable-value-item\" *ngFor=\"let selChoice of selChoices\">{{ cm.map[selChoice] | translate }}</div></ng-template></ionic-selectable></div></ng-container><ng-container *ngIf=\"!fwc.forceNarrow && (fwcInst.field.forceExpanded || (fwcInst.filteredChoices && fwcInst.filteredChoices.length <= searchTreshold))\"><div ajf-checkbox-group [formControl]=\"curControl\" class=\"ajf-choices-container\"><ion-card *ngFor=\"let choice of fwcInst.filteredChoices\"><ajf-checkbox-group-item [value]=\"choice.value\">{{ choice.label | translate }}</ajf-checkbox-group-item></ion-card></div></ng-container></ng-container><ion-input *ngSwitchCase=\"ajfFieldTypes.Formula\" [formControl]=\"curControl\" type=\"text\" readonly=\"readonly\"></ion-input><ion-item *ngSwitchCase=\"ajfFieldTypes.Date\"><ajf-calendar selectionMode=\"day\" dateOnlyForDay [minDate]=\"datefInst.field.minDateValue\" [maxDate]=\"datefInst.field.maxDateValue\" [formControl]=\"curControl\"></ajf-calendar></ion-item><ion-item *ngSwitchCase=\"ajfFieldTypes.DateInput\"><ion-input type=\"date\" [formControl]=\"control | async\"></ion-input></ion-item><ng-container *ngSwitchCase=\"ajfFieldTypes.Empty\"><div [innerHTML]=\"emptyfInst.field.HTML\"></div></ng-container><ng-container *ngSwitchCase=\"ajfFieldTypes.Table\"><div class=\"ajf-table-container\"><table><ng-container *ngFor=\"let columns of tablefInst.visibleColumns; let i = index\"><tr [ngClass]=\"i | tableRowClass\"><td *ngFor=\"let cellValue of columns\">{{ cellValue | ajfTranslateIfString | ajfFormatIfNumber: '.2' }}</td></tr></ng-container></table></div></ng-container></div><ng-container *ngIf=\"fieldInstance.field.hasAttachments\"><ng-container *ngFor=\"let attachment of fieldInstance.field.attachments\"><a [href]=\"attachment.value\" target=\"_blank\">{{attachment.label}}</a></ng-container></ng-container><ng-container *ngIf=\"fieldInstance.validationResults\"><div class=\"ajf-errors\"><ng-container *ngFor=\"let res of fieldInstance.validationResults\"><div class=\"error\" *ngIf=\"!res.result\">{{ res.error | translate }}</div></ng-container></div></ng-container></ng-container>",
+                template: "<ng-container *ngIf=\"control|async as curControl\"><div [ngSwitch]=\"fieldInstance.field.fieldType\" [ngClass]=\"'ajf-field-' + fieldInstance.completeName\" [class.ajf-validated]=\"fieldInstance|ajfFieldIsValid\"><ion-input *ngSwitchCase=\"ajfFieldTypes.String\" type=\"text\" [formControl]=\"curControl\"></ion-input><ng-container *ngSwitchCase=\"ajfFieldTypes.Text\"><ion-textarea [formControl]=\"curControl\"></ion-textarea></ng-container><ion-input *ngSwitchCase=\"ajfFieldTypes.Number\" type=\"number\" [formControl]=\"curControl\"></ion-input><ion-toggle *ngSwitchCase=\"ajfFieldTypes.Boolean\" [formControl]=\"curControl\"></ion-toggle><ng-container *ngSwitchCase=\"ajfFieldTypes.SingleChoice\"><ng-container *ngIf=\"(!fwc.forceExpanded && fwcInst.filteredChoices && fwcInst.filteredChoices.length > searchTreshold) || fwc.forceNarrow\"><div class=\"ajf-item-container\"><gic-select *ngIf=\"fwcInst.filteredChoices as cs\" #singleChoiceSelect [searchBar]=\"fwcInst|ajfSelectHasSearchBar:searchTreshold\" [useVirtualScroll]=\"fwcInst|ajfSelectUseVirtualScroll:100\" [placeholder]=\"fieldInstance.field.label\" [formControl]=\"curControl\"><ion-virtual-scroll [items]=\"cs\"><gic-select-option *virtualItem=\"let item\" [value]=\"item.value\">{{ item.label|translate }}</gic-select-option></ion-virtual-scroll></gic-select></div></ng-container><div class=\"ajf-choices-container\" *ngIf=\"!fwc.forceNarrow && (fwcInst.field.forceExpanded || (fwcInst.filteredChoices && fwcInst.filteredChoices.length <= searchTreshold))\"><ion-radio-group [formControl]=\"curControl\"><ion-item *ngFor=\"let choice of fwcInst.filteredChoices\"><ion-label>{{ choice.label | translate}}</ion-label><ion-radio [value]=\"choice.value\"></ion-radio></ion-item></ion-radio-group></div></ng-container><ng-container *ngSwitchCase=\"ajfFieldTypes.MultipleChoice\"><ng-container *ngIf=\"(!fwc.forceExpanded && fwcInst.filteredChoices && fwcInst.filteredChoices.length > searchTreshold) || fwcInst.field.forceNarrow\"><div class=\"ajf-item-container\"><gic-select *ngIf=\"fwcInst.filteredChoices as cs\" #multipleChoiceSelect multiple=\"multiple\" [searchBar]=\"fwcInst|ajfSelectHasSearchBar:searchTreshold\" [useVirtualScroll]=\"fwcInst|ajfSelectUseVirtualScroll:100\" [placeholder]=\"fieldInstance.field.label\" [formControl]=\"curControl\"><gic-select-option *ngFor=\"let item of cs\" [value]=\"item.value\">{{ item.label|translate }}</gic-select-option></gic-select></div></ng-container><ng-container *ngIf=\"!fwc.forceNarrow && (fwcInst.field.forceExpanded || (fwcInst.filteredChoices && fwcInst.filteredChoices.length <= searchTreshold))\"><div ajf-checkbox-group [formControl]=\"curControl\" class=\"ajf-choices-container\"><ion-card *ngFor=\"let choice of fwcInst.filteredChoices\"><ajf-checkbox-group-item [value]=\"choice.value\">{{ choice.label | translate }}</ajf-checkbox-group-item></ion-card></div></ng-container></ng-container><ion-input *ngSwitchCase=\"ajfFieldTypes.Formula\" [formControl]=\"curControl\" type=\"text\" readonly=\"readonly\"></ion-input><ion-item *ngSwitchCase=\"ajfFieldTypes.Date\"><ajf-calendar selectionMode=\"day\" dateOnlyForDay [minDate]=\"datefInst.field.minDateValue\" [maxDate]=\"datefInst.field.maxDateValue\" [formControl]=\"curControl\"></ajf-calendar></ion-item><ion-item *ngSwitchCase=\"ajfFieldTypes.DateInput\"><ion-input type=\"date\" [formControl]=\"control | async\"></ion-input></ion-item><ng-container *ngSwitchCase=\"ajfFieldTypes.Empty\"><div [innerHTML]=\"emptyfInst.field.HTML\"></div></ng-container><ng-container *ngSwitchCase=\"ajfFieldTypes.Table\"><div class=\"ajf-table-container\"><table><ng-container *ngFor=\"let columns of tablefInst.visibleColumns; let i = index\"><tr [ngClass]=\"i | tableRowClass\"><td *ngFor=\"let cellValue of columns\">{{ cellValue | ajfTranslateIfString | ajfFormatIfNumber: '.2' }}</td></tr></ng-container></table></div></ng-container></div><ng-container *ngIf=\"fieldInstance.field.hasAttachments\"><ng-container *ngFor=\"let attachment of fieldInstance.field.attachments\"><a [href]=\"attachment.value\" target=\"_blank\">{{attachment.label}}</a></ng-container></ng-container><ng-container *ngIf=\"fieldInstance.validationResults\"><div class=\"ajf-errors\"><ng-container *ngFor=\"let res of fieldInstance.validationResults\"><div class=\"error\" *ngIf=\"!res.result\">{{ res.error | translate }}</div></ng-container></div></ng-container></ng-container>",
                 styles: ["ajf-field ion-select{position:relative}ajf-field ion-input,ajf-field ion-textarea{border:dashed 2px #eee}ajf-field .ajf-choices-container{flex-direction:row;align-items:stretch;flex-wrap:wrap;display:flex}ajf-field .ajf-choices-container>ion-radio-group{display:flex;flex-wrap:wrap}ajf-field .ajf-choices-container>ion-radio-group ion-item{--ion-item-border-color:transparent}ajf-field .ajf-choices-container>ion-radio-group ion-item ion-label{margin-right:10px}ajf-field .ajf-choices-container>ion-card{margin-top:0;width:33%;display:flex;font-size:13px;flex-wrap:wrap;flex-basis:21%!important;flex-shrink:3!important}ajf-field .ajf-choices-container>ion-card>ajf-checkbox-group-item{width:100%;display:flex;flex-direction:column;align-items:stretch;justify-content:center}ajf-field .ajf-choices-container>ion-card>ion-item{font-size:13px;flex:1 0 auto;flex-shrink:3!important;flex-basis:21%!important;margin:0 10px}ajf-field .ajf-item-container{position:relative}ajf-field .ajf-errors{font-style:italic;padding:5px}ajf-field tr.ajf-row-odd{background-color:grey}ajf-field .ajf-table-container{overflow-x:auto}ajf-field .ajf-table-container table{width:100%}"],
                 encapsulation: ViewEncapsulation.None,
                 changeDetection: ChangeDetectionStrategy.OnPush,
@@ -249,42 +249,46 @@ AjfFormRenderer.ctorParameters = () => [
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-class AjfChoicesMapPipe {
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    transform(value) {
-        if (value == null || value.length === 0) {
-            return { array: [], map: {} };
-        }
-        /** @type {?} */
-        const choicesMap = value.reduce((/**
-         * @param {?} p
-         * @param {?} c
-         * @return {?}
-         */
-        (p, c) => {
-            p[c.value] = c.label;
-            return p;
-        }), (/** @type {?} */ ({})));
-        /** @type {?} */
-        const choicesArr = Object.keys(choicesMap);
-        return { array: choicesArr, map: choicesMap };
-    }
+class AjfFormPage {
 }
-AjfChoicesMapPipe.decorators = [
-    { type: Pipe, args: [{ name: 'ajfChoicesMap' },] },
+AjfFormPage.decorators = [
+    { type: Directive, args: [{ selector: '[ajfFormPage]' },] },
 ];
 
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-class AjfFormPage {
+class AjfSelectHasSearchBarPipe {
+    /**
+     * @param {?} instance
+     * @param {?} searchTreshold
+     * @return {?}
+     */
+    transform(instance, searchTreshold) {
+        return instance.filteredChoices && instance.filteredChoices.length > searchTreshold;
+    }
 }
-AjfFormPage.decorators = [
-    { type: Directive, args: [{ selector: '[ajfFormPage]' },] },
+AjfSelectHasSearchBarPipe.decorators = [
+    { type: Pipe, args: [{ name: 'ajfSelectHasSearchBar' },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class AjfSelectUseVirtualScroll {
+    /**
+     * @param {?} instance
+     * @param {?} vsTreshold
+     * @return {?}
+     */
+    transform(instance, vsTreshold) {
+        return instance.filteredChoices && instance.filteredChoices.length > vsTreshold;
+    }
+}
+AjfSelectUseVirtualScroll.decorators = [
+    { type: Pipe, args: [{ name: 'ajfSelectUseVirtualScroll' },] },
 ];
 
 /**
@@ -299,7 +303,7 @@ AjfFormsModule.decorators = [
                     CommonModule,
                     ReactiveFormsModule,
                     IonicModule,
-                    IonicSelectableModule,
+                    GicModule,
                     TranslateModule,
                     AjfCommonModule,
                     AjfFormsModule$1,
@@ -308,17 +312,18 @@ AjfFormsModule.decorators = [
                     AjfPageSliderModule,
                 ],
                 declarations: [
-                    AjfChoicesMapPipe,
                     AjfFormField,
                     AjfFormPage,
                     AjfFormRenderer,
+                    AjfSelectHasSearchBarPipe,
+                    AjfSelectUseVirtualScroll,
                 ],
                 exports: [
                     AjfFormField,
-                    AjfFormRenderer
+                    AjfFormRenderer,
                 ]
             },] },
 ];
 
-export { AJF_SEARCH_ALERT_TRESHOLD, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfChoicesMapPipe as ɵa, AjfFormPage as ɵb };
+export { AJF_SEARCH_ALERT_TRESHOLD, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfFormPage as ɵa, AjfSelectHasSearchBarPipe as ɵb, AjfSelectUseVirtualScroll as ɵc };
 //# sourceMappingURL=forms.js.map

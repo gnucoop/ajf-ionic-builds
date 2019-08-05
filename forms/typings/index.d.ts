@@ -2,5 +2,6 @@
  * Generated bundle index. Do not edit.
  */
 export * from './public-api';
-export { AjfChoicesMapPipe as ɵa } from './choices-map';
-export { AjfFormPage as ɵb } from './form-page';
+export { AjfFormPage as ɵa } from './form-page';
+export { AjfSelectHasSearchBarPipe as ɵb } from './select-has-search-bar.pipe';
+export { AjfSelectUseVirtualScroll as ɵc } from './select-use-virtual-scroll.pipe';

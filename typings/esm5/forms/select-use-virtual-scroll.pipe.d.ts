@@ -20,14 +20,7 @@
  *
  */
 import { PipeTransform } from '@angular/core';
-export declare class AjfChoicesMapPipe implements PipeTransform {
-    transform(value: {
-        label: string;
-        value: string;
-    }[]): {
-        array: string[];
-        map: {
-            [value: string]: string;
-        };
-    };
+import { AjfFieldWithChoicesInstance } from '@ajf/core/forms';
+export declare class AjfSelectUseVirtualScroll implements PipeTransform {
+    transform(instance: AjfFieldWithChoicesInstance, vsTreshold: number): boolean;
 }
