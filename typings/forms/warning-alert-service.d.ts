@@ -19,5 +19,11 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-import { InjectionToken } from '@angular/core';
-export declare const AJF_SEARCH_ALERT_TRESHOLD: InjectionToken<number>;
+import { AjfFieldWarningAlertResult, AjfWarningAlertService as CoreWarningAlertService } from '@ajf/core/forms';
+import { AlertController } from '@ionic/angular';
+import { Observable } from 'rxjs';
+export declare class AjfWarningAlertService implements CoreWarningAlertService {
+    private _alertCtrl;
+    constructor(_alertCtrl: AlertController);
+    showWarningAlertPrompt(warnings: string[]): Observable<AjfFieldWarningAlertResult>;
+}

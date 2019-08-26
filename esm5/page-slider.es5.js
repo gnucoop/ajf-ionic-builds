@@ -28,7 +28,7 @@ import { IonicModule } from '@ionic/angular';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var AjfPageSlider = /** @class */ (function (_super) {
     __extends(AjfPageSlider, _super);
@@ -60,7 +60,7 @@ var AjfPageSlider = /** @class */ (function (_super) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var AjfPageSliderModule = /** @class */ (function () {
     function AjfPageSliderModule() {

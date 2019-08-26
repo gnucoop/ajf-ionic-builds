@@ -22,5 +22,5 @@
 import { PipeTransform } from '@angular/core';
 import { AjfFieldWithChoicesInstance } from '@ajf/core/forms';
 export declare class AjfSelectHasSearchBarPipe implements PipeTransform {
-    transform(instance: AjfFieldWithChoicesInstance, searchTreshold: number): boolean;
+    transform(instance: AjfFieldWithChoicesInstance<any>, searchThreshold: number): boolean;
 }

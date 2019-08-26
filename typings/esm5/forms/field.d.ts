@@ -19,16 +19,9 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-import { ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { AlertController } from '@ionic/angular';
-import { AjfFormField as AjfCoreFormField, AjfFormFieldWarningAlertResult, AjfFormRendererService } from '@ajf/core/forms';
-export declare class AjfFormField extends AjfCoreFormField implements OnDestroy, OnInit {
-    private _alertCtrl;
-    private _searchTreshold;
-    alert: HTMLIonAlertElement | null;
-    readonly searchTreshold: number;
-    constructor(_rendererService: AjfFormRendererService, _changeDetectionRef: ChangeDetectorRef, _alertCtrl: AlertController, _searchTreshold: number);
-    showWarningAlertPrompt(messagesWarning: string[]): Observable<AjfFormFieldWarningAlertResult>;
-    hasSearch(): boolean;
+import { AjfFieldComponentsMap, AjfFormField as CoreFormField } from '@ajf/core/forms';
+import { ComponentFactoryResolver } from '@angular/core';
+export declare class AjfFormField extends CoreFormField {
+    componentsMap: AjfFieldComponentsMap;
+    constructor(cfr: ComponentFactoryResolver);
 }
