@@ -1,0 +1,8 @@
+{
+  "name": "@ajf/ionic/barcode",
+  "typings": "../barcode.d.ts",
+  "main": "../bundles/ionic-barcode.umd.js",
+  "module": "../esm5/barcode.es5.js",
+  "es2015": "../esm2015/barcode.js",
+  "sideEffects": false
+}

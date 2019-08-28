@@ -31,6 +31,7 @@ import { GicModule } from '@gic/angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { AjfCommonModule } from '@ajf/core/common';
 import { AjfTimeModule } from '@ajf/core/time';
+import { AjfBarcodeModule } from '@ajf/ionic/barcode';
 import { AjfCalendarModule } from '@ajf/ionic/calendar';
 import { AjfCheckboxGroupModule } from '@ajf/ionic/checkbox-group';
 import { AjfPageSliderModule } from '@ajf/ionic/page-slider';
@@ -175,6 +176,31 @@ var AjfEmptyFieldComponent = /** @class */ (function (_super) {
         { type: AjfWarningAlertService }
     ]; };
     return AjfEmptyFieldComponent;
+}(AjfBaseFieldComponent));
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var AjfBarcodeFieldComponent = /** @class */ (function (_super) {
+    __extends(AjfBarcodeFieldComponent, _super);
+    function AjfBarcodeFieldComponent(cdr, service, was) {
+        return _super.call(this, cdr, service, was) || this;
+    }
+    AjfBarcodeFieldComponent.decorators = [
+        { type: Component, args: [{template: "<ajf-barcode [formControl]=\"control|async\"></ajf-barcode>",
+                    styles: [""],
+                    changeDetection: ChangeDetectionStrategy.OnPush,
+                    encapsulation: ViewEncapsulation.None,
+                },] },
+    ];
+    /** @nocollapse */
+    AjfBarcodeFieldComponent.ctorParameters = function () { return [
+        { type: ChangeDetectorRef },
+        { type: AjfFormRendererService },
+        { type: AjfWarningAlertService }
+    ]; };
+    return AjfBarcodeFieldComponent;
 }(AjfBaseFieldComponent));
 
 /**
@@ -449,6 +475,7 @@ var AjfFormField = /** @class */ (function (_super) {
             _a[AjfFieldType.SingleChoice] = { component: AjfSingleChoiceFieldComponent },
             _a[AjfFieldType.MultipleChoice] = { component: AjfMultipleChoiceFieldComponent },
             _a[AjfFieldType.Time] = { component: AjfTimeFieldComponent },
+            _a[AjfFieldType.Barcode] = { component: AjfBarcodeFieldComponent },
             _a);
         return _this;
     }
@@ -661,11 +688,13 @@ var AjfFormsModule = /** @class */ (function () {
                         AjfCommonModule,
                         AjfFormsModule$1,
                         AjfCalendarModule,
+                        AjfBarcodeModule,
                         AjfCheckboxGroupModule,
                         AjfPageSliderModule,
                         AjfTimeModule,
                     ],
                     declarations: [
+                        AjfBarcodeFieldComponent,
                         AjfBooleanFieldComponent,
                         AjfDateFieldComponent,
                         AjfEmptyFieldComponent,
@@ -687,6 +716,7 @@ var AjfFormsModule = /** @class */ (function () {
                         AjfFormRenderer
                     ],
                     entryComponents: [
+                        AjfBarcodeFieldComponent,
                         AjfBooleanFieldComponent,
                         AjfDateFieldComponent,
                         AjfEmptyFieldComponent,
@@ -706,5 +736,5 @@ var AjfFormsModule = /** @class */ (function () {
     return AjfFormsModule;
 }());
 
-export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfEmptyFieldComponent, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfFormPage as ɵa, AjfSelectHasSearchBarPipe as ɵb, AjfSelectUseVirtualScroll as ɵc };
+export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfEmptyFieldComponent, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfBarcodeFieldComponent as ɵa, AjfFormPage as ɵb, AjfSelectHasSearchBarPipe as ɵc, AjfSelectUseVirtualScroll as ɵd };
 //# sourceMappingURL=forms.es5.js.map

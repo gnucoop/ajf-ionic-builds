@@ -19,17 +19,9 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-import { Version } from '@angular/core';
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * Current version of Ajf.
- * @type {?}
- */
-var VERSION = new Version('8.0.1-a1bd8e5');
-
-export { VERSION };
-//# sourceMappingURL=ionic.es5.js.map
+import { ChangeDetectorRef, Renderer2 } from '@angular/core';
+import { AjfBarcode } from '@ajf/core/barcode';
+export declare const BARCODE_CONTROL_VALUE_ACCESSOR: any;
+export declare class AjfBarcodeComponent extends AjfBarcode {
+    constructor(cdr: ChangeDetectorRef, renderer: Renderer2);
+}

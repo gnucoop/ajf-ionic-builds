@@ -20,10 +20,10 @@
  *
  */
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/forms'), require('@angular/core'), require('@ionic/angular'), require('rxjs'), require('rxjs/operators'), require('@angular/common'), require('@angular/forms'), require('@gic/angular'), require('@ngx-translate/core'), require('@ajf/core/common'), require('@ajf/core/time'), require('@ajf/ionic/calendar'), require('@ajf/ionic/checkbox-group'), require('@ajf/ionic/page-slider')) :
-    typeof define === 'function' && define.amd ? define('@ajf/ionic/forms', ['exports', '@ajf/core/forms', '@angular/core', '@ionic/angular', 'rxjs', 'rxjs/operators', '@angular/common', '@angular/forms', '@gic/angular', '@ngx-translate/core', '@ajf/core/common', '@ajf/core/time', '@ajf/ionic/calendar', '@ajf/ionic/checkbox-group', '@ajf/ionic/page-slider'], factory) :
-    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.forms = {}), global.ajf.core.forms, global.ng.core, global.ionic.angular, global.rxjs, global.rxjs.operators, global.ng.common, global.ng.forms, global.gic.angular, global.ngxt.core, global.ajf.core.common, global.ajf.core.time, global.ajf.ionic.calendar, global.ajf.ionic.checkboxGroup, global.ajf.ionic.pageSlider));
-}(this, function (exports, forms, core, angular, rxjs, operators, common, forms$1, angular$1, core$1, common$1, time, calendar, checkboxGroup, pageSlider) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/forms'), require('@angular/core'), require('@ionic/angular'), require('rxjs'), require('rxjs/operators'), require('@angular/common'), require('@angular/forms'), require('@gic/angular'), require('@ngx-translate/core'), require('@ajf/core/common'), require('@ajf/core/time'), require('@ajf/ionic/barcode'), require('@ajf/ionic/calendar'), require('@ajf/ionic/checkbox-group'), require('@ajf/ionic/page-slider')) :
+    typeof define === 'function' && define.amd ? define('@ajf/ionic/forms', ['exports', '@ajf/core/forms', '@angular/core', '@ionic/angular', 'rxjs', 'rxjs/operators', '@angular/common', '@angular/forms', '@gic/angular', '@ngx-translate/core', '@ajf/core/common', '@ajf/core/time', '@ajf/ionic/barcode', '@ajf/ionic/calendar', '@ajf/ionic/checkbox-group', '@ajf/ionic/page-slider'], factory) :
+    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.forms = {}), global.ajf.core.forms, global.ng.core, global.ionic.angular, global.rxjs, global.rxjs.operators, global.ng.common, global.ng.forms, global.gic.angular, global.ngxt.core, global.ajf.core.common, global.ajf.core.time, global.ajf.ionic.barcode, global.ajf.ionic.calendar, global.ajf.ionic.checkboxGroup, global.ajf.ionic.pageSlider));
+}(this, function (exports, forms, core, angular, rxjs, operators, common, forms$1, angular$1, core$1, common$1, time, barcode, calendar, checkboxGroup, pageSlider) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -194,6 +194,31 @@
             { type: AjfWarningAlertService }
         ]; };
         return AjfEmptyFieldComponent;
+    }(forms.AjfBaseFieldComponent));
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    var AjfBarcodeFieldComponent = /** @class */ (function (_super) {
+        __extends(AjfBarcodeFieldComponent, _super);
+        function AjfBarcodeFieldComponent(cdr, service, was) {
+            return _super.call(this, cdr, service, was) || this;
+        }
+        AjfBarcodeFieldComponent.decorators = [
+            { type: core.Component, args: [{template: "<ajf-barcode [formControl]=\"control|async\"></ajf-barcode>",
+                        styles: [""],
+                        changeDetection: core.ChangeDetectionStrategy.OnPush,
+                        encapsulation: core.ViewEncapsulation.None,
+                    },] },
+        ];
+        /** @nocollapse */
+        AjfBarcodeFieldComponent.ctorParameters = function () { return [
+            { type: core.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService }
+        ]; };
+        return AjfBarcodeFieldComponent;
     }(forms.AjfBaseFieldComponent));
 
     /**
@@ -468,6 +493,7 @@
                 _a[forms.AjfFieldType.SingleChoice] = { component: AjfSingleChoiceFieldComponent },
                 _a[forms.AjfFieldType.MultipleChoice] = { component: AjfMultipleChoiceFieldComponent },
                 _a[forms.AjfFieldType.Time] = { component: AjfTimeFieldComponent },
+                _a[forms.AjfFieldType.Barcode] = { component: AjfBarcodeFieldComponent },
                 _a);
             return _this;
         }
@@ -680,11 +706,13 @@
                             common$1.AjfCommonModule,
                             forms.AjfFormsModule,
                             calendar.AjfCalendarModule,
+                            barcode.AjfBarcodeModule,
                             checkboxGroup.AjfCheckboxGroupModule,
                             pageSlider.AjfPageSliderModule,
                             time.AjfTimeModule,
                         ],
                         declarations: [
+                            AjfBarcodeFieldComponent,
                             AjfBooleanFieldComponent,
                             AjfDateFieldComponent,
                             AjfEmptyFieldComponent,
@@ -706,6 +734,7 @@
                             AjfFormRenderer
                         ],
                         entryComponents: [
+                            AjfBarcodeFieldComponent,
                             AjfBooleanFieldComponent,
                             AjfDateFieldComponent,
                             AjfEmptyFieldComponent,
@@ -739,9 +768,10 @@
     exports.AjfTextareaFieldComponent = AjfTextareaFieldComponent;
     exports.AjfTimeFieldComponent = AjfTimeFieldComponent;
     exports.AjfWarningAlertService = AjfWarningAlertService;
-    exports.ɵa = AjfFormPage;
-    exports.ɵb = AjfSelectHasSearchBarPipe;
-    exports.ɵc = AjfSelectUseVirtualScroll;
+    exports.ɵa = AjfBarcodeFieldComponent;
+    exports.ɵb = AjfFormPage;
+    exports.ɵc = AjfSelectHasSearchBarPipe;
+    exports.ɵd = AjfSelectUseVirtualScroll;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
