@@ -506,7 +506,7 @@
                         inputs: ['instance'],
                         queries: {
                             fieldHost: new core.ViewChild(forms.AjfFieldHost, { static: true }),
-                        }
+                        },
                     },] },
         ];
         /** @nocollapse */

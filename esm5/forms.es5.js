@@ -488,7 +488,7 @@ var AjfFormField = /** @class */ (function (_super) {
                     inputs: ['instance'],
                     queries: {
                         fieldHost: new ViewChild(AjfFieldHost, { static: true }),
-                    }
+                    },
                 },] },
     ];
     /** @nocollapse */

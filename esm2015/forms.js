@@ -508,7 +508,7 @@ AjfFormField.decorators = [
                 inputs: ['instance'],
                 queries: {
                     fieldHost: new ViewChild(AjfFieldHost, { static: true }),
-                }
+                },
             },] },
 ];
 /** @nocollapse */
