@@ -403,7 +403,7 @@ class AjfTableFieldComponent extends AjfBaseFieldComponent {
     }
 }
 AjfTableFieldComponent.decorators = [
-    { type: Component, args: [{template: "<div class=\"ajf-table-container\"><table><ng-container *ngFor=\"let columns of instance|ajfTableVisibleColumns; let i = index\"><tr [ngClass]=\"i | ajfTableRowClass\"><td *ngFor=\"let cellValue of columns\">{{ cellValue | ajfTranslateIfString | ajfFormatIfNumber: '.2' }}</td></tr></ng-container></table></div>",
+    { type: Component, args: [{template: "<div class=\"ajf-table-container\"><table><ng-container *ngFor=\"let columns of (instance|ajfTableVisibleColumns); let i = index\"><tr [ngClass]=\"i | ajfTableRowClass\"><td *ngFor=\"let cellValue of columns\">{{ cellValue | ajfTranslateIfString | ajfFormatIfNumber: '.0-2' }}</td></tr></ng-container></table></div>",
                 styles: ["table.ajf-table-field{width:100%}"],
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 encapsulation: ViewEncapsulation.None,
