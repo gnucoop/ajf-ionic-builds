@@ -19,5 +19,20 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?n(exports,require("@angular/core")):"function"==typeof define&&define.amd?define("@ajf/ionic",["exports","@angular/core"],n):n(((e=e||self).ajf=e.ajf||{},e.ajf.ionic={}),e.ng.core)}(this,function(e,n){"use strict";var o=new n.Version("8.1.8-856f56a");e.VERSION=o,Object.defineProperty(e,"__esModule",{value:!0})});
-//# sourceMappingURL=ionic.umd.min.js.map
+import { AjfDateFieldInstance, AjfDateValueStringPipe, AjfBaseFieldComponent, AjfFormRendererService } from '@ajf/core/forms';
+import { ChangeDetectorRef } from '@angular/core';
+import { IonInput } from '@ionic/angular';
+import { AjfWarningAlertService } from './warning-alert-service';
+export declare class AjfDateInputFieldComponent extends AjfBaseFieldComponent<AjfDateFieldInstance> {
+    private _dvs;
+    input: IonInput;
+    private _minDateStr;
+    private _maxDateStr;
+    constructor(cdr: ChangeDetectorRef, service: AjfFormRendererService, was: AjfWarningAlertService, _dvs: AjfDateValueStringPipe);
+    onChange(evt: {
+        detail: {
+            value: string;
+        };
+    }): void;
+    protected _onInstanceChange(): void;
+}

@@ -19,9 +19,9 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-import { AjfBaseFieldComponent, AjfFormRendererService, AjfInputFieldComponent as AjfInputFieldComponent$1, AjfFieldWithChoicesComponent, AJF_SEARCH_ALERT_THRESHOLD, AjfFormField as AjfFormField$1, AjfFieldType, AjfFieldHost, AjfFormRenderer as AjfFormRenderer$1, AjfFormsModule as AjfFormsModule$1 } from '@ajf/core/forms';
-import { Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, Optional, Inject, EventEmitter, ViewChild, ComponentFactoryResolver, ViewChildren, Directive, Pipe, NgModule } from '@angular/core';
-import { AlertController, IonicModule } from '@ionic/angular';
+import { AjfBaseFieldComponent, AjfFormRendererService, AjfDateValueStringPipe, AjfInputFieldComponent as AjfInputFieldComponent$1, AjfFieldWithChoicesComponent, AJF_SEARCH_ALERT_THRESHOLD, AjfFormField as AjfFormField$1, AjfFieldType, AjfFieldHost, AjfFormRenderer as AjfFormRenderer$1, AjfFormsModule as AjfFormsModule$1 } from '@ajf/core/forms';
+import { Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, ViewChild, Optional, Inject, EventEmitter, ComponentFactoryResolver, ViewChildren, Directive, Pipe, NgModule } from '@angular/core';
+import { AlertController, IonInput, IonicModule } from '@ionic/angular';
 import { Observable, Subscription, defer } from 'rxjs';
 import { filter, switchMap, startWith, withLatestFrom, delayWhen } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
@@ -154,6 +154,65 @@ AjfDateFieldComponent.ctorParameters = () => [
     { type: AjfFormRendererService },
     { type: AjfWarningAlertService }
 ];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class AjfDateInputFieldComponent extends AjfBaseFieldComponent {
+    /**
+     * @param {?} cdr
+     * @param {?} service
+     * @param {?} was
+     * @param {?} _dvs
+     */
+    constructor(cdr, service, was, _dvs) {
+        super(cdr, service, was);
+        this._dvs = _dvs;
+    }
+    /**
+     * @param {?} evt
+     * @return {?}
+     */
+    onChange(evt) {
+        if (this.input == null) {
+            return;
+        }
+        /** @type {?} */
+        const val = evt.detail.value || '';
+        if (val.length > 0) {
+            if ((this._minDateStr != null && val < this._minDateStr)
+                || (this._maxDateStr != null && val > this._maxDateStr)) {
+                this.input.value = '';
+            }
+        }
+    }
+    /**
+     * @protected
+     * @return {?}
+     */
+    _onInstanceChange() {
+        this._minDateStr = this._dvs.transform(this.instance.node.minDate);
+        this._maxDateStr = this._dvs.transform(this.instance.node.maxDate);
+    }
+}
+AjfDateInputFieldComponent.decorators = [
+    { type: Component, args: [{template: "<ion-input type=\"date\" [min]=\"instance.node.minDate|ajfDateValueString\" [max]=\"instance.node.maxDate|ajfDateValueString\" (ionChange)=\"onChange($event)\" [formControl]=\"control|async\"></ion-input>",
+                styles: [""],
+                changeDetection: ChangeDetectionStrategy.OnPush,
+                encapsulation: ViewEncapsulation.None,
+            },] },
+];
+/** @nocollapse */
+AjfDateInputFieldComponent.ctorParameters = () => [
+    { type: ChangeDetectorRef },
+    { type: AjfFormRendererService },
+    { type: AjfWarningAlertService },
+    { type: AjfDateValueStringPipe }
+];
+AjfDateInputFieldComponent.propDecorators = {
+    input: [{ type: ViewChild, args: [IonInput, { static: true },] }]
+};
 
 /**
  * @fileoverview added by tsickle
@@ -489,7 +548,7 @@ class AjfFormField extends AjfFormField$1 {
             [AjfFieldType.Boolean]: { component: AjfBooleanFieldComponent },
             [AjfFieldType.Formula]: { component: AjfInputFieldComponent, inputs: { readonly: true } },
             [AjfFieldType.Date]: { component: AjfDateFieldComponent },
-            [AjfFieldType.DateInput]: { component: AjfInputFieldComponent, inputs: { type: 'date' } },
+            [AjfFieldType.DateInput]: { component: AjfDateInputFieldComponent },
             [AjfFieldType.Table]: { component: AjfTableFieldComponent },
             [AjfFieldType.Empty]: { component: AjfEmptyFieldComponent },
             [AjfFieldType.SingleChoice]: { component: AjfSingleChoiceFieldComponent },
@@ -687,6 +746,7 @@ AjfFormsModule.decorators = [
                     AjfBarcodeFieldComponent,
                     AjfBooleanFieldComponent,
                     AjfDateFieldComponent,
+                    AjfDateInputFieldComponent,
                     AjfEmptyFieldComponent,
                     AjfFormField,
                     AjfFormPage,
@@ -709,6 +769,7 @@ AjfFormsModule.decorators = [
                     AjfBarcodeFieldComponent,
                     AjfBooleanFieldComponent,
                     AjfDateFieldComponent,
+                    AjfDateInputFieldComponent,
                     AjfEmptyFieldComponent,
                     AjfInputFieldComponent,
                     AjfMultipleChoiceFieldComponent,
@@ -724,5 +785,5 @@ AjfFormsModule.decorators = [
             },] },
 ];
 
-export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfEmptyFieldComponent, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfBarcodeFieldComponent as ɵa, AjfFormPage as ɵb, AjfSelectHasSearchBarPipe as ɵc, AjfSelectUseVirtualScroll as ɵd };
+export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfDateInputFieldComponent, AjfEmptyFieldComponent, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfBarcodeFieldComponent as ɵa, AjfFormPage as ɵb, AjfSelectHasSearchBarPipe as ɵc, AjfSelectUseVirtualScroll as ɵd };
 //# sourceMappingURL=forms.js.map

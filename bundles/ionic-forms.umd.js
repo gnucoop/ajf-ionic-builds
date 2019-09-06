@@ -175,6 +175,70 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var AjfDateInputFieldComponent = /** @class */ (function (_super) {
+        __extends(AjfDateInputFieldComponent, _super);
+        function AjfDateInputFieldComponent(cdr, service, was, _dvs) {
+            var _this = _super.call(this, cdr, service, was) || this;
+            _this._dvs = _dvs;
+            return _this;
+        }
+        /**
+         * @param {?} evt
+         * @return {?}
+         */
+        AjfDateInputFieldComponent.prototype.onChange = /**
+         * @param {?} evt
+         * @return {?}
+         */
+        function (evt) {
+            if (this.input == null) {
+                return;
+            }
+            /** @type {?} */
+            var val = evt.detail.value || '';
+            if (val.length > 0) {
+                if ((this._minDateStr != null && val < this._minDateStr)
+                    || (this._maxDateStr != null && val > this._maxDateStr)) {
+                    this.input.value = '';
+                }
+            }
+        };
+        /**
+         * @protected
+         * @return {?}
+         */
+        AjfDateInputFieldComponent.prototype._onInstanceChange = /**
+         * @protected
+         * @return {?}
+         */
+        function () {
+            this._minDateStr = this._dvs.transform(this.instance.node.minDate);
+            this._maxDateStr = this._dvs.transform(this.instance.node.maxDate);
+        };
+        AjfDateInputFieldComponent.decorators = [
+            { type: core.Component, args: [{template: "<ion-input type=\"date\" [min]=\"instance.node.minDate|ajfDateValueString\" [max]=\"instance.node.maxDate|ajfDateValueString\" (ionChange)=\"onChange($event)\" [formControl]=\"control|async\"></ion-input>",
+                        styles: [""],
+                        changeDetection: core.ChangeDetectionStrategy.OnPush,
+                        encapsulation: core.ViewEncapsulation.None,
+                    },] },
+        ];
+        /** @nocollapse */
+        AjfDateInputFieldComponent.ctorParameters = function () { return [
+            { type: core.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService },
+            { type: forms.AjfDateValueStringPipe }
+        ]; };
+        AjfDateInputFieldComponent.propDecorators = {
+            input: [{ type: core.ViewChild, args: [angular.IonInput, { static: true },] }]
+        };
+        return AjfDateInputFieldComponent;
+    }(forms.AjfBaseFieldComponent));
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var AjfEmptyFieldComponent = /** @class */ (function (_super) {
         __extends(AjfEmptyFieldComponent, _super);
         function AjfEmptyFieldComponent(cdr, service, was) {
@@ -487,7 +551,7 @@
                 _a[forms.AjfFieldType.Boolean] = { component: AjfBooleanFieldComponent },
                 _a[forms.AjfFieldType.Formula] = { component: AjfInputFieldComponent, inputs: { readonly: true } },
                 _a[forms.AjfFieldType.Date] = { component: AjfDateFieldComponent },
-                _a[forms.AjfFieldType.DateInput] = { component: AjfInputFieldComponent, inputs: { type: 'date' } },
+                _a[forms.AjfFieldType.DateInput] = { component: AjfDateInputFieldComponent },
                 _a[forms.AjfFieldType.Table] = { component: AjfTableFieldComponent },
                 _a[forms.AjfFieldType.Empty] = { component: AjfEmptyFieldComponent },
                 _a[forms.AjfFieldType.SingleChoice] = { component: AjfSingleChoiceFieldComponent },
@@ -715,6 +779,7 @@
                             AjfBarcodeFieldComponent,
                             AjfBooleanFieldComponent,
                             AjfDateFieldComponent,
+                            AjfDateInputFieldComponent,
                             AjfEmptyFieldComponent,
                             AjfFormField,
                             AjfFormPage,
@@ -737,6 +802,7 @@
                             AjfBarcodeFieldComponent,
                             AjfBooleanFieldComponent,
                             AjfDateFieldComponent,
+                            AjfDateInputFieldComponent,
                             AjfEmptyFieldComponent,
                             AjfInputFieldComponent,
                             AjfMultipleChoiceFieldComponent,
@@ -756,6 +822,7 @@
 
     exports.AjfBooleanFieldComponent = AjfBooleanFieldComponent;
     exports.AjfDateFieldComponent = AjfDateFieldComponent;
+    exports.AjfDateInputFieldComponent = AjfDateInputFieldComponent;
     exports.AjfEmptyFieldComponent = AjfEmptyFieldComponent;
     exports.AjfFormField = AjfFormField;
     exports.AjfFormRenderer = AjfFormRenderer;

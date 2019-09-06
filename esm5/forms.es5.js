@@ -20,9 +20,9 @@
  *
  */
 import { __extends } from 'tslib';
-import { AjfFormRendererService, AjfBaseFieldComponent, AjfInputFieldComponent as AjfInputFieldComponent$1, AJF_SEARCH_ALERT_THRESHOLD, AjfFieldWithChoicesComponent, AjfFieldType, AjfFieldHost, AjfFormField as AjfFormField$1, AjfFormRenderer as AjfFormRenderer$1, AjfFormsModule as AjfFormsModule$1 } from '@ajf/core/forms';
-import { Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, Optional, Inject, EventEmitter, ViewChild, ComponentFactoryResolver, ViewChildren, Directive, Pipe, NgModule } from '@angular/core';
-import { AlertController, IonicModule } from '@ionic/angular';
+import { AjfFormRendererService, AjfBaseFieldComponent, AjfDateValueStringPipe, AjfInputFieldComponent as AjfInputFieldComponent$1, AJF_SEARCH_ALERT_THRESHOLD, AjfFieldWithChoicesComponent, AjfFieldType, AjfFieldHost, AjfFormField as AjfFormField$1, AjfFormRenderer as AjfFormRenderer$1, AjfFormsModule as AjfFormsModule$1 } from '@ajf/core/forms';
+import { Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, ViewChild, Optional, Inject, EventEmitter, ComponentFactoryResolver, ViewChildren, Directive, Pipe, NgModule } from '@angular/core';
+import { AlertController, IonInput, IonicModule } from '@ionic/angular';
 import { Observable, Subscription, defer } from 'rxjs';
 import { filter, switchMap, startWith, withLatestFrom, delayWhen } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
@@ -151,6 +151,70 @@ var AjfDateFieldComponent = /** @class */ (function (_super) {
         { type: AjfWarningAlertService }
     ]; };
     return AjfDateFieldComponent;
+}(AjfBaseFieldComponent));
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var AjfDateInputFieldComponent = /** @class */ (function (_super) {
+    __extends(AjfDateInputFieldComponent, _super);
+    function AjfDateInputFieldComponent(cdr, service, was, _dvs) {
+        var _this = _super.call(this, cdr, service, was) || this;
+        _this._dvs = _dvs;
+        return _this;
+    }
+    /**
+     * @param {?} evt
+     * @return {?}
+     */
+    AjfDateInputFieldComponent.prototype.onChange = /**
+     * @param {?} evt
+     * @return {?}
+     */
+    function (evt) {
+        if (this.input == null) {
+            return;
+        }
+        /** @type {?} */
+        var val = evt.detail.value || '';
+        if (val.length > 0) {
+            if ((this._minDateStr != null && val < this._minDateStr)
+                || (this._maxDateStr != null && val > this._maxDateStr)) {
+                this.input.value = '';
+            }
+        }
+    };
+    /**
+     * @protected
+     * @return {?}
+     */
+    AjfDateInputFieldComponent.prototype._onInstanceChange = /**
+     * @protected
+     * @return {?}
+     */
+    function () {
+        this._minDateStr = this._dvs.transform(this.instance.node.minDate);
+        this._maxDateStr = this._dvs.transform(this.instance.node.maxDate);
+    };
+    AjfDateInputFieldComponent.decorators = [
+        { type: Component, args: [{template: "<ion-input type=\"date\" [min]=\"instance.node.minDate|ajfDateValueString\" [max]=\"instance.node.maxDate|ajfDateValueString\" (ionChange)=\"onChange($event)\" [formControl]=\"control|async\"></ion-input>",
+                    styles: [""],
+                    changeDetection: ChangeDetectionStrategy.OnPush,
+                    encapsulation: ViewEncapsulation.None,
+                },] },
+    ];
+    /** @nocollapse */
+    AjfDateInputFieldComponent.ctorParameters = function () { return [
+        { type: ChangeDetectorRef },
+        { type: AjfFormRendererService },
+        { type: AjfWarningAlertService },
+        { type: AjfDateValueStringPipe }
+    ]; };
+    AjfDateInputFieldComponent.propDecorators = {
+        input: [{ type: ViewChild, args: [IonInput, { static: true },] }]
+    };
+    return AjfDateInputFieldComponent;
 }(AjfBaseFieldComponent));
 
 /**
@@ -469,7 +533,7 @@ var AjfFormField = /** @class */ (function (_super) {
             _a[AjfFieldType.Boolean] = { component: AjfBooleanFieldComponent },
             _a[AjfFieldType.Formula] = { component: AjfInputFieldComponent, inputs: { readonly: true } },
             _a[AjfFieldType.Date] = { component: AjfDateFieldComponent },
-            _a[AjfFieldType.DateInput] = { component: AjfInputFieldComponent, inputs: { type: 'date' } },
+            _a[AjfFieldType.DateInput] = { component: AjfDateInputFieldComponent },
             _a[AjfFieldType.Table] = { component: AjfTableFieldComponent },
             _a[AjfFieldType.Empty] = { component: AjfEmptyFieldComponent },
             _a[AjfFieldType.SingleChoice] = { component: AjfSingleChoiceFieldComponent },
@@ -697,6 +761,7 @@ var AjfFormsModule = /** @class */ (function () {
                         AjfBarcodeFieldComponent,
                         AjfBooleanFieldComponent,
                         AjfDateFieldComponent,
+                        AjfDateInputFieldComponent,
                         AjfEmptyFieldComponent,
                         AjfFormField,
                         AjfFormPage,
@@ -719,6 +784,7 @@ var AjfFormsModule = /** @class */ (function () {
                         AjfBarcodeFieldComponent,
                         AjfBooleanFieldComponent,
                         AjfDateFieldComponent,
+                        AjfDateInputFieldComponent,
                         AjfEmptyFieldComponent,
                         AjfInputFieldComponent,
                         AjfMultipleChoiceFieldComponent,
@@ -736,5 +802,5 @@ var AjfFormsModule = /** @class */ (function () {
     return AjfFormsModule;
 }());
 
-export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfEmptyFieldComponent, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfBarcodeFieldComponent as ɵa, AjfFormPage as ɵb, AjfSelectHasSearchBarPipe as ɵc, AjfSelectUseVirtualScroll as ɵd };
+export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfDateInputFieldComponent, AjfEmptyFieldComponent, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfBarcodeFieldComponent as ɵa, AjfFormPage as ɵb, AjfSelectHasSearchBarPipe as ɵc, AjfSelectUseVirtualScroll as ɵd };
 //# sourceMappingURL=forms.es5.js.map
