@@ -1,6 +1,6 @@
 {
   "name": "@ajf/ionic",
-  "version": "8.2.1-88e08db",
+  "version": "8.2.2-30aef0c",
   "description": "",
   "main": "./bundles/ionic.umd.js",
   "module": "./esm5/ionic.es5.js",
@@ -22,7 +22,7 @@
     "@angular/router": "^8.0.0",
     "@gic/angular": ">=4.7.1",
     "@ionic/angular": ">=4.7.0",
-    "@ajf/core": "8.2.1-88e08db",
+    "@ajf/core": "8.2.2-30aef0c",
     "flag-icon-css": "^3.3.0"
   },
   "dependencies": {
@@ -37,7 +37,7 @@
     ]
   },
   "sideEffects": false,
-  "releaseGitCommitSha": "88e08db8798821245a0d255630896e623b6a3051",
+  "releaseGitCommitSha": "30aef0c803e4b7e501033722329a85c4ae444de8",
   "releaseGitBranch": "",
   "releaseGitUser": " <>"
 }
