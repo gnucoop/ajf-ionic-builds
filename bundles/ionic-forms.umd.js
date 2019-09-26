@@ -561,6 +561,9 @@
                 _a);
             return _this;
         }
+        AjfFieldService.decorators = [
+            { type: core.Injectable },
+        ];
         return AjfFieldService;
     }(forms.AjfFieldService));
 

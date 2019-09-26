@@ -543,6 +543,9 @@ var AjfFieldService = /** @class */ (function (_super) {
             _a);
         return _this;
     }
+    AjfFieldService.decorators = [
+        { type: Injectable },
+    ];
     return AjfFieldService;
 }(AjfFieldService$1));
 

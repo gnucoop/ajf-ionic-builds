@@ -555,6 +555,9 @@ class AjfFieldService extends AjfFieldService$1 {
         };
     }
 }
+AjfFieldService.decorators = [
+    { type: Injectable },
+];
 
 /**
  * @fileoverview added by tsickle
