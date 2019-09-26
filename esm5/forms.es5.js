@@ -821,5 +821,5 @@ var AjfFormsModule = /** @class */ (function () {
     return AjfFormsModule;
 }());
 
-export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfDateInputFieldComponent, AjfEmptyFieldComponent, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfFieldService as ɵa, AjfBarcodeFieldComponent as ɵb, AjfFormPage as ɵc, AjfSelectHasSearchBarPipe as ɵd, AjfSelectUseVirtualScroll as ɵe };
+export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfDateInputFieldComponent, AjfEmptyFieldComponent, AjfFieldService, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfBarcodeFieldComponent as ɵa, AjfFormPage as ɵb, AjfSelectHasSearchBarPipe as ɵc, AjfSelectUseVirtualScroll as ɵd };
 //# sourceMappingURL=forms.es5.js.map

@@ -24,6 +24,7 @@ export * from './date-field';
 export * from './date-input-field';
 export * from './empty-field';
 export * from './field';
+export * from './field-service';
 export * from './input-field';
 export * from './form';
 export * from './forms-module';
