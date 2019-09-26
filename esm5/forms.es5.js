@@ -21,7 +21,7 @@
  */
 import { __extends } from 'tslib';
 import { AjfFormRendererService, AjfBaseFieldComponent, AjfDateValueStringPipe, AjfInputFieldComponent as AjfInputFieldComponent$1, AJF_SEARCH_ALERT_THRESHOLD, AjfFieldWithChoicesComponent, AjfFieldType, AjfFieldService as AjfFieldService$1, AjfFieldHost, AjfFormField as AjfFormField$1, AjfFormRenderer as AjfFormRenderer$1, AjfFormsModule as AjfFormsModule$1 } from '@ajf/core/forms';
-import { Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, ViewChild, Optional, Inject, EventEmitter, ComponentFactoryResolver, ViewChildren, Directive, Pipe, NgModule } from '@angular/core';
+import { Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, ViewChild, Optional, Inject, EventEmitter, ɵɵdefineInjectable, ComponentFactoryResolver, ViewChildren, Directive, Pipe, NgModule } from '@angular/core';
 import { AlertController, IonInput, IonicModule } from '@ionic/angular';
 import { Observable, Subscription, defer } from 'rxjs';
 import { filter, switchMap, startWith, withLatestFrom, delayWhen } from 'rxjs/operators';
@@ -544,8 +544,9 @@ var AjfFieldService = /** @class */ (function (_super) {
         return _this;
     }
     AjfFieldService.decorators = [
-        { type: Injectable },
+        { type: Injectable, args: [{ providedIn: 'root' },] },
     ];
+    /** @nocollapse */ AjfFieldService.ngInjectableDef = ɵɵdefineInjectable({ factory: function AjfFieldService_Factory() { return new AjfFieldService(); }, token: AjfFieldService, providedIn: "root" });
     return AjfFieldService;
 }(AjfFieldService$1));
 
@@ -758,6 +759,20 @@ var AjfSelectUseVirtualScroll = /** @class */ (function () {
 var AjfFormsModule = /** @class */ (function () {
     function AjfFormsModule() {
     }
+    /**
+     * @return {?}
+     */
+    AjfFormsModule.forRoot = /**
+     * @return {?}
+     */
+    function () {
+        return {
+            ngModule: AjfFormsModule,
+            providers: [
+                AjfFieldService,
+            ],
+        };
+    };
     AjfFormsModule.decorators = [
         { type: NgModule, args: [{
                     imports: [
