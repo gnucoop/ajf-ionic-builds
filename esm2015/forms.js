@@ -19,7 +19,7 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-import { AjfBaseFieldComponent, AjfFormRendererService, AjfDateValueStringPipe, AjfInputFieldComponent as AjfInputFieldComponent$1, AjfFieldWithChoicesComponent, AJF_SEARCH_ALERT_THRESHOLD, AjfFormField as AjfFormField$1, AjfFieldType, AjfFieldHost, AjfFormRenderer as AjfFormRenderer$1, AjfFormsModule as AjfFormsModule$1 } from '@ajf/core/forms';
+import { AjfBaseFieldComponent, AjfFormRendererService, AjfDateValueStringPipe, AjfInputFieldComponent as AjfInputFieldComponent$1, AjfFieldWithChoicesComponent, AJF_SEARCH_ALERT_THRESHOLD, AjfFieldService as AjfFieldService$1, AjfFieldType, AjfFormField as AjfFormField$1, AjfFieldHost, AjfFormRenderer as AjfFormRenderer$1, AjfFormsModule as AjfFormsModule$1 } from '@ajf/core/forms';
 import { Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, ViewChild, Optional, Inject, EventEmitter, ComponentFactoryResolver, ViewChildren, Directive, Pipe, NgModule } from '@angular/core';
 import { AlertController, IonInput, IonicModule } from '@ionic/angular';
 import { Observable, Subscription, defer } from 'rxjs';
@@ -535,12 +535,9 @@ AjfTimeFieldComponent.ctorParameters = () => [
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-class AjfFormField extends AjfFormField$1 {
-    /**
-     * @param {?} cfr
-     */
-    constructor(cfr) {
-        super(cfr);
+class AjfFieldService extends AjfFieldService$1 {
+    constructor() {
+        super(...arguments);
         this.componentsMap = {
             [AjfFieldType.String]: { component: AjfInputFieldComponent },
             [AjfFieldType.Text]: { component: AjfTextareaFieldComponent },
@@ -558,6 +555,21 @@ class AjfFormField extends AjfFormField$1 {
         };
     }
 }
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class AjfFormField extends AjfFormField$1 {
+    /**
+     * @param {?} cfr
+     * @param {?} fieldService
+     */
+    constructor(cfr, fieldService) {
+        super(cfr);
+        this.componentsMap = fieldService.componentsMap;
+    }
+}
 AjfFormField.decorators = [
     { type: Component, args: [{selector: 'ajf-field,ajf-form-field',
                 template: "<div [ngClass]=\"'ajf-field-' + (instance|ajfNodeCompleteName)\" [class.ajf-validated]=\"instance|ajfFieldIsValid\"><ng-template ajf-field-host></ng-template></div><ng-container *ngIf=\"instance.node.attachments\"><ng-container *ngFor=\"let attachment of instance.node.attachments\"><a [href]=\"attachment.value\" target=\"_blank\">{{attachment.label}}</a></ng-container></ng-container><ng-container *ngIf=\"instance.validationResults\"><div class=\"ajf-errors\"><ng-container *ngFor=\"let res of instance.validationResults\"><div class=\"error\" *ngIf=\"!res.result\">{{ res.error | translate }}</div></ng-container></div></ng-container>",
@@ -572,7 +584,8 @@ AjfFormField.decorators = [
 ];
 /** @nocollapse */
 AjfFormField.ctorParameters = () => [
-    { type: ComponentFactoryResolver }
+    { type: ComponentFactoryResolver },
+    { type: AjfFieldService }
 ];
 
 /**
@@ -780,10 +793,11 @@ AjfFormsModule.decorators = [
                     AjfTimeFieldComponent
                 ],
                 providers: [
+                    AjfFieldService,
                     AjfWarningAlertService,
                 ],
             },] },
 ];
 
-export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfDateInputFieldComponent, AjfEmptyFieldComponent, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfBarcodeFieldComponent as ɵa, AjfFormPage as ɵb, AjfSelectHasSearchBarPipe as ɵc, AjfSelectUseVirtualScroll as ɵd };
+export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfDateInputFieldComponent, AjfEmptyFieldComponent, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfFieldService as ɵa, AjfBarcodeFieldComponent as ɵb, AjfFormPage as ɵc, AjfSelectHasSearchBarPipe as ɵd, AjfSelectUseVirtualScroll as ɵe };
 //# sourceMappingURL=forms.js.map

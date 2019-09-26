@@ -539,11 +539,11 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
-    var AjfFormField = /** @class */ (function (_super) {
-        __extends(AjfFormField, _super);
-        function AjfFormField(cfr) {
+    var AjfFieldService = /** @class */ (function (_super) {
+        __extends(AjfFieldService, _super);
+        function AjfFieldService() {
             var _a;
-            var _this = _super.call(this, cfr) || this;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
             _this.componentsMap = (_a = {},
                 _a[forms.AjfFieldType.String] = { component: AjfInputFieldComponent },
                 _a[forms.AjfFieldType.Text] = { component: AjfTextareaFieldComponent },
@@ -561,6 +561,20 @@
                 _a);
             return _this;
         }
+        return AjfFieldService;
+    }(forms.AjfFieldService));
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    var AjfFormField = /** @class */ (function (_super) {
+        __extends(AjfFormField, _super);
+        function AjfFormField(cfr, fieldService) {
+            var _this = _super.call(this, cfr) || this;
+            _this.componentsMap = fieldService.componentsMap;
+            return _this;
+        }
         AjfFormField.decorators = [
             { type: core.Component, args: [{selector: 'ajf-field,ajf-form-field',
                         template: "<div [ngClass]=\"'ajf-field-' + (instance|ajfNodeCompleteName)\" [class.ajf-validated]=\"instance|ajfFieldIsValid\"><ng-template ajf-field-host></ng-template></div><ng-container *ngIf=\"instance.node.attachments\"><ng-container *ngFor=\"let attachment of instance.node.attachments\"><a [href]=\"attachment.value\" target=\"_blank\">{{attachment.label}}</a></ng-container></ng-container><ng-container *ngIf=\"instance.validationResults\"><div class=\"ajf-errors\"><ng-container *ngFor=\"let res of instance.validationResults\"><div class=\"error\" *ngIf=\"!res.result\">{{ res.error | translate }}</div></ng-container></div></ng-container>",
@@ -575,7 +589,8 @@
         ];
         /** @nocollapse */
         AjfFormField.ctorParameters = function () { return [
-            { type: core.ComponentFactoryResolver }
+            { type: core.ComponentFactoryResolver },
+            { type: AjfFieldService }
         ]; };
         return AjfFormField;
     }(forms.AjfFormField));
@@ -813,6 +828,7 @@
                             AjfTimeFieldComponent
                         ],
                         providers: [
+                            AjfFieldService,
                             AjfWarningAlertService,
                         ],
                     },] },
@@ -835,10 +851,11 @@
     exports.AjfTextareaFieldComponent = AjfTextareaFieldComponent;
     exports.AjfTimeFieldComponent = AjfTimeFieldComponent;
     exports.AjfWarningAlertService = AjfWarningAlertService;
-    exports.ɵa = AjfBarcodeFieldComponent;
-    exports.ɵb = AjfFormPage;
-    exports.ɵc = AjfSelectHasSearchBarPipe;
-    exports.ɵd = AjfSelectUseVirtualScroll;
+    exports.ɵa = AjfFieldService;
+    exports.ɵb = AjfBarcodeFieldComponent;
+    exports.ɵc = AjfFormPage;
+    exports.ɵd = AjfSelectHasSearchBarPipe;
+    exports.ɵe = AjfSelectUseVirtualScroll;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
