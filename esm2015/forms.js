@@ -568,11 +568,12 @@ AjfFieldService.ctorParameters = () => [];
  */
 class AjfFormField extends AjfFormField$1 {
     /**
+     * @param {?} cdr
      * @param {?} cfr
      * @param {?} fieldService
      */
-    constructor(cfr, fieldService) {
-        super(cfr);
+    constructor(cdr, cfr, fieldService) {
+        super(cdr, cfr);
         this.componentsMap = fieldService.componentsMap;
     }
 }
@@ -590,6 +591,7 @@ AjfFormField.decorators = [
 ];
 /** @nocollapse */
 AjfFormField.ctorParameters = () => [
+    { type: ChangeDetectorRef },
     { type: ComponentFactoryResolver },
     { type: AjfFieldService }
 ];
