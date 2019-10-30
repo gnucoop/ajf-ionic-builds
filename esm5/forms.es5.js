@@ -21,10 +21,10 @@
  */
 import { __extends } from 'tslib';
 import { AjfFormRendererService, AjfBaseFieldComponent, AjfDateValueStringPipe, AjfInputFieldComponent as AjfInputFieldComponent$1, AJF_SEARCH_ALERT_THRESHOLD, AjfFieldWithChoicesComponent, AjfFieldType, AjfFieldService as AjfFieldService$1, AjfFieldHost, AjfFormField as AjfFormField$1, AjfFormRenderer as AjfFormRenderer$1, AjfFormsModule as AjfFormsModule$1 } from '@ajf/core/forms';
-import { Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, ViewChild, Optional, Inject, EventEmitter, ɵɵdefineInjectable, ComponentFactoryResolver, ViewChildren, Directive, Pipe, NgModule } from '@angular/core';
+import { Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, ViewChild, EventEmitter, Optional, Inject, ɵɵdefineInjectable, ComponentFactoryResolver, ViewChildren, Directive, Pipe, NgModule } from '@angular/core';
 import { AlertController, IonInput, IonicModule } from '@ionic/angular';
 import { Observable, Subscription, defer } from 'rxjs';
-import { filter, switchMap, startWith, withLatestFrom, delayWhen } from 'rxjs/operators';
+import { filter, switchMap, map, startWith, withLatestFrom, delayWhen } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GicModule } from '@gic/angular';
@@ -265,6 +265,95 @@ var AjfBarcodeFieldComponent = /** @class */ (function (_super) {
         { type: AjfWarningAlertService }
     ]; };
     return AjfBarcodeFieldComponent;
+}(AjfBaseFieldComponent));
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var AjfFormulaFieldComponent = /** @class */ (function (_super) {
+    __extends(AjfFormulaFieldComponent, _super);
+    function AjfFormulaFieldComponent(cdr, service, was) {
+        var _this = _super.call(this, cdr, service, was) || this;
+        _this._onChangeEvt = new EventEmitter();
+        _this._onChangeSub = Subscription.EMPTY;
+        /** @type {?} */
+        var control$ = _this.control.pipe(filter((/**
+         * @param {?} control
+         * @return {?}
+         */
+        function (control) { return control != null; })));
+        _this._onChangeSub = control$.pipe(switchMap((/**
+         * @param {?} control
+         * @return {?}
+         */
+        function (control) { return _this._onChangeEvt.pipe(map((/**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) { return ({ control: control, value: value }); }))); }))).subscribe((/**
+         * @param {?} __0
+         * @return {?}
+         */
+        function (_a) {
+            var control = _a.control, value = _a.value;
+            try {
+                /** @type {?} */
+                var v = parseFloat(value);
+                value = v;
+            }
+            catch (e) { }
+            (/** @type {?} */ (control)).setValue(value);
+        }));
+        _this.value = _this.control.pipe(filter((/**
+         * @param {?} control
+         * @return {?}
+         */
+        function (control) { return control != null; })), switchMap((/**
+         * @param {?} control
+         * @return {?}
+         */
+        function (control) { return (/** @type {?} */ (control)).valueChanges.pipe(startWith((/** @type {?} */ (control)).value)); })));
+        return _this;
+    }
+    /**
+     * @return {?}
+     */
+    AjfFormulaFieldComponent.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        this._onChangeEvt.complete();
+        this._onChangeSub.unsubscribe();
+    };
+    /**
+     * @param {?} evt
+     * @return {?}
+     */
+    AjfFormulaFieldComponent.prototype.onChange = /**
+     * @param {?} evt
+     * @return {?}
+     */
+    function (evt) {
+        this._onChangeEvt.emit(evt.detail.value);
+    };
+    AjfFormulaFieldComponent.decorators = [
+        { type: Component, args: [{template: "<ion-input type=\"text\" readonly=\"readonly\" [value]=\"value|async\" (ionChange)=\"onChange($event)\"></ion-input>",
+                    styles: [""],
+                    changeDetection: ChangeDetectionStrategy.OnPush,
+                    encapsulation: ViewEncapsulation.None,
+                },] },
+    ];
+    /** @nocollapse */
+    AjfFormulaFieldComponent.ctorParameters = function () { return [
+        { type: ChangeDetectorRef },
+        { type: AjfFormRendererService },
+        { type: AjfWarningAlertService }
+    ]; };
+    AjfFormulaFieldComponent.propDecorators = {
+        input: [{ type: ViewChild, args: [IonInput, { static: true },] }]
+    };
+    return AjfFormulaFieldComponent;
 }(AjfBaseFieldComponent));
 
 /**
@@ -529,9 +618,7 @@ var AjfFieldService = /** @class */ (function (_super) {
         _this.componentsMap[AjfFieldType.Text] = { component: AjfTextareaFieldComponent };
         _this.componentsMap[AjfFieldType.Number] = { component: AjfNumberFieldComponent };
         _this.componentsMap[AjfFieldType.Boolean] = { component: AjfBooleanFieldComponent };
-        _this.componentsMap[AjfFieldType.Formula] = {
-            component: AjfInputFieldComponent, inputs: { readonly: true }
-        };
+        _this.componentsMap[AjfFieldType.Formula] = { component: AjfFormulaFieldComponent };
         _this.componentsMap[AjfFieldType.Date] = { component: AjfDateFieldComponent };
         _this.componentsMap[AjfFieldType.DateInput] = { component: AjfDateInputFieldComponent };
         _this.componentsMap[AjfFieldType.Table] = { component: AjfTableFieldComponent };
@@ -801,6 +888,7 @@ var AjfFormsModule = /** @class */ (function () {
                         AjfFormField,
                         AjfFormPage,
                         AjfFormRenderer,
+                        AjfFormulaFieldComponent,
                         AjfInputFieldComponent,
                         AjfMultipleChoiceFieldComponent,
                         AjfNumberFieldComponent,
@@ -821,6 +909,7 @@ var AjfFormsModule = /** @class */ (function () {
                         AjfDateFieldComponent,
                         AjfDateInputFieldComponent,
                         AjfEmptyFieldComponent,
+                        AjfFormulaFieldComponent,
                         AjfInputFieldComponent,
                         AjfMultipleChoiceFieldComponent,
                         AjfNumberFieldComponent,
@@ -838,5 +927,5 @@ var AjfFormsModule = /** @class */ (function () {
     return AjfFormsModule;
 }());
 
-export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfDateInputFieldComponent, AjfEmptyFieldComponent, AjfFieldService, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfBarcodeFieldComponent as ɵa, AjfFormPage as ɵb, AjfSelectHasSearchBarPipe as ɵc, AjfSelectUseVirtualScroll as ɵd };
+export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfDateInputFieldComponent, AjfEmptyFieldComponent, AjfFieldService, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfBarcodeFieldComponent as ɵa, AjfFormPage as ɵb, AjfFormulaFieldComponent as ɵc, AjfSelectHasSearchBarPipe as ɵd, AjfSelectUseVirtualScroll as ɵe };
 //# sourceMappingURL=forms.es5.js.map

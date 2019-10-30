@@ -289,6 +289,95 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var AjfFormulaFieldComponent = /** @class */ (function (_super) {
+        __extends(AjfFormulaFieldComponent, _super);
+        function AjfFormulaFieldComponent(cdr, service, was) {
+            var _this = _super.call(this, cdr, service, was) || this;
+            _this._onChangeEvt = new core.EventEmitter();
+            _this._onChangeSub = rxjs.Subscription.EMPTY;
+            /** @type {?} */
+            var control$ = _this.control.pipe(operators.filter((/**
+             * @param {?} control
+             * @return {?}
+             */
+            function (control) { return control != null; })));
+            _this._onChangeSub = control$.pipe(operators.switchMap((/**
+             * @param {?} control
+             * @return {?}
+             */
+            function (control) { return _this._onChangeEvt.pipe(operators.map((/**
+             * @param {?} value
+             * @return {?}
+             */
+            function (value) { return ({ control: control, value: value }); }))); }))).subscribe((/**
+             * @param {?} __0
+             * @return {?}
+             */
+            function (_a) {
+                var control = _a.control, value = _a.value;
+                try {
+                    /** @type {?} */
+                    var v = parseFloat(value);
+                    value = v;
+                }
+                catch (e) { }
+                (/** @type {?} */ (control)).setValue(value);
+            }));
+            _this.value = _this.control.pipe(operators.filter((/**
+             * @param {?} control
+             * @return {?}
+             */
+            function (control) { return control != null; })), operators.switchMap((/**
+             * @param {?} control
+             * @return {?}
+             */
+            function (control) { return (/** @type {?} */ (control)).valueChanges.pipe(operators.startWith((/** @type {?} */ (control)).value)); })));
+            return _this;
+        }
+        /**
+         * @return {?}
+         */
+        AjfFormulaFieldComponent.prototype.ngOnDestroy = /**
+         * @return {?}
+         */
+        function () {
+            this._onChangeEvt.complete();
+            this._onChangeSub.unsubscribe();
+        };
+        /**
+         * @param {?} evt
+         * @return {?}
+         */
+        AjfFormulaFieldComponent.prototype.onChange = /**
+         * @param {?} evt
+         * @return {?}
+         */
+        function (evt) {
+            this._onChangeEvt.emit(evt.detail.value);
+        };
+        AjfFormulaFieldComponent.decorators = [
+            { type: core.Component, args: [{template: "<ion-input type=\"text\" readonly=\"readonly\" [value]=\"value|async\" (ionChange)=\"onChange($event)\"></ion-input>",
+                        styles: [""],
+                        changeDetection: core.ChangeDetectionStrategy.OnPush,
+                        encapsulation: core.ViewEncapsulation.None,
+                    },] },
+        ];
+        /** @nocollapse */
+        AjfFormulaFieldComponent.ctorParameters = function () { return [
+            { type: core.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService }
+        ]; };
+        AjfFormulaFieldComponent.propDecorators = {
+            input: [{ type: core.ViewChild, args: [angular.IonInput, { static: true },] }]
+        };
+        return AjfFormulaFieldComponent;
+    }(forms.AjfBaseFieldComponent));
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var AjfInputFieldComponent = /** @class */ (function (_super) {
         __extends(AjfInputFieldComponent, _super);
         function AjfInputFieldComponent(cdr, service, was) {
@@ -547,9 +636,7 @@
             _this.componentsMap[forms.AjfFieldType.Text] = { component: AjfTextareaFieldComponent };
             _this.componentsMap[forms.AjfFieldType.Number] = { component: AjfNumberFieldComponent };
             _this.componentsMap[forms.AjfFieldType.Boolean] = { component: AjfBooleanFieldComponent };
-            _this.componentsMap[forms.AjfFieldType.Formula] = {
-                component: AjfInputFieldComponent, inputs: { readonly: true }
-            };
+            _this.componentsMap[forms.AjfFieldType.Formula] = { component: AjfFormulaFieldComponent };
             _this.componentsMap[forms.AjfFieldType.Date] = { component: AjfDateFieldComponent };
             _this.componentsMap[forms.AjfFieldType.DateInput] = { component: AjfDateInputFieldComponent };
             _this.componentsMap[forms.AjfFieldType.Table] = { component: AjfTableFieldComponent };
@@ -819,6 +906,7 @@
                             AjfFormField,
                             AjfFormPage,
                             AjfFormRenderer,
+                            AjfFormulaFieldComponent,
                             AjfInputFieldComponent,
                             AjfMultipleChoiceFieldComponent,
                             AjfNumberFieldComponent,
@@ -839,6 +927,7 @@
                             AjfDateFieldComponent,
                             AjfDateInputFieldComponent,
                             AjfEmptyFieldComponent,
+                            AjfFormulaFieldComponent,
                             AjfInputFieldComponent,
                             AjfMultipleChoiceFieldComponent,
                             AjfNumberFieldComponent,
@@ -874,8 +963,9 @@
     exports.AjfWarningAlertService = AjfWarningAlertService;
     exports.ɵa = AjfBarcodeFieldComponent;
     exports.ɵb = AjfFormPage;
-    exports.ɵc = AjfSelectHasSearchBarPipe;
-    exports.ɵd = AjfSelectUseVirtualScroll;
+    exports.ɵc = AjfFormulaFieldComponent;
+    exports.ɵd = AjfSelectHasSearchBarPipe;
+    exports.ɵe = AjfSelectUseVirtualScroll;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

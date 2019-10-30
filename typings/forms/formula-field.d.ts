@@ -19,17 +19,21 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-import { Version } from '@angular/core';
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * Current version of Ajf.
- * @type {?}
- */
-const VERSION = new Version('8.2.11-f953252');
-
-export { VERSION };
-//# sourceMappingURL=ionic.js.map
+import { AjfBaseFieldComponent, AjfFormulaFieldInstance, AjfFormRendererService } from '@ajf/core/forms';
+import { ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { IonInput } from '@ionic/angular';
+import { Observable } from 'rxjs';
+import { AjfWarningAlertService } from './warning-alert-service';
+export declare class AjfFormulaFieldComponent extends AjfBaseFieldComponent<AjfFormulaFieldInstance> implements OnDestroy {
+    input: IonInput;
+    readonly value: Observable<any>;
+    private _onChangeEvt;
+    private _onChangeSub;
+    constructor(cdr: ChangeDetectorRef, service: AjfFormRendererService, was: AjfWarningAlertService);
+    ngOnDestroy(): void;
+    onChange(evt: {
+        detail: {
+            value: any;
+        };
+    }): void;
+}
