@@ -71,7 +71,7 @@
         }
         AjfCheckboxGroupItem.decorators = [
             { type: core.Component, args: [{selector: 'ajf-checkbox-group-item',
-                        template: "<ion-button (click)=\"onInputChange($event)\" role=\"checkbox\" fill=\"clear\" type=\"button\" [id]=\"checkboxId|async\" [attr.aria-checked]=\"checkedState|async\" [attr.aria-disabled]=\"disabledState|async\"><div class=\"ajf-checkbox-group-item-content\"><div><ng-content></ng-content></div><ion-icon item-right [name]=\"icon|async\"></ion-icon></div></ion-button>",
+                        template: "<ion-button (click)=\"onInputChange($event)\" role=\"checkbox\" fill=\"clear\" type=\"button\" [id]=\"checkboxId|async\" [attr.aria-checked]=\"checkedState|async\" [attr.aria-disabled]=\"disabledState|async\" [disabled]=\"readonly\"><div class=\"ajf-checkbox-group-item-content\"><div><ng-content></ng-content></div><ion-icon item-right [name]=\"icon|async\"></ion-icon></div></ion-button>",
                         styles: ["ajf-checkbox-group-item ion-button{display:block;height:fit-content;margin:0;font-size:.9em;--padding-top:0;--padding-start:5px;--padding-bottom:0;--padding-end:5px}ajf-checkbox-group-item .ajf-checkbox-group-item-content{display:flex;align-items:center;width:100%;height:fit-content;padding:10px 0}ajf-checkbox-group-item .ajf-checkbox-group-item-content>div{flex:1 1 auto;white-space:normal;max-width:calc(100% - 19px)}ajf-checkbox-group-item .ajf-checkbox-group-item-content>ion-icon{flex:0 0 auto;margin-left:5px}"],
                         changeDetection: core.ChangeDetectionStrategy.OnPush,
                         encapsulation: core.ViewEncapsulation.None,
@@ -86,7 +86,8 @@
                             'checked',
                             'value',
                             'checkedIcon',
-                            'notCheckedIcon'
+                            'notCheckedIcon',
+                            'readonly'
                         ],
                         outputs: [
                             'change'
