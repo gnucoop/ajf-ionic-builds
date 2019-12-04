@@ -19,9 +19,15 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-import { AnimationBuilder } from '@angular/animations';
-import { ChangeDetectorRef, Renderer2 } from '@angular/core';
 import { AjfPageSlider as AjfCorePageSlider } from '@ajf/core/page-slider';
-export declare class AjfPageSlider extends AjfCorePageSlider {
-    constructor(animationBuilder: AnimationBuilder, cdr: ChangeDetectorRef, renderer: Renderer2);
+import { AnimationBuilder } from '@angular/animations';
+import { AfterContentInit, ChangeDetectorRef, ElementRef, OnDestroy, Renderer2 } from '@angular/core';
+export declare class AjfPageSlider extends AjfCorePageSlider implements AfterContentInit, OnDestroy {
+    private _el;
+    private _scrollSub;
+    constructor(animationBuilder: AnimationBuilder, cdr: ChangeDetectorRef, renderer: Renderer2, _el: ElementRef);
+    ngAfterContentInit(): void;
+    ngOnDestroy(): void;
+    private _fixRippleFromRadioButton;
+    private _fixToggleButtons;
 }

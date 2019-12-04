@@ -20,9 +20,11 @@
  *
  */
 import { __extends } from 'tslib';
-import { AnimationBuilder } from '@angular/animations';
-import { Component, ViewEncapsulation, ChangeDetectionStrategy, ContentChildren, ViewChild, ChangeDetectorRef, Renderer2, NgModule } from '@angular/core';
 import { AjfPageSliderItem, AjfPageSlider as AjfPageSlider$1, AjfPageSliderModule as AjfPageSliderModule$1 } from '@ajf/core/page-slider';
+import { AnimationBuilder } from '@angular/animations';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, ContentChildren, ViewChild, ChangeDetectorRef, Renderer2, ElementRef, NgModule } from '@angular/core';
+import { Subscription, merge } from 'rxjs';
+import { map, startWith, filter, switchMap } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
@@ -32,9 +34,120 @@ import { IonicModule } from '@ionic/angular';
  */
 var AjfPageSlider = /** @class */ (function (_super) {
     __extends(AjfPageSlider, _super);
-    function AjfPageSlider(animationBuilder, cdr, renderer) {
-        return _super.call(this, animationBuilder, cdr, renderer) || this;
+    function AjfPageSlider(animationBuilder, cdr, renderer, _el) {
+        var _this = _super.call(this, animationBuilder, cdr, renderer) || this;
+        _this._el = _el;
+        _this._scrollSub = Subscription.EMPTY;
+        return _this;
     }
+    /**
+     * @return {?}
+     */
+    AjfPageSlider.prototype.ngAfterContentInit = /**
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        _super.prototype.ngAfterContentInit.call(this);
+        this._scrollSub = this.pages.changes.pipe(map((/**
+         * @return {?}
+         */
+        function () { return _this.pages.toArray(); })), startWith(this.pages.toArray()), filter((/**
+         * @param {?} pages
+         * @return {?}
+         */
+        function (pages) { return pages.length > 0; })), switchMap((/**
+         * @param {?} pages
+         * @return {?}
+         */
+        function (pages) { return merge.apply(void 0, pages.map((/**
+         * @param {?} page
+         * @return {?}
+         */
+        function (page) { return page.scroll; }))); }))).subscribe((/**
+         * @return {?}
+         */
+        function () {
+            _this._fixRippleFromRadioButton();
+            _this._fixToggleButtons();
+        }));
+    };
+    /**
+     * @return {?}
+     */
+    AjfPageSlider.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        _super.prototype.ngOnDestroy.call(this);
+        this._scrollSub.unsubscribe();
+    };
+    /**
+     * @private
+     * @return {?}
+     */
+    AjfPageSlider.prototype._fixRippleFromRadioButton = /**
+     * @private
+     * @return {?}
+     */
+    function () {
+        try {
+            /** @type {?} */
+            var el = (/** @type {?} */ (this._el.nativeElement));
+            /** @type {?} */
+            var radioGroups = el.getElementsByTagName('ion-radio-group');
+            /** @type {?} */
+            var radioGroup = radioGroups[0];
+            /** @type {?} */
+            var items = radioGroup.getElementsByTagName('ion-item');
+            /** @type {?} */
+            var item = items[0];
+            /** @type {?} */
+            var ripples = (/** @type {?} */ ((/** @type {?} */ (item.shadowRoot)).firstElementChild)).getElementsByTagName('ion-ripple-effect');
+            /** @type {?} */
+            var ripple_1 = (/** @type {?} */ (ripples.item(0)));
+            /** @type {?} */
+            var orig_1 = ripple_1.style.opacity;
+            ripple_1.style.opacity = '0';
+            ripple_1.addRipple(0, 0).then((/**
+             * @param {?} remove
+             * @return {?}
+             */
+            function (remove) {
+                remove();
+                ripple_1.style.opacity = orig_1;
+            }));
+        }
+        catch (e) { }
+    };
+    /**
+     * @private
+     * @return {?}
+     */
+    AjfPageSlider.prototype._fixToggleButtons = /**
+     * @private
+     * @return {?}
+     */
+    function () {
+        try {
+            /** @type {?} */
+            var el = (/** @type {?} */ (this._el.nativeElement));
+            /** @type {?} */
+            var toggleButtons = el.getElementsByTagName('ion-toggle');
+            /** @type {?} */
+            var toggleButtonsNum = toggleButtons.length;
+            for (var i = 0; i < toggleButtonsNum; i++) {
+                /** @type {?} */
+                var toggleButton = (/** @type {?} */ (toggleButtons.item(i)));
+                /** @type {?} */
+                var inners = (/** @type {?} */ ((/** @type {?} */ (toggleButton.shadowRoot)).firstElementChild)).getElementsByClassName('toggle-inner');
+                /** @type {?} */
+                var inner = (/** @type {?} */ (inners[0]));
+                inner.style.willChange = 'auto';
+            }
+        }
+        catch (e) { }
+    };
     AjfPageSlider.decorators = [
         { type: Component, args: [{selector: 'ajf-page-slider',
                     template: "<div #content class=\"ajf-page-slider-content\"><div #body [ngClass]=\"'ajf-page-slider-' + orientation\" (touchstart)=\"onTouchStart($event)\" (touchmove)=\"onTouchMove($event)\" (touchend)=\"onTouchEnd()\" (mousewheel)=\"onMouseWheel($event)\" class=\"ajf-page-slider-body\"><ng-content></ng-content></div></div><ion-toolbar *ngIf=\"!hideNavigationButtons\" class=\"ajf-toolbar\"><ng-content select=\"[ajfPageSliderBar]\"></ng-content><ion-buttons slot=\"end\"><ion-button *ngIf=\"!fixedOrientation\" (click)=\"switchOrientation()\"><ion-icon [class.ajf-icon-rotated]=\"orientation == 'horizontal'\" name=\"swap\"></ion-icon></ion-button><ion-button (click)=\"slide({dir: 'up'})\" fill=\"solid\" color=\"secondary\"><ion-icon *ngIf=\"orientation == 'horizontal'\" name=\"arrow-back\"></ion-icon><ion-icon *ngIf=\"orientation == 'vertical'\" name=\"arrow-up\"></ion-icon></ion-button><ion-button (click)=\"slide({dir: 'down'})\" fill=\"solid\" color=\"secondary\"><ion-icon *ngIf=\"orientation == 'horizontal'\" name=\"arrow-forward\"></ion-icon><ion-icon *ngIf=\"orientation == 'vertical'\" name=\"arrow-down\"></ion-icon></ion-button></ion-buttons></ion-toolbar>",
@@ -53,7 +166,8 @@ var AjfPageSlider = /** @class */ (function (_super) {
     AjfPageSlider.ctorParameters = function () { return [
         { type: AnimationBuilder },
         { type: ChangeDetectorRef },
-        { type: Renderer2 }
+        { type: Renderer2 },
+        { type: ElementRef }
     ]; };
     return AjfPageSlider;
 }(AjfPageSlider$1));

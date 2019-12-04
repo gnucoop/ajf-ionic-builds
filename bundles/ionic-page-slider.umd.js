@@ -20,10 +20,10 @@
  *
  */
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/animations'), require('@angular/core'), require('@ajf/core/page-slider'), require('@angular/common'), require('@ionic/angular')) :
-    typeof define === 'function' && define.amd ? define('@ajf/ionic/page-slider', ['exports', '@angular/animations', '@angular/core', '@ajf/core/page-slider', '@angular/common', '@ionic/angular'], factory) :
-    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.pageSlider = {}), global.ng.animations, global.ng.core, global.ajf.core.pageSlider, global.ng.common, global.ionic.angular));
-}(this, function (exports, animations, core, pageSlider, common, angular) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/page-slider'), require('@angular/animations'), require('@angular/core'), require('rxjs'), require('rxjs/operators'), require('@angular/common'), require('@ionic/angular')) :
+    typeof define === 'function' && define.amd ? define('@ajf/ionic/page-slider', ['exports', '@ajf/core/page-slider', '@angular/animations', '@angular/core', 'rxjs', 'rxjs/operators', '@angular/common', '@ionic/angular'], factory) :
+    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.pageSlider = {}), global.ajf.core.pageSlider, global.ng.animations, global.ng.core, global.rxjs, global.rxjs.operators, global.ng.common, global.ionic.angular));
+}(this, function (exports, pageSlider, animations, core, rxjs, operators, common, angular) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -60,9 +60,120 @@
      */
     var AjfPageSlider = /** @class */ (function (_super) {
         __extends(AjfPageSlider, _super);
-        function AjfPageSlider(animationBuilder, cdr, renderer) {
-            return _super.call(this, animationBuilder, cdr, renderer) || this;
+        function AjfPageSlider(animationBuilder, cdr, renderer, _el) {
+            var _this = _super.call(this, animationBuilder, cdr, renderer) || this;
+            _this._el = _el;
+            _this._scrollSub = rxjs.Subscription.EMPTY;
+            return _this;
         }
+        /**
+         * @return {?}
+         */
+        AjfPageSlider.prototype.ngAfterContentInit = /**
+         * @return {?}
+         */
+        function () {
+            var _this = this;
+            _super.prototype.ngAfterContentInit.call(this);
+            this._scrollSub = this.pages.changes.pipe(operators.map((/**
+             * @return {?}
+             */
+            function () { return _this.pages.toArray(); })), operators.startWith(this.pages.toArray()), operators.filter((/**
+             * @param {?} pages
+             * @return {?}
+             */
+            function (pages) { return pages.length > 0; })), operators.switchMap((/**
+             * @param {?} pages
+             * @return {?}
+             */
+            function (pages) { return rxjs.merge.apply(void 0, pages.map((/**
+             * @param {?} page
+             * @return {?}
+             */
+            function (page) { return page.scroll; }))); }))).subscribe((/**
+             * @return {?}
+             */
+            function () {
+                _this._fixRippleFromRadioButton();
+                _this._fixToggleButtons();
+            }));
+        };
+        /**
+         * @return {?}
+         */
+        AjfPageSlider.prototype.ngOnDestroy = /**
+         * @return {?}
+         */
+        function () {
+            _super.prototype.ngOnDestroy.call(this);
+            this._scrollSub.unsubscribe();
+        };
+        /**
+         * @private
+         * @return {?}
+         */
+        AjfPageSlider.prototype._fixRippleFromRadioButton = /**
+         * @private
+         * @return {?}
+         */
+        function () {
+            try {
+                /** @type {?} */
+                var el = (/** @type {?} */ (this._el.nativeElement));
+                /** @type {?} */
+                var radioGroups = el.getElementsByTagName('ion-radio-group');
+                /** @type {?} */
+                var radioGroup = radioGroups[0];
+                /** @type {?} */
+                var items = radioGroup.getElementsByTagName('ion-item');
+                /** @type {?} */
+                var item = items[0];
+                /** @type {?} */
+                var ripples = (/** @type {?} */ ((/** @type {?} */ (item.shadowRoot)).firstElementChild)).getElementsByTagName('ion-ripple-effect');
+                /** @type {?} */
+                var ripple_1 = (/** @type {?} */ (ripples.item(0)));
+                /** @type {?} */
+                var orig_1 = ripple_1.style.opacity;
+                ripple_1.style.opacity = '0';
+                ripple_1.addRipple(0, 0).then((/**
+                 * @param {?} remove
+                 * @return {?}
+                 */
+                function (remove) {
+                    remove();
+                    ripple_1.style.opacity = orig_1;
+                }));
+            }
+            catch (e) { }
+        };
+        /**
+         * @private
+         * @return {?}
+         */
+        AjfPageSlider.prototype._fixToggleButtons = /**
+         * @private
+         * @return {?}
+         */
+        function () {
+            try {
+                /** @type {?} */
+                var el = (/** @type {?} */ (this._el.nativeElement));
+                /** @type {?} */
+                var toggleButtons = el.getElementsByTagName('ion-toggle');
+                /** @type {?} */
+                var toggleButtonsNum = toggleButtons.length;
+                for (var i = 0; i < toggleButtonsNum; i++) {
+                    /** @type {?} */
+                    var toggleButton = (/** @type {?} */ (toggleButtons.item(i)));
+                    /** @type {?} */
+                    var inners = (/** @type {?} */ ((/** @type {?} */ (toggleButton.shadowRoot)).firstElementChild)).getElementsByClassName('toggle-inner');
+                    /** @type {?} */
+                    var inner = (/** @type {?} */ (inners[0]));
+                    inner.style.willChange = 'auto';
+                }
+            }
+            catch (e) { }
+        };
         AjfPageSlider.decorators = [
             { type: core.Component, args: [{selector: 'ajf-page-slider',
                         template: "<div #content class=\"ajf-page-slider-content\"><div #body [ngClass]=\"'ajf-page-slider-' + orientation\" (touchstart)=\"onTouchStart($event)\" (touchmove)=\"onTouchMove($event)\" (touchend)=\"onTouchEnd()\" (mousewheel)=\"onMouseWheel($event)\" class=\"ajf-page-slider-body\"><ng-content></ng-content></div></div><ion-toolbar *ngIf=\"!hideNavigationButtons\" class=\"ajf-toolbar\"><ng-content select=\"[ajfPageSliderBar]\"></ng-content><ion-buttons slot=\"end\"><ion-button *ngIf=\"!fixedOrientation\" (click)=\"switchOrientation()\"><ion-icon [class.ajf-icon-rotated]=\"orientation == 'horizontal'\" name=\"swap\"></ion-icon></ion-button><ion-button (click)=\"slide({dir: 'up'})\" fill=\"solid\" color=\"secondary\"><ion-icon *ngIf=\"orientation == 'horizontal'\" name=\"arrow-back\"></ion-icon><ion-icon *ngIf=\"orientation == 'vertical'\" name=\"arrow-up\"></ion-icon></ion-button><ion-button (click)=\"slide({dir: 'down'})\" fill=\"solid\" color=\"secondary\"><ion-icon *ngIf=\"orientation == 'horizontal'\" name=\"arrow-forward\"></ion-icon><ion-icon *ngIf=\"orientation == 'vertical'\" name=\"arrow-down\"></ion-icon></ion-button></ion-buttons></ion-toolbar>",
@@ -81,7 +192,8 @@
         AjfPageSlider.ctorParameters = function () { return [
             { type: animations.AnimationBuilder },
             { type: core.ChangeDetectorRef },
-            { type: core.Renderer2 }
+            { type: core.Renderer2 },
+            { type: core.ElementRef }
         ]; };
         return AjfPageSlider;
     }(pageSlider.AjfPageSlider));
