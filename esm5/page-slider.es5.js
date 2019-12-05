@@ -136,14 +136,26 @@ var AjfPageSlider = /** @class */ (function (_super) {
             var toggleButtons = el.getElementsByTagName('ion-toggle');
             /** @type {?} */
             var toggleButtonsNum = toggleButtons.length;
-            for (var i = 0; i < toggleButtonsNum; i++) {
+            var _loop_1 = function (i) {
                 /** @type {?} */
                 var toggleButton = (/** @type {?} */ (toggleButtons.item(i)));
                 /** @type {?} */
                 var inners = (/** @type {?} */ ((/** @type {?} */ (toggleButton.shadowRoot)).firstElementChild)).getElementsByClassName('toggle-inner');
                 /** @type {?} */
                 var inner = (/** @type {?} */ (inners[0]));
-                inner.style.willChange = 'auto';
+                inner.setAttribute('style', 'will-change: auto');
+                setTimeout((/**
+                 * @return {?}
+                 */
+                function () {
+                    try {
+                        inner.removeAttribute('style');
+                    }
+                    catch (e) { }
+                }), 0);
+            };
+            for (var i = 0; i < toggleButtonsNum; i++) {
+                _loop_1(i);
             }
         }
         catch (e) { }

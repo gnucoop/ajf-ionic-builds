@@ -131,7 +131,16 @@ class AjfPageSlider extends AjfPageSlider$1 {
                 const inners = (/** @type {?} */ ((/** @type {?} */ (toggleButton.shadowRoot)).firstElementChild)).getElementsByClassName('toggle-inner');
                 /** @type {?} */
                 const inner = (/** @type {?} */ (inners[0]));
-                inner.style.willChange = 'auto';
+                inner.setAttribute('style', 'will-change: auto');
+                setTimeout((/**
+                 * @return {?}
+                 */
+                () => {
+                    try {
+                        inner.removeAttribute('style');
+                    }
+                    catch (e) { }
+                }), 0);
             }
         }
         catch (e) { }
