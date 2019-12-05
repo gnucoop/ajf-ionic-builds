@@ -114,7 +114,7 @@ class AjfBooleanFieldComponent extends AjfBaseFieldComponent {
     }
 }
 AjfBooleanFieldComponent.decorators = [
-    { type: Component, args: [{template: "<ion-toggle [formControl]=\"control|async\"></ion-toggle>",
+    { type: Component, args: [{template: "<ion-toggle [disabled]=\"readonly\" [formControl]=\"control|async\"></ion-toggle>",
                 styles: [""],
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 encapsulation: ViewEncapsulation.None,
@@ -400,7 +400,7 @@ class AjfMultipleChoiceFieldComponent extends AjfFieldWithChoicesComponent {
     }
 }
 AjfMultipleChoiceFieldComponent.decorators = [
-    { type: Component, args: [{template: "<ng-container *ngIf=\"!(instance|ajfExpandFieldWithChoices:searchThreshold); else expanded\"><div class=\"ajf-item-container\"><gic-select *ngIf=\"instance.filteredChoices as cs\" #multipleChoiceSelect multiple=\"multiple\" [searchBar]=\"instance|ajfSelectHasSearchBar:searchThreshold\" [useVirtualScroll]=\"instance|ajfSelectUseVirtualScroll:100\" [placeholder]=\"instance.node.label\" [formControl]=\"control|async\" [disabled]=\"readonly\"><gic-select-option *ngFor=\"let item of cs\" [value]=\"item.value\">{{ item.label|translate }}</gic-select-option></gic-select></div></ng-container><ng-template #expanded><div ajf-checkbox-group [formControl]=\"control|async\" class=\"ajf-choices-container\"><ion-card *ngFor=\"let choice of instance.filteredChoices\"><ajf-checkbox-group-item [value]=\"choice.value\">{{ choice.label | translate }}</ajf-checkbox-group-item></ion-card></div></ng-template>",
+    { type: Component, args: [{template: "<ng-container *ngIf=\"!(instance|ajfExpandFieldWithChoices:searchThreshold); else expanded\"><div class=\"ajf-item-container\"><gic-select *ngIf=\"instance.filteredChoices as cs\" #multipleChoiceSelect multiple=\"multiple\" [searchBar]=\"instance|ajfSelectHasSearchBar:searchThreshold\" [useVirtualScroll]=\"instance|ajfSelectUseVirtualScroll:100\" [placeholder]=\"instance.node.label\" [formControl]=\"control|async\" [disabled]=\"readonly\"><gic-select-option *ngFor=\"let item of cs\" [value]=\"item.value\">{{ item.label|translate }}</gic-select-option></gic-select></div></ng-container><ng-template #expanded><div ajf-checkbox-group [formControl]=\"control|async\" class=\"ajf-choices-container\"><ion-card *ngFor=\"let choice of instance.filteredChoices\"><ajf-checkbox-group-item [readonly]=\"readonly\" [value]=\"choice.value\">{{ choice.label | translate }}</ajf-checkbox-group-item></ion-card></div></ng-template>",
                 styles: [""],
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 encapsulation: ViewEncapsulation.None,
@@ -516,7 +516,7 @@ class AjfSingleChoiceFieldComponent extends AjfFieldWithChoicesComponent {
     }
 }
 AjfSingleChoiceFieldComponent.decorators = [
-    { type: Component, args: [{template: "<ng-container *ngIf=\"!(instance|ajfExpandFieldWithChoices:searchThreshold); else expanded\"><div class=\"ajf-item-container\"><gic-select *ngIf=\"instance.filteredChoices as cs\" #singleChoiceSelect [searchBar]=\"instance|ajfSelectHasSearchBar:searchThreshold\" [useVirtualScroll]=\"instance|ajfSelectUseVirtualScroll:100\" [placeholder]=\"instance.node.label\" [formControl]=\"control|async\"><ion-content><ion-virtual-scroll [items]=\"cs\"><gic-select-option *virtualItem=\"let item\" [value]=\"item.value\">{{ item.label|translate }}</gic-select-option></ion-virtual-scroll></ion-content></gic-select></div></ng-container><ng-template #expanded><div class=\"ajf-choices-container\"><ion-radio-group [formControl]=\"control|async\"><ion-item *ngFor=\"let choice of instance.filteredChoices\"><ion-label>{{ choice.label | translate}}</ion-label><ion-radio [value]=\"choice.value\"></ion-radio></ion-item></ion-radio-group></div></ng-template>",
+    { type: Component, args: [{template: "<ng-container *ngIf=\"!(instance|ajfExpandFieldWithChoices:searchThreshold); else expanded\"><div class=\"ajf-item-container\"><gic-select *ngIf=\"instance.filteredChoices as cs\" #singleChoiceSelect [disabled]=\"readonly\" [searchBar]=\"instance|ajfSelectHasSearchBar:searchThreshold\" [useVirtualScroll]=\"instance|ajfSelectUseVirtualScroll:100\" [placeholder]=\"instance.node.label\" [formControl]=\"control|async\"><ion-content><ion-virtual-scroll [items]=\"cs\"><gic-select-option *virtualItem=\"let item\" [value]=\"item.value\">{{ item.label|translate }}</gic-select-option></ion-virtual-scroll></ion-content></gic-select></div></ng-container><ng-template #expanded><div class=\"ajf-choices-container\"><ion-radio-group [formControl]=\"control|async\"><ion-item *ngFor=\"let choice of instance.filteredChoices\"><ion-label>{{ choice.label | translate}}</ion-label><ion-radio [disabled]=\"readonly\" [value]=\"choice.value\"></ion-radio></ion-item></ion-radio-group></div></ng-template>",
                 styles: [""],
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 encapsulation: ViewEncapsulation.None,
