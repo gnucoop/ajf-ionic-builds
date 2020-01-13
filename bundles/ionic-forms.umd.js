@@ -20,10 +20,10 @@
  *
  */
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/forms'), require('@angular/core'), require('@ionic/angular'), require('rxjs'), require('rxjs/operators'), require('@angular/common'), require('@angular/forms'), require('@gic/angular'), require('@ngx-translate/core'), require('@ajf/core/common'), require('@ajf/core/time'), require('@ajf/ionic/barcode'), require('@ajf/ionic/calendar'), require('@ajf/ionic/checkbox-group'), require('@ajf/ionic/page-slider')) :
-    typeof define === 'function' && define.amd ? define('@ajf/ionic/forms', ['exports', '@ajf/core/forms', '@angular/core', '@ionic/angular', 'rxjs', 'rxjs/operators', '@angular/common', '@angular/forms', '@gic/angular', '@ngx-translate/core', '@ajf/core/common', '@ajf/core/time', '@ajf/ionic/barcode', '@ajf/ionic/calendar', '@ajf/ionic/checkbox-group', '@ajf/ionic/page-slider'], factory) :
-    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.forms = {}), global.ajf.core.forms, global.ng.core, global.ionic.angular, global.rxjs, global.rxjs.operators, global.ng.common, global.ng.forms, global.gic.angular, global.ngxt.core, global.ajf.core.common, global.ajf.core.time, global.ajf.ionic.barcode, global.ajf.ionic.calendar, global.ajf.ionic.checkboxGroup, global.ajf.ionic.pageSlider));
-}(this, function (exports, forms, core, angular, rxjs, operators, common, forms$1, angular$1, core$1, common$1, time, barcode, calendar, checkboxGroup, pageSlider) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/forms'), require('@angular/core'), require('@ionic/angular'), require('rxjs'), require('rxjs/operators'), require('@angular/common'), require('@angular/forms'), require('@gic/angular'), require('@ngx-translate/core'), require('@ajf/core/common'), require('@ajf/ionic/barcode'), require('@ajf/ionic/calendar'), require('@ajf/ionic/checkbox-group'), require('@ajf/ionic/page-slider'), require('@ajf/ionic/time')) :
+    typeof define === 'function' && define.amd ? define('@ajf/ionic/forms', ['exports', '@ajf/core/forms', '@angular/core', '@ionic/angular', 'rxjs', 'rxjs/operators', '@angular/common', '@angular/forms', '@gic/angular', '@ngx-translate/core', '@ajf/core/common', '@ajf/ionic/barcode', '@ajf/ionic/calendar', '@ajf/ionic/checkbox-group', '@ajf/ionic/page-slider', '@ajf/ionic/time'], factory) :
+    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.forms = {}), global.ajf.core.forms, global.ng.core, global.ionic.angular, global.rxjs, global.rxjs.operators, global.ng.common, global.ng.forms, global.gic.angular, global.ngxt.core, global.ajf.core.common, global.ajf.ionic.barcode, global.ajf.ionic.calendar, global.ajf.ionic.checkboxGroup, global.ajf.ionic.pageSlider, global.ajf.ionic.time));
+}(this, function (exports, forms, core, angular, rxjs, operators, common, forms$1, angular$1, core$1, common$1, barcode, calendar, checkboxGroup, pageSlider, time) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -533,7 +533,7 @@
             return _super.call(this, cdr, service, was, searchThreshold) || this;
         }
         AjfSingleChoiceFieldComponent.decorators = [
-            { type: core.Component, args: [{template: "<ng-container *ngIf=\"!(instance|ajfExpandFieldWithChoices:searchThreshold); else expanded\"><div class=\"ajf-item-container\"><gic-select *ngIf=\"instance.filteredChoices as cs\" #singleChoiceSelect [disabled]=\"readonly\" [searchBar]=\"instance|ajfSelectHasSearchBar:searchThreshold\" [useVirtualScroll]=\"instance|ajfSelectUseVirtualScroll:100\" [placeholder]=\"instance.node.label\" [formControl]=\"control|async\"><ion-content><ion-virtual-scroll [items]=\"cs\"><gic-select-option *virtualItem=\"let item\" [value]=\"item.value\">{{ item.label|translate }}</gic-select-option></ion-virtual-scroll></ion-content></gic-select></div></ng-container><ng-template #expanded><div class=\"ajf-choices-container\"><ion-radio-group [formControl]=\"control|async\"><ion-item *ngFor=\"let choice of instance.filteredChoices\"><ion-label>{{ choice.label | translate}}</ion-label><ion-radio [disabled]=\"readonly\" [value]=\"choice.value\"></ion-radio></ion-item></ion-radio-group></div></ng-template>",
+            { type: core.Component, args: [{template: "<ng-container *ngIf=\"!(instance|ajfExpandFieldWithChoices:searchThreshold); else expanded\"><div class=\"ajf-item-container\"><gic-select *ngIf=\"instance.filteredChoices as cs\" #singleChoiceSelect [disabled]=\"readonly\" [searchBar]=\"instance|ajfSelectHasSearchBar:searchThreshold\" [useVirtualScroll]=\"instance|ajfSelectUseVirtualScroll:100\" [placeholder]=\"instance.node.label\" [formControl]=\"control|async\"><gic-select-option *ngFor=\"let item of cs\" [value]=\"item.value\">{{ item.label|translate }}</gic-select-option></gic-select></div></ng-container><ng-template #expanded><div class=\"ajf-choices-container\"><ion-radio-group [formControl]=\"control|async\"><ion-item *ngFor=\"let choice of instance.filteredChoices\"><ion-label>{{ choice.label | translate }}</ion-label><ion-radio [disabled]=\"readonly\" [value]=\"choice.value\"></ion-radio></ion-item></ion-radio-group></div></ng-template>",
                         styles: [""],
                         changeDetection: core.ChangeDetectionStrategy.OnPush,
                         encapsulation: core.ViewEncapsulation.None,
@@ -609,7 +609,7 @@
             return _super.call(this, cdr, service, was) || this;
         }
         AjfTimeFieldComponent.decorators = [
-            { type: core.Component, args: [{template: "<ajf-time [formControl]=\"control|async\" [readonly]=\"readonly\">></ajf-time>",
+            { type: core.Component, args: [{template: "<ajf-time [formControl]=\"control|async\" [readonly]=\"readonly\"></ajf-time>",
                         styles: [""],
                         changeDetection: core.ChangeDetectionStrategy.OnPush,
                         encapsulation: core.ViewEncapsulation.None,

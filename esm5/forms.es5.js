@@ -30,11 +30,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GicModule } from '@gic/angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { AjfCommonModule } from '@ajf/core/common';
-import { AjfTimeModule } from '@ajf/core/time';
 import { AjfBarcodeModule } from '@ajf/ionic/barcode';
 import { AjfCalendarModule } from '@ajf/ionic/calendar';
 import { AjfCheckboxGroupModule } from '@ajf/ionic/checkbox-group';
 import { AjfPageSliderModule } from '@ajf/ionic/page-slider';
+import { AjfTimeModule } from '@ajf/ionic/time';
 
 /**
  * @fileoverview added by tsickle
@@ -515,7 +515,7 @@ var AjfSingleChoiceFieldComponent = /** @class */ (function (_super) {
         return _super.call(this, cdr, service, was, searchThreshold) || this;
     }
     AjfSingleChoiceFieldComponent.decorators = [
-        { type: Component, args: [{template: "<ng-container *ngIf=\"!(instance|ajfExpandFieldWithChoices:searchThreshold); else expanded\"><div class=\"ajf-item-container\"><gic-select *ngIf=\"instance.filteredChoices as cs\" #singleChoiceSelect [disabled]=\"readonly\" [searchBar]=\"instance|ajfSelectHasSearchBar:searchThreshold\" [useVirtualScroll]=\"instance|ajfSelectUseVirtualScroll:100\" [placeholder]=\"instance.node.label\" [formControl]=\"control|async\"><ion-content><ion-virtual-scroll [items]=\"cs\"><gic-select-option *virtualItem=\"let item\" [value]=\"item.value\">{{ item.label|translate }}</gic-select-option></ion-virtual-scroll></ion-content></gic-select></div></ng-container><ng-template #expanded><div class=\"ajf-choices-container\"><ion-radio-group [formControl]=\"control|async\"><ion-item *ngFor=\"let choice of instance.filteredChoices\"><ion-label>{{ choice.label | translate}}</ion-label><ion-radio [disabled]=\"readonly\" [value]=\"choice.value\"></ion-radio></ion-item></ion-radio-group></div></ng-template>",
+        { type: Component, args: [{template: "<ng-container *ngIf=\"!(instance|ajfExpandFieldWithChoices:searchThreshold); else expanded\"><div class=\"ajf-item-container\"><gic-select *ngIf=\"instance.filteredChoices as cs\" #singleChoiceSelect [disabled]=\"readonly\" [searchBar]=\"instance|ajfSelectHasSearchBar:searchThreshold\" [useVirtualScroll]=\"instance|ajfSelectUseVirtualScroll:100\" [placeholder]=\"instance.node.label\" [formControl]=\"control|async\"><gic-select-option *ngFor=\"let item of cs\" [value]=\"item.value\">{{ item.label|translate }}</gic-select-option></gic-select></div></ng-container><ng-template #expanded><div class=\"ajf-choices-container\"><ion-radio-group [formControl]=\"control|async\"><ion-item *ngFor=\"let choice of instance.filteredChoices\"><ion-label>{{ choice.label | translate }}</ion-label><ion-radio [disabled]=\"readonly\" [value]=\"choice.value\"></ion-radio></ion-item></ion-radio-group></div></ng-template>",
                     styles: [""],
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
@@ -591,7 +591,7 @@ var AjfTimeFieldComponent = /** @class */ (function (_super) {
         return _super.call(this, cdr, service, was) || this;
     }
     AjfTimeFieldComponent.decorators = [
-        { type: Component, args: [{template: "<ajf-time [formControl]=\"control|async\" [readonly]=\"readonly\">></ajf-time>",
+        { type: Component, args: [{template: "<ajf-time [formControl]=\"control|async\" [readonly]=\"readonly\"></ajf-time>",
                     styles: [""],
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
