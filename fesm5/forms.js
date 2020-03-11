@@ -17,7 +17,7 @@ import { AjfTimeModule } from '@ajf/ionic/time';
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -79,7 +79,7 @@ var AjfWarningAlertService = /** @class */ (function () {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -122,7 +122,7 @@ var AjfBooleanFieldComponent = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -165,7 +165,7 @@ var AjfDateFieldComponent = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -231,7 +231,7 @@ var AjfDateInputFieldComponent = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -274,7 +274,7 @@ var AjfEmptyFieldComponent = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -317,7 +317,7 @@ var AjfBarcodeFieldComponent = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -388,7 +388,7 @@ var AjfFormulaFieldComponent = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -431,7 +431,7 @@ var AjfInputFieldComponent = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -475,7 +475,7 @@ var AjfMultipleChoiceFieldComponent = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -550,7 +550,7 @@ var AjfNumberFieldComponent = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -594,7 +594,7 @@ var AjfSingleChoiceFieldComponent = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -637,7 +637,7 @@ var AjfTableFieldComponent = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -680,7 +680,7 @@ var AjfTextareaFieldComponent = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -751,7 +751,7 @@ var AjfFieldService = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -797,7 +797,7 @@ var AjfFormField = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -865,7 +865,7 @@ var AjfFormRenderer = /** @class */ (function (_super) {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -895,7 +895,7 @@ var AjfFormPage = /** @class */ (function () {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -928,7 +928,7 @@ var AjfSelectHasSearchBarPipe = /** @class */ (function () {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -961,7 +961,7 @@ var AjfSelectUseVirtualScroll = /** @class */ (function () {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
@@ -1058,7 +1058,7 @@ var AjfFormsModule = /** @class */ (function () {
 
 /**
  * @license
- * Copyright (C) 2018 Gnucoop soc. coop.
+ * Copyright (C) Gnucoop soc. coop.
  *
  * This file is part of the Advanced JSON forms (ajf).
  *
