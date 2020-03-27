@@ -1274,11 +1274,11 @@
     exports.AjfTextareaFieldComponent = AjfTextareaFieldComponent;
     exports.AjfTimeFieldComponent = AjfTimeFieldComponent;
     exports.AjfWarningAlertService = AjfWarningAlertService;
-    exports.ɵajf_src_ionic_forms_forms_a = AjfBarcodeFieldComponent;
-    exports.ɵajf_src_ionic_forms_forms_b = AjfFormPage;
-    exports.ɵajf_src_ionic_forms_forms_c = AjfFormulaFieldComponent;
-    exports.ɵajf_src_ionic_forms_forms_d = AjfSelectHasSearchBarPipe;
-    exports.ɵajf_src_ionic_forms_forms_e = AjfSelectUseVirtualScroll;
+    exports.ɵgc_ajf_src_ionic_forms_forms_a = AjfBarcodeFieldComponent;
+    exports.ɵgc_ajf_src_ionic_forms_forms_b = AjfFormPage;
+    exports.ɵgc_ajf_src_ionic_forms_forms_c = AjfFormulaFieldComponent;
+    exports.ɵgc_ajf_src_ionic_forms_forms_d = AjfSelectHasSearchBarPipe;
+    exports.ɵgc_ajf_src_ionic_forms_forms_e = AjfSelectUseVirtualScroll;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
