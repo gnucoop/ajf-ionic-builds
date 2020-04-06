@@ -1,6 +1,6 @@
 {
   "name": "@ajf/ionic",
-  "version": "9.0.1-sha-1d4d89b",
+  "version": "9.0.1-sha-f357b9a",
   "description": "",
   "main": "./bundles/ionic.umd.js",
   "fesm5": "./fesm5/ionic.js",
@@ -26,7 +26,7 @@
     "@angular/router": "^9.0.0 || ^10.0.0",
     "@gic/angular": "^5.0.0",
     "@ionic/angular": "^5.0.0",
-    "@ajf/core": "9.0.1-sha-1d4d89b",
+    "@ajf/core": "9.0.1-sha-f357b9a",
     "flag-icon-css": "^3.3.0",
     "tslib": "^1.9.0"
   },
