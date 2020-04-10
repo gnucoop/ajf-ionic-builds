@@ -4,16 +4,16 @@ import { Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, Chan
 import { AlertController, IonInput, IonicModule } from '@ionic/angular';
 import { Observable, Subscription, defer } from 'rxjs';
 import { filter, switchMap, map, startWith, withLatestFrom, delayWhen } from 'rxjs/operators';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { GicModule } from '@gic/angular';
-import { TranslateModule } from '@ngx-translate/core';
 import { AjfCommonModule } from '@ajf/core/common';
 import { AjfBarcodeModule } from '@ajf/ionic/barcode';
 import { AjfCalendarModule } from '@ajf/ionic/calendar';
 import { AjfCheckboxGroupModule } from '@ajf/ionic/checkbox-group';
 import { AjfPageSliderModule } from '@ajf/ionic/page-slider';
 import { AjfTimeModule } from '@ajf/ionic/time';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GicModule } from '@gic/angular';
+import { TranslateModule } from '@ngx-translate/core';
 
 /**
  * @license
@@ -43,7 +43,8 @@ var AjfWarningAlertService = /** @class */ (function () {
     AjfWarningAlertService.prototype.showWarningAlertPrompt = function (warnings) {
         var _this = this;
         return new Observable(function (subscriber) {
-            _this._alertCtrl.create({
+            _this._alertCtrl
+                .create({
                 header: 'Warning',
                 message: warnings.join('\n'),
                 buttons: [
@@ -62,7 +63,8 @@ var AjfWarningAlertService = /** @class */ (function () {
                         }
                     }
                 ]
-            }).then(function (alert) {
+            })
+                .then(function (alert) {
                 alert.present();
             });
         });
@@ -198,8 +200,8 @@ var AjfDateInputFieldComponent = /** @class */ (function (_super) {
         }
         var val = evt.detail.value || '';
         if (val.length > 0) {
-            if ((this._minDateStr != null && val < this._minDateStr)
-                || (this._maxDateStr != null && val > this._maxDateStr)) {
+            if ((this._minDateStr != null && val < this._minDateStr) ||
+                (this._maxDateStr != null && val > this._maxDateStr)) {
                 this.input.value = '';
             }
         }
@@ -343,15 +345,19 @@ var AjfFormulaFieldComponent = /** @class */ (function (_super) {
         _this._onChangeEvt = new EventEmitter();
         _this._onChangeSub = Subscription.EMPTY;
         var control$ = _this.control.pipe(filter(function (control) { return control != null; }));
-        _this._onChangeSub = control$.pipe(switchMap(function (control) { return _this._onChangeEvt.pipe(map(function (value) { return ({ control: control, value: value }); })); })).subscribe(function (_a) {
-            var control = _a.control, value = _a.value;
-            try {
-                var v = parseFloat(value);
-                value = v;
-            }
-            catch (e) { }
-            control.setValue(value);
-        });
+        _this._onChangeSub =
+            control$
+                .pipe(switchMap(function (control) { return _this._onChangeEvt.pipe(map(function (value) { return ({ control: control, value: value }); })); }))
+                .subscribe(function (_a) {
+                var control = _a.control, value = _a.value;
+                try {
+                    var v = parseFloat(value);
+                    value = v;
+                }
+                catch (e) {
+                }
+                control.setValue(value);
+            });
         _this.value = _this.control.pipe(filter(function (control) { return control != null; }), switchMap(function (control) { return control.valueChanges.pipe(startWith(control.value)); }));
         return _this;
     }
@@ -511,7 +517,9 @@ var AjfNumberFieldComponent = /** @class */ (function (_super) {
     };
     AjfNumberFieldComponent.prototype.ngOnInit = function () {
         _super.prototype.ngOnInit.call(this);
-        this._setValueSub = this._setValueEvt.pipe(withLatestFrom(this.control)).subscribe(function (_a) {
+        this._setValueSub = this._setValueEvt
+            .pipe(withLatestFrom(this.control))
+            .subscribe(function (_a) {
             var _b = __read(_a, 2), value = _b[0], control = _b[1];
             if (control == null) {
                 return;
@@ -823,11 +831,15 @@ var AjfFormRenderer = /** @class */ (function (_super) {
         _this._longSlide = false;
         _this._viewInitEvt = new EventEmitter();
         _this._scrollFinishSub = Subscription.EMPTY;
-        _this._scrollFinishSub = _this._viewInitEvt.pipe(delayWhen(function () { return _this.formGroup; }), switchMap(function () { return _this.formSlider.pageScrollFinish; })).subscribe(function (_) { return _this._updateLongSlide(); });
+        _this._scrollFinishSub = _this._viewInitEvt
+            .pipe(delayWhen(function () { return _this.formGroup; }), switchMap(function () { return _this.formSlider.pageScrollFinish; }))
+            .subscribe(function (_) { return _this._updateLongSlide(); });
         return _this;
     }
     Object.defineProperty(AjfFormRenderer.prototype, "longSlide", {
-        get: function () { return this._longSlide; },
+        get: function () {
+            return this._longSlide;
+        },
         enumerable: true,
         configurable: true
     });
@@ -994,19 +1006,19 @@ var AjfFormsModule = /** @class */ (function () {
     AjfFormsModule.decorators = [
         { type: NgModule, args: [{
                     imports: [
-                        CommonModule,
-                        FormsModule,
-                        ReactiveFormsModule,
-                        IonicModule,
-                        GicModule,
-                        TranslateModule,
+                        AjfBarcodeModule,
+                        AjfCalendarModule,
+                        AjfCheckboxGroupModule,
                         AjfCommonModule,
                         AjfFormsModule$1,
-                        AjfCalendarModule,
-                        AjfBarcodeModule,
-                        AjfCheckboxGroupModule,
                         AjfPageSliderModule,
                         AjfTimeModule,
+                        CommonModule,
+                        FormsModule,
+                        GicModule,
+                        ReactiveFormsModule,
+                        IonicModule,
+                        TranslateModule,
                     ],
                     declarations: [
                         AjfBarcodeFieldComponent,
@@ -1026,7 +1038,7 @@ var AjfFormsModule = /** @class */ (function () {
                         AjfSingleChoiceFieldComponent,
                         AjfTableFieldComponent,
                         AjfTextareaFieldComponent,
-                        AjfTimeFieldComponent
+                        AjfTimeFieldComponent,
                     ],
                     entryComponents: [
                         AjfBarcodeFieldComponent,
@@ -1041,11 +1053,11 @@ var AjfFormsModule = /** @class */ (function () {
                         AjfSingleChoiceFieldComponent,
                         AjfTableFieldComponent,
                         AjfTextareaFieldComponent,
-                        AjfTimeFieldComponent
+                        AjfTimeFieldComponent,
                     ],
                     exports: [
                         AjfFormField,
-                        AjfFormRenderer
+                        AjfFormRenderer,
                     ],
                     providers: [
                         AjfFieldService,

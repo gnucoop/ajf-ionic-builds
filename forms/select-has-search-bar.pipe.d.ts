@@ -19,8 +19,8 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-import { PipeTransform } from '@angular/core';
 import { AjfFieldWithChoicesInstance } from '@ajf/core/forms';
+import { PipeTransform } from '@angular/core';
 export declare class AjfSelectHasSearchBarPipe implements PipeTransform {
     transform(instance: AjfFieldWithChoicesInstance<any>, searchThreshold: number): boolean;
 }

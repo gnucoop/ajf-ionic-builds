@@ -2,8 +2,8 @@ import { AjfCalendar, AjfCalendarService, AjfCalendarModule as AjfCalendarModule
 import { CommonModule } from '@angular/common';
 import { forwardRef, Component, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, NgModule } from '@angular/core';
 import { NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
 import { IonicModule } from '@ionic/angular';
+import { TranslateModule } from '@ngx-translate/core';
 
 /**
  * @fileoverview added by tsickle

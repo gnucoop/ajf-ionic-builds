@@ -39,7 +39,9 @@ var AjfPageSlider = /** @class */ (function (_super) {
     AjfPageSlider.prototype.ngAfterContentInit = function () {
         var _this = this;
         _super.prototype.ngAfterContentInit.call(this);
-        this._scrollSub = this.pages.changes.pipe(map(function () { return _this.pages.toArray(); }), startWith(this.pages.toArray()), filter(function (pages) { return pages.length > 0; }), switchMap(function (pages) { return merge.apply(void 0, __spread(pages.map(function (page) { return page.scroll; }))); })).subscribe(function () {
+        this._scrollSub = this.pages.changes
+            .pipe(map(function () { return _this.pages.toArray(); }), startWith(this.pages.toArray()), filter(function (pages) { return pages.length > 0; }), switchMap(function (pages) { return merge.apply(void 0, __spread(pages.map(function (page) { return page.scroll; }))); }))
+            .subscribe(function () {
             _this._fixRippleFromRadioButton();
             _this._fixToggleButtons();
         });
@@ -55,8 +57,7 @@ var AjfPageSlider = /** @class */ (function (_super) {
             var radioGroup = radioGroups[0];
             var items = radioGroup.getElementsByTagName('ion-item');
             var item = items[0];
-            var ripples = item.shadowRoot.firstElementChild
-                .getElementsByTagName('ion-ripple-effect');
+            var ripples = item.shadowRoot.firstElementChild.getElementsByTagName('ion-ripple-effect');
             var ripple_1 = ripples.item(0);
             var orig_1 = ripple_1.style.opacity;
             ripple_1.style.opacity = '0';
@@ -65,7 +66,8 @@ var AjfPageSlider = /** @class */ (function (_super) {
                 ripple_1.style.opacity = orig_1;
             });
         }
-        catch (e) { }
+        catch (e) {
+        }
     };
     AjfPageSlider.prototype._fixToggleButtons = function () {
         try {
@@ -74,22 +76,23 @@ var AjfPageSlider = /** @class */ (function (_super) {
             var toggleButtonsNum = toggleButtons.length;
             var _loop_1 = function (i) {
                 var toggleButton = toggleButtons.item(i);
-                var inners = toggleButton.shadowRoot.firstElementChild
-                    .getElementsByClassName('toggle-inner');
+                var inners = toggleButton.shadowRoot.firstElementChild.getElementsByClassName('toggle-inner');
                 var inner = inners[0];
                 inner.setAttribute('style', 'will-change: auto');
                 setTimeout(function () {
                     try {
                         inner.removeAttribute('style');
                     }
-                    catch (e) { }
+                    catch (e) {
+                    }
                 }, 0);
             };
             for (var i = 0; i < toggleButtonsNum; i++) {
                 _loop_1(i);
             }
         }
-        catch (e) { }
+        catch (e) {
+        }
     };
     AjfPageSlider.decorators = [
         { type: Component, args: [{
@@ -137,17 +140,17 @@ var AjfPageSliderModule = /** @class */ (function () {
     AjfPageSliderModule.decorators = [
         { type: NgModule, args: [{
                     imports: [
+                        AjfPageSliderModule$1,
                         CommonModule,
                         IonicModule,
-                        AjfPageSliderModule$1
                     ],
                     declarations: [
-                        AjfPageSlider
+                        AjfPageSlider,
                     ],
                     exports: [
                         AjfPageSliderModule$1,
-                        AjfPageSlider
-                    ]
+                        AjfPageSlider,
+                    ],
                 },] }
     ];
     return AjfPageSliderModule;

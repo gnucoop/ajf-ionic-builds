@@ -1,10 +1,10 @@
+import { AjfCommonModule } from '@ajf/core/common';
 import { CommonModule } from '@angular/common';
 import { forwardRef, Component, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, Renderer2, NgModule } from '@angular/core';
-import { NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
 import { IonicModule } from '@ionic/angular';
-import { AjfCommonModule } from '@ajf/core/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { AjfBarcode } from '@ajf/core/barcode';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 /**
  * @fileoverview added by tsickle
@@ -27,13 +27,6 @@ class AjfBarcodeComponent extends AjfBarcode {
      */
     constructor(cdr, renderer) {
         super(cdr, renderer);
-    }
-    /**
-     * @param {?} segment
-     * @return {?}
-     */
-    onSelectSegment(segment) {
-        this.toggle = segment;
     }
 }
 AjfBarcodeComponent.decorators = [
@@ -66,11 +59,10 @@ class AjfBarcodeModule {
 AjfBarcodeModule.decorators = [
     { type: NgModule, args: [{
                 imports: [
+                    AjfCommonModule,
                     CommonModule,
-                    FormsModule,
-                    TranslateModule,
                     IonicModule,
-                    AjfCommonModule
+                    TranslateModule,
                 ],
                 declarations: [
                     AjfBarcodeComponent,

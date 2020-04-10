@@ -54,17 +54,17 @@ class AjfCheckboxGroupModule {
 AjfCheckboxGroupModule.decorators = [
     { type: NgModule, args: [{
                 imports: [
+                    AjfCheckboxGroupModule$1,
                     CommonModule,
                     IonicModule,
-                    AjfCheckboxGroupModule$1
                 ],
                 declarations: [
-                    AjfCheckboxGroupItem
+                    AjfCheckboxGroupItem,
                 ],
                 exports: [
+                    AjfCheckboxGroupItem,
                     AjfCheckboxGroupModule$1,
-                    AjfCheckboxGroupItem
-                ]
+                ],
             },] }
 ];
 

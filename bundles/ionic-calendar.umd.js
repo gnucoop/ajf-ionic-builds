@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/calendar'), require('@angular/common'), require('@angular/core'), require('@angular/forms'), require('@ngx-translate/core'), require('@ionic/angular')) :
-    typeof define === 'function' && define.amd ? define('@ajf/ionic/calendar', ['exports', '@ajf/core/calendar', '@angular/common', '@angular/core', '@angular/forms', '@ngx-translate/core', '@ionic/angular'], factory) :
-    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.calendar = {}), global.ng.core.calendar, global.ng.common, global.ng.core, global.ng.forms, global.ngxTranslate.core, global.ionic.angular));
-}(this, (function (exports, calendar, common, core, forms, core$1, angular) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/calendar'), require('@angular/common'), require('@angular/core'), require('@angular/forms'), require('@ionic/angular'), require('@ngx-translate/core')) :
+    typeof define === 'function' && define.amd ? define('@ajf/ionic/calendar', ['exports', '@ajf/core/calendar', '@angular/common', '@angular/core', '@angular/forms', '@ionic/angular', '@ngx-translate/core'], factory) :
+    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.calendar = {}), global.ng.core.calendar, global.ng.common, global.ng.core, global.ng.forms, global.ionic.angular, global.ngxTranslate.core));
+}(this, (function (exports, calendar, common, core, forms, angular, core$1) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.

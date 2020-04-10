@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/forms'), require('@angular/core'), require('@ionic/angular'), require('rxjs'), require('rxjs/operators'), require('@angular/common'), require('@angular/forms'), require('@gic/angular'), require('@ngx-translate/core'), require('@ajf/core/common'), require('@ajf/ionic/barcode'), require('@ajf/ionic/calendar'), require('@ajf/ionic/checkbox-group'), require('@ajf/ionic/page-slider'), require('@ajf/ionic/time')) :
-    typeof define === 'function' && define.amd ? define('@ajf/ionic/forms', ['exports', '@ajf/core/forms', '@angular/core', '@ionic/angular', 'rxjs', 'rxjs/operators', '@angular/common', '@angular/forms', '@gic/angular', '@ngx-translate/core', '@ajf/core/common', '@ajf/ionic/barcode', '@ajf/ionic/calendar', '@ajf/ionic/checkbox-group', '@ajf/ionic/page-slider', '@ajf/ionic/time'], factory) :
-    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.forms = {}), global.ng.core.forms, global.ng.core, global.ionic.angular, global.rxjs, global.rxjs.operators, global.ng.common, global.ng.forms, global.gic.angular, global.ngxTranslate.core, global.ng.core.common, global.ng.ionic.barcode, global.ng.ionic.calendar, global.ng.ionic.checkboxGroup, global.ng.ionic.pageSlider, global.ng.ionic.time));
-}(this, (function (exports, forms, i0, angular, rxjs, operators, common, forms$1, angular$1, core, common$1, barcode, calendar, checkboxGroup, pageSlider, time) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/forms'), require('@angular/core'), require('@ionic/angular'), require('rxjs'), require('rxjs/operators'), require('@ajf/core/common'), require('@ajf/ionic/barcode'), require('@ajf/ionic/calendar'), require('@ajf/ionic/checkbox-group'), require('@ajf/ionic/page-slider'), require('@ajf/ionic/time'), require('@angular/common'), require('@angular/forms'), require('@gic/angular'), require('@ngx-translate/core')) :
+    typeof define === 'function' && define.amd ? define('@ajf/ionic/forms', ['exports', '@ajf/core/forms', '@angular/core', '@ionic/angular', 'rxjs', 'rxjs/operators', '@ajf/core/common', '@ajf/ionic/barcode', '@ajf/ionic/calendar', '@ajf/ionic/checkbox-group', '@ajf/ionic/page-slider', '@ajf/ionic/time', '@angular/common', '@angular/forms', '@gic/angular', '@ngx-translate/core'], factory) :
+    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.forms = {}), global.ng.core.forms, global.ng.core, global.ionic.angular, global.rxjs, global.rxjs.operators, global.ng.core.common, global.ng.ionic.barcode, global.ng.ionic.calendar, global.ng.ionic.checkboxGroup, global.ng.ionic.pageSlider, global.ng.ionic.time, global.ng.common, global.ng.forms, global.gic.angular, global.ngxTranslate.core));
+}(this, (function (exports, forms, i0, angular, rxjs, operators, common, barcode, calendar, checkboxGroup, pageSlider, time, common$1, forms$1, angular$1, core) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -219,7 +219,8 @@
         AjfWarningAlertService.prototype.showWarningAlertPrompt = function (warnings) {
             var _this = this;
             return new rxjs.Observable(function (subscriber) {
-                _this._alertCtrl.create({
+                _this._alertCtrl
+                    .create({
                     header: 'Warning',
                     message: warnings.join('\n'),
                     buttons: [
@@ -238,7 +239,8 @@
                             }
                         }
                     ]
-                }).then(function (alert) {
+                })
+                    .then(function (alert) {
                     alert.present();
                 });
             });
@@ -374,8 +376,8 @@
             }
             var val = evt.detail.value || '';
             if (val.length > 0) {
-                if ((this._minDateStr != null && val < this._minDateStr)
-                    || (this._maxDateStr != null && val > this._maxDateStr)) {
+                if ((this._minDateStr != null && val < this._minDateStr) ||
+                    (this._maxDateStr != null && val > this._maxDateStr)) {
                     this.input.value = '';
                 }
             }
@@ -519,15 +521,19 @@
             _this._onChangeEvt = new i0.EventEmitter();
             _this._onChangeSub = rxjs.Subscription.EMPTY;
             var control$ = _this.control.pipe(operators.filter(function (control) { return control != null; }));
-            _this._onChangeSub = control$.pipe(operators.switchMap(function (control) { return _this._onChangeEvt.pipe(operators.map(function (value) { return ({ control: control, value: value }); })); })).subscribe(function (_a) {
-                var control = _a.control, value = _a.value;
-                try {
-                    var v = parseFloat(value);
-                    value = v;
-                }
-                catch (e) { }
-                control.setValue(value);
-            });
+            _this._onChangeSub =
+                control$
+                    .pipe(operators.switchMap(function (control) { return _this._onChangeEvt.pipe(operators.map(function (value) { return ({ control: control, value: value }); })); }))
+                    .subscribe(function (_a) {
+                    var control = _a.control, value = _a.value;
+                    try {
+                        var v = parseFloat(value);
+                        value = v;
+                    }
+                    catch (e) {
+                    }
+                    control.setValue(value);
+                });
             _this.value = _this.control.pipe(operators.filter(function (control) { return control != null; }), operators.switchMap(function (control) { return control.valueChanges.pipe(operators.startWith(control.value)); }));
             return _this;
         }
@@ -687,7 +693,9 @@
         };
         AjfNumberFieldComponent.prototype.ngOnInit = function () {
             _super.prototype.ngOnInit.call(this);
-            this._setValueSub = this._setValueEvt.pipe(operators.withLatestFrom(this.control)).subscribe(function (_a) {
+            this._setValueSub = this._setValueEvt
+                .pipe(operators.withLatestFrom(this.control))
+                .subscribe(function (_a) {
                 var _b = __read(_a, 2), value = _b[0], control = _b[1];
                 if (control == null) {
                     return;
@@ -999,11 +1007,15 @@
             _this._longSlide = false;
             _this._viewInitEvt = new i0.EventEmitter();
             _this._scrollFinishSub = rxjs.Subscription.EMPTY;
-            _this._scrollFinishSub = _this._viewInitEvt.pipe(operators.delayWhen(function () { return _this.formGroup; }), operators.switchMap(function () { return _this.formSlider.pageScrollFinish; })).subscribe(function (_) { return _this._updateLongSlide(); });
+            _this._scrollFinishSub = _this._viewInitEvt
+                .pipe(operators.delayWhen(function () { return _this.formGroup; }), operators.switchMap(function () { return _this.formSlider.pageScrollFinish; }))
+                .subscribe(function (_) { return _this._updateLongSlide(); });
             return _this;
         }
         Object.defineProperty(AjfFormRenderer.prototype, "longSlide", {
-            get: function () { return this._longSlide; },
+            get: function () {
+                return this._longSlide;
+            },
             enumerable: true,
             configurable: true
         });
@@ -1170,19 +1182,19 @@
         AjfFormsModule.decorators = [
             { type: i0.NgModule, args: [{
                         imports: [
-                            common.CommonModule,
-                            forms$1.FormsModule,
-                            forms$1.ReactiveFormsModule,
-                            angular.IonicModule,
-                            angular$1.GicModule,
-                            core.TranslateModule,
-                            common$1.AjfCommonModule,
-                            forms.AjfFormsModule,
-                            calendar.AjfCalendarModule,
                             barcode.AjfBarcodeModule,
+                            calendar.AjfCalendarModule,
                             checkboxGroup.AjfCheckboxGroupModule,
+                            common.AjfCommonModule,
+                            forms.AjfFormsModule,
                             pageSlider.AjfPageSliderModule,
                             time.AjfTimeModule,
+                            common$1.CommonModule,
+                            forms$1.FormsModule,
+                            angular$1.GicModule,
+                            forms$1.ReactiveFormsModule,
+                            angular.IonicModule,
+                            core.TranslateModule,
                         ],
                         declarations: [
                             AjfBarcodeFieldComponent,
@@ -1202,7 +1214,7 @@
                             AjfSingleChoiceFieldComponent,
                             AjfTableFieldComponent,
                             AjfTextareaFieldComponent,
-                            AjfTimeFieldComponent
+                            AjfTimeFieldComponent,
                         ],
                         entryComponents: [
                             AjfBarcodeFieldComponent,
@@ -1217,11 +1229,11 @@
                             AjfSingleChoiceFieldComponent,
                             AjfTableFieldComponent,
                             AjfTextareaFieldComponent,
-                            AjfTimeFieldComponent
+                            AjfTimeFieldComponent,
                         ],
                         exports: [
                             AjfFormField,
-                            AjfFormRenderer
+                            AjfFormRenderer,
                         ],
                         providers: [
                             AjfFieldService,

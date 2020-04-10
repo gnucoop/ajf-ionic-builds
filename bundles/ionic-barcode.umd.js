@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('@angular/core'), require('@angular/forms'), require('@ngx-translate/core'), require('@ionic/angular'), require('@ajf/core/common'), require('@ajf/core/barcode')) :
-    typeof define === 'function' && define.amd ? define('@ajf/ionic/barcode', ['exports', '@angular/common', '@angular/core', '@angular/forms', '@ngx-translate/core', '@ionic/angular', '@ajf/core/common', '@ajf/core/barcode'], factory) :
-    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.barcode = {}), global.ng.common, global.ng.core, global.ng.forms, global.ngxTranslate.core, global.ionic.angular, global.ng.core.common, global.ng.core.barcode));
-}(this, (function (exports, common, core, forms, core$1, angular, common$1, barcode) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/common'), require('@angular/common'), require('@angular/core'), require('@ionic/angular'), require('@ngx-translate/core'), require('@ajf/core/barcode'), require('@angular/forms')) :
+    typeof define === 'function' && define.amd ? define('@ajf/ionic/barcode', ['exports', '@ajf/core/common', '@angular/common', '@angular/core', '@ionic/angular', '@ngx-translate/core', '@ajf/core/barcode', '@angular/forms'], factory) :
+    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.barcode = {}), global.ng.core.common, global.ng.common, global.ng.core, global.ionic.angular, global.ngxTranslate.core, global.ng.core.barcode, global.ng.forms));
+}(this, (function (exports, common, common$1, core, angular, core$1, barcode, forms) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -222,9 +222,6 @@
         function AjfBarcodeComponent(cdr, renderer) {
             return _super.call(this, cdr, renderer) || this;
         }
-        AjfBarcodeComponent.prototype.onSelectSegment = function (segment) {
-            this.toggle = segment;
-        };
         AjfBarcodeComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'ajf-barcode',
@@ -270,11 +267,10 @@
         AjfBarcodeModule.decorators = [
             { type: core.NgModule, args: [{
                         imports: [
-                            common.CommonModule,
-                            forms.FormsModule,
-                            core$1.TranslateModule,
+                            common.AjfCommonModule,
+                            common$1.CommonModule,
                             angular.IonicModule,
-                            common$1.AjfCommonModule
+                            core$1.TranslateModule,
                         ],
                         declarations: [
                             AjfBarcodeComponent,

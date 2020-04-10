@@ -28,7 +28,8 @@ class AjfPageSlider extends AjfPageSlider$1 {
      */
     ngAfterContentInit() {
         super.ngAfterContentInit();
-        this._scrollSub = this.pages.changes.pipe(map((/**
+        this._scrollSub = this.pages.changes
+            .pipe(map((/**
          * @return {?}
          */
         () => this.pages.toArray())), startWith(this.pages.toArray()), filter((/**
@@ -43,7 +44,8 @@ class AjfPageSlider extends AjfPageSlider$1 {
          * @param {?} page
          * @return {?}
          */
-        page => page.scroll)))))).subscribe((/**
+        page => page.scroll))))))
+            .subscribe((/**
          * @return {?}
          */
         () => {
@@ -90,7 +92,8 @@ class AjfPageSlider extends AjfPageSlider$1 {
                 ripple.style.opacity = orig;
             }));
         }
-        catch (e) { }
+        catch (e) {
+        }
     }
     /**
      * @private
@@ -119,11 +122,13 @@ class AjfPageSlider extends AjfPageSlider$1 {
                     try {
                         inner.removeAttribute('style');
                     }
-                    catch (e) { }
+                    catch (e) {
+                    }
                 }), 0);
             }
         }
-        catch (e) { }
+        catch (e) {
+        }
     }
 }
 AjfPageSlider.decorators = [
@@ -169,17 +174,17 @@ class AjfPageSliderModule {
 AjfPageSliderModule.decorators = [
     { type: NgModule, args: [{
                 imports: [
+                    AjfPageSliderModule$1,
                     CommonModule,
                     IonicModule,
-                    AjfPageSliderModule$1
                 ],
                 declarations: [
-                    AjfPageSlider
+                    AjfPageSlider,
                 ],
                 exports: [
                     AjfPageSliderModule$1,
-                    AjfPageSlider
-                ]
+                    AjfPageSlider,
+                ],
             },] }
 ];
 

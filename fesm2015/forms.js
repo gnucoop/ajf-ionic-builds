@@ -3,16 +3,16 @@ import { Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, Chan
 import { AlertController, IonInput, IonicModule } from '@ionic/angular';
 import { Observable, Subscription, defer } from 'rxjs';
 import { filter, switchMap, map, startWith, withLatestFrom, delayWhen } from 'rxjs/operators';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { GicModule } from '@gic/angular';
-import { TranslateModule } from '@ngx-translate/core';
 import { AjfCommonModule } from '@ajf/core/common';
 import { AjfBarcodeModule } from '@ajf/ionic/barcode';
 import { AjfCalendarModule } from '@ajf/ionic/calendar';
 import { AjfCheckboxGroupModule } from '@ajf/ionic/checkbox-group';
 import { AjfPageSliderModule } from '@ajf/ionic/page-slider';
 import { AjfTimeModule } from '@ajf/ionic/time';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GicModule } from '@gic/angular';
+import { TranslateModule } from '@ngx-translate/core';
 
 /**
  * @fileoverview added by tsickle
@@ -36,7 +36,8 @@ class AjfWarningAlertService {
          * @return {?}
          */
         subscriber => {
-            this._alertCtrl.create({
+            this._alertCtrl
+                .create({
                 header: 'Warning',
                 message: warnings.join('\n'),
                 buttons: [
@@ -61,7 +62,8 @@ class AjfWarningAlertService {
                         })
                     }
                 ]
-            }).then((/**
+            })
+                .then((/**
              * @param {?} alert
              * @return {?}
              */
@@ -183,8 +185,8 @@ class AjfDateInputFieldComponent extends AjfBaseFieldComponent {
         /** @type {?} */
         const val = evt.detail.value || '';
         if (val.length > 0) {
-            if ((this._minDateStr != null && val < this._minDateStr)
-                || (this._maxDateStr != null && val > this._maxDateStr)) {
+            if ((this._minDateStr != null && val < this._minDateStr) ||
+                (this._maxDateStr != null && val > this._maxDateStr)) {
                 this.input.value = '';
             }
         }
@@ -327,27 +329,31 @@ class AjfFormulaFieldComponent extends AjfBaseFieldComponent {
          * @return {?}
          */
         control => control != null)));
-        this._onChangeSub = control$.pipe(switchMap((/**
-         * @param {?} control
-         * @return {?}
-         */
-        control => this._onChangeEvt.pipe(map((/**
-         * @param {?} value
-         * @return {?}
-         */
-        value => ({ control, value }))))))).subscribe((/**
-         * @param {?} __0
-         * @return {?}
-         */
-        ({ control, value }) => {
-            try {
-                /** @type {?} */
-                const v = parseFloat(value);
-                value = v;
-            }
-            catch (e) { }
-            (/** @type {?} */ (control)).setValue(value);
-        }));
+        this._onChangeSub =
+            control$
+                .pipe(switchMap((/**
+             * @param {?} control
+             * @return {?}
+             */
+            control => this._onChangeEvt.pipe(map((/**
+             * @param {?} value
+             * @return {?}
+             */
+            value => ({ control, value })))))))
+                .subscribe((/**
+             * @param {?} __0
+             * @return {?}
+             */
+            ({ control, value }) => {
+                try {
+                    /** @type {?} */
+                    const v = parseFloat(value);
+                    value = v;
+                }
+                catch (e) {
+                }
+                (/** @type {?} */ (control)).setValue(value);
+            }));
         this.value = this.control.pipe(filter((/**
          * @param {?} control
          * @return {?}
@@ -529,7 +535,9 @@ class AjfNumberFieldComponent extends AjfInputFieldComponent$1 {
      */
     ngOnInit() {
         super.ngOnInit();
-        this._setValueSub = this._setValueEvt.pipe(withLatestFrom(this.control)).subscribe((/**
+        this._setValueSub = this._setValueEvt
+            .pipe(withLatestFrom(this.control))
+            .subscribe((/**
          * @param {?} __0
          * @return {?}
          */
@@ -817,13 +825,15 @@ class AjfFormRenderer extends AjfFormRenderer$1 {
         this._longSlide = false;
         this._viewInitEvt = new EventEmitter();
         this._scrollFinishSub = Subscription.EMPTY;
-        this._scrollFinishSub = this._viewInitEvt.pipe(delayWhen((/**
+        this._scrollFinishSub = this._viewInitEvt
+            .pipe(delayWhen((/**
          * @return {?}
          */
         () => this.formGroup)), switchMap((/**
          * @return {?}
          */
-        () => this.formSlider.pageScrollFinish))).subscribe((/**
+        () => this.formSlider.pageScrollFinish)))
+            .subscribe((/**
          * @param {?} _
          * @return {?}
          */
@@ -832,7 +842,9 @@ class AjfFormRenderer extends AjfFormRenderer$1 {
     /**
      * @return {?}
      */
-    get longSlide() { return this._longSlide; }
+    get longSlide() {
+        return this._longSlide;
+    }
     /**
      * @return {?}
      */
@@ -978,19 +990,19 @@ class AjfFormsModule {
 AjfFormsModule.decorators = [
     { type: NgModule, args: [{
                 imports: [
-                    CommonModule,
-                    FormsModule,
-                    ReactiveFormsModule,
-                    IonicModule,
-                    GicModule,
-                    TranslateModule,
+                    AjfBarcodeModule,
+                    AjfCalendarModule,
+                    AjfCheckboxGroupModule,
                     AjfCommonModule,
                     AjfFormsModule$1,
-                    AjfCalendarModule,
-                    AjfBarcodeModule,
-                    AjfCheckboxGroupModule,
                     AjfPageSliderModule,
                     AjfTimeModule,
+                    CommonModule,
+                    FormsModule,
+                    GicModule,
+                    ReactiveFormsModule,
+                    IonicModule,
+                    TranslateModule,
                 ],
                 declarations: [
                     AjfBarcodeFieldComponent,
@@ -1010,7 +1022,7 @@ AjfFormsModule.decorators = [
                     AjfSingleChoiceFieldComponent,
                     AjfTableFieldComponent,
                     AjfTextareaFieldComponent,
-                    AjfTimeFieldComponent
+                    AjfTimeFieldComponent,
                 ],
                 entryComponents: [
                     AjfBarcodeFieldComponent,
@@ -1025,11 +1037,11 @@ AjfFormsModule.decorators = [
                     AjfSingleChoiceFieldComponent,
                     AjfTableFieldComponent,
                     AjfTextareaFieldComponent,
-                    AjfTimeFieldComponent
+                    AjfTimeFieldComponent,
                 ],
                 exports: [
                     AjfFormField,
-                    AjfFormRenderer
+                    AjfFormRenderer,
                 ],
                 providers: [
                     AjfFieldService,

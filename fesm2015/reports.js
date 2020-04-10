@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, ElementRef, ComponentFactoryResolver, Renderer2, NgModule } from '@angular/core';
 import { AjfBaseWidgetComponent, AjfReportRenderer as AjfReportRenderer$1, AjfReportWidget as AjfReportWidget$1, AjfWidgetType, AjfReportsModule as AjfReportsModule$1 } from '@ajf/core/reports';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, ElementRef, ComponentFactoryResolver, Renderer2, NgModule } from '@angular/core';
 import { AjfImageType } from '@ajf/core/image';
 import { AjfChartModule } from '@ajf/core/chart';
 import { AjfCommonModule } from '@ajf/core/common';
@@ -379,8 +379,6 @@ class AjfReportsModule {
 AjfReportsModule.decorators = [
     { type: NgModule, args: [{
                 imports: [
-                    CommonModule,
-                    TranslateModule,
                     AjfChartModule,
                     AjfCommonModule,
                     AjfImageModule,
@@ -388,7 +386,9 @@ AjfReportsModule.decorators = [
                     AjfPageBreakModule,
                     AjfTableModule,
                     AjfTextModule,
+                    CommonModule,
                     AjfReportsModule$1,
+                    TranslateModule,
                 ],
                 declarations: [
                     AjfChartWidgetComponent,
