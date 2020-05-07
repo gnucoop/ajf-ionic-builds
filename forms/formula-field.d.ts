@@ -20,7 +20,6 @@
  *
  */
 import { AjfBaseFieldComponent, AjfFormRendererService, AjfFormulaFieldInstance } from '@ajf/core/forms';
-import { BooleanInput } from '@angular/cdk/coercion';
 import { ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { IonInput } from '@ionic/angular';
 import { Observable } from 'rxjs';
@@ -33,5 +32,4 @@ export declare class AjfFormulaFieldComponent extends AjfBaseFieldComponent<AjfF
     constructor(cdr: ChangeDetectorRef, service: AjfFormRendererService, was: AjfWarningAlertService);
     ngOnDestroy(): void;
     onChange(event: Event): void;
-    static ngAcceptInputType_readonly: BooleanInput;
 }

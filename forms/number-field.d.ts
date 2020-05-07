@@ -20,7 +20,6 @@
  *
  */
 import { AjfFormRendererService, AjfInputFieldComponent as CoreComponent } from '@ajf/core/forms';
-import { BooleanInput } from '@angular/cdk/coercion';
 import { ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AjfWarningAlertService } from './warning-alert-service';
@@ -32,5 +31,4 @@ export declare class AjfNumberFieldComponent extends CoreComponent implements On
     ngOnDestroy(): void;
     ngOnInit(): void;
     setValue(value: any): void;
-    static ngAcceptInputType_readonly: BooleanInput;
 }

@@ -20,10 +20,8 @@
  *
  */
 import { AjfBarcode } from '@ajf/core/barcode';
-import { BooleanInput } from '@angular/cdk/coercion';
 import { ChangeDetectorRef, Renderer2 } from '@angular/core';
 export declare const BARCODE_CONTROL_VALUE_ACCESSOR: any;
 export declare class AjfBarcodeComponent extends AjfBarcode {
     constructor(cdr: ChangeDetectorRef, renderer: Renderer2);
-    static ngAcceptInputType_readonly: BooleanInput;
 }
