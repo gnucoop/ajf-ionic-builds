@@ -1,9 +1,11 @@
 import { __decorate, __metadata, __param } from 'tslib';
-import { AjfBaseFieldComponent, AJF_WARNING_ALERT_SERVICE, AjfFormRendererService, AjfDateValueStringPipe, AjfInputFieldComponent as AjfInputFieldComponent$1, AjfFieldWithChoicesComponent, AJF_SEARCH_ALERT_THRESHOLD, AjfTableFieldComponent as AjfTableFieldComponent$1, AjfFieldService as AjfFieldService$1, AjfFieldType, AjfReadOnlyFieldComponent, AjfReadOnlyTableFieldComponent, AjfFormField as AjfFormField$1, AjfFormRenderer as AjfFormRenderer$1, AjfFormsModule as AjfFormsModule$1 } from '@ajf/core/forms';
+import { AjfBaseFieldComponent, AJF_WARNING_ALERT_SERVICE, AjfFormRendererService, AjfDateValueStringPipe, AjfInputFieldComponent as AjfInputFieldComponent$1, AjfFieldWithChoicesComponent, AJF_SEARCH_ALERT_THRESHOLD, AjfTableFieldComponent as AjfTableFieldComponent$1, AjfVideoUrlFieldComponent as AjfVideoUrlFieldComponent$1, AjfFieldService as AjfFieldService$1, AjfFieldType, AjfReadOnlyFieldComponent, AjfReadOnlyTableFieldComponent, AjfFileFieldComponent, AjfReadOnlyFileFieldComponent, AjfImageFieldComponent, AjfReadOnlyImageFieldComponent, AjfReadOnlyVideoUrlFieldComponent, AjfFormField as AjfFormField$1, AjfFormRenderer as AjfFormRenderer$1, AjfFormsModule as AjfFormsModule$1 } from '@ajf/core/forms';
 import { Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, Inject, ChangeDetectorRef, ViewChild, EventEmitter, Optional, ɵɵdefineInjectable, ComponentFactoryResolver, Directive, Pipe, NgModule } from '@angular/core';
 import { AlertController, IonInput, IonicModule } from '@ionic/angular';
 import { Observable, Subscription, defer } from 'rxjs';
 import { filter, switchMap, map, startWith, withLatestFrom, delayWhen } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
 import { AjfCommonModule } from '@ajf/core/common';
 import { AjfBarcodeModule } from '@ajf/ionic/barcode';
 import { AjfCalendarModule } from '@ajf/ionic/calendar';
@@ -698,6 +700,48 @@ let AjfTimeFieldComponent = /** @class */ (() => {
     return AjfTimeFieldComponent;
 })();
 
+/**
+ * @license
+ * Copyright (C) Gnucoop soc. coop.
+ *
+ * This file is part of the Advanced JSON forms (ajf).
+ *
+ * Advanced JSON forms (ajf) is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the License,
+ * or (at your option) any later version.
+ *
+ * Advanced JSON forms (ajf) is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with Advanced JSON forms (ajf).
+ * If not, see http://www.gnu.org/licenses/.
+ *
+ */
+let AjfVideoUrlFieldComponent = /** @class */ (() => {
+    let AjfVideoUrlFieldComponent = class AjfVideoUrlFieldComponent extends AjfVideoUrlFieldComponent$1 {
+        constructor(cdr, service, was, domSanitizer, httpClient) {
+            super(cdr, service, was, domSanitizer, httpClient);
+        }
+    };
+    AjfVideoUrlFieldComponent = __decorate([
+        Component({
+            template: "<ng-container *ngIf=\"control|async as ctrl\">\n  <ion-input class=\"ajf-video-input\" [formControl]=\"ctrl!\"></ion-input>\n  <div class=\"ajf-video-thumbnail\">\n    <ng-container *ngIf=\"validUrl|async\">\n      <a target=\"_blank\" [href]=\"ctrl.value\">\n        <img *ngIf=\"videoThumbnail|async as thumb\" [src]=\"thumb\" class=\"\" alt=\"\">\n      </a>\n    </ng-container>\n  </div>\n</ng-container>\n",
+            changeDetection: ChangeDetectionStrategy.OnPush,
+            encapsulation: ViewEncapsulation.None,
+            styles: [".ajf-video-input{width:100%}.ajf-video-thumbnail{margin-top:1em;width:212px;height:120px;background-color:#eee;display:flex;align-items:center;justify-content:center}.ajf-video-thumbnail img{flex:1 1 auto}\n"]
+        }),
+        __param(2, Inject(AJF_WARNING_ALERT_SERVICE)),
+        __metadata("design:paramtypes", [ChangeDetectorRef, AjfFormRendererService,
+            AjfWarningAlertService, DomSanitizer,
+            HttpClient])
+    ], AjfVideoUrlFieldComponent);
+    return AjfVideoUrlFieldComponent;
+})();
+
 let AjfFieldService = /** @class */ (() => {
     let AjfFieldService = class AjfFieldService extends AjfFieldService$1 {
         constructor() {
@@ -753,6 +797,18 @@ let AjfFieldService = /** @class */ (() => {
             this.componentsMap[AjfFieldType.Barcode] = {
                 component: AjfBarcodeFieldComponent,
                 readOnlyComponent: AjfReadOnlyFieldComponent
+            };
+            this.componentsMap[AjfFieldType.File] = {
+                component: AjfFileFieldComponent,
+                readOnlyComponent: AjfReadOnlyFileFieldComponent
+            };
+            this.componentsMap[AjfFieldType.Image] = {
+                component: AjfImageFieldComponent,
+                readOnlyComponent: AjfReadOnlyImageFieldComponent
+            };
+            this.componentsMap[AjfFieldType.VideoUrl] = {
+                component: AjfVideoUrlFieldComponent,
+                readOnlyComponent: AjfReadOnlyVideoUrlFieldComponent
             };
         }
     };
@@ -1046,6 +1102,7 @@ let AjfFormsModule = /** @class */ (() => {
                 AjfTableFieldComponent,
                 AjfTextareaFieldComponent,
                 AjfTimeFieldComponent,
+                AjfVideoUrlFieldComponent,
             ],
             entryComponents: [
                 AjfBarcodeFieldComponent,
@@ -1061,6 +1118,7 @@ let AjfFormsModule = /** @class */ (() => {
                 AjfTableFieldComponent,
                 AjfTextareaFieldComponent,
                 AjfTimeFieldComponent,
+                AjfVideoUrlFieldComponent,
             ],
             exports: [
                 AjfFormField,
@@ -1101,5 +1159,5 @@ let AjfFormsModule = /** @class */ (() => {
  * Generated bundle index. Do not edit.
  */
 
-export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfDateInputFieldComponent, AjfEmptyFieldComponent, AjfFieldService, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfBarcodeFieldComponent as ɵgc_ajf_src_ionic_forms_forms_a, AjfFormPage as ɵgc_ajf_src_ionic_forms_forms_b, AjfFormulaFieldComponent as ɵgc_ajf_src_ionic_forms_forms_c, AjfSelectHasSearchBarPipe as ɵgc_ajf_src_ionic_forms_forms_d, AjfSelectUseVirtualScroll as ɵgc_ajf_src_ionic_forms_forms_e };
+export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfDateInputFieldComponent, AjfEmptyFieldComponent, AjfFieldService, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfBarcodeFieldComponent as ɵgc_ajf_src_ionic_forms_forms_a, AjfFormPage as ɵgc_ajf_src_ionic_forms_forms_b, AjfFormulaFieldComponent as ɵgc_ajf_src_ionic_forms_forms_c, AjfSelectHasSearchBarPipe as ɵgc_ajf_src_ionic_forms_forms_d, AjfSelectUseVirtualScroll as ɵgc_ajf_src_ionic_forms_forms_e, AjfVideoUrlFieldComponent as ɵgc_ajf_src_ionic_forms_forms_f };
 //# sourceMappingURL=forms.js.map

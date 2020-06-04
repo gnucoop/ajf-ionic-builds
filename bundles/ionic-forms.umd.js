@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/forms'), require('@angular/core'), require('@ionic/angular'), require('rxjs'), require('rxjs/operators'), require('@ajf/core/common'), require('@ajf/ionic/barcode'), require('@ajf/ionic/calendar'), require('@ajf/ionic/checkbox-group'), require('@ajf/ionic/page-slider'), require('@ajf/ionic/time'), require('@angular/common'), require('@angular/forms'), require('@gic/angular'), require('@ngx-translate/core')) :
-    typeof define === 'function' && define.amd ? define('@ajf/ionic/forms', ['exports', '@ajf/core/forms', '@angular/core', '@ionic/angular', 'rxjs', 'rxjs/operators', '@ajf/core/common', '@ajf/ionic/barcode', '@ajf/ionic/calendar', '@ajf/ionic/checkbox-group', '@ajf/ionic/page-slider', '@ajf/ionic/time', '@angular/common', '@angular/forms', '@gic/angular', '@ngx-translate/core'], factory) :
-    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.forms = {}), global.ng.core.forms, global.ng.core, global.ionic.angular, global.rxjs, global.rxjs.operators, global.ng.core.common, global.ng.ionic.barcode, global.ng.ionic.calendar, global.ng.ionic.checkboxGroup, global.ng.ionic.pageSlider, global.ng.ionic.time, global.ng.common, global.ng.forms, global.gic.angular, global.ngxTranslate.core));
-}(this, (function (exports, forms, i0, angular, rxjs, operators, common, barcode, calendar, checkboxGroup, pageSlider, time, common$1, forms$1, angular$1, core) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/forms'), require('@angular/core'), require('@ionic/angular'), require('rxjs'), require('rxjs/operators'), require('@angular/common/http'), require('@angular/platform-browser'), require('@ajf/core/common'), require('@ajf/ionic/barcode'), require('@ajf/ionic/calendar'), require('@ajf/ionic/checkbox-group'), require('@ajf/ionic/page-slider'), require('@ajf/ionic/time'), require('@angular/common'), require('@angular/forms'), require('@gic/angular'), require('@ngx-translate/core')) :
+    typeof define === 'function' && define.amd ? define('@ajf/ionic/forms', ['exports', '@ajf/core/forms', '@angular/core', '@ionic/angular', 'rxjs', 'rxjs/operators', '@angular/common/http', '@angular/platform-browser', '@ajf/core/common', '@ajf/ionic/barcode', '@ajf/ionic/calendar', '@ajf/ionic/checkbox-group', '@ajf/ionic/page-slider', '@ajf/ionic/time', '@angular/common', '@angular/forms', '@gic/angular', '@ngx-translate/core'], factory) :
+    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.forms = {}), global.ng.core.forms, global.ng.core, global.ionic.angular, global.rxjs, global.rxjs.operators, global.ng.common.http, global.ng.platformBrowser, global.ng.core.common, global.ng.ionic.barcode, global.ng.ionic.calendar, global.ng.ionic.checkboxGroup, global.ng.ionic.pageSlider, global.ng.ionic.time, global.ng.common, global.ng.forms, global.gic.angular, global.ngxTranslate.core));
+}(this, (function (exports, forms, i0, angular, rxjs, operators, http, platformBrowser, common, barcode, calendar, checkboxGroup, pageSlider, time, common$1, forms$1, angular$1, core) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -906,6 +906,47 @@
         return AjfTimeFieldComponent;
     }(forms.AjfBaseFieldComponent));
 
+    /**
+     * @license
+     * Copyright (C) Gnucoop soc. coop.
+     *
+     * This file is part of the Advanced JSON forms (ajf).
+     *
+     * Advanced JSON forms (ajf) is free software: you can redistribute it and/or
+     * modify it under the terms of the GNU Affero General Public License as
+     * published by the Free Software Foundation, either version 3 of the License,
+     * or (at your option) any later version.
+     *
+     * Advanced JSON forms (ajf) is distributed in the hope that it will be useful,
+     * but WITHOUT ANY WARRANTY; without even the implied warranty of
+     * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero
+     * General Public License for more details.
+     *
+     * You should have received a copy of the GNU Affero General Public License
+     * along with Advanced JSON forms (ajf).
+     * If not, see http://www.gnu.org/licenses/.
+     *
+     */
+    var AjfVideoUrlFieldComponent = /** @class */ (function (_super) {
+        __extends(AjfVideoUrlFieldComponent, _super);
+        function AjfVideoUrlFieldComponent(cdr, service, was, domSanitizer, httpClient) {
+            return _super.call(this, cdr, service, was, domSanitizer, httpClient) || this;
+        }
+        AjfVideoUrlFieldComponent = __decorate([
+            i0.Component({
+                template: "<ng-container *ngIf=\"control|async as ctrl\">\n  <ion-input class=\"ajf-video-input\" [formControl]=\"ctrl!\"></ion-input>\n  <div class=\"ajf-video-thumbnail\">\n    <ng-container *ngIf=\"validUrl|async\">\n      <a target=\"_blank\" [href]=\"ctrl.value\">\n        <img *ngIf=\"videoThumbnail|async as thumb\" [src]=\"thumb\" class=\"\" alt=\"\">\n      </a>\n    </ng-container>\n  </div>\n</ng-container>\n",
+                changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                encapsulation: i0.ViewEncapsulation.None,
+                styles: [".ajf-video-input{width:100%}.ajf-video-thumbnail{margin-top:1em;width:212px;height:120px;background-color:#eee;display:flex;align-items:center;justify-content:center}.ajf-video-thumbnail img{flex:1 1 auto}\n"]
+            }),
+            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
+            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
+                AjfWarningAlertService, platformBrowser.DomSanitizer,
+                http.HttpClient])
+        ], AjfVideoUrlFieldComponent);
+        return AjfVideoUrlFieldComponent;
+    }(forms.AjfVideoUrlFieldComponent));
+
     var AjfFieldService = /** @class */ (function (_super) {
         __extends(AjfFieldService, _super);
         function AjfFieldService() {
@@ -961,6 +1002,18 @@
             _this.componentsMap[forms.AjfFieldType.Barcode] = {
                 component: AjfBarcodeFieldComponent,
                 readOnlyComponent: forms.AjfReadOnlyFieldComponent
+            };
+            _this.componentsMap[forms.AjfFieldType.File] = {
+                component: forms.AjfFileFieldComponent,
+                readOnlyComponent: forms.AjfReadOnlyFileFieldComponent
+            };
+            _this.componentsMap[forms.AjfFieldType.Image] = {
+                component: forms.AjfImageFieldComponent,
+                readOnlyComponent: forms.AjfReadOnlyImageFieldComponent
+            };
+            _this.componentsMap[forms.AjfFieldType.VideoUrl] = {
+                component: AjfVideoUrlFieldComponent,
+                readOnlyComponent: forms.AjfReadOnlyVideoUrlFieldComponent
             };
             return _this;
         }
@@ -1253,6 +1306,7 @@
                     AjfTableFieldComponent,
                     AjfTextareaFieldComponent,
                     AjfTimeFieldComponent,
+                    AjfVideoUrlFieldComponent,
                 ],
                 entryComponents: [
                     AjfBarcodeFieldComponent,
@@ -1268,6 +1322,7 @@
                     AjfTableFieldComponent,
                     AjfTextareaFieldComponent,
                     AjfTimeFieldComponent,
+                    AjfVideoUrlFieldComponent,
                 ],
                 exports: [
                     AjfFormField,
@@ -1329,6 +1384,7 @@
     exports.ɵgc_ajf_src_ionic_forms_forms_c = AjfFormulaFieldComponent;
     exports.ɵgc_ajf_src_ionic_forms_forms_d = AjfSelectHasSearchBarPipe;
     exports.ɵgc_ajf_src_ionic_forms_forms_e = AjfSelectUseVirtualScroll;
+    exports.ɵgc_ajf_src_ionic_forms_forms_f = AjfVideoUrlFieldComponent;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
