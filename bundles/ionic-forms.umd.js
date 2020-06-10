@@ -286,10 +286,13 @@
                 });
             });
         };
-        AjfWarningAlertService = __decorate([
-            i0.Injectable(),
-            __metadata("design:paramtypes", [angular.AlertController])
-        ], AjfWarningAlertService);
+        AjfWarningAlertService.decorators = [
+            { type: i0.Injectable }
+        ];
+        /** @nocollapse */
+        AjfWarningAlertService.ctorParameters = function () { return [
+            { type: angular.AlertController }
+        ]; };
         return AjfWarningAlertService;
     }());
 
@@ -319,17 +322,20 @@
         function AjfBooleanFieldComponent(cdr, service, was) {
             return _super.call(this, cdr, service, was) || this;
         }
-        AjfBooleanFieldComponent = __decorate([
-            i0.Component({
-                template: "<ion-toggle *ngIf=\"control|async as ctrl\" [formControl]=\"ctrl!\"></ion-toggle>\n",
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                encapsulation: i0.ViewEncapsulation.None,
-                styles: ["\n"]
-            }),
-            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
-                AjfWarningAlertService])
-        ], AjfBooleanFieldComponent);
+        AjfBooleanFieldComponent.decorators = [
+            { type: i0.Component, args: [{
+                        template: "<ion-toggle *ngIf=\"control|async as ctrl\" [formControl]=\"ctrl!\"></ion-toggle>\n",
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        encapsulation: i0.ViewEncapsulation.None,
+                        styles: ["\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfBooleanFieldComponent.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] }
+        ]; };
         return AjfBooleanFieldComponent;
     }(forms.AjfBaseFieldComponent));
 
@@ -359,17 +365,20 @@
         function AjfDateFieldComponent(cdr, service, was) {
             return _super.call(this, cdr, service, was) || this;
         }
-        AjfDateFieldComponent = __decorate([
-            i0.Component({
-                template: "<ion-item>\n  <ajf-calendar\n      *ngIf=\"control|async as ctrl\"\n      selectionMode=\"day\"\n      [dateOnlyForDay]=\"true\"\n      [minDate]=\"instance.node.minDate|ajfDateValue\"\n      [maxDate]=\"instance.node.maxDate|ajfDateValue\"\n      [formControl]=\"ctrl!\"></ajf-calendar>\n</ion-item>\n",
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                encapsulation: i0.ViewEncapsulation.None,
-                styles: ["\n"]
-            }),
-            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
-                AjfWarningAlertService])
-        ], AjfDateFieldComponent);
+        AjfDateFieldComponent.decorators = [
+            { type: i0.Component, args: [{
+                        template: "<ion-item>\n  <ajf-calendar\n      *ngIf=\"control|async as ctrl\"\n      selectionMode=\"day\"\n      [dateOnlyForDay]=\"true\"\n      [minDate]=\"instance.node.minDate|ajfDateValue\"\n      [maxDate]=\"instance.node.maxDate|ajfDateValue\"\n      [formControl]=\"ctrl!\"></ajf-calendar>\n</ion-item>\n",
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        encapsulation: i0.ViewEncapsulation.None,
+                        styles: ["\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfDateFieldComponent.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] }
+        ]; };
         return AjfDateFieldComponent;
     }(forms.AjfBaseFieldComponent));
 
@@ -418,22 +427,24 @@
             this._minDateStr = this._dvs.transform(this.instance.node.minDate);
             this._maxDateStr = this._dvs.transform(this.instance.node.maxDate);
         };
-        __decorate([
-            i0.ViewChild(angular.IonInput, { static: false }),
-            __metadata("design:type", angular.IonInput)
-        ], AjfDateInputFieldComponent.prototype, "input", void 0);
-        AjfDateInputFieldComponent = __decorate([
-            i0.Component({
-                template: "<ion-input\n    type=\"date\"\n    *ngIf=\"control|async as ctrl\"\n    [min]=\"instance.node.minDate|ajfDateValueString\"\n    [max]=\"instance.node.maxDate|ajfDateValueString\"\n    (ionChange)=\"onChange($event)\"\n    [formControl]=\"ctrl!\"></ion-input>\n",
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                encapsulation: i0.ViewEncapsulation.None,
-                styles: ["\n"]
-            }),
-            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
-                AjfWarningAlertService,
-                forms.AjfDateValueStringPipe])
-        ], AjfDateInputFieldComponent);
+        AjfDateInputFieldComponent.decorators = [
+            { type: i0.Component, args: [{
+                        template: "<ion-input\n    type=\"date\"\n    *ngIf=\"control|async as ctrl\"\n    [min]=\"instance.node.minDate|ajfDateValueString\"\n    [max]=\"instance.node.maxDate|ajfDateValueString\"\n    (ionChange)=\"onChange($event)\"\n    [formControl]=\"ctrl!\"></ion-input>\n",
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        encapsulation: i0.ViewEncapsulation.None,
+                        styles: ["\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfDateInputFieldComponent.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] },
+            { type: forms.AjfDateValueStringPipe }
+        ]; };
+        AjfDateInputFieldComponent.propDecorators = {
+            input: [{ type: i0.ViewChild, args: [angular.IonInput, { static: false },] }]
+        };
         return AjfDateInputFieldComponent;
     }(forms.AjfBaseFieldComponent));
 
@@ -463,17 +474,20 @@
         function AjfEmptyFieldComponent(cdr, service, was) {
             return _super.call(this, cdr, service, was) || this;
         }
-        AjfEmptyFieldComponent = __decorate([
-            i0.Component({
-                template: "<div [innerHTML]=\"instance.node.HTML\"></div>\n",
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                encapsulation: i0.ViewEncapsulation.None,
-                styles: ["\n"]
-            }),
-            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
-                AjfWarningAlertService])
-        ], AjfEmptyFieldComponent);
+        AjfEmptyFieldComponent.decorators = [
+            { type: i0.Component, args: [{
+                        template: "<div [innerHTML]=\"instance.node.HTML\"></div>\n",
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        encapsulation: i0.ViewEncapsulation.None,
+                        styles: ["\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfEmptyFieldComponent.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] }
+        ]; };
         return AjfEmptyFieldComponent;
     }(forms.AjfBaseFieldComponent));
 
@@ -503,17 +517,20 @@
         function AjfBarcodeFieldComponent(cdr, service, was) {
             return _super.call(this, cdr, service, was) || this;
         }
-        AjfBarcodeFieldComponent = __decorate([
-            i0.Component({
-                template: "<ajf-barcode *ngIf=\"control|async as ctrl\" [formControl]=\"ctrl!\"></ajf-barcode>\n",
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                encapsulation: i0.ViewEncapsulation.None,
-                styles: ["\n"]
-            }),
-            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
-                AjfWarningAlertService])
-        ], AjfBarcodeFieldComponent);
+        AjfBarcodeFieldComponent.decorators = [
+            { type: i0.Component, args: [{
+                        template: "<ajf-barcode *ngIf=\"control|async as ctrl\" [formControl]=\"ctrl!\"></ajf-barcode>\n",
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        encapsulation: i0.ViewEncapsulation.None,
+                        styles: ["\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfBarcodeFieldComponent.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] }
+        ]; };
         return AjfBarcodeFieldComponent;
     }(forms.AjfBaseFieldComponent));
 
@@ -572,21 +589,23 @@
             }
             this._onChangeEvt.emit(evt.detail.value);
         };
-        __decorate([
-            i0.ViewChild(angular.IonInput, { static: true }),
-            __metadata("design:type", angular.IonInput)
-        ], AjfFormulaFieldComponent.prototype, "input", void 0);
-        AjfFormulaFieldComponent = __decorate([
-            i0.Component({
-                template: "<ion-input type=\"text\" [readonly]=\"true\" [value]=\"value|async\" (ionChange)=\"onChange($event)\"></ion-input>\n",
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                encapsulation: i0.ViewEncapsulation.None,
-                styles: ["\n"]
-            }),
-            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
-                AjfWarningAlertService])
-        ], AjfFormulaFieldComponent);
+        AjfFormulaFieldComponent.decorators = [
+            { type: i0.Component, args: [{
+                        template: "<ion-input type=\"text\" [readonly]=\"true\" [value]=\"value|async\" (ionChange)=\"onChange($event)\"></ion-input>\n",
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        encapsulation: i0.ViewEncapsulation.None,
+                        styles: ["\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfFormulaFieldComponent.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] }
+        ]; };
+        AjfFormulaFieldComponent.propDecorators = {
+            input: [{ type: i0.ViewChild, args: [angular.IonInput, { static: true },] }]
+        };
         return AjfFormulaFieldComponent;
     }(forms.AjfBaseFieldComponent));
 
@@ -616,17 +635,20 @@
         function AjfInputFieldComponent(cdr, service, was) {
             return _super.call(this, cdr, service, was) || this;
         }
-        AjfInputFieldComponent = __decorate([
-            i0.Component({
-                template: "<ion-input *ngIf=\"control|async as ctrl\" [type]=\"type\" [formControl]=\"ctrl!\"></ion-input>\n",
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                encapsulation: i0.ViewEncapsulation.None,
-                styles: ["\n"]
-            }),
-            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
-                AjfWarningAlertService])
-        ], AjfInputFieldComponent);
+        AjfInputFieldComponent.decorators = [
+            { type: i0.Component, args: [{
+                        template: "<ion-input *ngIf=\"control|async as ctrl\" [type]=\"type\" [formControl]=\"ctrl!\"></ion-input>\n",
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        encapsulation: i0.ViewEncapsulation.None,
+                        styles: ["\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfInputFieldComponent.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] }
+        ]; };
         return AjfInputFieldComponent;
     }(forms.AjfInputFieldComponent));
 
@@ -656,18 +678,21 @@
         function AjfMultipleChoiceFieldComponent(cdr, service, was, searchThreshold) {
             return _super.call(this, cdr, service, was, searchThreshold) || this;
         }
-        AjfMultipleChoiceFieldComponent = __decorate([
-            i0.Component({
-                template: "<ng-container *ngIf=\"!(instance|ajfExpandFieldWithChoices:searchThreshold); else expanded\">\n  <div class=\"ajf-item-container\">\n    <ng-container *ngIf=\"instance.filteredChoices as cs\">\n      <gic-select\n          #multipleChoiceSelect\n          *ngIf=\"control|async as ctrl\"\n          [multiple]=\"true\"\n          [searchBar]=\"instance|ajfSelectHasSearchBar:searchThreshold\"\n          [useVirtualScroll]=\"instance|ajfSelectUseVirtualScroll:100\"\n          [placeholder]=\"instance.node.label\"\n          [formControl]=\"ctrl!\">\n        <gic-select-option *ngFor=\"let item of cs\"\n            [value]=\"item.value\">{{ item.label|translate }}</gic-select-option>\n      </gic-select>\n    </ng-container>\n  </div>\n</ng-container>\n<ng-template #expanded>\n  <div ajf-checkbox-group\n      *ngIf=\"control|async as ctrl\"\n      [formControl]=\"ctrl!\"\n      class=\"ajf-choices-container\"\n  >\n    <ion-card *ngFor=\"let choice of instance.filteredChoices\">\n      <ajf-checkbox-group-item\n        [value]=\"choice.value\">\n        {{ choice.label | translate }}\n      </ajf-checkbox-group-item>\n    </ion-card>\n  </div>\n</ng-template>\n",
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                encapsulation: i0.ViewEncapsulation.None,
-                styles: ["\n"]
-            }),
-            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
-            __param(3, i0.Optional()), __param(3, i0.Inject(forms.AJF_SEARCH_ALERT_THRESHOLD)),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
-                AjfWarningAlertService, Number])
-        ], AjfMultipleChoiceFieldComponent);
+        AjfMultipleChoiceFieldComponent.decorators = [
+            { type: i0.Component, args: [{
+                        template: "<ng-container *ngIf=\"!(instance|ajfExpandFieldWithChoices:searchThreshold); else expanded\">\n  <div class=\"ajf-item-container\">\n    <ng-container *ngIf=\"instance.filteredChoices as cs\">\n      <gic-select\n          #multipleChoiceSelect\n          *ngIf=\"control|async as ctrl\"\n          [multiple]=\"true\"\n          [searchBar]=\"instance|ajfSelectHasSearchBar:searchThreshold\"\n          [useVirtualScroll]=\"instance|ajfSelectUseVirtualScroll:100\"\n          [placeholder]=\"instance.node.label\"\n          [formControl]=\"ctrl!\">\n        <gic-select-option *ngFor=\"let item of cs\"\n            [value]=\"item.value\">{{ item.label|translate }}</gic-select-option>\n      </gic-select>\n    </ng-container>\n  </div>\n</ng-container>\n<ng-template #expanded>\n  <div ajf-checkbox-group\n      *ngIf=\"control|async as ctrl\"\n      [formControl]=\"ctrl!\"\n      class=\"ajf-choices-container\"\n  >\n    <ion-card *ngFor=\"let choice of instance.filteredChoices\">\n      <ajf-checkbox-group-item\n        [value]=\"choice.value\">\n        {{ choice.label | translate }}\n      </ajf-checkbox-group-item>\n    </ion-card>\n  </div>\n</ng-template>\n",
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        encapsulation: i0.ViewEncapsulation.None,
+                        styles: ["\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfMultipleChoiceFieldComponent.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] },
+            { type: Number, decorators: [{ type: i0.Optional }, { type: i0.Inject, args: [forms.AJF_SEARCH_ALERT_THRESHOLD,] }] }
+        ]; };
         return AjfMultipleChoiceFieldComponent;
     }(forms.AjfFieldWithChoicesComponent));
 
@@ -731,17 +756,20 @@
             }
             this._setValueEvt.emit(value);
         };
-        AjfNumberFieldComponent = __decorate([
-            i0.Component({
-                template: "<ion-input [ngModel]=\"value|async\" (ngModelChange)=\"setValue($event)\"></ion-input>\n",
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                encapsulation: i0.ViewEncapsulation.None,
-                styles: ["\n"]
-            }),
-            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
-                AjfWarningAlertService])
-        ], AjfNumberFieldComponent);
+        AjfNumberFieldComponent.decorators = [
+            { type: i0.Component, args: [{
+                        template: "<ion-input [ngModel]=\"value|async\" (ngModelChange)=\"setValue($event)\"></ion-input>\n",
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        encapsulation: i0.ViewEncapsulation.None,
+                        styles: ["\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfNumberFieldComponent.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] }
+        ]; };
         return AjfNumberFieldComponent;
     }(forms.AjfInputFieldComponent));
 
@@ -771,18 +799,21 @@
         function AjfSingleChoiceFieldComponent(cdr, service, was, searchThreshold) {
             return _super.call(this, cdr, service, was, searchThreshold) || this;
         }
-        AjfSingleChoiceFieldComponent = __decorate([
-            i0.Component({
-                template: "<ng-container *ngIf=\"!(instance|ajfExpandFieldWithChoices:searchThreshold); else expanded\">\n  <div class=\"ajf-item-container\">\n    <ng-container *ngIf=\"instance.filteredChoices as cs\">\n      <gic-select *ngIf=\"control|async as ctrl\"\n          #singleChoiceSelect\n          [searchBar]=\"instance|ajfSelectHasSearchBar:searchThreshold\"\n          [useVirtualScroll]=\"instance|ajfSelectUseVirtualScroll:100\"\n          [placeholder]=\"instance.node.label\"\n          [formControl]=\"ctrl!\">\n        <gic-select-option *ngFor=\"let item of cs\" [value]=\"item.value\">{{ item.label|translate }}</gic-select-option>\n      </gic-select>\n    </ng-container>\n  </div>\n</ng-container>\n<ng-template #expanded>\n  <div class=\"ajf-choices-container\">\n    <ion-radio-group\n      *ngIf=\"control|async as ctrl\"\n      [formControl]=\"ctrl!\">\n      <ion-item *ngFor=\"let choice of instance.filteredChoices\">\n        <ion-label>{{ choice.label | translate }}</ion-label>\n        <ion-radio [value]=\"choice.value\"></ion-radio>\n      </ion-item>\n    </ion-radio-group>\n  </div>\n</ng-template>\n",
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                encapsulation: i0.ViewEncapsulation.None,
-                styles: ["\n"]
-            }),
-            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
-            __param(3, i0.Optional()), __param(3, i0.Inject(forms.AJF_SEARCH_ALERT_THRESHOLD)),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
-                AjfWarningAlertService, Number])
-        ], AjfSingleChoiceFieldComponent);
+        AjfSingleChoiceFieldComponent.decorators = [
+            { type: i0.Component, args: [{
+                        template: "<ng-container *ngIf=\"!(instance|ajfExpandFieldWithChoices:searchThreshold); else expanded\">\n  <div class=\"ajf-item-container\">\n    <ng-container *ngIf=\"instance.filteredChoices as cs\">\n      <gic-select *ngIf=\"control|async as ctrl\"\n          #singleChoiceSelect\n          [searchBar]=\"instance|ajfSelectHasSearchBar:searchThreshold\"\n          [useVirtualScroll]=\"instance|ajfSelectUseVirtualScroll:100\"\n          [placeholder]=\"instance.node.label\"\n          [formControl]=\"ctrl!\">\n        <gic-select-option *ngFor=\"let item of cs\" [value]=\"item.value\">{{ item.label|translate }}</gic-select-option>\n      </gic-select>\n    </ng-container>\n  </div>\n</ng-container>\n<ng-template #expanded>\n  <div class=\"ajf-choices-container\">\n    <ion-radio-group\n      *ngIf=\"control|async as ctrl\"\n      [formControl]=\"ctrl!\">\n      <ion-item *ngFor=\"let choice of instance.filteredChoices\">\n        <ion-label>{{ choice.label | translate }}</ion-label>\n        <ion-radio [value]=\"choice.value\"></ion-radio>\n      </ion-item>\n    </ion-radio-group>\n  </div>\n</ng-template>\n",
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        encapsulation: i0.ViewEncapsulation.None,
+                        styles: ["\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfSingleChoiceFieldComponent.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] },
+            { type: Number, decorators: [{ type: i0.Optional }, { type: i0.Inject, args: [forms.AJF_SEARCH_ALERT_THRESHOLD,] }] }
+        ]; };
         return AjfSingleChoiceFieldComponent;
     }(forms.AjfFieldWithChoicesComponent));
 
@@ -812,17 +843,20 @@
         function AjfTableFieldComponent(cdr, service, was) {
             return _super.call(this, cdr, service, was) || this;
         }
-        AjfTableFieldComponent = __decorate([
-            i0.Component({
-                template: "<table class=\"ajf-table-field\">\n  <ng-container *ngIf=\"instance.node as node\">\n    <ng-container *ngFor=\"let columns of instance.controls; let row = index\">\n      <tr [ngClass]=\"row | ajfTableRowClass\">\n        <td>\n          <ng-container *ngIf=\"columns.length > 0 && columns[0] != null\">\n            {{ columns[0] | ajfTranslateIfString | ajfFormatIfNumber: '.0-2' }}\n          </ng-container>\n        </td>\n        <ng-container *ngIf=\"columns.length > 1\">\n          <td *ngFor=\"let c of columns[1]; let column = index\">\n            <ng-container *ngIf=\"c|ajfGetTableCellControl as contr\">\n              <ng-container *ngIf=\"contr != null\">\n                <input *ngIf=\"row > 0 && contr.show && (node.rows[row-1][column]|ajfIsCellEditable); else plainTextCell\"\n                  (focusout)=\"contr!.show = false\" type=\"number\" [formControl]=\"contr.control\" autoFocus>\n                <ng-template #plainTextCell>\n                  <span *ngIf=\"row > 0; else labelCell\" class=\"ajf-table-cell\"\n                    (click)=\"goToCell(row, column)\">{{ contr.control!.value | ajfTranslateIfString | ajfFormatIfNumber: '.0-2' }}</span>\n                  <ng-template #labelCell>{{ contr | ajfTranslateIfString | ajfFormatIfNumber: '.0-2' }}</ng-template>\n                </ng-template>\n              </ng-container>\n            </ng-container>\n          </td>\n        </ng-container>\n      </tr>\n    </ng-container>\n  </ng-container>\n</table>\n",
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                encapsulation: i0.ViewEncapsulation.None,
-                styles: ["table.ajf-table-field{width:100%}\n"]
-            }),
-            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
-                AjfWarningAlertService])
-        ], AjfTableFieldComponent);
+        AjfTableFieldComponent.decorators = [
+            { type: i0.Component, args: [{
+                        template: "<table class=\"ajf-table-field\">\n  <ng-container *ngIf=\"instance.node as node\">\n    <ng-container *ngFor=\"let columns of instance.controls; let row = index\">\n      <tr [ngClass]=\"row | ajfTableRowClass\">\n        <td>\n          <ng-container *ngIf=\"columns.length > 0 && columns[0] != null\">\n            {{ columns[0] | ajfTranslateIfString | ajfFormatIfNumber: '.0-2' }}\n          </ng-container>\n        </td>\n        <ng-container *ngIf=\"columns.length > 1\">\n          <td *ngFor=\"let c of columns[1]; let column = index\">\n            <ng-container *ngIf=\"c|ajfGetTableCellControl as contr\">\n              <ng-container *ngIf=\"contr != null\">\n                <input *ngIf=\"row > 0 && contr.show && (node.rows[row-1][column]|ajfIsCellEditable); else plainTextCell\"\n                  (focusout)=\"contr!.show = false\" type=\"number\" [formControl]=\"contr.control\" autoFocus>\n                <ng-template #plainTextCell>\n                  <span *ngIf=\"row > 0; else labelCell\" class=\"ajf-table-cell\"\n                    (click)=\"goToCell(row, column)\">{{ contr.control!.value | ajfTranslateIfString | ajfFormatIfNumber: '.0-2' }}</span>\n                  <ng-template #labelCell>{{ contr | ajfTranslateIfString | ajfFormatIfNumber: '.0-2' }}</ng-template>\n                </ng-template>\n              </ng-container>\n            </ng-container>\n          </td>\n        </ng-container>\n      </tr>\n    </ng-container>\n  </ng-container>\n</table>\n",
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        encapsulation: i0.ViewEncapsulation.None,
+                        styles: ["table.ajf-table-field{width:100%}\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfTableFieldComponent.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] }
+        ]; };
         return AjfTableFieldComponent;
     }(forms.AjfTableFieldComponent));
 
@@ -852,17 +886,20 @@
         function AjfTextareaFieldComponent(cdr, service, was) {
             return _super.call(this, cdr, service, was) || this;
         }
-        AjfTextareaFieldComponent = __decorate([
-            i0.Component({
-                template: "<ion-textarea *ngIf=\"control|async as ctrl\" [formControl]=\"ctrl!\"></ion-textarea>\n",
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                encapsulation: i0.ViewEncapsulation.None,
-                styles: ["\n"]
-            }),
-            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
-                AjfWarningAlertService])
-        ], AjfTextareaFieldComponent);
+        AjfTextareaFieldComponent.decorators = [
+            { type: i0.Component, args: [{
+                        template: "<ion-textarea *ngIf=\"control|async as ctrl\" [formControl]=\"ctrl!\"></ion-textarea>\n",
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        encapsulation: i0.ViewEncapsulation.None,
+                        styles: ["\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfTextareaFieldComponent.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] }
+        ]; };
         return AjfTextareaFieldComponent;
     }(forms.AjfBaseFieldComponent));
 
@@ -892,17 +929,20 @@
         function AjfTimeFieldComponent(cdr, service, was) {
             return _super.call(this, cdr, service, was) || this;
         }
-        AjfTimeFieldComponent = __decorate([
-            i0.Component({
-                template: "<ajf-time *ngIf=\"control|async as ctrl\" [formControl]=\"ctrl!\"></ajf-time>\n",
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                encapsulation: i0.ViewEncapsulation.None,
-                styles: ["\n"]
-            }),
-            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
-                AjfWarningAlertService])
-        ], AjfTimeFieldComponent);
+        AjfTimeFieldComponent.decorators = [
+            { type: i0.Component, args: [{
+                        template: "<ajf-time *ngIf=\"control|async as ctrl\" [formControl]=\"ctrl!\"></ajf-time>\n",
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        encapsulation: i0.ViewEncapsulation.None,
+                        styles: ["\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfTimeFieldComponent.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] }
+        ]; };
         return AjfTimeFieldComponent;
     }(forms.AjfBaseFieldComponent));
 
@@ -932,18 +972,22 @@
         function AjfVideoUrlFieldComponent(cdr, service, was, domSanitizer, httpClient) {
             return _super.call(this, cdr, service, was, domSanitizer, httpClient) || this;
         }
-        AjfVideoUrlFieldComponent = __decorate([
-            i0.Component({
-                template: "<ng-container *ngIf=\"control|async as ctrl\">\n  <ion-input class=\"ajf-video-input\" [formControl]=\"ctrl!\"></ion-input>\n  <div class=\"ajf-video-thumbnail\">\n    <ng-container *ngIf=\"validUrl|async\">\n      <a target=\"_blank\" [href]=\"ctrl.value\">\n        <img *ngIf=\"videoThumbnail|async as thumb\" [src]=\"thumb\" class=\"\" alt=\"\">\n      </a>\n    </ng-container>\n  </div>\n</ng-container>\n",
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                encapsulation: i0.ViewEncapsulation.None,
-                styles: [".ajf-video-input{width:100%}.ajf-video-thumbnail{margin-top:1em;width:212px;height:120px;background-color:#eee;display:flex;align-items:center;justify-content:center}.ajf-video-thumbnail img{flex:1 1 auto}\n"]
-            }),
-            __param(2, i0.Inject(forms.AJF_WARNING_ALERT_SERVICE)),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, forms.AjfFormRendererService,
-                AjfWarningAlertService, platformBrowser.DomSanitizer,
-                http.HttpClient])
-        ], AjfVideoUrlFieldComponent);
+        AjfVideoUrlFieldComponent.decorators = [
+            { type: i0.Component, args: [{
+                        template: "<ng-container *ngIf=\"control|async as ctrl\">\n  <ion-input class=\"ajf-video-input\" [formControl]=\"ctrl!\"></ion-input>\n  <div class=\"ajf-video-thumbnail\">\n    <ng-container *ngIf=\"validUrl|async\">\n      <a target=\"_blank\" [href]=\"ctrl.value\">\n        <img *ngIf=\"videoThumbnail|async as thumb\" [src]=\"thumb\" class=\"\" alt=\"\">\n      </a>\n    </ng-container>\n  </div>\n</ng-container>\n",
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        encapsulation: i0.ViewEncapsulation.None,
+                        styles: [".ajf-video-input{width:100%}.ajf-video-thumbnail{margin-top:1em;width:212px;height:120px;background-color:#eee;display:flex;align-items:center;justify-content:center}.ajf-video-thumbnail img{flex:1 1 auto}\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfVideoUrlFieldComponent.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: forms.AjfFormRendererService },
+            { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] },
+            { type: platformBrowser.DomSanitizer },
+            { type: http.HttpClient }
+        ]; };
         return AjfVideoUrlFieldComponent;
     }(forms.AjfVideoUrlFieldComponent));
 
@@ -1017,11 +1061,12 @@
             };
             return _this;
         }
+        AjfFieldService.decorators = [
+            { type: i0.Injectable, args: [{ providedIn: 'root' },] }
+        ];
+        /** @nocollapse */
+        AjfFieldService.ctorParameters = function () { return []; };
         AjfFieldService.ɵprov = i0["ɵɵdefineInjectable"]({ factory: function AjfFieldService_Factory() { return new AjfFieldService(); }, token: AjfFieldService, providedIn: "root" });
-        AjfFieldService = __decorate([
-            i0.Injectable({ providedIn: 'root' }),
-            __metadata("design:paramtypes", [])
-        ], AjfFieldService);
         return AjfFieldService;
     }(forms.AjfFieldService));
 
@@ -1053,16 +1098,21 @@
             _this.componentsMap = fieldService.componentsMap;
             return _this;
         }
-        AjfFormField = __decorate([
-            i0.Component({
-                selector: 'ajf-field,ajf-form-field',
-                template: "<div\n    [ngClass]=\"'ajf-field-' + (instance|ajfNodeCompleteName)\"\n    [class.ajf-validated]=\"instance.validationResults|ajfFieldIsValid\"\n>\n  <ng-template ajf-field-host></ng-template>\n</div>\n<ng-container *ngIf=\"instance.node.attachments\">\n  <ng-container *ngFor=\"let attachment of instance.node.attachments\">\n    <a [href]=\"attachment.value\" target=\"_blank\">{{attachment.label}}</a>\n  </ng-container>\n</ng-container>\n<ng-container *ngIf=\"!readonly && instance.validationResults\">\n  <div class=\"ajf-errors\">\n    <ng-container *ngFor=\"let res of instance.validationResults\">\n      <div class=\"error\" *ngIf=\"!res.result\">\n        {{ res.error | translate }}\n      </div>\n    </ng-container>\n  </div>\n</ng-container>\n",
-                encapsulation: i0.ViewEncapsulation.None,
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                styles: ["ajf-field ion-select{position:relative}ajf-field ion-input,ajf-field ion-textarea{border:dashed 2px #eee}ajf-field .ajf-choices-container{flex-direction:row;align-items:stretch;flex-wrap:wrap;display:flex}ajf-field .ajf-choices-container>ion-radio-group{display:flex;flex-wrap:wrap}ajf-field .ajf-choices-container>ion-radio-group ion-item{--ion-item-border-color: transparent}ajf-field .ajf-choices-container>ion-radio-group ion-item ion-label{margin-right:10px}ajf-field .ajf-choices-container>ion-card{margin-top:0;width:33%;display:flex;font-size:13px;flex-wrap:wrap;flex-basis:21% !important;flex-shrink:3 !important}ajf-field .ajf-choices-container>ion-card>ajf-checkbox-group-item{width:100%;display:flex;flex-direction:column;align-items:stretch;justify-content:center}ajf-field .ajf-choices-container>ion-card>ion-item{font-size:13px;flex:1 0 auto;flex-shrink:3 !important;flex-basis:21% !important;margin:0 10px}ajf-field .ajf-item-container{position:relative}ajf-field .ajf-errors{font-style:italic;padding:5px}ajf-field tr.ajf-row-odd{background-color:gray}ajf-field .ajf-table-container{overflow-x:auto}ajf-field .ajf-table-container table{width:100%}\n"]
-            }),
-            __metadata("design:paramtypes", [i0.ChangeDetectorRef, i0.ComponentFactoryResolver, AjfFieldService])
-        ], AjfFormField);
+        AjfFormField.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'ajf-field,ajf-form-field',
+                        template: "<div\n    [ngClass]=\"'ajf-field-' + (instance|ajfNodeCompleteName)\"\n    [class.ajf-validated]=\"instance.validationResults|ajfFieldIsValid\"\n>\n  <ng-template ajf-field-host></ng-template>\n</div>\n<ng-container *ngIf=\"instance.node.attachments\">\n  <ng-container *ngFor=\"let attachment of instance.node.attachments\">\n    <a [href]=\"attachment.value\" target=\"_blank\">{{attachment.label}}</a>\n  </ng-container>\n</ng-container>\n<ng-container *ngIf=\"!readonly && instance.validationResults\">\n  <div class=\"ajf-errors\">\n    <ng-container *ngFor=\"let res of instance.validationResults\">\n      <div class=\"error\" *ngIf=\"!res.result\">\n        {{ res.error | translate }}\n      </div>\n    </ng-container>\n  </div>\n</ng-container>\n",
+                        encapsulation: i0.ViewEncapsulation.None,
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        styles: ["ajf-field ion-select{position:relative}ajf-field ion-input,ajf-field ion-textarea{border:dashed 2px #eee}ajf-field .ajf-choices-container{flex-direction:row;align-items:stretch;flex-wrap:wrap;display:flex}ajf-field .ajf-choices-container>ion-radio-group{display:flex;flex-wrap:wrap}ajf-field .ajf-choices-container>ion-radio-group ion-item{--ion-item-border-color: transparent}ajf-field .ajf-choices-container>ion-radio-group ion-item ion-label{margin-right:10px}ajf-field .ajf-choices-container>ion-card{margin-top:0;width:33%;display:flex;font-size:13px;flex-wrap:wrap;flex-basis:21% !important;flex-shrink:3 !important}ajf-field .ajf-choices-container>ion-card>ajf-checkbox-group-item{width:100%;display:flex;flex-direction:column;align-items:stretch;justify-content:center}ajf-field .ajf-choices-container>ion-card>ion-item{font-size:13px;flex:1 0 auto;flex-shrink:3 !important;flex-basis:21% !important;margin:0 10px}ajf-field .ajf-item-container{position:relative}ajf-field .ajf-errors{font-style:italic;padding:5px}ajf-field tr.ajf-row-odd{background-color:gray}ajf-field .ajf-table-container{overflow-x:auto}ajf-field .ajf-table-container table{width:100%}\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfFormField.ctorParameters = function () { return [
+            { type: i0.ChangeDetectorRef },
+            { type: i0.ComponentFactoryResolver },
+            { type: AjfFieldService }
+        ]; };
         return AjfFormField;
     }(forms.AjfFormField));
 
@@ -1121,22 +1171,20 @@
                 this._changeDetectorRef.markForCheck();
             }
         };
-        AjfFormRenderer = __decorate([
-            i0.Component({
-                selector: 'ajf-form',
-                template: "<ng-container *ngIf=\"formGroup|async as currentFormGroup\">\n  <form novalidate [formGroup]=\"currentFormGroup!\">\n    <div class=\"ajf-form-container\">\n      <ion-toolbar *ngIf=\"!hideTopToolbar\">\n        {{ title | translate }}\n        <ion-buttons slot=\"end\">\n          <ion-button *ngIf=\"!saveDisabled\" (click)=\"onSave($event)\">{{ 'Save' | translate }}</ion-button>\n        </ion-buttons>\n      </ion-toolbar>\n      <div class=\"ajf-slider-container\">\n        <ajf-page-slider (orientationChange)=\"orientationChangeHandler($event)\"\n            [hideNavigationButtons]=\"hideNavigationButtons\"\n            [fixedOrientation]=\"fixedOrientation\"\n            [orientation]=\"orientation\"\n            #formSlider>\n          <ng-container *ngIf=\"(slides|async) as curSlides\">\n            <ng-container *ngIf=\"curSlides && curSlides!.length > 0 && hasStartMessage\">\n              <ajf-page-slider-item>\n                <div ajfFormPage class=\"ajf-form-page\">\n                  <ion-card>\n                    <ion-card-header>\n                      <div class=\"ajf-page-slider-item-header\">\n                        <h2>\n                          <span class=\"ajf-form-header-number\">\n                            1  &rarr;\n                          </span>\n                          <span class=\"ajf-title\">\n                            <ng-content select=\"[ajfFormStartMessageTitle]\"></ng-content>\n                          </span>\n                        </h2>\n                      </div>\n                    </ion-card-header>\n                    <ion-card-content>\n                      <ng-content select=\"[ajfFormStartMessage]\"></ng-content>\n                    </ion-card-content>\n                  </ion-card>\n                </div>\n              </ajf-page-slider-item>\n            </ng-container>\n            <ng-container *ngFor=\"let slideInstance of curSlides; trackBy: trackNodeById\">\n              <ng-container *ngIf=\"(!(slideInstance|ajfIsRepeatingSlideInstance)) && slideInstance.visible\">\n                <ajf-page-slider-item>\n                  <div ajfFormPage class=\"ajf-form-page\">\n                    <ion-card>\n                      <ion-card-header>\n                        <div class=\"ajf-page-slider-item-header\">\n                          <h2>\n                            <span class=\"ajf-form-header-number\">{{ slideInstance.position + (hasStartMessage | ajfBoolToInt) }} &rarr;</span>\n                            <span class=\"ajf-title\">{{ slideInstance.node.label | translate}}</span>\n                          </h2>\n                          <ion-icon color=\"danger\" name=\"warning\" *ngIf=\"!slideInstance.valid\"></ion-icon>\n                          <ion-icon color=\"secondary\" name=\"checkmark\" *ngIf=\"slideInstance.valid\"></ion-icon>\n                        </div>\n                      </ion-card-header>\n                      <ion-card-content>\n                        <ng-container *ngFor=\"let fieldInstance of slideInstance.flatNodes; trackBy: trackNodeById\">\n                          <div [ngClass]=\"'ajf-' + (fieldInstance|ajfAsFieldInstance).node.size\" class=\"ajf-field-entry\"\n                              *ngIf=\"fieldInstance.visible\">\n                            <i [class]=\"(fieldInstance|ajfAsFieldInstance).node.fieldType | ajfFieldIcon\" item-right></i>\n                            <p>{{ (fieldInstance|ajfAsFieldInstance).node.description }}</p>\n                            <ion-label [innerHTML]=\"fieldInstance.node.label | translate\"></ion-label>\n                            <ajf-field [instance]=\"fieldInstance|ajfAsFieldInstance\" [readonly]=\"readonly\"></ajf-field>\n                          </div>\n                        </ng-container>\n                      </ion-card-content>\n                    </ion-card>\n                  </div>\n                </ajf-page-slider-item>\n              </ng-container>\n              <ng-container *ngIf=\"(slideInstance|ajfIsRepeatingSlideInstance) && slideInstance.visible\">\n                <ajf-page-slider-item *ngFor=\"let curRep of ((slideInstance|ajfAsRepeatingSlideInstance).reps|ajfRange); let idx = index; let lastSlide = last\">\n                  <div ajfFormPage class=\"ajf-form-page\">\n                    <ion-card>\n                      <ion-card-header>\n                        <div class=\"ajf-page-slider-item-header\">\n                          <h2>\n                            <span class=\"ajf-form-header-number\">{{ slideInstance.position|ajfIncrement:idx }} &rarr;</span>\n                            <span class=\"ajf-title\">{{ slideInstance.node.label | translate }}</span>\n                          </h2>\n                          <ion-icon color=\"danger\" name=\"ajf-warning\" *ngIf=\"!(slideInstance|ajfValidSlide:idx)\"></ion-icon>\n                          <ion-icon color=\"secondary\" name=\"checkmark\" *ngIf=\"(slideInstance|ajfValidSlide:idx)\"></ion-icon>\n                        </div>\n                        <div *ngIf=\"lastSlide && !readonly\" class=\"ajf-group-actions\">\n                          <ion-fab-button size=\"small\" (click)=\"addGroup(slideInstance)\" [disabled]=\"!(slideInstance|ajfAsRepeatingSlideInstance).canAdd\">\n                            <ion-icon name=\"add\"></ion-icon>\n                          </ion-fab-button>\n                          <ion-fab-button size=\"small\" (click)=\"removeGroup(slideInstance)\" [disabled]=\"!(slideInstance|ajfAsRepeatingSlideInstance).canRemove\">\n                            <ion-icon name=\"remove\"></ion-icon>\n                          </ion-fab-button>\n                        </div>\n                      </ion-card-header>\n                      <ion-card-content>\n                        <ng-container *ngFor=\"let fieldInstance of slideInstance.slideNodes[idx]; trackBy: trackNodeById\">\n                          <div [ngClass]=\"'ajf-' + (fieldInstance|ajfAsFieldInstance).node.size\" class=\"ajf-field-entry\"\n                              *ngIf=\"fieldInstance.visible\">\n                            <i [class]=\"(fieldInstance|ajfAsFieldInstance).node.fieldType | ajfFieldIcon\" item-right></i>\n                            <p>{{ (fieldInstance|ajfAsFieldInstance).node.description }}</p>\n                            <ion-label [innerHTML]=\"fieldInstance.node.label | translate\"></ion-label>\n                            <ajf-field [instance]=\"fieldInstance|ajfAsFieldInstance\" [readonly]=\"readonly\"></ajf-field>\n                          </div>\n                        </ng-container>\n                        <div *ngIf=\"lastSlide && longSlide\" class=\"ajf-group-actions ajf-group-actions-bottom\">\n                          <ion-fab-button size=\"small\" (click)=\"addGroup(slideInstance)\" [disabled]=\"!(slideInstance|ajfAsRepeatingSlideInstance).canAdd\" mat-mini-fab>\n                            <ion-icon name=\"add\"></ion-icon>\n                          </ion-fab-button>\n                          <ion-fab-button size=\"small\" (click)=\"removeGroup(slideInstance)\" [disabled]=\"!(slideInstance|ajfAsRepeatingSlideInstance).canRemove\" mat-mini-fab>\n                            <ion-icon name=\"remove\"></ion-icon>\n                          </ion-fab-button>\n                        </div>\n                      </ion-card-content>\n                    </ion-card>\n                  </div>\n                </ajf-page-slider-item>\n              </ng-container>\n            </ng-container>\n            <ng-container *ngIf=\"curSlides && curSlides!.length > 0 && hasEndMessage\">\n              <ajf-page-slider-item>\n                <div ajfFormPage class=\"ajf-form-page\">\n                  <ion-card>\n                    <ion-card-header>\n                      <div class=\"ajf-page-slider-item-header\">\n                        <h2>\n                          <span *ngIf=\"(slidesNum|async) as snum\" class=\"ajf-form-header-number\">\n                            {{ snum! + (hasStartMessage | ajfBoolToInt) + 1 }} &rarr;\n                          </span>\n                          <span class=\"ajf-title\">\n                            <ng-content select=\"[ajfFormEndMessageTitle]\"></ng-content>\n                          </span>\n                        </h2>\n                      </div>\n                    </ion-card-header>\n                    <ion-card-content>\n                      <ng-content select=\"[ajfFormEndMessage]\"></ng-content>\n                    </ion-card-content>\n                  </ion-card>\n                </div>\n              </ajf-page-slider-item>\n            </ng-container>\n          </ng-container>\n          <div ajfPageSliderBar *ngIf=\"!hideBottomToolbar\">\n            <div class=\"ajf-left-bar\">\n              <ion-buttons class=\"ajf-errors\" *ngIf=\"((errors | async) || 0) > 0\">\n                <ion-button (click)=\"goToPrevError()\" color=\"danger\">\n                  <ion-icon name=\"arrow-up\"></ion-icon>\n                </ion-button>\n                <ion-button (click)=\"goToNextError()\" color=\"danger\">\n                  <ion-icon name=\"arrow-down\"></ion-icon>\n                </ion-button>\n              </ion-buttons>\n              <div class=\"ajf-info-box ajf-error\">\n                <div class=\"ajf-title\" translate>\n                  Errors\n                </div>\n                <div class=\"ajf-content\">\n                  {{ errors | async }} / {{ slidesNum|async }}\n                </div>\n              </div>\n            </div>\n          </div>\n        </ajf-page-slider>\n      </div>\n    </div>\n  </form>\n</ng-container>\n",
-                encapsulation: i0.ViewEncapsulation.None,
-                changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                styles: ["ajf-form{display:block;position:relative}ajf-form form{display:block;position:absolute;top:0;right:0;bottom:0;left:0}ajf-form form .ajf-form-container{display:flex;flex-direction:column;height:100%}ajf-form form .ajf-form-container ion-toolbar{flex:0 0 auto;height:56px}ajf-form form .ajf-form-container ion-toolbar.ajf-hidden{opacity:0}ajf-form form .ajf-form-container>.ajf-slider-container{flex:1 1 auto;position:relative;height:calc(100% - 56px)}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider{height:100%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content{padding:16px}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page{flex:1;max-height:100%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card{flex:1;margin-bottom:2em}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-header{overflow:visible !important}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-header .ajf-group-actions{position:absolute;left:calc(100vw - 160px - 6em);width:160px;margin-top:-2em;padding:15px;z-index:10;white-space:nowrap;overflow:visible !important}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-header .ajf-group-actions ion-fab-button{display:inline-block;overflow:visible !important}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content{display:flex;flex-wrap:wrap;flex-direction:row;align-content:flex-start;position:relative}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content .ajf-group-actions-bottom{width:100%;text-align:right;overflow:visible !important}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content .ajf-group-actions-bottom ion-fab-button{overflow:visible !important;display:inline-block}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry{flex:1 0 auto;padding-left:10px;padding-right:10px;width:100%;box-sizing:border-box}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-normal{width:100%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-small{width:50%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-smaller{width:33%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-tiny{width:25%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-mini{width:20%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider .ajf-page-slider-item-header{display:flex;align-items:center;width:100%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider .ajf-page-slider-item-header>h2{flex:1}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider .ajf-page-slider-item-header>h2>.ajf-form-header-number{margin-right:.5em}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider .ajf-page-slider-item-header>h2>.ajf-title{display:inline-block;margin-right:40px;white-space:normal;vertical-align:top}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar{display:flex;align-items:flex-start;flex-direction:row;position:absolute;bottom:0}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar ion-buttons.ajf-errors{order:1;color:red}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar .ajf-info-box{height:40px;padding:4px}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar .ajf-info-box>div{height:16px;line-height:16px}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar .ajf-info-box>div.ajf-content{font-weight:bold}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar .ajf-info-box.ajf-error{order:2;color:red}ajf-form form .ajf-form-container .ajf-spacer{flex:1 0 auto}\n"]
-            })
-            /**
-             * This class will define an ajf form renderer
-             * @implements : AfterViewInit
-             * @implements : AfterViewInit
-             */
-            ,
-            __metadata("design:paramtypes", [forms.AjfFormRendererService, i0.ChangeDetectorRef])
-        ], AjfFormRenderer);
+        AjfFormRenderer.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'ajf-form',
+                        template: "<ng-container *ngIf=\"formGroup|async as currentFormGroup\">\n  <form novalidate [formGroup]=\"currentFormGroup!\">\n    <div class=\"ajf-form-container\">\n      <ion-toolbar *ngIf=\"!hideTopToolbar\">\n        {{ title | translate }}\n        <ion-buttons slot=\"end\">\n          <ion-button *ngIf=\"!saveDisabled\" (click)=\"onSave($event)\">{{ 'Save' | translate }}</ion-button>\n        </ion-buttons>\n      </ion-toolbar>\n      <div class=\"ajf-slider-container\">\n        <ajf-page-slider (orientationChange)=\"orientationChangeHandler($event)\"\n            [hideNavigationButtons]=\"hideNavigationButtons\"\n            [fixedOrientation]=\"fixedOrientation\"\n            [orientation]=\"orientation\"\n            #formSlider>\n          <ng-container *ngIf=\"(slides|async) as curSlides\">\n            <ng-container *ngIf=\"curSlides && curSlides!.length > 0 && hasStartMessage\">\n              <ajf-page-slider-item>\n                <div ajfFormPage class=\"ajf-form-page\">\n                  <ion-card>\n                    <ion-card-header>\n                      <div class=\"ajf-page-slider-item-header\">\n                        <h2>\n                          <span class=\"ajf-form-header-number\">\n                            1  &rarr;\n                          </span>\n                          <span class=\"ajf-title\">\n                            <ng-content select=\"[ajfFormStartMessageTitle]\"></ng-content>\n                          </span>\n                        </h2>\n                      </div>\n                    </ion-card-header>\n                    <ion-card-content>\n                      <ng-content select=\"[ajfFormStartMessage]\"></ng-content>\n                    </ion-card-content>\n                  </ion-card>\n                </div>\n              </ajf-page-slider-item>\n            </ng-container>\n            <ng-container *ngFor=\"let slideInstance of curSlides; trackBy: trackNodeById\">\n              <ng-container *ngIf=\"(!(slideInstance|ajfIsRepeatingSlideInstance)) && slideInstance.visible\">\n                <ajf-page-slider-item>\n                  <div ajfFormPage class=\"ajf-form-page\">\n                    <ion-card>\n                      <ion-card-header>\n                        <div class=\"ajf-page-slider-item-header\">\n                          <h2>\n                            <span class=\"ajf-form-header-number\">{{ slideInstance.position + (hasStartMessage | ajfBoolToInt) }} &rarr;</span>\n                            <span class=\"ajf-title\">{{ slideInstance.node.label | translate}}</span>\n                          </h2>\n                          <ion-icon color=\"danger\" name=\"warning\" *ngIf=\"!slideInstance.valid\"></ion-icon>\n                          <ion-icon color=\"secondary\" name=\"checkmark\" *ngIf=\"slideInstance.valid\"></ion-icon>\n                        </div>\n                      </ion-card-header>\n                      <ion-card-content>\n                        <ng-container *ngFor=\"let fieldInstance of slideInstance.flatNodes; trackBy: trackNodeById\">\n                          <div [ngClass]=\"'ajf-' + (fieldInstance|ajfAsFieldInstance).node.size\" class=\"ajf-field-entry\"\n                              *ngIf=\"fieldInstance.visible\">\n                            <i [class]=\"(fieldInstance|ajfAsFieldInstance).node.fieldType | ajfFieldIcon\" item-right></i>\n                            <p>{{ (fieldInstance|ajfAsFieldInstance).node.description }}</p>\n                            <ion-label [innerHTML]=\"fieldInstance.node.label | translate\"></ion-label>\n                            <ajf-field [instance]=\"fieldInstance|ajfAsFieldInstance\" [readonly]=\"readonly\"></ajf-field>\n                          </div>\n                        </ng-container>\n                      </ion-card-content>\n                    </ion-card>\n                  </div>\n                </ajf-page-slider-item>\n              </ng-container>\n              <ng-container *ngIf=\"(slideInstance|ajfIsRepeatingSlideInstance) && slideInstance.visible\">\n                <ajf-page-slider-item *ngFor=\"let curRep of ((slideInstance|ajfAsRepeatingSlideInstance).reps|ajfRange); let idx = index; let lastSlide = last\">\n                  <div ajfFormPage class=\"ajf-form-page\">\n                    <ion-card>\n                      <ion-card-header>\n                        <div class=\"ajf-page-slider-item-header\">\n                          <h2>\n                            <span class=\"ajf-form-header-number\">{{ slideInstance.position|ajfIncrement:idx }} &rarr;</span>\n                            <span class=\"ajf-title\">{{ slideInstance.node.label | translate }}</span>\n                          </h2>\n                          <ion-icon color=\"danger\" name=\"ajf-warning\" *ngIf=\"!(slideInstance|ajfValidSlide:idx)\"></ion-icon>\n                          <ion-icon color=\"secondary\" name=\"checkmark\" *ngIf=\"(slideInstance|ajfValidSlide:idx)\"></ion-icon>\n                        </div>\n                        <div *ngIf=\"lastSlide && !readonly\" class=\"ajf-group-actions\">\n                          <ion-fab-button size=\"small\" (click)=\"addGroup(slideInstance)\" [disabled]=\"!(slideInstance|ajfAsRepeatingSlideInstance).canAdd\">\n                            <ion-icon name=\"add\"></ion-icon>\n                          </ion-fab-button>\n                          <ion-fab-button size=\"small\" (click)=\"removeGroup(slideInstance)\" [disabled]=\"!(slideInstance|ajfAsRepeatingSlideInstance).canRemove\">\n                            <ion-icon name=\"remove\"></ion-icon>\n                          </ion-fab-button>\n                        </div>\n                      </ion-card-header>\n                      <ion-card-content>\n                        <ng-container *ngFor=\"let fieldInstance of slideInstance.slideNodes[idx]; trackBy: trackNodeById\">\n                          <div [ngClass]=\"'ajf-' + (fieldInstance|ajfAsFieldInstance).node.size\" class=\"ajf-field-entry\"\n                              *ngIf=\"fieldInstance.visible\">\n                            <i [class]=\"(fieldInstance|ajfAsFieldInstance).node.fieldType | ajfFieldIcon\" item-right></i>\n                            <p>{{ (fieldInstance|ajfAsFieldInstance).node.description }}</p>\n                            <ion-label [innerHTML]=\"fieldInstance.node.label | translate\"></ion-label>\n                            <ajf-field [instance]=\"fieldInstance|ajfAsFieldInstance\" [readonly]=\"readonly\"></ajf-field>\n                          </div>\n                        </ng-container>\n                        <div *ngIf=\"lastSlide && longSlide\" class=\"ajf-group-actions ajf-group-actions-bottom\">\n                          <ion-fab-button size=\"small\" (click)=\"addGroup(slideInstance)\" [disabled]=\"!(slideInstance|ajfAsRepeatingSlideInstance).canAdd\" mat-mini-fab>\n                            <ion-icon name=\"add\"></ion-icon>\n                          </ion-fab-button>\n                          <ion-fab-button size=\"small\" (click)=\"removeGroup(slideInstance)\" [disabled]=\"!(slideInstance|ajfAsRepeatingSlideInstance).canRemove\" mat-mini-fab>\n                            <ion-icon name=\"remove\"></ion-icon>\n                          </ion-fab-button>\n                        </div>\n                      </ion-card-content>\n                    </ion-card>\n                  </div>\n                </ajf-page-slider-item>\n              </ng-container>\n            </ng-container>\n            <ng-container *ngIf=\"curSlides && curSlides!.length > 0 && hasEndMessage\">\n              <ajf-page-slider-item>\n                <div ajfFormPage class=\"ajf-form-page\">\n                  <ion-card>\n                    <ion-card-header>\n                      <div class=\"ajf-page-slider-item-header\">\n                        <h2>\n                          <span *ngIf=\"(slidesNum|async) as snum\" class=\"ajf-form-header-number\">\n                            {{ snum! + (hasStartMessage | ajfBoolToInt) + 1 }} &rarr;\n                          </span>\n                          <span class=\"ajf-title\">\n                            <ng-content select=\"[ajfFormEndMessageTitle]\"></ng-content>\n                          </span>\n                        </h2>\n                      </div>\n                    </ion-card-header>\n                    <ion-card-content>\n                      <ng-content select=\"[ajfFormEndMessage]\"></ng-content>\n                    </ion-card-content>\n                  </ion-card>\n                </div>\n              </ajf-page-slider-item>\n            </ng-container>\n          </ng-container>\n          <div ajfPageSliderBar *ngIf=\"!hideBottomToolbar\">\n            <div class=\"ajf-left-bar\">\n              <ion-buttons class=\"ajf-errors\" *ngIf=\"((errors | async) || 0) > 0\">\n                <ion-button (click)=\"goToPrevError()\" color=\"danger\">\n                  <ion-icon name=\"arrow-up\"></ion-icon>\n                </ion-button>\n                <ion-button (click)=\"goToNextError()\" color=\"danger\">\n                  <ion-icon name=\"arrow-down\"></ion-icon>\n                </ion-button>\n              </ion-buttons>\n              <div class=\"ajf-info-box ajf-error\">\n                <div class=\"ajf-title\" translate>\n                  Errors\n                </div>\n                <div class=\"ajf-content\">\n                  {{ errors | async }} / {{ slidesNum|async }}\n                </div>\n              </div>\n            </div>\n          </div>\n        </ajf-page-slider>\n      </div>\n    </div>\n  </form>\n</ng-container>\n",
+                        encapsulation: i0.ViewEncapsulation.None,
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        styles: ["ajf-form{display:block;position:relative}ajf-form form{display:block;position:absolute;top:0;right:0;bottom:0;left:0}ajf-form form .ajf-form-container{display:flex;flex-direction:column;height:100%}ajf-form form .ajf-form-container ion-toolbar{flex:0 0 auto;height:56px}ajf-form form .ajf-form-container ion-toolbar.ajf-hidden{opacity:0}ajf-form form .ajf-form-container>.ajf-slider-container{flex:1 1 auto;position:relative;height:calc(100% - 56px)}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider{height:100%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content{padding:16px}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page{flex:1;max-height:100%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card{flex:1;margin-bottom:2em}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-header{overflow:visible !important}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-header .ajf-group-actions{position:absolute;left:calc(100vw - 160px - 6em);width:160px;margin-top:-2em;padding:15px;z-index:10;white-space:nowrap;overflow:visible !important}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-header .ajf-group-actions ion-fab-button{display:inline-block;overflow:visible !important}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content{display:flex;flex-wrap:wrap;flex-direction:row;align-content:flex-start;position:relative}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content .ajf-group-actions-bottom{width:100%;text-align:right;overflow:visible !important}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content .ajf-group-actions-bottom ion-fab-button{overflow:visible !important;display:inline-block}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry{flex:1 0 auto;padding-left:10px;padding-right:10px;width:100%;box-sizing:border-box}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-normal{width:100%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-small{width:50%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-smaller{width:33%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-tiny{width:25%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-mini{width:20%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider .ajf-page-slider-item-header{display:flex;align-items:center;width:100%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider .ajf-page-slider-item-header>h2{flex:1}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider .ajf-page-slider-item-header>h2>.ajf-form-header-number{margin-right:.5em}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider .ajf-page-slider-item-header>h2>.ajf-title{display:inline-block;margin-right:40px;white-space:normal;vertical-align:top}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar{display:flex;align-items:flex-start;flex-direction:row;position:absolute;bottom:0}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar ion-buttons.ajf-errors{order:1;color:red}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar .ajf-info-box{height:40px;padding:4px}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar .ajf-info-box>div{height:16px;line-height:16px}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar .ajf-info-box>div.ajf-content{font-weight:bold}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar .ajf-info-box.ajf-error{order:2;color:red}ajf-form form .ajf-form-container .ajf-spacer{flex:1 0 auto}\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfFormRenderer.ctorParameters = function () { return [
+            { type: forms.AjfFormRendererService },
+            { type: i0.ChangeDetectorRef }
+        ]; };
         return AjfFormRenderer;
     }(forms.AjfFormRenderer));
 
@@ -1164,9 +1212,9 @@
     var AjfFormPage = /** @class */ (function () {
         function AjfFormPage() {
         }
-        AjfFormPage = __decorate([
-            i0.Directive({ selector: '[ajfFormPage]' })
-        ], AjfFormPage);
+        AjfFormPage.decorators = [
+            { type: i0.Directive, args: [{ selector: '[ajfFormPage]' },] }
+        ];
         return AjfFormPage;
     }());
 
@@ -1197,9 +1245,9 @@
         AjfSelectHasSearchBarPipe.prototype.transform = function (instance, searchThreshold) {
             return instance.filteredChoices && instance.filteredChoices.length > searchThreshold;
         };
-        AjfSelectHasSearchBarPipe = __decorate([
-            i0.Pipe({ name: 'ajfSelectHasSearchBar' })
-        ], AjfSelectHasSearchBarPipe);
+        AjfSelectHasSearchBarPipe.decorators = [
+            { type: i0.Pipe, args: [{ name: 'ajfSelectHasSearchBar' },] }
+        ];
         return AjfSelectHasSearchBarPipe;
     }());
 
@@ -1230,9 +1278,9 @@
         AjfSelectUseVirtualScroll.prototype.transform = function (instance, vsThreshold) {
             return instance.filteredChoices && instance.filteredChoices.length > vsThreshold;
         };
-        AjfSelectUseVirtualScroll = __decorate([
-            i0.Pipe({ name: 'ajfSelectUseVirtualScroll' })
-        ], AjfSelectUseVirtualScroll);
+        AjfSelectUseVirtualScroll.decorators = [
+            { type: i0.Pipe, args: [{ name: 'ajfSelectUseVirtualScroll' },] }
+        ];
         return AjfSelectUseVirtualScroll;
     }());
 
@@ -1260,80 +1308,78 @@
     var AjfFormsModule = /** @class */ (function () {
         function AjfFormsModule() {
         }
-        AjfFormsModule_1 = AjfFormsModule;
         AjfFormsModule.forRoot = function () {
             return {
-                ngModule: AjfFormsModule_1,
+                ngModule: AjfFormsModule,
                 providers: [
                     AjfFieldService,
                 ],
             };
         };
-        var AjfFormsModule_1;
-        AjfFormsModule = AjfFormsModule_1 = __decorate([
-            i0.NgModule({
-                imports: [
-                    barcode.AjfBarcodeModule,
-                    calendar.AjfCalendarModule,
-                    checkboxGroup.AjfCheckboxGroupModule,
-                    common.AjfCommonModule,
-                    forms.AjfFormsModule,
-                    pageSlider.AjfPageSliderModule,
-                    time.AjfTimeModule,
-                    common$1.CommonModule,
-                    forms$1.FormsModule,
-                    angular$1.GicModule,
-                    angular.IonicModule,
-                    forms$1.ReactiveFormsModule,
-                    core.TranslateModule,
-                ],
-                declarations: [
-                    AjfBarcodeFieldComponent,
-                    AjfBooleanFieldComponent,
-                    AjfDateFieldComponent,
-                    AjfDateInputFieldComponent,
-                    AjfEmptyFieldComponent,
-                    AjfFormField,
-                    AjfFormPage,
-                    AjfFormRenderer,
-                    AjfFormulaFieldComponent,
-                    AjfInputFieldComponent,
-                    AjfMultipleChoiceFieldComponent,
-                    AjfNumberFieldComponent,
-                    AjfSelectHasSearchBarPipe,
-                    AjfSelectUseVirtualScroll,
-                    AjfSingleChoiceFieldComponent,
-                    AjfTableFieldComponent,
-                    AjfTextareaFieldComponent,
-                    AjfTimeFieldComponent,
-                    AjfVideoUrlFieldComponent,
-                ],
-                entryComponents: [
-                    AjfBarcodeFieldComponent,
-                    AjfBooleanFieldComponent,
-                    AjfDateFieldComponent,
-                    AjfDateInputFieldComponent,
-                    AjfEmptyFieldComponent,
-                    AjfFormulaFieldComponent,
-                    AjfInputFieldComponent,
-                    AjfMultipleChoiceFieldComponent,
-                    AjfNumberFieldComponent,
-                    AjfSingleChoiceFieldComponent,
-                    AjfTableFieldComponent,
-                    AjfTextareaFieldComponent,
-                    AjfTimeFieldComponent,
-                    AjfVideoUrlFieldComponent,
-                ],
-                exports: [
-                    AjfFormField,
-                    AjfFormRenderer,
-                ],
-                providers: [
-                    AjfFieldService,
-                    { provide: forms.AJF_WARNING_ALERT_SERVICE, useClass: AjfWarningAlertService },
-                ],
-            })
-        ], AjfFormsModule);
+        AjfFormsModule.decorators = [
+            { type: i0.NgModule, args: [{
+                        imports: [
+                            barcode.AjfBarcodeModule,
+                            calendar.AjfCalendarModule,
+                            checkboxGroup.AjfCheckboxGroupModule,
+                            common.AjfCommonModule,
+                            forms.AjfFormsModule,
+                            pageSlider.AjfPageSliderModule,
+                            time.AjfTimeModule,
+                            common$1.CommonModule,
+                            forms$1.FormsModule,
+                            angular$1.GicModule,
+                            angular.IonicModule,
+                            forms$1.ReactiveFormsModule,
+                            core.TranslateModule,
+                        ],
+                        declarations: [
+                            AjfBarcodeFieldComponent,
+                            AjfBooleanFieldComponent,
+                            AjfDateFieldComponent,
+                            AjfDateInputFieldComponent,
+                            AjfEmptyFieldComponent,
+                            AjfFormField,
+                            AjfFormPage,
+                            AjfFormRenderer,
+                            AjfFormulaFieldComponent,
+                            AjfInputFieldComponent,
+                            AjfMultipleChoiceFieldComponent,
+                            AjfNumberFieldComponent,
+                            AjfSelectHasSearchBarPipe,
+                            AjfSelectUseVirtualScroll,
+                            AjfSingleChoiceFieldComponent,
+                            AjfTableFieldComponent,
+                            AjfTextareaFieldComponent,
+                            AjfTimeFieldComponent,
+                            AjfVideoUrlFieldComponent,
+                        ],
+                        entryComponents: [
+                            AjfBarcodeFieldComponent,
+                            AjfBooleanFieldComponent,
+                            AjfDateFieldComponent,
+                            AjfDateInputFieldComponent,
+                            AjfEmptyFieldComponent,
+                            AjfFormulaFieldComponent,
+                            AjfInputFieldComponent,
+                            AjfMultipleChoiceFieldComponent,
+                            AjfNumberFieldComponent,
+                            AjfSingleChoiceFieldComponent,
+                            AjfTableFieldComponent,
+                            AjfTextareaFieldComponent,
+                            AjfTimeFieldComponent,
+                            AjfVideoUrlFieldComponent,
+                        ],
+                        exports: [
+                            AjfFormField,
+                            AjfFormRenderer,
+                        ],
+                        providers: [
+                            AjfFieldService,
+                            { provide: forms.AJF_WARNING_ALERT_SERVICE, useClass: AjfWarningAlertService },
+                        ],
+                    },] }
+        ];
         return AjfFormsModule;
     }());
 

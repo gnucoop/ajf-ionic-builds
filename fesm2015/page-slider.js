@@ -1,4 +1,3 @@
-import { __decorate, __metadata } from 'tslib';
 import { AjfPageSlider as AjfPageSlider$1, AjfPageSliderModule as AjfPageSliderModule$1 } from '@ajf/core/page-slider';
 import { AnimationBuilder } from '@angular/animations';
 import { Component, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, Renderer2, ElementRef, NgModule } from '@angular/core';
@@ -29,7 +28,7 @@ import { IonicModule } from '@ionic/angular';
  *
  */
 let AjfPageSlider = /** @class */ (() => {
-    let AjfPageSlider = class AjfPageSlider extends AjfPageSlider$1 {
+    class AjfPageSlider extends AjfPageSlider$1 {
         constructor(animationBuilder, cdr, renderer, _el) {
             super(animationBuilder, cdr, renderer);
             this._el = _el;
@@ -89,20 +88,23 @@ let AjfPageSlider = /** @class */ (() => {
             catch (e) {
             }
         }
-    };
-    AjfPageSlider = __decorate([
-        Component({
-            selector: 'ajf-page-slider',
-            template: "<div #content class=\"ajf-page-slider-content\">\n  <div #body [ngClass]=\"'ajf-page-slider-' + orientation\"\n      (touchstart)=\"onTouchStart($event)\"\n      (touchmove)=\"onTouchMove($event)\"\n      (touchend)=\"onTouchEnd()\"\n      (mousewheel)=\"onMouseWheel($event)\" class=\"ajf-page-slider-body\">\n    <ng-content></ng-content>\n  </div>\n</div>\n<ion-toolbar *ngIf=\"!hideNavigationButtons\" class=\"ajf-toolbar\">\n  <ng-content select=\"[ajfPageSliderBar]\"></ng-content>\n  <ion-buttons slot=\"end\">\n    <ion-button *ngIf=\"!fixedOrientation\" (click)=\"switchOrientation()\">\n      <ion-icon [class.ajf-icon-rotated]=\"orientation == 'horizontal'\"\n          name=\"swap-horizontal\"></ion-icon>\n    </ion-button>\n    <ion-button (click)=\"slide({dir: 'up'})\" fill=\"solid\" color=\"secondary\">\n      <ion-icon *ngIf=\"orientation == 'horizontal'\" name=\"arrow-back\"></ion-icon>\n      <ion-icon *ngIf=\"orientation == 'vertical'\" name=\"arrow-up\"></ion-icon>\n    </ion-button>\n    <ion-button (click)=\"slide({dir: 'down'})\" fill=\"solid\" color=\"secondary\">\n      <ion-icon *ngIf=\"orientation == 'horizontal'\" name=\"arrow-forward\"></ion-icon>\n      <ion-icon *ngIf=\"orientation == 'vertical'\" name=\"arrow-down\"></ion-icon>\n    </ion-button>\n  </ion-buttons>\n</ion-toolbar>\n",
-            encapsulation: ViewEncapsulation.None,
-            changeDetection: ChangeDetectionStrategy.OnPush,
-            styles: ["ajf-page-slider{display:flex;flex-direction:column;align-items:stretch}ajf-page-slider ion-icon.ajf-icon-rotated{transform:rotate(90deg)}ajf-page-slider>.ajf-page-slider-content{flex:1;display:block;overflow:hidden;height:100%}ajf-page-slider>.ajf-page-slider-content>.ajf-page-slider-body{display:flex;align-items:stretch}ajf-page-slider>.ajf-page-slider-content>.ajf-page-slider-body.ajf-page-slider-vertical{flex-direction:column;width:100%}ajf-page-slider>.ajf-page-slider-content>.ajf-page-slider-body.ajf-page-slider-horizontal{flex-direction:row;height:100%}ajf-page-slider>.ajf-page-slider-content>.ajf-page-slider-body>ajf-page-slider-item{flex:1 0 auto}\n"]
-        }),
-        __metadata("design:paramtypes", [AnimationBuilder,
-            ChangeDetectorRef,
-            Renderer2,
-            ElementRef])
-    ], AjfPageSlider);
+    }
+    AjfPageSlider.decorators = [
+        { type: Component, args: [{
+                    selector: 'ajf-page-slider',
+                    template: "<div #content class=\"ajf-page-slider-content\">\n  <div #body [ngClass]=\"'ajf-page-slider-' + orientation\"\n      (touchstart)=\"onTouchStart($event)\"\n      (touchmove)=\"onTouchMove($event)\"\n      (touchend)=\"onTouchEnd()\"\n      (mousewheel)=\"onMouseWheel($event)\" class=\"ajf-page-slider-body\">\n    <ng-content></ng-content>\n  </div>\n</div>\n<ion-toolbar *ngIf=\"!hideNavigationButtons\" class=\"ajf-toolbar\">\n  <ng-content select=\"[ajfPageSliderBar]\"></ng-content>\n  <ion-buttons slot=\"end\">\n    <ion-button *ngIf=\"!fixedOrientation\" (click)=\"switchOrientation()\">\n      <ion-icon [class.ajf-icon-rotated]=\"orientation == 'horizontal'\"\n          name=\"swap-horizontal\"></ion-icon>\n    </ion-button>\n    <ion-button (click)=\"slide({dir: 'up'})\" fill=\"solid\" color=\"secondary\">\n      <ion-icon *ngIf=\"orientation == 'horizontal'\" name=\"arrow-back\"></ion-icon>\n      <ion-icon *ngIf=\"orientation == 'vertical'\" name=\"arrow-up\"></ion-icon>\n    </ion-button>\n    <ion-button (click)=\"slide({dir: 'down'})\" fill=\"solid\" color=\"secondary\">\n      <ion-icon *ngIf=\"orientation == 'horizontal'\" name=\"arrow-forward\"></ion-icon>\n      <ion-icon *ngIf=\"orientation == 'vertical'\" name=\"arrow-down\"></ion-icon>\n    </ion-button>\n  </ion-buttons>\n</ion-toolbar>\n",
+                    encapsulation: ViewEncapsulation.None,
+                    changeDetection: ChangeDetectionStrategy.OnPush,
+                    styles: ["ajf-page-slider{display:flex;flex-direction:column;align-items:stretch}ajf-page-slider ion-icon.ajf-icon-rotated{transform:rotate(90deg)}ajf-page-slider>.ajf-page-slider-content{flex:1;display:block;overflow:hidden;height:100%}ajf-page-slider>.ajf-page-slider-content>.ajf-page-slider-body{display:flex;align-items:stretch}ajf-page-slider>.ajf-page-slider-content>.ajf-page-slider-body.ajf-page-slider-vertical{flex-direction:column;width:100%}ajf-page-slider>.ajf-page-slider-content>.ajf-page-slider-body.ajf-page-slider-horizontal{flex-direction:row;height:100%}ajf-page-slider>.ajf-page-slider-content>.ajf-page-slider-body>ajf-page-slider-item{flex:1 0 auto}\n"]
+                }] }
+    ];
+    /** @nocollapse */
+    AjfPageSlider.ctorParameters = () => [
+        { type: AnimationBuilder },
+        { type: ChangeDetectorRef },
+        { type: Renderer2 },
+        { type: ElementRef }
+    ];
     return AjfPageSlider;
 })();
 
@@ -128,24 +130,24 @@ let AjfPageSlider = /** @class */ (() => {
  *
  */
 let AjfPageSliderModule = /** @class */ (() => {
-    let AjfPageSliderModule = class AjfPageSliderModule {
-    };
-    AjfPageSliderModule = __decorate([
-        NgModule({
-            imports: [
-                AjfPageSliderModule$1,
-                CommonModule,
-                IonicModule,
-            ],
-            declarations: [
-                AjfPageSlider,
-            ],
-            exports: [
-                AjfPageSliderModule$1,
-                AjfPageSlider,
-            ],
-        })
-    ], AjfPageSliderModule);
+    class AjfPageSliderModule {
+    }
+    AjfPageSliderModule.decorators = [
+        { type: NgModule, args: [{
+                    imports: [
+                        AjfPageSliderModule$1,
+                        CommonModule,
+                        IonicModule,
+                    ],
+                    declarations: [
+                        AjfPageSlider,
+                    ],
+                    exports: [
+                        AjfPageSliderModule$1,
+                        AjfPageSlider,
+                    ],
+                },] }
+    ];
     return AjfPageSliderModule;
 })();
 

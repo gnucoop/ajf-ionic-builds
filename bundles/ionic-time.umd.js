@@ -263,17 +263,18 @@
         function AjfTime() {
             return _super.call(this) || this;
         }
-        AjfTime = __decorate([
-            core.Component({
-                selector: 'ajf-time',
-                template: "<div>\n  <ion-input\n      min=\"0\"\n      max=\"23\" \n      (focus)=\"focusHandler()\"\n      [(ngModel)]=\"hours\"\n      type=\"number\"\n  ></ion-input>\n  :\n  <ion-input\n      min=\"0\"\n      max=\"59\"\n      (focus)=\"focusHandler()\"\n      [(ngModel)]=\"minutes\" type=\"number\"\n  ></ion-input>\n</div>\n",
-                providers: [AJF_TIME_CONTROL_VALUE_ACCESSOR],
-                encapsulation: core.ViewEncapsulation.None,
-                changeDetection: core.ChangeDetectionStrategy.OnPush,
-                styles: ["ajf-time>div{display:flex;align-items:center;width:7em}ajf-time>div ion-input{text-align:center}\n"]
-            }),
-            __metadata("design:paramtypes", [])
-        ], AjfTime);
+        AjfTime.decorators = [
+            { type: core.Component, args: [{
+                        selector: 'ajf-time',
+                        template: "<div>\n  <ion-input\n      min=\"0\"\n      max=\"23\" \n      (focus)=\"focusHandler()\"\n      [(ngModel)]=\"hours\"\n      type=\"number\"\n  ></ion-input>\n  :\n  <ion-input\n      min=\"0\"\n      max=\"59\"\n      (focus)=\"focusHandler()\"\n      [(ngModel)]=\"minutes\" type=\"number\"\n  ></ion-input>\n</div>\n",
+                        providers: [AJF_TIME_CONTROL_VALUE_ACCESSOR],
+                        encapsulation: core.ViewEncapsulation.None,
+                        changeDetection: core.ChangeDetectionStrategy.OnPush,
+                        styles: ["ajf-time>div{display:flex;align-items:center;width:7em}ajf-time>div ion-input{text-align:center}\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfTime.ctorParameters = function () { return []; };
         return AjfTime;
     }(time.AjfTime));
 
@@ -301,20 +302,20 @@
     var AjfTimeModule = /** @class */ (function () {
         function AjfTimeModule() {
         }
-        AjfTimeModule = __decorate([
-            core.NgModule({
-                imports: [
-                    forms.FormsModule,
-                    angular.IonicModule,
-                ],
-                declarations: [
-                    AjfTime,
-                ],
-                exports: [
-                    AjfTime,
-                ]
-            })
-        ], AjfTimeModule);
+        AjfTimeModule.decorators = [
+            { type: core.NgModule, args: [{
+                        imports: [
+                            forms.FormsModule,
+                            angular.IonicModule,
+                        ],
+                        declarations: [
+                            AjfTime,
+                        ],
+                        exports: [
+                            AjfTime,
+                        ]
+                    },] }
+        ];
         return AjfTimeModule;
     }());
 

@@ -261,22 +261,24 @@
             _this.notCheckedIcon = 'close';
             return _this;
         }
-        AjfCheckboxGroupItem = __decorate([
-            core.Component({
-                selector: 'ajf-checkbox-group-item',
-                template: "<ion-button (click)=\"onInputChange($event)\" role=\"checkbox\"\n    fill=\"clear\"\n    type=\"button\"\n    [id]=\"checkboxId|async\"\n    [attr.aria-checked]=\"checkedState|async\"\n    [attr.aria-disabled]=\"disabledState|async\">\n  <div class=\"ajf-checkbox-group-item-content\">\n    <div>\n        <ng-content></ng-content>\n    </div>\n    <ion-icon *ngIf=\"icon|async as ic\" item-right [name]=\"ic!\"></ion-icon>\n  </div>\n</ion-button>\n",
-                changeDetection: core.ChangeDetectionStrategy.OnPush,
-                encapsulation: core.ViewEncapsulation.None,
-                host: {
-                    '[attr.id]': 'id',
-                    '[class.ajf-checkbox-group-checked]': 'checked',
-                    '[class.ajf-checkbox-group-disable]': 'disabled'
-                },
-                styles: ["ajf-checkbox-group-item ion-button{display:block;height:fit-content;margin:0;font-size:.9em;--padding-top: 0;--padding-start: 5px;--padding-bottom: 0;--padding-end: 5px}ajf-checkbox-group-item .ajf-checkbox-group-item-content{display:flex;align-items:center;width:100%;height:fit-content;padding:10px 0}ajf-checkbox-group-item .ajf-checkbox-group-item-content>div{flex:1 1 auto;white-space:normal;max-width:calc(100% - 19px)}ajf-checkbox-group-item .ajf-checkbox-group-item-content>ion-icon{flex:0 0 auto;margin-left:5px}\n"]
-            }),
-            __param(0, core.Optional()),
-            __metadata("design:paramtypes", [checkboxGroup.AjfCheckboxGroup])
-        ], AjfCheckboxGroupItem);
+        AjfCheckboxGroupItem.decorators = [
+            { type: core.Component, args: [{
+                        selector: 'ajf-checkbox-group-item',
+                        template: "<ion-button (click)=\"onInputChange($event)\" role=\"checkbox\"\n    fill=\"clear\"\n    type=\"button\"\n    [id]=\"checkboxId|async\"\n    [attr.aria-checked]=\"checkedState|async\"\n    [attr.aria-disabled]=\"disabledState|async\">\n  <div class=\"ajf-checkbox-group-item-content\">\n    <div>\n        <ng-content></ng-content>\n    </div>\n    <ion-icon *ngIf=\"icon|async as ic\" item-right [name]=\"ic!\"></ion-icon>\n  </div>\n</ion-button>\n",
+                        changeDetection: core.ChangeDetectionStrategy.OnPush,
+                        encapsulation: core.ViewEncapsulation.None,
+                        host: {
+                            '[attr.id]': 'id',
+                            '[class.ajf-checkbox-group-checked]': 'checked',
+                            '[class.ajf-checkbox-group-disable]': 'disabled'
+                        },
+                        styles: ["ajf-checkbox-group-item ion-button{display:block;height:fit-content;margin:0;font-size:.9em;--padding-top: 0;--padding-start: 5px;--padding-bottom: 0;--padding-end: 5px}ajf-checkbox-group-item .ajf-checkbox-group-item-content{display:flex;align-items:center;width:100%;height:fit-content;padding:10px 0}ajf-checkbox-group-item .ajf-checkbox-group-item-content>div{flex:1 1 auto;white-space:normal;max-width:calc(100% - 19px)}ajf-checkbox-group-item .ajf-checkbox-group-item-content>ion-icon{flex:0 0 auto;margin-left:5px}\n"]
+                    }] }
+        ];
+        /** @nocollapse */
+        AjfCheckboxGroupItem.ctorParameters = function () { return [
+            { type: checkboxGroup.AjfCheckboxGroup, decorators: [{ type: core.Optional }] }
+        ]; };
         return AjfCheckboxGroupItem;
     }(checkboxGroup.AjfCheckboxGroupItem));
 
@@ -304,22 +306,22 @@
     var AjfCheckboxGroupModule = /** @class */ (function () {
         function AjfCheckboxGroupModule() {
         }
-        AjfCheckboxGroupModule = __decorate([
-            core.NgModule({
-                imports: [
-                    checkboxGroup.AjfCheckboxGroupModule,
-                    common.CommonModule,
-                    angular.IonicModule,
-                ],
-                declarations: [
-                    AjfCheckboxGroupItem,
-                ],
-                exports: [
-                    AjfCheckboxGroupItem,
-                    checkboxGroup.AjfCheckboxGroupModule,
-                ],
-            })
-        ], AjfCheckboxGroupModule);
+        AjfCheckboxGroupModule.decorators = [
+            { type: core.NgModule, args: [{
+                        imports: [
+                            checkboxGroup.AjfCheckboxGroupModule,
+                            common.CommonModule,
+                            angular.IonicModule,
+                        ],
+                        declarations: [
+                            AjfCheckboxGroupItem,
+                        ],
+                        exports: [
+                            AjfCheckboxGroupItem,
+                            checkboxGroup.AjfCheckboxGroupModule,
+                        ],
+                    },] }
+        ];
         return AjfCheckboxGroupModule;
     }());
 

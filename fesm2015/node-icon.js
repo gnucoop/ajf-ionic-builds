@@ -1,4 +1,3 @@
-import { __decorate } from 'tslib';
 import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation, ChangeDetectionStrategy, NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
@@ -26,17 +25,17 @@ import { AjfNodeIcon as AjfNodeIcon$1 } from '@ajf/core/node-icon';
  *
  */
 let AjfNodeIcon = /** @class */ (() => {
-    let AjfNodeIcon = class AjfNodeIcon extends AjfNodeIcon$1 {
-    };
-    AjfNodeIcon = __decorate([
-        Component({
-            selector: 'ajf-node-icon',
-            template: "<ng-template [ngIf]=\"node\">\n  <i [ngClass]=\"[fontSet, fontIcon]\"></i>\n</ng-template>\n",
-            encapsulation: ViewEncapsulation.None,
-            changeDetection: ChangeDetectionStrategy.OnPush,
-            styles: ["\n"]
-        })
-    ], AjfNodeIcon);
+    class AjfNodeIcon extends AjfNodeIcon$1 {
+    }
+    AjfNodeIcon.decorators = [
+        { type: Component, args: [{
+                    selector: 'ajf-node-icon',
+                    template: "<ng-template [ngIf]=\"node\">\n  <i [ngClass]=\"[fontSet, fontIcon]\"></i>\n</ng-template>\n",
+                    encapsulation: ViewEncapsulation.None,
+                    changeDetection: ChangeDetectionStrategy.OnPush,
+                    styles: ["\n"]
+                }] }
+    ];
     return AjfNodeIcon;
 })();
 
@@ -62,22 +61,22 @@ let AjfNodeIcon = /** @class */ (() => {
  *
  */
 let AjfNodeIconModule = /** @class */ (() => {
-    let AjfNodeIconModule = class AjfNodeIconModule {
-    };
-    AjfNodeIconModule = __decorate([
-        NgModule({
-            imports: [
-                CommonModule,
-                IonicModule,
-            ],
-            declarations: [
-                AjfNodeIcon,
-            ],
-            exports: [
-                AjfNodeIcon,
-            ],
-        })
-    ], AjfNodeIconModule);
+    class AjfNodeIconModule {
+    }
+    AjfNodeIconModule.decorators = [
+        { type: NgModule, args: [{
+                    imports: [
+                        CommonModule,
+                        IonicModule,
+                    ],
+                    declarations: [
+                        AjfNodeIcon,
+                    ],
+                    exports: [
+                        AjfNodeIcon,
+                    ],
+                },] }
+    ];
     return AjfNodeIconModule;
 })();
 
