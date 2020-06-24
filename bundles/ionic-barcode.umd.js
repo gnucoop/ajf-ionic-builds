@@ -271,9 +271,8 @@
                         changeDetection: core.ChangeDetectionStrategy.OnPush,
                         providers: [BARCODE_CONTROL_VALUE_ACCESSOR],
                         styles: ["ajf-barcode ion-segment{width:fit-content}ajf-barcode .ajf-code-container{display:inline-flex;flex-direction:row;flex-wrap:wrap;justify-content:center;align-content:stretch;align-items:center}ajf-barcode .ajf-code-container button{margin-left:10px}ajf-barcode .ajf-drop-container{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:flex-start;align-content:stretch;align-items:stretch}\n"]
-                    }] }
+                    },] }
         ];
-        /** @nocollapse */
         AjfBarcodeComponent.ctorParameters = function () { return [
             { type: core.ChangeDetectorRef },
             { type: core.Renderer2 }

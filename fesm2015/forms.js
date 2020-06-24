@@ -74,7 +74,6 @@ let AjfWarningAlertService = /** @class */ (() => {
     AjfWarningAlertService.decorators = [
         { type: Injectable }
     ];
-    /** @nocollapse */
     AjfWarningAlertService.ctorParameters = () => [
         { type: AlertController }
     ];
@@ -114,9 +113,8 @@ let AjfBooleanFieldComponent = /** @class */ (() => {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
                     styles: ["\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfBooleanFieldComponent.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: AjfFormRendererService },
@@ -158,9 +156,8 @@ let AjfDateFieldComponent = /** @class */ (() => {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
                     styles: ["\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfDateFieldComponent.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: AjfFormRendererService },
@@ -220,9 +217,8 @@ let AjfDateInputFieldComponent = /** @class */ (() => {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
                     styles: ["\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfDateInputFieldComponent.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: AjfFormRendererService },
@@ -268,9 +264,8 @@ let AjfEmptyFieldComponent = /** @class */ (() => {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
                     styles: ["\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfEmptyFieldComponent.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: AjfFormRendererService },
@@ -312,9 +307,8 @@ let AjfBarcodeFieldComponent = /** @class */ (() => {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
                     styles: ["\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfBarcodeFieldComponent.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: AjfFormRendererService },
@@ -383,9 +377,8 @@ let AjfFormulaFieldComponent = /** @class */ (() => {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
                     styles: ["\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfFormulaFieldComponent.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: AjfFormRendererService },
@@ -430,9 +423,8 @@ let AjfInputFieldComponent = /** @class */ (() => {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
                     styles: ["\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfInputFieldComponent.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: AjfFormRendererService },
@@ -474,9 +466,8 @@ let AjfMultipleChoiceFieldComponent = /** @class */ (() => {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
                     styles: ["\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfMultipleChoiceFieldComponent.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: AjfFormRendererService },
@@ -551,9 +542,8 @@ let AjfNumberFieldComponent = /** @class */ (() => {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
                     styles: ["\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfNumberFieldComponent.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: AjfFormRendererService },
@@ -595,9 +585,8 @@ let AjfSingleChoiceFieldComponent = /** @class */ (() => {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
                     styles: ["\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfSingleChoiceFieldComponent.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: AjfFormRendererService },
@@ -640,9 +629,8 @@ let AjfTableFieldComponent = /** @class */ (() => {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
                     styles: ["table.ajf-table-field{width:100%}\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfTableFieldComponent.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: AjfFormRendererService },
@@ -684,9 +672,8 @@ let AjfTextareaFieldComponent = /** @class */ (() => {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
                     styles: ["\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfTextareaFieldComponent.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: AjfFormRendererService },
@@ -728,9 +715,8 @@ let AjfTimeFieldComponent = /** @class */ (() => {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
                     styles: ["\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfTimeFieldComponent.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: AjfFormRendererService },
@@ -772,9 +758,8 @@ let AjfVideoUrlFieldComponent = /** @class */ (() => {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     encapsulation: ViewEncapsulation.None,
                     styles: [".ajf-video-input{width:100%}.ajf-video-thumbnail{margin-top:1em;width:212px;height:120px;background-color:#eee;display:flex;align-items:center;justify-content:center}.ajf-video-thumbnail img{flex:1 1 auto}\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfVideoUrlFieldComponent.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: AjfFormRendererService },
@@ -876,12 +861,11 @@ let AjfFieldService = /** @class */ (() => {
             };
         }
     }
+    AjfFieldService.ɵprov = ɵɵdefineInjectable({ factory: function AjfFieldService_Factory() { return new AjfFieldService(); }, token: AjfFieldService, providedIn: "root" });
     AjfFieldService.decorators = [
         { type: Injectable, args: [{ providedIn: 'root' },] }
     ];
-    /** @nocollapse */
     AjfFieldService.ctorParameters = () => [];
-    AjfFieldService.ɵprov = ɵɵdefineInjectable({ factory: function AjfFieldService_Factory() { return new AjfFieldService(); }, token: AjfFieldService, providedIn: "root" });
     return AjfFieldService;
 })();
 
@@ -920,9 +904,8 @@ let AjfFormField = /** @class */ (() => {
                     encapsulation: ViewEncapsulation.None,
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     styles: ["ajf-field ion-select{position:relative}ajf-field ion-input,ajf-field ion-textarea{border:dashed 2px #eee}ajf-field .ajf-choices-container{flex-direction:row;align-items:stretch;flex-wrap:wrap;display:flex}ajf-field .ajf-choices-container>ion-radio-group{display:flex;flex-wrap:wrap}ajf-field .ajf-choices-container>ion-radio-group ion-item{--ion-item-border-color: transparent}ajf-field .ajf-choices-container>ion-radio-group ion-item ion-label{margin-right:10px}ajf-field .ajf-choices-container>ion-card{margin-top:0;width:33%;display:flex;font-size:13px;flex-wrap:wrap;flex-basis:21% !important;flex-shrink:3 !important}ajf-field .ajf-choices-container>ion-card>ajf-checkbox-group-item{width:100%;display:flex;flex-direction:column;align-items:stretch;justify-content:center}ajf-field .ajf-choices-container>ion-card>ion-item{font-size:13px;flex:1 0 auto;flex-shrink:3 !important;flex-basis:21% !important;margin:0 10px}ajf-field .ajf-item-container{position:relative}ajf-field .ajf-errors{font-style:italic;padding:5px}ajf-field tr.ajf-row-odd{background-color:gray}ajf-field .ajf-table-container{overflow-x:auto}ajf-field .ajf-table-container table{width:100%}\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfFormField.ctorParameters = () => [
         { type: ChangeDetectorRef },
         { type: ComponentFactoryResolver },
@@ -989,9 +972,8 @@ let AjfFormRenderer = /** @class */ (() => {
                     encapsulation: ViewEncapsulation.None,
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     styles: ["ajf-form{display:block;position:relative}ajf-form form{display:block;position:absolute;top:0;right:0;bottom:0;left:0}ajf-form form .ajf-form-container{display:flex;flex-direction:column;height:100%}ajf-form form .ajf-form-container ion-toolbar{flex:0 0 auto;height:56px}ajf-form form .ajf-form-container ion-toolbar.ajf-hidden{opacity:0}ajf-form form .ajf-form-container>.ajf-slider-container{flex:1 1 auto;position:relative;height:calc(100% - 56px)}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider{height:100%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content{padding:16px}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page{flex:1;max-height:100%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card{flex:1;margin-bottom:2em}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-header{overflow:visible !important}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-header .ajf-group-actions{position:absolute;left:calc(100vw - 160px - 6em);width:160px;margin-top:-2em;padding:15px;z-index:10;white-space:nowrap;overflow:visible !important}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-header .ajf-group-actions ion-fab-button{display:inline-block;overflow:visible !important}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content{display:flex;flex-wrap:wrap;flex-direction:row;align-content:flex-start;position:relative}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content .ajf-group-actions-bottom{width:100%;text-align:right;overflow:visible !important}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content .ajf-group-actions-bottom ion-fab-button{overflow:visible !important;display:inline-block}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry{flex:1 0 auto;padding-left:10px;padding-right:10px;width:100%;box-sizing:border-box}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-normal{width:100%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-small{width:50%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-smaller{width:33%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-tiny{width:25%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider ajf-page-slider-item .ajf-page-slider-item-content .ajf-form-page>ion-card>ion-card-content>.ajf-field-entry.ajf-mini{width:20%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider .ajf-page-slider-item-header{display:flex;align-items:center;width:100%}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider .ajf-page-slider-item-header>h2{flex:1}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider .ajf-page-slider-item-header>h2>.ajf-form-header-number{margin-right:.5em}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider .ajf-page-slider-item-header>h2>.ajf-title{display:inline-block;margin-right:40px;white-space:normal;vertical-align:top}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar{display:flex;align-items:flex-start;flex-direction:row;position:absolute;bottom:0}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar ion-buttons.ajf-errors{order:1;color:red}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar .ajf-info-box{height:40px;padding:4px}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar .ajf-info-box>div{height:16px;line-height:16px}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar .ajf-info-box>div.ajf-content{font-weight:bold}ajf-form form .ajf-form-container>.ajf-slider-container>ajf-page-slider [ajfPageSliderBar] .ajf-left-bar .ajf-info-box.ajf-error{order:2;color:red}ajf-form form .ajf-form-container .ajf-spacer{flex:1 0 auto}\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfFormRenderer.ctorParameters = () => [
         { type: AjfFormRendererService },
         { type: ChangeDetectorRef }

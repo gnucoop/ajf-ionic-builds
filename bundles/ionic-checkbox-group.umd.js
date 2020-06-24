@@ -273,9 +273,8 @@
                             '[class.ajf-checkbox-group-disable]': 'disabled'
                         },
                         styles: ["ajf-checkbox-group-item ion-button{display:block;height:fit-content;margin:0;font-size:.9em;--padding-top: 0;--padding-start: 5px;--padding-bottom: 0;--padding-end: 5px}ajf-checkbox-group-item .ajf-checkbox-group-item-content{display:flex;align-items:center;width:100%;height:fit-content;padding:10px 0}ajf-checkbox-group-item .ajf-checkbox-group-item-content>div{flex:1 1 auto;white-space:normal;max-width:calc(100% - 19px)}ajf-checkbox-group-item .ajf-checkbox-group-item-content>ion-icon{flex:0 0 auto;margin-left:5px}\n"]
-                    }] }
+                    },] }
         ];
-        /** @nocollapse */
         AjfCheckboxGroupItem.ctorParameters = function () { return [
             { type: checkboxGroup.AjfCheckboxGroup, decorators: [{ type: core.Optional }] }
         ]; };

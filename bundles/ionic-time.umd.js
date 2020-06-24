@@ -271,9 +271,8 @@
                         encapsulation: core.ViewEncapsulation.None,
                         changeDetection: core.ChangeDetectionStrategy.OnPush,
                         styles: ["ajf-time>div{display:flex;align-items:center;width:7em}ajf-time>div ion-input{text-align:center}\n"]
-                    }] }
+                    },] }
         ];
-        /** @nocollapse */
         AjfTime.ctorParameters = function () { return []; };
         return AjfTime;
     }(time.AjfTime));

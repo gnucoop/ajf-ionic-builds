@@ -273,9 +273,8 @@
                             CALENDAR_CONTROL_VALUE_ACCESSOR,
                         ],
                         styles: ["ajf-calendar{display:flex;box-sizing:border-box;width:100%;height:320px;flex-direction:column}ajf-calendar .ajf-calendar-header,ajf-calendar .ajf-calendar-row{display:flex;box-sizing:border-box;width:100%;flex-direction:row}ajf-calendar .ajf-calendar-header{height:40px}ajf-calendar .ajf-calendar-header ion-fab-button,ajf-calendar .ajf-calendar-header ion-button{--margin-top: 0;--margin-bottom: 0;--margin-start: 0;--margin-end: 0}ajf-calendar .ajf-calendar-header ion-fab-button{position:relative;left:0;right:0}ajf-calendar .ajf-calendar-header ion-button{--height: 40px;--width: 100%}ajf-calendar .ajf-calendar-header .ajf-calendar-header-title{flex:1;margin:0 10px}ajf-calendar .ajf-calendar-row{flex:1}ajf-calendar .ajf-calendar-row ion-button,ajf-calendar .ajf-calendar-row div{flex:1;margin:3px;height:auto}ajf-calendar .ajf-calendar-row ion-button{--width: 100%;--height: 100%}ajf-calendar .ajf-calendar-row div{line-height:40px;text-align:center}ajf-calendar .ajf-calendar-row .ajf-calendar-partial-selection{--ion-color-base: rgba(240, 65, 65, 0.5) !important}ajf-calendar .ajf-calendar-row .ajf-calendar-highlight{--ion-color-base: #fcd739 !important}\n"]
-                    }] }
+                    },] }
         ];
-        /** @nocollapse */
         AjfCalendarComponent.ctorParameters = function () { return [
             { type: core.ChangeDetectorRef },
             { type: calendar.AjfCalendarService }

@@ -43,9 +43,8 @@ let AjfTime = /** @class */ (() => {
                     encapsulation: ViewEncapsulation.None,
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     styles: ["ajf-time>div{display:flex;align-items:center;width:7em}ajf-time>div ion-input{text-align:center}\n"]
-                }] }
+                },] }
     ];
-    /** @nocollapse */
     AjfTime.ctorParameters = () => [];
     return AjfTime;
 })();
