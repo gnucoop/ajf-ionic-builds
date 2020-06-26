@@ -1,6 +1,6 @@
 {
   "name": "@ajf/ionic",
-  "version": "10.0.0-next.0-sha-2d4d49d",
+  "version": "10.0.0-sha-c372688",
   "description": "",
   "repository": {
     "type": "git",
@@ -13,12 +13,12 @@
   },
   "homepage": "https://github.com/gnucoop/ajf#readme",
   "peerDependencies": {
-    "@angular/core": "^10.0.0 || ^11.0.0",
-    "@angular/common": "^10.0.0 || ^11.0.0",
-    "@angular/router": "^10.0.0 || ^11.0.0",
+    "@angular/core": "^10.0.0-sha-c372688 || ^11.0.0",
+    "@angular/common": "^10.0.0-sha-c372688 || ^11.0.0",
+    "@angular/router": "^10.0.0-sha-c372688 || ^11.0.0",
     "@gic/angular": "^5.0.0",
     "@ionic/angular": "^5.0.0",
-    "@ajf/core": "10.0.0-next.0-sha-2d4d49d",
+    "@ajf/core": "10.0.0-sha-c372688",
     "flag-icon-css": "^3.3.0"
   },
   "dependencies": {
