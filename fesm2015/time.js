@@ -29,25 +29,22 @@ const AJF_TIME_CONTROL_VALUE_ACCESSOR = {
     useExisting: forwardRef(() => AjfTime),
     multi: true
 };
-let AjfTime = /** @class */ (() => {
-    class AjfTime extends AjfTime$1 {
-        constructor() {
-            super();
-        }
+class AjfTime extends AjfTime$1 {
+    constructor() {
+        super();
     }
-    AjfTime.decorators = [
-        { type: Component, args: [{
-                    selector: 'ajf-time',
-                    template: "<div>\n  <ion-input\n      min=\"0\"\n      max=\"23\" \n      (focus)=\"focusHandler()\"\n      [(ngModel)]=\"hours\"\n      type=\"number\"\n  ></ion-input>\n  :\n  <ion-input\n      min=\"0\"\n      max=\"59\"\n      (focus)=\"focusHandler()\"\n      [(ngModel)]=\"minutes\" type=\"number\"\n  ></ion-input>\n</div>\n",
-                    providers: [AJF_TIME_CONTROL_VALUE_ACCESSOR],
-                    encapsulation: ViewEncapsulation.None,
-                    changeDetection: ChangeDetectionStrategy.OnPush,
-                    styles: ["ajf-time>div{display:flex;align-items:center;width:7em}ajf-time>div ion-input{text-align:center}\n"]
-                },] }
-    ];
-    AjfTime.ctorParameters = () => [];
-    return AjfTime;
-})();
+}
+AjfTime.decorators = [
+    { type: Component, args: [{
+                selector: 'ajf-time',
+                template: "<div>\n  <ion-input\n      min=\"0\"\n      max=\"23\" \n      (focus)=\"focusHandler()\"\n      [(ngModel)]=\"hours\"\n      type=\"number\"\n  ></ion-input>\n  :\n  <ion-input\n      min=\"0\"\n      max=\"59\"\n      (focus)=\"focusHandler()\"\n      [(ngModel)]=\"minutes\" type=\"number\"\n  ></ion-input>\n</div>\n",
+                providers: [AJF_TIME_CONTROL_VALUE_ACCESSOR],
+                encapsulation: ViewEncapsulation.None,
+                changeDetection: ChangeDetectionStrategy.OnPush,
+                styles: ["ajf-time>div{display:flex;align-items:center;width:7em}ajf-time>div ion-input{text-align:center}\n"]
+            },] }
+];
+AjfTime.ctorParameters = () => [];
 
 /**
  * @license
@@ -70,25 +67,22 @@ let AjfTime = /** @class */ (() => {
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-let AjfTimeModule = /** @class */ (() => {
-    class AjfTimeModule {
-    }
-    AjfTimeModule.decorators = [
-        { type: NgModule, args: [{
-                    imports: [
-                        FormsModule,
-                        IonicModule,
-                    ],
-                    declarations: [
-                        AjfTime,
-                    ],
-                    exports: [
-                        AjfTime,
-                    ]
-                },] }
-    ];
-    return AjfTimeModule;
-})();
+class AjfTimeModule {
+}
+AjfTimeModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    FormsModule,
+                    IonicModule,
+                ],
+                declarations: [
+                    AjfTime,
+                ],
+                exports: [
+                    AjfTime,
+                ]
+            },] }
+];
 
 /**
  * @license

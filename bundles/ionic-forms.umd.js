@@ -556,19 +556,17 @@
             _this._onChangeEvt = new i0.EventEmitter();
             _this._onChangeSub = rxjs.Subscription.EMPTY;
             var control$ = _this.control.pipe(operators.filter(function (control) { return control != null; }));
-            _this._onChangeSub =
-                control$
-                    .pipe(operators.switchMap(function (control) { return _this._onChangeEvt.pipe(operators.map(function (value) { return ({ control: control, value: value }); })); }))
-                    .subscribe(function (_a) {
-                    var control = _a.control, value = _a.value;
-                    try {
-                        var v = parseFloat(value);
-                        value = v;
-                    }
-                    catch (e) {
-                    }
-                    control.setValue(value);
-                });
+            var controlValue$ = control$.pipe(operators.switchMap(function (control) { return _this._onChangeEvt.pipe(operators.map(function (value) { return ({ control: control, value: value }); })); }));
+            _this._onChangeSub = controlValue$.subscribe(function (_a) {
+                var control = _a.control, value = _a.value;
+                try {
+                    var v = parseFloat(value);
+                    value = v;
+                }
+                catch (e) {
+                }
+                control.setValue(value);
+            });
             _this.value = _this.control.pipe(operators.filter(function (control) { return control != null; }), operators.switchMap(function (control) { return control.valueChanges.pipe(operators.startWith(control.value)); }));
             return _this;
         }
@@ -728,10 +726,11 @@
             this._setValueSub = this._setValueEvt
                 .pipe(operators.withLatestFrom(this.control))
                 .subscribe(function (_a) {
-                var _b = __read(_a, 2), value = _b[0], control = _b[1];
-                if (control == null) {
+                var _b = __read(_a, 2), value = _b[0], ctrl = _b[1];
+                if (ctrl == null) {
                     return;
                 }
+                var control = ctrl;
                 control.setValue(value);
             });
         };
