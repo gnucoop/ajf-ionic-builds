@@ -25,7 +25,10 @@ import { IonicModule } from '@ionic/angular';
  *
  */
 class AjfCheckboxGroupItem extends AjfCheckboxGroupItem$1 {
-    constructor(checkboxGroup) {
+    constructor(
+    // `AjfCheckboxGroupItem` is commonly used in combination with a `AjfCheckboxGroup`.
+    // tslint:disable-next-line: lightweight-tokens
+    checkboxGroup) {
         super(checkboxGroup);
         this.checkedIcon = 'checkmark';
         this.notCheckedIcon = 'close';
