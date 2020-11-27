@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/common'), require('@angular/common'), require('@angular/core'), require('@ionic/angular'), require('@ngx-translate/core'), require('@ajf/core/barcode'), require('@angular/forms')) :
     typeof define === 'function' && define.amd ? define('@ajf/ionic/barcode', ['exports', '@ajf/core/common', '@angular/common', '@angular/core', '@ionic/angular', '@ngx-translate/core', '@ajf/core/barcode', '@angular/forms'], factory) :
-    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.barcode = {}), global.ng.core.common, global.ng.common, global.ng.core, global.ionic.angular, global.ngxTranslate.core, global.ng.core.barcode, global.ng.forms));
+    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.barcode = {}), global.ajf.core.common, global.ng.common, global.ng.core, global.ionic.angular, global.ngxTranslate.core, global.ajf.core.barcode, global.ng.forms));
 }(this, (function (exports, common, common$1, core, angular, core$1, barcode, forms) { 'use strict';
 
     /*! *****************************************************************************

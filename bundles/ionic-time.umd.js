@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/forms'), require('@ionic/angular'), require('@ajf/core/time')) :
     typeof define === 'function' && define.amd ? define('@ajf/ionic/time', ['exports', '@angular/core', '@angular/forms', '@ionic/angular', '@ajf/core/time'], factory) :
-    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.time = {}), global.ng.core, global.ng.forms, global.ionic.angular, global.ng.core.time));
+    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.time = {}), global.ng.core, global.ng.forms, global.ionic.angular, global.ajf.core.time));
 }(this, (function (exports, core, forms, angular, time) { 'use strict';
 
     /*! *****************************************************************************

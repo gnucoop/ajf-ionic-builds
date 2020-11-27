@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/checkbox-group'), require('@angular/core'), require('@angular/common'), require('@ionic/angular')) :
     typeof define === 'function' && define.amd ? define('@ajf/ionic/checkbox-group', ['exports', '@ajf/core/checkbox-group', '@angular/core', '@angular/common', '@ionic/angular'], factory) :
-    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.checkboxGroup = {}), global.ng.core.checkboxGroup, global.ng.core, global.ng.common, global.ionic.angular));
+    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.checkboxGroup = {}), global.ajf.core.checkboxGroup, global.ng.core, global.ng.common, global.ionic.angular));
 }(this, (function (exports, checkboxGroup, core, common, angular) { 'use strict';
 
     /*! *****************************************************************************

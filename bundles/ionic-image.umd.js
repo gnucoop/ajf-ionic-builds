@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('@angular/core'), require('@ionic/angular'), require('@ajf/core/image'), require('@angular/platform-browser')) :
     typeof define === 'function' && define.amd ? define('@ajf/ionic/image', ['exports', '@angular/common', '@angular/core', '@ionic/angular', '@ajf/core/image', '@angular/platform-browser'], factory) :
-    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.image = {}), global.ng.common, global.ng.core, global.ionic.angular, global.ng.core.image, global.ng.platformBrowser));
+    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.image = {}), global.ng.common, global.ng.core, global.ionic.angular, global.ajf.core.image, global.ng.platformBrowser));
 }(this, (function (exports, common, core, angular, image, platformBrowser) { 'use strict';
 
     /*! *****************************************************************************

@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/page-slider'), require('@angular/animations'), require('@angular/core'), require('rxjs'), require('rxjs/operators'), require('@angular/common'), require('@ionic/angular')) :
     typeof define === 'function' && define.amd ? define('@ajf/ionic/page-slider', ['exports', '@ajf/core/page-slider', '@angular/animations', '@angular/core', 'rxjs', 'rxjs/operators', '@angular/common', '@ionic/angular'], factory) :
-    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.pageSlider = {}), global.ng.core.pageSlider, global.ng.animations, global.ng.core, global.rxjs, global.rxjs.operators, global.ng.common, global.ionic.angular));
+    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.pageSlider = {}), global.ajf.core.pageSlider, global.ng.animations, global.ng.core, global.rxjs, global.rxjs.operators, global.ng.common, global.ionic.angular));
 }(this, (function (exports, pageSlider, animations, core, rxjs, operators, common, angular) { 'use strict';
 
     /*! *****************************************************************************
