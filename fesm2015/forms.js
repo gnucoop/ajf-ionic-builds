@@ -1,4 +1,4 @@
-import { AjfBaseFieldComponent, AjfFormRendererService, AJF_WARNING_ALERT_SERVICE, AjfDateValueStringPipe, AjfInputFieldComponent as AjfInputFieldComponent$1, AjfFieldWithChoicesComponent, AJF_SEARCH_ALERT_THRESHOLD, AjfTableFieldComponent as AjfTableFieldComponent$1, AjfVideoUrlFieldComponent as AjfVideoUrlFieldComponent$1, AjfFieldService as AjfFieldService$1, AjfFieldType, AjfReadOnlyFieldComponent, AjfReadOnlyTableFieldComponent, AjfFileFieldComponent, AjfReadOnlyFileFieldComponent, AjfImageFieldComponent, AjfReadOnlyImageFieldComponent, AjfReadOnlyVideoUrlFieldComponent, AjfFormField as AjfFormField$1, AjfFormRenderer as AjfFormRenderer$1, AjfFormsModule as AjfFormsModule$1 } from '@ajf/core/forms';
+import { AjfBaseFieldComponent, AjfFormRendererService, AJF_WARNING_ALERT_SERVICE, AjfDateValueStringPipe, AjfInputFieldComponent as AjfInputFieldComponent$1, AjfFieldWithChoicesComponent, AJF_SEARCH_ALERT_THRESHOLD, AjfTableFieldComponent as AjfTableFieldComponent$1, AjfVideoUrlFieldComponent as AjfVideoUrlFieldComponent$1, AjfFieldService as AjfFieldService$1, AjfFieldType, AjfReadOnlyFieldComponent, AjfReadOnlyTableFieldComponent, AjfReadOnlySelectFieldComponent, AjfFileFieldComponent, AjfReadOnlyFileFieldComponent, AjfImageFieldComponent, AjfReadOnlyImageFieldComponent, AjfReadOnlyVideoUrlFieldComponent, AjfFormField as AjfFormField$1, AjfFormRenderer as AjfFormRenderer$1, AjfFormsModule as AjfFormsModule$1 } from '@ajf/core/forms';
 import { Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, Inject, ViewChild, EventEmitter, Optional, ɵɵdefineInjectable, ComponentFactoryResolver, Directive, Pipe, NgModule } from '@angular/core';
 import { AlertController, IonInput, IonicModule } from '@ionic/angular';
 import { Observable, Subscription, defer } from 'rxjs';
@@ -786,11 +786,11 @@ class AjfFieldService extends AjfFieldService$1 {
         };
         this.componentsMap[AjfFieldType.SingleChoice] = {
             component: AjfSingleChoiceFieldComponent,
-            readOnlyComponent: AjfReadOnlyFieldComponent
+            readOnlyComponent: AjfReadOnlySelectFieldComponent
         };
         this.componentsMap[AjfFieldType.MultipleChoice] = {
             component: AjfMultipleChoiceFieldComponent,
-            readOnlyComponent: AjfReadOnlyFieldComponent
+            readOnlyComponent: AjfReadOnlySelectFieldComponent
         };
         this.componentsMap[AjfFieldType.Time] = {
             component: AjfTimeFieldComponent,
