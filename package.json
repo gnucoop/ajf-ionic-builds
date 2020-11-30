@@ -1,6 +1,6 @@
 {
   "name": "@ajf/ionic",
-  "version": "11.0.1-sha-a957bfb8d",
+  "version": "11.0.1-sha-93c2819c8",
   "description": "",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "@angular/router": "^11.0.0 || ^12.0.0-0",
     "@gic/angular": "^5.0.0",
     "@ionic/angular": "^5.0.0",
-    "@ajf/core": "11.0.1-sha-a957bfb8d",
+    "@ajf/core": "11.0.1-sha-93c2819c8",
     "@ajf/icons": "^1.0.0",
     "flag-icon-css": "^3.5.0"
   },

@@ -395,7 +395,7 @@ class AjfInputFieldComponent extends AjfInputFieldComponent$1 {
 }
 AjfInputFieldComponent.decorators = [
     { type: Component, args: [{
-                template: "<ion-input *ngIf=\"control|async as ctrl\" [type]=\"type\" [formControl]=\"ctrl!\"></ion-input>\n",
+                template: "<ion-input *ngIf=\"control|async as ctrl\" [type]=\"type\" [formControl]=\"ctrl!\" [readonly]=\"instance|ajfIsReadonlyInputField\">\n</ion-input>\n",
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 encapsulation: ViewEncapsulation.None,
                 styles: ["\n"]
