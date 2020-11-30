@@ -1,6 +1,7 @@
 import { AjfBaseWidgetComponent, AjfReportRenderer as AjfReportRenderer$1, AjfWidgetService as AjfWidgetService$1, AjfWidgetType, AjfReportWidget as AjfReportWidget$1, AjfReportsModule as AjfReportsModule$1 } from '@ajf/core/reports';
 import { Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, ElementRef, ɵɵdefineInjectable, Injectable, ComponentFactoryResolver, Renderer2, NgModule } from '@angular/core';
 import { AjfImageType } from '@ajf/core/image';
+import { BehaviorSubject } from 'rxjs';
 import { AjfChartModule } from '@ajf/core/chart';
 import { AjfCommonModule } from '@ajf/core/common';
 import { AjfMapModule } from '@ajf/core/map';
@@ -231,11 +232,16 @@ AjfImageWidgetComponent.ctorParameters = () => [
 class AjfLayoutWidgetComponent extends AjfBaseWidgetComponent {
     constructor(cdr, el) {
         super(cdr, el);
+        this._allcolumnsRendered$ = new BehaviorSubject(false);
+        this.allcolumnsRendered$ = this._allcolumnsRendered$;
+    }
+    ngAfterContentChecked() {
+        this._allcolumnsRendered$.next(true);
     }
 }
 AjfLayoutWidgetComponent.decorators = [
     { type: Component, args: [{
-                template: "<div class=\"ajf-columns\">\n  <div\n      *ngFor=\"let column of instance.widget.columns; let idx = index\"\n      [ngStyle]=\"{'flex-grow': column > -1 ? 1 : null, 'flex-basis' : column > -1 ? (column * 100) + '%' : null}\"\n      class=\"ajf-column\"\n  >\n    <ajf-widget *ngIf=\"(instance|ajfGetColumnContent:idx) as cc\" [instance]=\"cc!\">\n    </ajf-widget>\n  </div>\n</div>\n",
+                template: "<div class=\"ajf-columns\">\n    <div *ngFor=\"let column of instance.widget.columns; let idx = index\"\n        [ngStyle]=\"{'flex-grow': column > -1 ? 1 : null, 'flex-basis' : column > -1 ? (column * 100) + '%' : null}\"\n        class=\"ajf-column\">\n        <ng-container *ngIf=\"allcolumnsRendered$|async\">\n            <ajf-widget *ngIf=\"(instance|ajfGetColumnContent:idx) as cc\" [instance]=\"cc!\">\n            </ajf-widget>\n        </ng-container>\n    </div>\n</div>\n",
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 encapsulation: ViewEncapsulation.None,
                 styles: [".ajf-columns{flex:1 1 auto;display:flex;align-items:inherit;box-sizing:border-box}.ajf-columns>.ajf-column{box-sizing:border-box;display:flex;align-items:inherit;flex-shrink:1}\n"]
@@ -391,7 +397,7 @@ class AjfTableWidgetComponent extends AjfBaseWidgetComponent {
 }
 AjfTableWidgetComponent.decorators = [
     { type: Component, args: [{
-                template: "<ajf-table [data]=\"instance.data\"></ajf-table>\n",
+                template: " <ajf-table [data]=\"instance.data\"></ajf-table>\n",
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 encapsulation: ViewEncapsulation.None,
                 styles: ["\n"]
