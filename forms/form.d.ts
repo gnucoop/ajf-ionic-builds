@@ -22,14 +22,17 @@
 import { AjfFormRenderer as AjfCoreFormRenderer, AjfFormRendererService } from '@ajf/core/forms';
 import { BooleanInput } from '@angular/cdk/coercion';
 import { AfterViewInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
 export declare class AjfFormRenderer extends AjfCoreFormRenderer implements AfterViewInit, OnDestroy {
+    popoverController: PopoverController;
     private _longSlide;
     get longSlide(): boolean;
     private _viewInitEvt;
     private _scrollFinishSub;
-    constructor(rendererService: AjfFormRendererService, cdr: ChangeDetectorRef);
+    constructor(rendererService: AjfFormRendererService, cdr: ChangeDetectorRef, popoverController: PopoverController);
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
+    openPopover(ev: any, hint: string): void;
     private _updateLongSlide;
     static ngAcceptInputType_fixedOrientation: BooleanInput;
     static ngAcceptInputType_hasEndMessage: BooleanInput;
