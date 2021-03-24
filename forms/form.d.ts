@@ -25,6 +25,7 @@ import { AfterViewInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 export declare class AjfFormRenderer extends AjfCoreFormRenderer implements AfterViewInit, OnDestroy {
     popoverController: PopoverController;
+    topBar: boolean;
     private _longSlide;
     get longSlide(): boolean;
     private _viewInitEvt;
