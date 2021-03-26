@@ -325,7 +325,7 @@
             var _this = this;
             _super.prototype.ngAfterContentInit.call(this);
             this._scrollSub = this.pages.changes
-                .pipe(operators.map(function () { return _this.pages.toArray(); }), operators.startWith(this.pages.toArray()), operators.filter(function (pages) { return pages.length > 0; }), operators.switchMap(function (pages) { return rxjs.merge.apply(void 0, __spread(pages.map(function (page) { return page.scroll; }))); }))
+                .pipe(operators.map(function () { return _this.pages.toArray(); }), operators.startWith(this.pages.toArray()), operators.filter(function (pages) { return pages.length > 0; }), operators.switchMap(function (pages) { return rxjs.merge.apply(void 0, __spreadArray([], __read(pages.map(function (page) { return page.scroll; })))); }))
                 .subscribe(function () {
                 _this._fixRippleFromRadioButton();
                 _this._fixToggleButtons();
