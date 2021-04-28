@@ -1,6 +1,6 @@
 {
   "name": "@ajf/ionic",
-  "version": "12.0.0-next.2-sha-131f8fa5d",
+  "version": "12.0.0-next.2-sha-dba031547",
   "description": "",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "@angular/router": "^12.0.0-0 || ^13.0.0-0",
     "@gic/angular": "^5.0.0",
     "@ionic/angular": "^5.0.0",
-    "@ajf/core": "12.0.0-next.2-sha-131f8fa5d",
+    "@ajf/core": "12.0.0-next.2-sha-dba031547",
     "@ajf/icons": "^1.0.0",
     "flag-icon-css": "^3.5.0"
   },
