@@ -1,8 +1,30 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/forms'), require('@angular/core'), require('@ionic/angular'), require('rxjs'), require('rxjs/operators'), require('@angular/common/http'), require('@angular/platform-browser'), require('@ajf/core/common'), require('@ajf/ionic/barcode'), require('@ajf/ionic/calendar'), require('@ajf/ionic/checkbox-group'), require('@ajf/ionic/page-slider'), require('@ajf/ionic/time'), require('@angular/common'), require('@angular/forms'), require('@gic/angular'), require('@ngx-translate/core')) :
     typeof define === 'function' && define.amd ? define('@ajf/ionic/forms', ['exports', '@ajf/core/forms', '@angular/core', '@ionic/angular', 'rxjs', 'rxjs/operators', '@angular/common/http', '@angular/platform-browser', '@ajf/core/common', '@ajf/ionic/barcode', '@ajf/ionic/calendar', '@ajf/ionic/checkbox-group', '@ajf/ionic/page-slider', '@ajf/ionic/time', '@angular/common', '@angular/forms', '@gic/angular', '@ngx-translate/core'], factory) :
-    (global = global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.forms = {}), global.ajf.core.forms, global.ng.core, global.ionic.angular, global.rxjs, global.rxjs.operators, global.ng.common.http, global.ng.platformBrowser, global.ajf.core.common, global.ajf.ionic.barcode, global.ajf.ionic.calendar, global.ajf.ionic.checkboxGroup, global.ajf.ionic.pageSlider, global.ajf.ionic.time, global.ng.common, global.ng.forms, global.gic.angular, global.ngxTranslate.core));
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.forms = {}), global.ajf.core.forms, global.ng.core, global.ionic.angular, global.rxjs, global.rxjs.operators, global.ng.common.http, global.ng.platformBrowser, global.ajf.core.common, global.ajf.ionic.barcode, global.ajf.ionic.calendar, global.ajf.ionic.checkboxGroup, global.ajf.ionic.pageSlider, global.ajf.ionic.time, global.ng.common, global.ng.forms, global.gic.angular, global.ngxTranslate.core));
 }(this, (function (exports, forms, i0, angular, rxjs, operators, http, platformBrowser, common, barcode, calendar, checkboxGroup, pageSlider, time, common$1, forms$1, angular$1, core) { 'use strict';
+
+    function _interopNamespace(e) {
+        if (e && e.__esModule) return e;
+        var n = Object.create(null);
+        if (e) {
+            Object.keys(e).forEach(function (k) {
+                if (k !== 'default') {
+                    var d = Object.getOwnPropertyDescriptor(e, k);
+                    Object.defineProperty(n, k, d.get ? d : {
+                        enumerable: true,
+                        get: function () {
+                            return e[k];
+                        }
+                    });
+                }
+            });
+        }
+        n['default'] = e;
+        return Object.freeze(n);
+    }
+
+    var i0__namespace = /*#__PURE__*/_interopNamespace(i0);
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -299,18 +321,21 @@
     function __importDefault(mod) {
         return (mod && mod.__esModule) ? mod : { default: mod };
     }
-    function __classPrivateFieldGet(receiver, privateMap) {
-        if (!privateMap.has(receiver)) {
-            throw new TypeError("attempted to get private field on non-instance");
-        }
-        return privateMap.get(receiver);
+    function __classPrivateFieldGet(receiver, state, kind, f) {
+        if (kind === "a" && !f)
+            throw new TypeError("Private accessor was defined without a getter");
+        if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver))
+            throw new TypeError("Cannot read private member from an object whose class did not declare it");
+        return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
     }
-    function __classPrivateFieldSet(receiver, privateMap, value) {
-        if (!privateMap.has(receiver)) {
-            throw new TypeError("attempted to set private field on non-instance");
-        }
-        privateMap.set(receiver, value);
-        return value;
+    function __classPrivateFieldSet(receiver, state, value, kind, f) {
+        if (kind === "m")
+            throw new TypeError("Private method is not writable");
+        if (kind === "a" && !f)
+            throw new TypeError("Private accessor was defined without a setter");
+        if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver))
+            throw new TypeError("Cannot write private member to an object whose class did not declare it");
+        return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
     }
 
     /**
@@ -834,7 +859,7 @@
         }
         return AjfFieldService;
     }(forms.AjfFieldService));
-    AjfFieldService.ɵprov = i0.ɵɵdefineInjectable({ factory: function AjfFieldService_Factory() { return new AjfFieldService(); }, token: AjfFieldService, providedIn: "root" });
+    AjfFieldService.ɵprov = i0__namespace.ɵɵdefineInjectable({ factory: function AjfFieldService_Factory() { return new AjfFieldService(); }, token: AjfFieldService, providedIn: "root" });
     AjfFieldService.decorators = [
         { type: i0.Injectable, args: [{ providedIn: 'root' },] }
     ];
