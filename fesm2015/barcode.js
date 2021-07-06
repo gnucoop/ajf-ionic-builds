@@ -1,8 +1,8 @@
 import { AjfCommonModule } from '@ajf/core/common';
+import { AjfTranslocoModule } from '@ajf/core/transloco';
 import { CommonModule } from '@angular/common';
 import { forwardRef, Component, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, Renderer2, NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { TranslateModule } from '@ngx-translate/core';
 import { AjfBarcode } from '@ajf/core/barcode';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -40,7 +40,7 @@ class AjfBarcodeComponent extends AjfBarcode {
 AjfBarcodeComponent.decorators = [
     { type: Component, args: [{
                 selector: 'ajf-barcode',
-                template: "<ng-container *ngIf=\"value; else barcode\">\n  <div class=\"ajf-code-container\">\n    <span>{{ value }}</span>\n    <ion-button (click)=\"reset()\">\n      <ion-icon slot=\"icon-only\" style=\"transform: rotate(90deg);\" name=\"reorder\"></ion-icon>\n    </ion-button>\n  </div>\n</ng-container>\n<ng-template #barcode>\n  <ion-segment [value]=\"toggle\">\n    <ion-segment-button (click)=\"toggle = 'drop' ; fileInput.click()\" layout=\"icon-end\">\n      <ion-icon name=\"add-circle-outline\"></ion-icon>\n      <span translate>Upload image </span>\n      <input #fileInput type=\"file\" (change)=\"onSelectFile($event)\" multiple style=\"display:none;\" />\n    </ion-segment-button>\n    <ion-segment-button (click)=\"toggle = 'camera'\">\n      <span translate>Camera</span>\n    </ion-segment-button>\n  </ion-segment>\n  <ng-container *ngIf=\"toggle == 'camera'\">\n    <div ajfVideoDirective [source]=\"videoSource\" class=\"left\" (isInit)=\"takeSnapshot()\"></div>\n  </ng-container>\n</ng-template>\n",
+                template: "<ng-container *ngIf=\"value; else barcode\">\n  <div class=\"ajf-code-container\">\n    <span>{{ value }}</span>\n    <ion-button (click)=\"reset()\">\n      <ion-icon\n        slot=\"icon-only\"\n        style=\"transform: rotate(90deg)\"\n        name=\"reorder\"\n      ></ion-icon>\n    </ion-button>\n  </div>\n</ng-container>\n<ng-template #barcode>\n  <ion-segment [value]=\"toggle\">\n    <ion-segment-button\n      (click)=\"toggle = 'drop' ; fileInput.click()\"\n      layout=\"icon-end\"\n    >\n      <ion-icon name=\"add-circle-outline\"></ion-icon>\n      <span>{{'Upload image'|transloco}}</span>\n      <input\n        #fileInput\n        type=\"file\"\n        (change)=\"onSelectFile($event)\"\n        multiple\n        style=\"display: none\"\n      />\n    </ion-segment-button>\n    <ion-segment-button (click)=\"toggle = 'camera'\">\n      <span>{{'Camera'|transloco}}</span>\n    </ion-segment-button>\n  </ion-segment>\n  <ng-container *ngIf=\"toggle == 'camera'\">\n    <div\n      ajfVideoDirective\n      [source]=\"videoSource\"\n      class=\"left\"\n      (isInit)=\"takeSnapshot()\"\n    ></div>\n  </ng-container>\n</ng-template>\n",
                 encapsulation: ViewEncapsulation.None,
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 providers: [BARCODE_CONTROL_VALUE_ACCESSOR],
@@ -81,7 +81,7 @@ AjfBarcodeModule.decorators = [
                     AjfCommonModule,
                     CommonModule,
                     IonicModule,
-                    TranslateModule,
+                    AjfTranslocoModule,
                 ],
                 declarations: [
                     AjfBarcodeComponent,

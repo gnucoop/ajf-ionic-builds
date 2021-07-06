@@ -1,9 +1,9 @@
 import { AjfCalendar, AjfCalendarService, AjfCalendarModule as AjfCalendarModule$1 } from '@ajf/core/calendar';
+import { AjfTranslocoModule } from '@ajf/core/transloco';
 import { CommonModule } from '@angular/common';
 import { forwardRef, Component, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, NgModule } from '@angular/core';
 import { NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { TranslateModule } from '@ngx-translate/core';
 
 /**
  * @license
@@ -39,7 +39,7 @@ class AjfCalendarComponent extends AjfCalendar {
 AjfCalendarComponent.decorators = [
     { type: Component, args: [{
                 selector: 'ajf-calendar',
-                template: "<div class=\"ajf-calendar-header\">\n  <ion-fab-button mini left [disabled]=\"disabled\" (click)=\"prevPage()\">&#8592;</ion-fab-button>\n  <ion-button [disabled]=\"disabled\" (click)=\"previousViewMode()\" light class=\"ajf-calendar-header-title\">\n    {{ viewHeader | translate }}\n  </ion-button>\n  <ion-fab-button mini right [disabled]=\"disabled\" (click)=\"nextPage()\">&#8594;</ion-fab-button>\n</div>\n<div class=\"ajf-calendar-row\" *ngIf=\"calendarHeaders.length > 0\">\n  <div *ngFor=\"let calendarHeader of calendarHeaders\">\n    <div class=\"button-label\">{{ calendarHeader | translate }}</div>\n  </div>\n</div>\n<div class=\"ajf-calendar-row\" *ngFor=\"let row of calendarRows\">\n  <ion-button\n      [color]=\"entry.selected == 'none' ? 'light' : 'danger'\"\n      [disabled]=\"disabled || (entry.disabled || false)\"\n      [class.ajf-calendar-partial-selection]=\"entry.selected == 'partial'\"\n      [class.ajf-calendar-highlight]=\"entry.selected === 'none' && entry.highlight\"\n      (click)=\"selectEntry(entry)\"\n      *ngFor=\"let entry of row\">\n    {{ entry|ajfCalendarEntryLabel }}\n  </ion-button>\n</div>\n",
+                template: "<div class=\"ajf-calendar-header\">\n  <ion-fab-button mini left [disabled]=\"disabled\" (click)=\"prevPage()\">&#8592;</ion-fab-button>\n  <ion-button [disabled]=\"disabled\" (click)=\"previousViewMode()\" light class=\"ajf-calendar-header-title\">\n    {{ viewHeader | transloco }}\n  </ion-button>\n  <ion-fab-button mini right [disabled]=\"disabled\" (click)=\"nextPage()\">&#8594;</ion-fab-button>\n</div>\n<div class=\"ajf-calendar-row\" *ngIf=\"calendarHeaders.length > 0\">\n  <div *ngFor=\"let calendarHeader of calendarHeaders\">\n    <div class=\"button-label\">{{ calendarHeader | transloco }}</div>\n  </div>\n</div>\n<div class=\"ajf-calendar-row\" *ngFor=\"let row of calendarRows\">\n  <ion-button\n      [color]=\"entry.selected == 'none' ? 'light' : 'danger'\"\n      [disabled]=\"disabled || (entry.disabled || false)\"\n      [class.ajf-calendar-partial-selection]=\"entry.selected == 'partial'\"\n      [class.ajf-calendar-highlight]=\"entry.selected === 'none' && entry.highlight\"\n      (click)=\"selectEntry(entry)\"\n      *ngFor=\"let entry of row\">\n    {{ entry|ajfCalendarEntryLabel }}\n  </ion-button>\n</div>\n",
                 encapsulation: ViewEncapsulation.None,
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 providers: [
@@ -83,7 +83,7 @@ AjfCalendarModule.decorators = [
                     AjfCalendarModule$1,
                     FormsModule,
                     IonicModule,
-                    TranslateModule,
+                    AjfTranslocoModule,
                 ],
                 declarations: [
                     AjfCalendarComponent,

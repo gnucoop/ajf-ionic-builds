@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/common'), require('@angular/common'), require('@angular/core'), require('@ionic/angular'), require('@ngx-translate/core'), require('@ajf/core/barcode'), require('@angular/forms')) :
-    typeof define === 'function' && define.amd ? define('@ajf/ionic/barcode', ['exports', '@ajf/core/common', '@angular/common', '@angular/core', '@ionic/angular', '@ngx-translate/core', '@ajf/core/barcode', '@angular/forms'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.barcode = {}), global.ajf.core.common, global.ng.common, global.ng.core, global.ionic.angular, global.ngxTranslate.core, global.ajf.core.barcode, global.ng.forms));
-}(this, (function (exports, common, common$1, core, angular, core$1, barcode, forms) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/common'), require('@ajf/core/transloco'), require('@angular/common'), require('@angular/core'), require('@ionic/angular'), require('@ajf/core/barcode'), require('@angular/forms')) :
+    typeof define === 'function' && define.amd ? define('@ajf/ionic/barcode', ['exports', '@ajf/core/common', '@ajf/core/transloco', '@angular/common', '@angular/core', '@ionic/angular', '@ajf/core/barcode', '@angular/forms'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.barcode = {}), global.ajf.core.common, global.ajf.core.transloco, global.ng.common, global.ng.core, global.ionic.angular, global.ajf.core.barcode, global.ng.forms));
+}(this, (function (exports, common, transloco, common$1, core, angular, barcode, forms) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -331,7 +331,7 @@
     AjfBarcodeComponent.decorators = [
         { type: core.Component, args: [{
                     selector: 'ajf-barcode',
-                    template: "<ng-container *ngIf=\"value; else barcode\">\n  <div class=\"ajf-code-container\">\n    <span>{{ value }}</span>\n    <ion-button (click)=\"reset()\">\n      <ion-icon slot=\"icon-only\" style=\"transform: rotate(90deg);\" name=\"reorder\"></ion-icon>\n    </ion-button>\n  </div>\n</ng-container>\n<ng-template #barcode>\n  <ion-segment [value]=\"toggle\">\n    <ion-segment-button (click)=\"toggle = 'drop' ; fileInput.click()\" layout=\"icon-end\">\n      <ion-icon name=\"add-circle-outline\"></ion-icon>\n      <span translate>Upload image </span>\n      <input #fileInput type=\"file\" (change)=\"onSelectFile($event)\" multiple style=\"display:none;\" />\n    </ion-segment-button>\n    <ion-segment-button (click)=\"toggle = 'camera'\">\n      <span translate>Camera</span>\n    </ion-segment-button>\n  </ion-segment>\n  <ng-container *ngIf=\"toggle == 'camera'\">\n    <div ajfVideoDirective [source]=\"videoSource\" class=\"left\" (isInit)=\"takeSnapshot()\"></div>\n  </ng-container>\n</ng-template>\n",
+                    template: "<ng-container *ngIf=\"value; else barcode\">\n  <div class=\"ajf-code-container\">\n    <span>{{ value }}</span>\n    <ion-button (click)=\"reset()\">\n      <ion-icon\n        slot=\"icon-only\"\n        style=\"transform: rotate(90deg)\"\n        name=\"reorder\"\n      ></ion-icon>\n    </ion-button>\n  </div>\n</ng-container>\n<ng-template #barcode>\n  <ion-segment [value]=\"toggle\">\n    <ion-segment-button\n      (click)=\"toggle = 'drop' ; fileInput.click()\"\n      layout=\"icon-end\"\n    >\n      <ion-icon name=\"add-circle-outline\"></ion-icon>\n      <span>{{'Upload image'|transloco}}</span>\n      <input\n        #fileInput\n        type=\"file\"\n        (change)=\"onSelectFile($event)\"\n        multiple\n        style=\"display: none\"\n      />\n    </ion-segment-button>\n    <ion-segment-button (click)=\"toggle = 'camera'\">\n      <span>{{'Camera'|transloco}}</span>\n    </ion-segment-button>\n  </ion-segment>\n  <ng-container *ngIf=\"toggle == 'camera'\">\n    <div\n      ajfVideoDirective\n      [source]=\"videoSource\"\n      class=\"left\"\n      (isInit)=\"takeSnapshot()\"\n    ></div>\n  </ng-container>\n</ng-template>\n",
                     encapsulation: core.ViewEncapsulation.None,
                     changeDetection: core.ChangeDetectionStrategy.OnPush,
                     providers: [BARCODE_CONTROL_VALUE_ACCESSOR],
@@ -375,7 +375,7 @@
                         common.AjfCommonModule,
                         common$1.CommonModule,
                         angular.IonicModule,
-                        core$1.TranslateModule,
+                        transloco.AjfTranslocoModule,
                     ],
                     declarations: [
                         AjfBarcodeComponent,

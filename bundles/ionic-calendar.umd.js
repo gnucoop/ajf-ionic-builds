@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/calendar'), require('@angular/common'), require('@angular/core'), require('@angular/forms'), require('@ionic/angular'), require('@ngx-translate/core')) :
-    typeof define === 'function' && define.amd ? define('@ajf/ionic/calendar', ['exports', '@ajf/core/calendar', '@angular/common', '@angular/core', '@angular/forms', '@ionic/angular', '@ngx-translate/core'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.calendar = {}), global.ajf.core.calendar, global.ng.common, global.ng.core, global.ng.forms, global.ionic.angular, global.ngxTranslate.core));
-}(this, (function (exports, calendar, common, core, forms, angular, core$1) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/calendar'), require('@ajf/core/transloco'), require('@angular/common'), require('@angular/core'), require('@angular/forms'), require('@ionic/angular')) :
+    typeof define === 'function' && define.amd ? define('@ajf/ionic/calendar', ['exports', '@ajf/core/calendar', '@ajf/core/transloco', '@angular/common', '@angular/core', '@angular/forms', '@ionic/angular'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.calendar = {}), global.ajf.core.calendar, global.ajf.core.transloco, global.ng.common, global.ng.core, global.ng.forms, global.ionic.angular));
+}(this, (function (exports, calendar, transloco, common, core, forms, angular) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -331,7 +331,7 @@
     AjfCalendarComponent.decorators = [
         { type: core.Component, args: [{
                     selector: 'ajf-calendar',
-                    template: "<div class=\"ajf-calendar-header\">\n  <ion-fab-button mini left [disabled]=\"disabled\" (click)=\"prevPage()\">&#8592;</ion-fab-button>\n  <ion-button [disabled]=\"disabled\" (click)=\"previousViewMode()\" light class=\"ajf-calendar-header-title\">\n    {{ viewHeader | translate }}\n  </ion-button>\n  <ion-fab-button mini right [disabled]=\"disabled\" (click)=\"nextPage()\">&#8594;</ion-fab-button>\n</div>\n<div class=\"ajf-calendar-row\" *ngIf=\"calendarHeaders.length > 0\">\n  <div *ngFor=\"let calendarHeader of calendarHeaders\">\n    <div class=\"button-label\">{{ calendarHeader | translate }}</div>\n  </div>\n</div>\n<div class=\"ajf-calendar-row\" *ngFor=\"let row of calendarRows\">\n  <ion-button\n      [color]=\"entry.selected == 'none' ? 'light' : 'danger'\"\n      [disabled]=\"disabled || (entry.disabled || false)\"\n      [class.ajf-calendar-partial-selection]=\"entry.selected == 'partial'\"\n      [class.ajf-calendar-highlight]=\"entry.selected === 'none' && entry.highlight\"\n      (click)=\"selectEntry(entry)\"\n      *ngFor=\"let entry of row\">\n    {{ entry|ajfCalendarEntryLabel }}\n  </ion-button>\n</div>\n",
+                    template: "<div class=\"ajf-calendar-header\">\n  <ion-fab-button mini left [disabled]=\"disabled\" (click)=\"prevPage()\">&#8592;</ion-fab-button>\n  <ion-button [disabled]=\"disabled\" (click)=\"previousViewMode()\" light class=\"ajf-calendar-header-title\">\n    {{ viewHeader | transloco }}\n  </ion-button>\n  <ion-fab-button mini right [disabled]=\"disabled\" (click)=\"nextPage()\">&#8594;</ion-fab-button>\n</div>\n<div class=\"ajf-calendar-row\" *ngIf=\"calendarHeaders.length > 0\">\n  <div *ngFor=\"let calendarHeader of calendarHeaders\">\n    <div class=\"button-label\">{{ calendarHeader | transloco }}</div>\n  </div>\n</div>\n<div class=\"ajf-calendar-row\" *ngFor=\"let row of calendarRows\">\n  <ion-button\n      [color]=\"entry.selected == 'none' ? 'light' : 'danger'\"\n      [disabled]=\"disabled || (entry.disabled || false)\"\n      [class.ajf-calendar-partial-selection]=\"entry.selected == 'partial'\"\n      [class.ajf-calendar-highlight]=\"entry.selected === 'none' && entry.highlight\"\n      (click)=\"selectEntry(entry)\"\n      *ngFor=\"let entry of row\">\n    {{ entry|ajfCalendarEntryLabel }}\n  </ion-button>\n</div>\n",
                     encapsulation: core.ViewEncapsulation.None,
                     changeDetection: core.ChangeDetectionStrategy.OnPush,
                     providers: [
@@ -378,7 +378,7 @@
                         calendar.AjfCalendarModule,
                         forms.FormsModule,
                         angular.IonicModule,
-                        core$1.TranslateModule,
+                        transloco.AjfTranslocoModule,
                     ],
                     declarations: [
                         AjfCalendarComponent,
