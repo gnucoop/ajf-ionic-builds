@@ -19,20 +19,10 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-export * from './boolean-field';
-export * from './date-field';
-export * from './date-input-field';
-export * from './empty-field';
-export * from './field';
-export * from './field-service';
-export * from './input-field';
-export * from './form';
-export * from './forms-module';
-export * from './multiple-choice-field';
-export * from './number-field';
-export * from './range-field';
-export * from './single-choice-field';
-export * from './table-field';
-export * from './textarea-field';
-export * from './time-field';
-export * from './warning-alert-service';
+import { AjfFormRendererService } from '@ajf/core/forms';
+import { AjfRange } from '@ajf/core/range';
+import { ChangeDetectorRef } from '@angular/core';
+import { AjfWarningAlertService } from './warning-alert-service';
+export declare class AjfRangeFieldComponent extends AjfRange {
+    constructor(cdr: ChangeDetectorRef, service: AjfFormRendererService, was: AjfWarningAlertService);
+}

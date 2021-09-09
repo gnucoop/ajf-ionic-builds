@@ -4,6 +4,7 @@ import { Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, Chan
 import { AlertController, IonInput, PopoverController, IonicModule } from '@ionic/angular';
 import { Observable, Subscription, defer } from 'rxjs';
 import { filter, switchMap, map, startWith, withLatestFrom, delayWhen } from 'rxjs/operators';
+import { AjfRange } from '@ajf/core/range';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AjfCommonModule } from '@ajf/core/common';
@@ -543,6 +544,47 @@ AjfNumberFieldComponent.ctorParameters = () => [
  * If not, see http://www.gnu.org/licenses/.
  *
  */
+class AjfRangeFieldComponent extends AjfRange {
+    constructor(cdr, service, was) {
+        super(cdr, service, was);
+    }
+}
+AjfRangeFieldComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'ajf-range',
+                template: "<ion-range\n  snaps=\"true\"\n  ticks=\"true\"\n  debounce=\"500\"\n  *ngIf=\"control|async as ctrl\"\n  [attr.aria-label]=\"name\"\n  [formControl]=\"ctrl!\"\n  [name]=\"name\"\n  [step]=\"step\"\n  [min]=\"start\"\n  [max]=\"end\"\n></ion-range>\n",
+                changeDetection: ChangeDetectionStrategy.OnPush,
+                encapsulation: ViewEncapsulation.None,
+                styles: ["\n"]
+            },] }
+];
+AjfRangeFieldComponent.ctorParameters = () => [
+    { type: ChangeDetectorRef },
+    { type: AjfFormRendererService },
+    { type: AjfWarningAlertService, decorators: [{ type: Inject, args: [AJF_WARNING_ALERT_SERVICE,] }] }
+];
+
+/**
+ * @license
+ * Copyright (C) Gnucoop soc. coop.
+ *
+ * This file is part of the Advanced JSON forms (ajf).
+ *
+ * Advanced JSON forms (ajf) is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the License,
+ * or (at your option) any later version.
+ *
+ * Advanced JSON forms (ajf) is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with Advanced JSON forms (ajf).
+ * If not, see http://www.gnu.org/licenses/.
+ *
+ */
 class AjfSingleChoiceFieldComponent extends AjfFieldWithChoicesComponent {
     constructor(cdr, service, was, searchThreshold) {
         super(cdr, service, was, searchThreshold);
@@ -812,6 +854,10 @@ class AjfFieldService extends AjfFieldService$1 {
         this.componentsMap[AjfFieldType.VideoUrl] = {
             component: AjfVideoUrlFieldComponent,
             readOnlyComponent: AjfReadOnlyVideoUrlFieldComponent
+        };
+        this.componentsMap[AjfFieldType.Range] = {
+            component: AjfRangeFieldComponent,
+            readOnlyComponent: AjfReadOnlyFieldComponent
         };
     }
 }
@@ -1132,6 +1178,7 @@ AjfFormsModule.decorators = [
                     AjfMultipleChoiceFieldComponent,
                     AjfNumberFieldComponent,
                     AjfPopover,
+                    AjfRangeFieldComponent,
                     AjfSelectHasSearchBarPipe,
                     AjfSelectUseVirtualScroll,
                     AjfSingleChoiceFieldComponent,
@@ -1151,6 +1198,7 @@ AjfFormsModule.decorators = [
                     AjfMultipleChoiceFieldComponent,
                     AjfNumberFieldComponent,
                     AjfPopover,
+                    AjfRangeFieldComponent,
                     AjfSingleChoiceFieldComponent,
                     AjfTableFieldComponent,
                     AjfTextareaFieldComponent,
@@ -1194,5 +1242,5 @@ AjfFormsModule.decorators = [
  * Generated bundle index. Do not edit.
  */
 
-export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfDateInputFieldComponent, AjfEmptyFieldComponent, AjfFieldService, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfBarcodeFieldComponent as ɵgc_ajf_src_ionic_forms_forms_a, AjfFormPage as ɵgc_ajf_src_ionic_forms_forms_b, AjfFormulaFieldComponent as ɵgc_ajf_src_ionic_forms_forms_c, AjfPopover as ɵgc_ajf_src_ionic_forms_forms_d, AjfSelectHasSearchBarPipe as ɵgc_ajf_src_ionic_forms_forms_e, AjfSelectUseVirtualScroll as ɵgc_ajf_src_ionic_forms_forms_f, AjfVideoUrlFieldComponent as ɵgc_ajf_src_ionic_forms_forms_g };
+export { AjfBooleanFieldComponent, AjfDateFieldComponent, AjfDateInputFieldComponent, AjfEmptyFieldComponent, AjfFieldService, AjfFormField, AjfFormRenderer, AjfFormsModule, AjfInputFieldComponent, AjfMultipleChoiceFieldComponent, AjfNumberFieldComponent, AjfRangeFieldComponent, AjfSingleChoiceFieldComponent, AjfTableFieldComponent, AjfTextareaFieldComponent, AjfTimeFieldComponent, AjfWarningAlertService, AjfBarcodeFieldComponent as ɵgc_ajf_src_ionic_forms_forms_a, AjfFormPage as ɵgc_ajf_src_ionic_forms_forms_b, AjfFormulaFieldComponent as ɵgc_ajf_src_ionic_forms_forms_c, AjfPopover as ɵgc_ajf_src_ionic_forms_forms_d, AjfSelectHasSearchBarPipe as ɵgc_ajf_src_ionic_forms_forms_e, AjfSelectUseVirtualScroll as ɵgc_ajf_src_ionic_forms_forms_f, AjfVideoUrlFieldComponent as ɵgc_ajf_src_ionic_forms_forms_g };
 //# sourceMappingURL=forms.js.map

@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/forms'), require('@angular/core'), require('@ionic/angular'), require('rxjs'), require('rxjs/operators'), require('@angular/common/http'), require('@angular/platform-browser'), require('@ajf/core/common'), require('@ajf/core/transloco'), require('@ajf/ionic/barcode'), require('@ajf/ionic/calendar'), require('@ajf/ionic/checkbox-group'), require('@ajf/ionic/page-slider'), require('@ajf/ionic/time'), require('@angular/common'), require('@angular/forms'), require('@gic/angular')) :
-    typeof define === 'function' && define.amd ? define('@ajf/ionic/forms', ['exports', '@ajf/core/forms', '@angular/core', '@ionic/angular', 'rxjs', 'rxjs/operators', '@angular/common/http', '@angular/platform-browser', '@ajf/core/common', '@ajf/core/transloco', '@ajf/ionic/barcode', '@ajf/ionic/calendar', '@ajf/ionic/checkbox-group', '@ajf/ionic/page-slider', '@ajf/ionic/time', '@angular/common', '@angular/forms', '@gic/angular'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.forms = {}), global.ajf.core.forms, global.ng.core, global.ionic.angular, global.rxjs, global.rxjs.operators, global.ng.common.http, global.ng.platformBrowser, global.ajf.core.common, global.ajf.core.transloco, global.ajf.ionic.barcode, global.ajf.ionic.calendar, global.ajf.ionic.checkboxGroup, global.ajf.ionic.pageSlider, global.ajf.ionic.time, global.ng.common, global.ng.forms, global.gic.angular));
-}(this, (function (exports, forms, i0, angular, rxjs, operators, http, platformBrowser, common, transloco, barcode, calendar, checkboxGroup, pageSlider, time, common$1, forms$1, angular$1) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@ajf/core/forms'), require('@angular/core'), require('@ionic/angular'), require('rxjs'), require('rxjs/operators'), require('@ajf/core/range'), require('@angular/common/http'), require('@angular/platform-browser'), require('@ajf/core/common'), require('@ajf/core/transloco'), require('@ajf/ionic/barcode'), require('@ajf/ionic/calendar'), require('@ajf/ionic/checkbox-group'), require('@ajf/ionic/page-slider'), require('@ajf/ionic/time'), require('@angular/common'), require('@angular/forms'), require('@gic/angular')) :
+    typeof define === 'function' && define.amd ? define('@ajf/ionic/forms', ['exports', '@ajf/core/forms', '@angular/core', '@ionic/angular', 'rxjs', 'rxjs/operators', '@ajf/core/range', '@angular/common/http', '@angular/platform-browser', '@ajf/core/common', '@ajf/core/transloco', '@ajf/ionic/barcode', '@ajf/ionic/calendar', '@ajf/ionic/checkbox-group', '@ajf/ionic/page-slider', '@ajf/ionic/time', '@angular/common', '@angular/forms', '@gic/angular'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.ajf = global.ajf || {}, global.ajf.ionic = global.ajf.ionic || {}, global.ajf.ionic.forms = {}), global.ajf.core.forms, global.ng.core, global.ionic.angular, global.rxjs, global.rxjs.operators, global.ajf.core.range, global.ng.common.http, global.ng.platformBrowser, global.ajf.core.common, global.ajf.core.transloco, global.ajf.ionic.barcode, global.ajf.ionic.calendar, global.ajf.ionic.checkboxGroup, global.ajf.ionic.pageSlider, global.ajf.ionic.time, global.ng.common, global.ng.forms, global.gic.angular));
+}(this, (function (exports, forms, i0, angular, rxjs, operators, range, http, platformBrowser, common, transloco, barcode, calendar, checkboxGroup, pageSlider, time, common$1, forms$1, angular$1) { 'use strict';
 
     function _interopNamespace(e) {
         if (e && e.__esModule) return e;
@@ -679,6 +679,28 @@
         { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] }
     ]; };
 
+    var AjfRangeFieldComponent = /** @class */ (function (_super) {
+        __extends(AjfRangeFieldComponent, _super);
+        function AjfRangeFieldComponent(cdr, service, was) {
+            return _super.call(this, cdr, service, was) || this;
+        }
+        return AjfRangeFieldComponent;
+    }(range.AjfRange));
+    AjfRangeFieldComponent.decorators = [
+        { type: i0.Component, args: [{
+                    selector: 'ajf-range',
+                    template: "<ion-range\n  snaps=\"true\"\n  ticks=\"true\"\n  debounce=\"500\"\n  *ngIf=\"control|async as ctrl\"\n  [attr.aria-label]=\"name\"\n  [formControl]=\"ctrl!\"\n  [name]=\"name\"\n  [step]=\"step\"\n  [min]=\"start\"\n  [max]=\"end\"\n></ion-range>\n",
+                    changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                    encapsulation: i0.ViewEncapsulation.None,
+                    styles: ["\n"]
+                },] }
+    ];
+    AjfRangeFieldComponent.ctorParameters = function () { return [
+        { type: i0.ChangeDetectorRef },
+        { type: forms.AjfFormRendererService },
+        { type: AjfWarningAlertService, decorators: [{ type: i0.Inject, args: [forms.AJF_WARNING_ALERT_SERVICE,] }] }
+    ]; };
+
     var AjfSingleChoiceFieldComponent = /** @class */ (function (_super) {
         __extends(AjfSingleChoiceFieldComponent, _super);
         function AjfSingleChoiceFieldComponent(cdr, service, was, searchThreshold) {
@@ -854,6 +876,10 @@
             _this.componentsMap[forms.AjfFieldType.VideoUrl] = {
                 component: AjfVideoUrlFieldComponent,
                 readOnlyComponent: forms.AjfReadOnlyVideoUrlFieldComponent
+            };
+            _this.componentsMap[forms.AjfFieldType.Range] = {
+                component: AjfRangeFieldComponent,
+                readOnlyComponent: forms.AjfReadOnlyFieldComponent
             };
             return _this;
         }
@@ -1159,6 +1185,7 @@
                         AjfMultipleChoiceFieldComponent,
                         AjfNumberFieldComponent,
                         AjfPopover,
+                        AjfRangeFieldComponent,
                         AjfSelectHasSearchBarPipe,
                         AjfSelectUseVirtualScroll,
                         AjfSingleChoiceFieldComponent,
@@ -1178,6 +1205,7 @@
                         AjfMultipleChoiceFieldComponent,
                         AjfNumberFieldComponent,
                         AjfPopover,
+                        AjfRangeFieldComponent,
                         AjfSingleChoiceFieldComponent,
                         AjfTableFieldComponent,
                         AjfTextareaFieldComponent,
@@ -1232,6 +1260,7 @@
     exports.AjfInputFieldComponent = AjfInputFieldComponent;
     exports.AjfMultipleChoiceFieldComponent = AjfMultipleChoiceFieldComponent;
     exports.AjfNumberFieldComponent = AjfNumberFieldComponent;
+    exports.AjfRangeFieldComponent = AjfRangeFieldComponent;
     exports.AjfSingleChoiceFieldComponent = AjfSingleChoiceFieldComponent;
     exports.AjfTableFieldComponent = AjfTableFieldComponent;
     exports.AjfTextareaFieldComponent = AjfTextareaFieldComponent;
