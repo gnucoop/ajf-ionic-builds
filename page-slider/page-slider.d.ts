@@ -23,6 +23,7 @@ import { AjfPageSlider as AjfCorePageSlider } from '@ajf/core/page-slider';
 import { AnimationBuilder } from '@angular/animations';
 import { BooleanInput } from '@angular/cdk/coercion';
 import { AfterContentInit, ChangeDetectorRef, ElementRef, OnDestroy, Renderer2 } from '@angular/core';
+import * as i0 from "@angular/core";
 export declare class AjfPageSlider extends AjfCorePageSlider implements AfterContentInit, OnDestroy {
     private _el;
     private _scrollSub;
@@ -33,4 +34,6 @@ export declare class AjfPageSlider extends AjfCorePageSlider implements AfterCon
     private _fixToggleButtons;
     static ngAcceptInputType_fixedOrientation: BooleanInput;
     static ngAcceptInputType_hideNavigationButtons: BooleanInput;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AjfPageSlider, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AjfPageSlider, "ajf-page-slider", never, {}, {}, never, ["*", "[ajfPageSliderBar]"]>;
 }

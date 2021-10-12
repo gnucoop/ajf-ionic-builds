@@ -21,6 +21,9 @@
  */
 import { AjfFieldWithChoicesInstance } from '@ajf/core/forms';
 import { PipeTransform } from '@angular/core';
+import * as i0 from "@angular/core";
 export declare class AjfSelectUseVirtualScroll implements PipeTransform {
     transform(instance: AjfFieldWithChoicesInstance<any>, vsThreshold: number): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AjfSelectUseVirtualScroll, never>;
+    static ɵpipe: i0.ɵɵPipeDeclaration<AjfSelectUseVirtualScroll, "ajfSelectUseVirtualScroll">;
 }

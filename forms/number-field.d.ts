@@ -23,6 +23,7 @@ import { AjfFormRendererService, AjfInputFieldComponent as CoreComponent } from 
 import { ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AjfWarningAlertService } from './warning-alert-service';
+import * as i0 from "@angular/core";
 export declare class AjfNumberFieldComponent extends CoreComponent implements OnDestroy, OnInit {
     readonly value: Observable<number | null>;
     private _setValueEvt;
@@ -31,4 +32,6 @@ export declare class AjfNumberFieldComponent extends CoreComponent implements On
     ngOnDestroy(): void;
     ngOnInit(): void;
     setValue(value: any): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AjfNumberFieldComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AjfNumberFieldComponent, "ng-component", never, {}, {}, never, never>;
 }

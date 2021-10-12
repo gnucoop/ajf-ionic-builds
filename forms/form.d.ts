@@ -23,6 +23,7 @@ import { AjfFormRenderer as AjfCoreFormRenderer, AjfFormRendererService } from '
 import { BooleanInput } from '@angular/cdk/coercion';
 import { AfterViewInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
+import * as i0 from "@angular/core";
 export declare class AjfFormRenderer extends AjfCoreFormRenderer implements AfterViewInit, OnDestroy {
     popoverController: PopoverController;
     topBar: boolean;
@@ -43,4 +44,6 @@ export declare class AjfFormRenderer extends AjfCoreFormRenderer implements Afte
     static ngAcceptInputType_hideTopToolbar: BooleanInput;
     static ngAcceptInputType_saveDisabled: BooleanInput;
     static ngAcceptInputType_readonly: BooleanInput;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AjfFormRenderer, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AjfFormRenderer, "ajf-form", never, { "topBar": "topBar"; }, {}, never, ["[ajfFormTopToolbarButtons]", "[ajfFormSaveButton]", "[ajfFormStartMessageTitle]", "[ajfFormStartMessage]", "[ajfFormEndMessageTitle]", "[ajfFormEndMessage]"]>;
 }

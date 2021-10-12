@@ -24,6 +24,7 @@ import { ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { IonInput } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { AjfWarningAlertService } from './warning-alert-service';
+import * as i0 from "@angular/core";
 export declare class AjfFormulaFieldComponent extends AjfBaseFieldComponent<AjfFormulaFieldInstance> implements OnDestroy {
     input: IonInput;
     readonly value: Observable<any>;
@@ -32,4 +33,6 @@ export declare class AjfFormulaFieldComponent extends AjfBaseFieldComponent<AjfF
     constructor(cdr: ChangeDetectorRef, service: AjfFormRendererService, was: AjfWarningAlertService);
     ngOnDestroy(): void;
     onChange(event: Event): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AjfFormulaFieldComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AjfFormulaFieldComponent, "ng-component", never, {}, {}, never, never>;
 }

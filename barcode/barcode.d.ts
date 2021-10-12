@@ -21,7 +21,10 @@
  */
 import { AjfBarcode } from '@ajf/core/barcode';
 import { ChangeDetectorRef, Renderer2 } from '@angular/core';
+import * as i0 from "@angular/core";
 export declare const BARCODE_CONTROL_VALUE_ACCESSOR: any;
 export declare class AjfBarcodeComponent extends AjfBarcode {
     constructor(cdr: ChangeDetectorRef, renderer: Renderer2);
+    static ɵfac: i0.ɵɵFactoryDeclaration<AjfBarcodeComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AjfBarcodeComponent, "ajf-barcode", never, {}, {}, never, never>;
 }
