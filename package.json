@@ -1,6 +1,6 @@
 {
   "name": "@ajf/ionic",
-  "version": "13.0.0-next.9-6ae2a73",
+  "version": "13.0.0-next.9-d627539",
   "description": "",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "@ajf/core": "13.0.0-next.9",
     "@ajf/icons": "^1.0.0",
     "flag-icon-css": "^3.5.0",
-    "rxjs": "^6.5.3"
+    "rxjs": "^6.5.3 || ^7.0.0"
   },
   "dependencies": {
     "tslib": "^2.2.0"
