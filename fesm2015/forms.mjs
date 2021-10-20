@@ -48,18 +48,18 @@ class AjfWarningAlertService {
                         handler: () => {
                             subscriber.next({ result: false });
                             subscriber.complete();
-                        }
+                        },
                     },
                     {
                         text: 'Yes',
                         handler: () => {
                             subscriber.next({ result: true });
                             subscriber.complete();
-                        }
-                    }
-                ]
+                        },
+                    },
+                ],
             })
-                .then((alert) => {
+                .then(alert => {
                 alert.present();
             });
         });
@@ -315,8 +315,7 @@ class AjfFormulaFieldComponent extends AjfBaseFieldComponent {
                 const v = parseFloat(value);
                 value = v;
             }
-            catch (e) {
-            }
+            catch (e) { }
             control.setValue(value);
         });
         this.value = this.control.pipe(filter(control => control != null), switchMap(control => control.valueChanges.pipe(startWith(control.value))));
@@ -783,71 +782,71 @@ class AjfFieldService extends AjfFieldService$1 {
         super();
         this.componentsMap[AjfFieldType.String] = {
             component: AjfInputFieldComponent,
-            readOnlyComponent: AjfReadOnlyFieldComponent
+            readOnlyComponent: AjfReadOnlyFieldComponent,
         };
         this.componentsMap[AjfFieldType.Text] = {
             component: AjfTextareaFieldComponent,
-            readOnlyComponent: AjfReadOnlyFieldComponent
+            readOnlyComponent: AjfReadOnlyFieldComponent,
         };
         this.componentsMap[AjfFieldType.Number] = {
             component: AjfNumberFieldComponent,
-            readOnlyComponent: AjfReadOnlyFieldComponent
+            readOnlyComponent: AjfReadOnlyFieldComponent,
         };
         this.componentsMap[AjfFieldType.Boolean] = {
             component: AjfBooleanFieldComponent,
-            readOnlyComponent: AjfReadOnlyFieldComponent
+            readOnlyComponent: AjfReadOnlyFieldComponent,
         };
         this.componentsMap[AjfFieldType.Formula] = {
             component: AjfFormulaFieldComponent,
-            readOnlyComponent: AjfReadOnlyFieldComponent
+            readOnlyComponent: AjfReadOnlyFieldComponent,
         };
         this.componentsMap[AjfFieldType.Date] = {
             component: AjfDateFieldComponent,
-            readOnlyComponent: AjfReadOnlyFieldComponent
+            readOnlyComponent: AjfReadOnlyFieldComponent,
         };
         this.componentsMap[AjfFieldType.DateInput] = {
             component: AjfDateInputFieldComponent,
-            readOnlyComponent: AjfReadOnlyFieldComponent
+            readOnlyComponent: AjfReadOnlyFieldComponent,
         };
         this.componentsMap[AjfFieldType.Table] = {
             component: AjfTableFieldComponent,
-            readOnlyComponent: AjfReadOnlyTableFieldComponent
+            readOnlyComponent: AjfReadOnlyTableFieldComponent,
         };
         this.componentsMap[AjfFieldType.Empty] = {
             component: AjfEmptyFieldComponent,
-            readOnlyComponent: AjfReadOnlyFieldComponent
+            readOnlyComponent: AjfReadOnlyFieldComponent,
         };
         this.componentsMap[AjfFieldType.SingleChoice] = {
             component: AjfSingleChoiceFieldComponent,
-            readOnlyComponent: AjfReadOnlySelectFieldComponent
+            readOnlyComponent: AjfReadOnlySelectFieldComponent,
         };
         this.componentsMap[AjfFieldType.MultipleChoice] = {
             component: AjfMultipleChoiceFieldComponent,
-            readOnlyComponent: AjfReadOnlySelectFieldComponent
+            readOnlyComponent: AjfReadOnlySelectFieldComponent,
         };
         this.componentsMap[AjfFieldType.Time] = {
             component: AjfTimeFieldComponent,
-            readOnlyComponent: AjfReadOnlyFieldComponent
+            readOnlyComponent: AjfReadOnlyFieldComponent,
         };
         this.componentsMap[AjfFieldType.Barcode] = {
             component: AjfBarcodeFieldComponent,
-            readOnlyComponent: AjfReadOnlyFieldComponent
+            readOnlyComponent: AjfReadOnlyFieldComponent,
         };
         this.componentsMap[AjfFieldType.File] = {
             component: AjfFileFieldComponent,
-            readOnlyComponent: AjfReadOnlyFileFieldComponent
+            readOnlyComponent: AjfReadOnlyFileFieldComponent,
         };
         this.componentsMap[AjfFieldType.Image] = {
             component: AjfImageFieldComponent,
-            readOnlyComponent: AjfReadOnlyImageFieldComponent
+            readOnlyComponent: AjfReadOnlyImageFieldComponent,
         };
         this.componentsMap[AjfFieldType.VideoUrl] = {
             component: AjfVideoUrlFieldComponent,
-            readOnlyComponent: AjfReadOnlyVideoUrlFieldComponent
+            readOnlyComponent: AjfReadOnlyVideoUrlFieldComponent,
         };
         this.componentsMap[AjfFieldType.Range] = {
             component: AjfRangeFieldComponent,
-            readOnlyComponent: AjfReadOnlyFieldComponent
+            readOnlyComponent: AjfReadOnlyFieldComponent,
         };
     }
 }
@@ -1015,9 +1014,9 @@ class AjfFormRenderer extends AjfFormRenderer$1 {
             cssClass: 'ajf-popover',
             translucent: true,
             event: ev,
-            componentProps: { hint }
+            componentProps: { hint },
         });
-        popover.then((pop) => pop.present());
+        popover.then(pop => pop.present());
     }
     _updateLongSlide() {
         const longSlide = this.formSlider.isCurrentPageLong();
@@ -1061,9 +1060,7 @@ class AjfFormsModule {
     static forRoot() {
         return {
             ngModule: AjfFormsModule,
-            providers: [
-                AjfFieldService,
-            ],
+            providers: [AjfFieldService],
         };
     }
 }
@@ -1100,8 +1097,7 @@ AjfFormsModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version:
         GicModule,
         IonicModule,
         ReactiveFormsModule,
-        AjfTranslocoModule], exports: [AjfFormField,
-        AjfFormRenderer] });
+        AjfTranslocoModule], exports: [AjfFormField, AjfFormRenderer] });
 AjfFormsModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfFormsModule, providers: [
         AjfFieldService,
         { provide: AJF_WARNING_ALERT_SERVICE, useClass: AjfWarningAlertService },
@@ -1179,10 +1175,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.0-next.15",
                         AjfTimeFieldComponent,
                         AjfVideoUrlFieldComponent,
                     ],
-                    exports: [
-                        AjfFormField,
-                        AjfFormRenderer,
-                    ],
+                    exports: [AjfFormField, AjfFormRenderer],
                     providers: [
                         AjfFieldService,
                         { provide: AJF_WARNING_ALERT_SERVICE, useClass: AjfWarningAlertService },

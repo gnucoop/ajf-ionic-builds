@@ -65,8 +65,7 @@ class AjfPageSlider extends AjfPageSlider$1 {
                 ripple.style.opacity = orig;
             });
         }
-        catch (e) {
-        }
+        catch (e) { }
     }
     _fixToggleButtons() {
         try {
@@ -82,13 +81,11 @@ class AjfPageSlider extends AjfPageSlider$1 {
                     try {
                         inner.removeAttribute('style');
                     }
-                    catch (e) {
-                    }
+                    catch (e) { }
                 }, 0);
             }
         }
-        catch (e) {
-        }
+        catch (e) { }
     }
 }
 AjfPageSlider.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfPageSlider, deps: [{ token: i1.AnimationBuilder }, { token: i0.ChangeDetectorRef }, { token: i0.Renderer2 }, { token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component });
@@ -122,30 +119,14 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.0-next.15",
 class AjfPageSliderModule {
 }
 AjfPageSliderModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfPageSliderModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-AjfPageSliderModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfPageSliderModule, declarations: [AjfPageSlider], imports: [AjfPageSliderModule$1,
-        CommonModule,
-        IonicModule], exports: [AjfPageSliderModule$1,
-        AjfPageSlider] });
-AjfPageSliderModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfPageSliderModule, imports: [[
-            AjfPageSliderModule$1,
-            CommonModule,
-            IonicModule,
-        ], AjfPageSliderModule$1] });
+AjfPageSliderModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfPageSliderModule, declarations: [AjfPageSlider], imports: [AjfPageSliderModule$1, CommonModule, IonicModule], exports: [AjfPageSliderModule$1, AjfPageSlider] });
+AjfPageSliderModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfPageSliderModule, imports: [[AjfPageSliderModule$1, CommonModule, IonicModule], AjfPageSliderModule$1] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfPageSliderModule, decorators: [{
             type: NgModule,
             args: [{
-                    imports: [
-                        AjfPageSliderModule$1,
-                        CommonModule,
-                        IonicModule,
-                    ],
-                    declarations: [
-                        AjfPageSlider,
-                    ],
-                    exports: [
-                        AjfPageSliderModule$1,
-                        AjfPageSlider,
-                    ],
+                    imports: [AjfPageSliderModule$1, CommonModule, IonicModule],
+                    declarations: [AjfPageSlider],
+                    exports: [AjfPageSliderModule$1, AjfPageSlider],
                 }]
         }] });
 

@@ -45,7 +45,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.0-next.15",
             args: [{ selector: 'ajf-checkbox-group-item', changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, host: {
                         '[attr.id]': 'id',
                         '[class.ajf-checkbox-group-checked]': 'checked',
-                        '[class.ajf-checkbox-group-disable]': 'disabled'
+                        '[class.ajf-checkbox-group-disable]': 'disabled',
                     }, template: "<ion-button (click)=\"onInputChange($event)\" role=\"checkbox\"\n    fill=\"clear\"\n    type=\"button\"\n    [id]=\"checkboxId|async\"\n    [attr.aria-checked]=\"checkedState|async\"\n    [attr.aria-disabled]=\"disabledState|async\">\n  <div class=\"ajf-checkbox-group-item-content\">\n    <div>\n        <ng-content></ng-content>\n    </div>\n    <ion-icon *ngIf=\"icon|async as ic\" item-right [name]=\"ic!\"></ion-icon>\n  </div>\n</ion-button>\n", styles: ["ajf-checkbox-group-item ion-button{display:block;height:fit-content;margin:0;font-size:.9em;--padding-top: 0;--padding-start: 5px;--padding-bottom: 0;--padding-end: 5px}ajf-checkbox-group-item .ajf-checkbox-group-item-content{display:flex;align-items:center;width:100%;height:fit-content;padding:10px 0}ajf-checkbox-group-item .ajf-checkbox-group-item-content>div{flex:1 1 auto;white-space:normal;max-width:calc(100% - 19px)}ajf-checkbox-group-item .ajf-checkbox-group-item-content>ion-icon{flex:0 0 auto;margin-left:5px}\n"] }]
         }], ctorParameters: function () { return [{ type: i1.AjfCheckboxGroup, decorators: [{
                     type: Optional
@@ -75,30 +75,14 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.0-next.15",
 class AjfCheckboxGroupModule {
 }
 AjfCheckboxGroupModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfCheckboxGroupModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-AjfCheckboxGroupModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfCheckboxGroupModule, declarations: [AjfCheckboxGroupItem], imports: [AjfCheckboxGroupModule$1,
-        CommonModule,
-        IonicModule], exports: [AjfCheckboxGroupItem,
-        AjfCheckboxGroupModule$1] });
-AjfCheckboxGroupModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfCheckboxGroupModule, imports: [[
-            AjfCheckboxGroupModule$1,
-            CommonModule,
-            IonicModule,
-        ], AjfCheckboxGroupModule$1] });
+AjfCheckboxGroupModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfCheckboxGroupModule, declarations: [AjfCheckboxGroupItem], imports: [AjfCheckboxGroupModule$1, CommonModule, IonicModule], exports: [AjfCheckboxGroupItem, AjfCheckboxGroupModule$1] });
+AjfCheckboxGroupModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfCheckboxGroupModule, imports: [[AjfCheckboxGroupModule$1, CommonModule, IonicModule], AjfCheckboxGroupModule$1] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfCheckboxGroupModule, decorators: [{
             type: NgModule,
             args: [{
-                    imports: [
-                        AjfCheckboxGroupModule$1,
-                        CommonModule,
-                        IonicModule,
-                    ],
-                    declarations: [
-                        AjfCheckboxGroupItem,
-                    ],
-                    exports: [
-                        AjfCheckboxGroupItem,
-                        AjfCheckboxGroupModule$1,
-                    ],
+                    imports: [AjfCheckboxGroupModule$1, CommonModule, IonicModule],
+                    declarations: [AjfCheckboxGroupItem],
+                    exports: [AjfCheckboxGroupItem, AjfCheckboxGroupModule$1],
                 }]
         }] });
 

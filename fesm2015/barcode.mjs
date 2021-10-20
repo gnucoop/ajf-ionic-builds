@@ -35,7 +35,7 @@ import * as i4 from '@ngneat/transloco';
 const BARCODE_CONTROL_VALUE_ACCESSOR = {
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => AjfBarcodeComponent),
-    multi: true
+    multi: true,
 };
 class AjfBarcodeComponent extends AjfBarcode {
     constructor(cdr, renderer) {
@@ -73,31 +73,14 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.0-next.15",
 class AjfBarcodeModule {
 }
 AjfBarcodeModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfBarcodeModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-AjfBarcodeModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfBarcodeModule, declarations: [AjfBarcodeComponent], imports: [AjfCommonModule,
-        CommonModule,
-        IonicModule,
-        AjfTranslocoModule], exports: [AjfBarcodeComponent] });
-AjfBarcodeModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfBarcodeModule, imports: [[
-            AjfCommonModule,
-            CommonModule,
-            IonicModule,
-            AjfTranslocoModule,
-        ]] });
+AjfBarcodeModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfBarcodeModule, declarations: [AjfBarcodeComponent], imports: [AjfCommonModule, CommonModule, IonicModule, AjfTranslocoModule], exports: [AjfBarcodeComponent] });
+AjfBarcodeModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfBarcodeModule, imports: [[AjfCommonModule, CommonModule, IonicModule, AjfTranslocoModule]] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.0-next.15", ngImport: i0, type: AjfBarcodeModule, decorators: [{
             type: NgModule,
             args: [{
-                    imports: [
-                        AjfCommonModule,
-                        CommonModule,
-                        IonicModule,
-                        AjfTranslocoModule,
-                    ],
-                    declarations: [
-                        AjfBarcodeComponent,
-                    ],
-                    exports: [
-                        AjfBarcodeComponent,
-                    ],
+                    imports: [AjfCommonModule, CommonModule, IonicModule, AjfTranslocoModule],
+                    declarations: [AjfBarcodeComponent],
+                    exports: [AjfBarcodeComponent],
                 }]
         }] });
 
