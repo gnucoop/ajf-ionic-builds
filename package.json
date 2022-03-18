@@ -1,6 +1,6 @@
 {
   "name": "@ajf/ionic",
-  "version": "13.1.0-next.0-e52077c9",
+  "version": "13.1.0-next.0",
   "description": "",
   "repository": {
     "type": "git",
@@ -13,110 +13,109 @@
   },
   "homepage": "https://github.com/gnucoop/ajf#readme",
   "peerDependencies": {
-    "@angular/core": "^13.0.0-0 || ^14.0.0-0",
-    "@angular/common": "^13.0.0-0 || ^14.0.0-0",
-    "@angular/router": "^13.0.0-0 || ^14.0.0-0",
-    "@gic/angular": "^5.0.0",
-    "@ionic/angular": "^5.0.0",
     "@ajf/core": "13.1.0-next.0",
-    "@ajf/icons": "^1.0.0",
-    "flag-icon-css": "^4.0.0",
-    "rxjs": "^6.5.3 || ^7.0.0"
+    "@angular/animations": "^13.2.5",
+    "@angular/cdk": "^13.2.5",
+    "@angular/core": "^13.2.5",
+    "@angular/common": "^13.2.5",
+    "@angular/forms": "^13.2.5",
+    "@angular/platform-browser": "^13.2.5",
+    "@gic/angular": "^5.8.1",
+    "@ionic/angular": "5.8.1"
   },
   "dependencies": {
-    "tslib": "^2.2.0"
+    "tslib": "^2.3.0"
   },
-  "sideEffects": false,
-  "fesm2020": "./fesm2020/ionic.mjs",
-  "fesm2015": "./fesm2015/ionic.mjs",
-  "esm2020": "./esm2020/index.mjs",
-  "typings": "./index.d.ts",
-  "module": "./fesm2015/ionic.mjs",
-  "es2020": "./fesm2020/ionic.mjs",
-  "type": "module",
+  "module": "fesm2015/ajf-ionic.mjs",
+  "es2020": "fesm2020/ajf-ionic.mjs",
+  "esm2020": "esm2020/ajf-ionic.mjs",
+  "fesm2020": "fesm2020/ajf-ionic.mjs",
+  "fesm2015": "fesm2015/ajf-ionic.mjs",
+  "typings": "ajf-ionic.d.ts",
   "exports": {
     "./package.json": {
       "default": "./package.json"
     },
     ".": {
-      "types": "./index.d.ts",
-      "esm2020": "./esm2020/index.mjs",
-      "es2020": "./fesm2020/ionic.mjs",
-      "es2015": "./fesm2015/ionic.mjs",
-      "node": "./fesm2015/ionic.mjs",
-      "default": "./fesm2020/ionic.mjs"
+      "types": "./ajf-ionic.d.ts",
+      "esm2020": "./esm2020/ajf-ionic.mjs",
+      "es2020": "./fesm2020/ajf-ionic.mjs",
+      "es2015": "./fesm2015/ajf-ionic.mjs",
+      "node": "./fesm2015/ajf-ionic.mjs",
+      "default": "./fesm2020/ajf-ionic.mjs"
     },
     "./barcode": {
-      "types": "./barcode/barcode_public_index.d.ts",
-      "esm2020": "./esm2020/barcode/barcode_public_index.mjs",
-      "es2020": "./fesm2020/barcode.mjs",
-      "es2015": "./fesm2015/barcode.mjs",
-      "node": "./fesm2015/barcode.mjs",
-      "default": "./fesm2020/barcode.mjs"
+      "types": "./barcode/ajf-ionic-barcode.d.ts",
+      "esm2020": "./esm2020/barcode/ajf-ionic-barcode.mjs",
+      "es2020": "./fesm2020/ajf-ionic-barcode.mjs",
+      "es2015": "./fesm2015/ajf-ionic-barcode.mjs",
+      "node": "./fesm2015/ajf-ionic-barcode.mjs",
+      "default": "./fesm2020/ajf-ionic-barcode.mjs"
     },
     "./calendar": {
-      "types": "./calendar/calendar_public_index.d.ts",
-      "esm2020": "./esm2020/calendar/calendar_public_index.mjs",
-      "es2020": "./fesm2020/calendar.mjs",
-      "es2015": "./fesm2015/calendar.mjs",
-      "node": "./fesm2015/calendar.mjs",
-      "default": "./fesm2020/calendar.mjs"
+      "types": "./calendar/ajf-ionic-calendar.d.ts",
+      "esm2020": "./esm2020/calendar/ajf-ionic-calendar.mjs",
+      "es2020": "./fesm2020/ajf-ionic-calendar.mjs",
+      "es2015": "./fesm2015/ajf-ionic-calendar.mjs",
+      "node": "./fesm2015/ajf-ionic-calendar.mjs",
+      "default": "./fesm2020/ajf-ionic-calendar.mjs"
     },
     "./checkbox-group": {
-      "types": "./checkbox-group/checkbox-group_public_index.d.ts",
-      "esm2020": "./esm2020/checkbox-group/checkbox-group_public_index.mjs",
-      "es2020": "./fesm2020/checkbox-group.mjs",
-      "es2015": "./fesm2015/checkbox-group.mjs",
-      "node": "./fesm2015/checkbox-group.mjs",
-      "default": "./fesm2020/checkbox-group.mjs"
+      "types": "./checkbox-group/ajf-ionic-checkbox-group.d.ts",
+      "esm2020": "./esm2020/checkbox-group/ajf-ionic-checkbox-group.mjs",
+      "es2020": "./fesm2020/ajf-ionic-checkbox-group.mjs",
+      "es2015": "./fesm2015/ajf-ionic-checkbox-group.mjs",
+      "node": "./fesm2015/ajf-ionic-checkbox-group.mjs",
+      "default": "./fesm2020/ajf-ionic-checkbox-group.mjs"
     },
     "./forms": {
-      "types": "./forms/forms_public_index.d.ts",
-      "esm2020": "./esm2020/forms/forms_public_index.mjs",
-      "es2020": "./fesm2020/forms.mjs",
-      "es2015": "./fesm2015/forms.mjs",
-      "node": "./fesm2015/forms.mjs",
-      "default": "./fesm2020/forms.mjs"
+      "types": "./forms/ajf-ionic-forms.d.ts",
+      "esm2020": "./esm2020/forms/ajf-ionic-forms.mjs",
+      "es2020": "./fesm2020/ajf-ionic-forms.mjs",
+      "es2015": "./fesm2015/ajf-ionic-forms.mjs",
+      "node": "./fesm2015/ajf-ionic-forms.mjs",
+      "default": "./fesm2020/ajf-ionic-forms.mjs"
     },
     "./image": {
-      "types": "./image/image_public_index.d.ts",
-      "esm2020": "./esm2020/image/image_public_index.mjs",
-      "es2020": "./fesm2020/image.mjs",
-      "es2015": "./fesm2015/image.mjs",
-      "node": "./fesm2015/image.mjs",
-      "default": "./fesm2020/image.mjs"
+      "types": "./image/ajf-ionic-image.d.ts",
+      "esm2020": "./esm2020/image/ajf-ionic-image.mjs",
+      "es2020": "./fesm2020/ajf-ionic-image.mjs",
+      "es2015": "./fesm2015/ajf-ionic-image.mjs",
+      "node": "./fesm2015/ajf-ionic-image.mjs",
+      "default": "./fesm2020/ajf-ionic-image.mjs"
     },
     "./node-icon": {
-      "types": "./node-icon/node-icon_public_index.d.ts",
-      "esm2020": "./esm2020/node-icon/node-icon_public_index.mjs",
-      "es2020": "./fesm2020/node-icon.mjs",
-      "es2015": "./fesm2015/node-icon.mjs",
-      "node": "./fesm2015/node-icon.mjs",
-      "default": "./fesm2020/node-icon.mjs"
+      "types": "./node-icon/ajf-ionic-node-icon.d.ts",
+      "esm2020": "./esm2020/node-icon/ajf-ionic-node-icon.mjs",
+      "es2020": "./fesm2020/ajf-ionic-node-icon.mjs",
+      "es2015": "./fesm2015/ajf-ionic-node-icon.mjs",
+      "node": "./fesm2015/ajf-ionic-node-icon.mjs",
+      "default": "./fesm2020/ajf-ionic-node-icon.mjs"
     },
     "./page-slider": {
-      "types": "./page-slider/page-slider_public_index.d.ts",
-      "esm2020": "./esm2020/page-slider/page-slider_public_index.mjs",
-      "es2020": "./fesm2020/page-slider.mjs",
-      "es2015": "./fesm2015/page-slider.mjs",
-      "node": "./fesm2015/page-slider.mjs",
-      "default": "./fesm2020/page-slider.mjs"
+      "types": "./page-slider/ajf-ionic-page-slider.d.ts",
+      "esm2020": "./esm2020/page-slider/ajf-ionic-page-slider.mjs",
+      "es2020": "./fesm2020/ajf-ionic-page-slider.mjs",
+      "es2015": "./fesm2015/ajf-ionic-page-slider.mjs",
+      "node": "./fesm2015/ajf-ionic-page-slider.mjs",
+      "default": "./fesm2020/ajf-ionic-page-slider.mjs"
     },
     "./reports": {
-      "types": "./reports/reports_public_index.d.ts",
-      "esm2020": "./esm2020/reports/reports_public_index.mjs",
-      "es2020": "./fesm2020/reports.mjs",
-      "es2015": "./fesm2015/reports.mjs",
-      "node": "./fesm2015/reports.mjs",
-      "default": "./fesm2020/reports.mjs"
+      "types": "./reports/ajf-ionic-reports.d.ts",
+      "esm2020": "./esm2020/reports/ajf-ionic-reports.mjs",
+      "es2020": "./fesm2020/ajf-ionic-reports.mjs",
+      "es2015": "./fesm2015/ajf-ionic-reports.mjs",
+      "node": "./fesm2015/ajf-ionic-reports.mjs",
+      "default": "./fesm2020/ajf-ionic-reports.mjs"
     },
     "./time": {
-      "types": "./time/time_public_index.d.ts",
-      "esm2020": "./esm2020/time/time_public_index.mjs",
-      "es2020": "./fesm2020/time.mjs",
-      "es2015": "./fesm2015/time.mjs",
-      "node": "./fesm2015/time.mjs",
-      "default": "./fesm2020/time.mjs"
+      "types": "./time/ajf-ionic-time.d.ts",
+      "esm2020": "./esm2020/time/ajf-ionic-time.mjs",
+      "es2020": "./fesm2020/ajf-ionic-time.mjs",
+      "es2015": "./fesm2015/ajf-ionic-time.mjs",
+      "node": "./fesm2015/ajf-ionic-time.mjs",
+      "default": "./fesm2020/ajf-ionic-time.mjs"
     }
-  }
+  },
+  "sideEffects": false
 }
