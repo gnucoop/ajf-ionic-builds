@@ -19,9 +19,9 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-import { AjfCheckboxGroup, AjfCheckboxGroupItem as AjfCoreCheckboxGroupItem } from '@ajf/core/checkbox-group';
+import { AjfCheckboxGroup, AjfCheckboxGroupItem as CoreCheckboxGroupItem } from '@ajf/core/checkbox-group';
 import * as i0 from "@angular/core";
-export declare class AjfCheckboxGroupItem<T> extends AjfCoreCheckboxGroupItem<T> {
+export declare class AjfCheckboxGroupItem<T> extends CoreCheckboxGroupItem<T> {
     constructor(checkboxGroup: AjfCheckboxGroup<T>);
     static ɵfac: i0.ɵɵFactoryDeclaration<AjfCheckboxGroupItem<any>, [{ optional: true; }]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AjfCheckboxGroupItem<any>, "ajf-checkbox-group-item", never, {}, {}, never, ["*"]>;

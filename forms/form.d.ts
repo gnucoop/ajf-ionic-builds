@@ -19,12 +19,12 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-import { AjfFormRenderer as AjfCoreFormRenderer, AjfFormRendererService } from '@ajf/core/forms';
+import { AjfFormRenderer as CoreFormRenderer, AjfFormRendererService } from '@ajf/core/forms';
 import { BooleanInput } from '@angular/cdk/coercion';
 import { AfterViewInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import * as i0 from "@angular/core";
-export declare class AjfFormRenderer extends AjfCoreFormRenderer implements AfterViewInit, OnDestroy {
+export declare class AjfFormRenderer extends CoreFormRenderer implements AfterViewInit, OnDestroy {
     popoverController: PopoverController;
     topBar: boolean;
     private _longSlide;

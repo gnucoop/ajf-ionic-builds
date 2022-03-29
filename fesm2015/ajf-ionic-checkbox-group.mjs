@@ -77,12 +77,12 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImpor
 class AjfCheckboxGroupModule {
 }
 AjfCheckboxGroupModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfCheckboxGroupModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-AjfCheckboxGroupModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfCheckboxGroupModule, declarations: [AjfCheckboxGroupItem], imports: [AjfCheckboxGroupModule$1, CommonModule, IonicModule], exports: [AjfCheckboxGroupItem, AjfCheckboxGroupModule$1] });
-AjfCheckboxGroupModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfCheckboxGroupModule, imports: [[AjfCheckboxGroupModule$1, CommonModule, IonicModule], AjfCheckboxGroupModule$1] });
+AjfCheckboxGroupModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfCheckboxGroupModule, declarations: [AjfCheckboxGroupItem], imports: [CommonModule, AjfCheckboxGroupModule$1, IonicModule], exports: [AjfCheckboxGroupItem, AjfCheckboxGroupModule$1] });
+AjfCheckboxGroupModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfCheckboxGroupModule, imports: [[CommonModule, AjfCheckboxGroupModule$1, IonicModule], AjfCheckboxGroupModule$1] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfCheckboxGroupModule, decorators: [{
             type: NgModule,
             args: [{
-                    imports: [AjfCheckboxGroupModule$1, CommonModule, IonicModule],
+                    imports: [CommonModule, AjfCheckboxGroupModule$1, IonicModule],
                     declarations: [AjfCheckboxGroupItem],
                     exports: [AjfCheckboxGroupItem, AjfCheckboxGroupModule$1],
                 }]

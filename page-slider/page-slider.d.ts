@@ -19,12 +19,12 @@
  * If not, see http://www.gnu.org/licenses/.
  *
  */
-import { AjfPageSlider as AjfCorePageSlider } from '@ajf/core/page-slider';
+import { AjfPageSlider as CorePageSlider } from '@ajf/core/page-slider';
 import { AnimationBuilder } from '@angular/animations';
 import { BooleanInput } from '@angular/cdk/coercion';
 import { AfterContentInit, ChangeDetectorRef, ElementRef, OnDestroy, Renderer2 } from '@angular/core';
 import * as i0 from "@angular/core";
-export declare class AjfPageSlider extends AjfCorePageSlider implements AfterContentInit, OnDestroy {
+export declare class AjfPageSlider extends CorePageSlider implements AfterContentInit, OnDestroy {
     private _el;
     private _scrollSub;
     constructor(animationBuilder: AnimationBuilder, cdr: ChangeDetectorRef, renderer: Renderer2, _el: ElementRef);

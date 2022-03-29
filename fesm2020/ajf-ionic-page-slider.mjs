@@ -119,14 +119,14 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImpor
 class AjfPageSliderModule {
 }
 AjfPageSliderModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfPageSliderModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-AjfPageSliderModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfPageSliderModule, declarations: [AjfPageSlider], imports: [AjfPageSliderModule$1, CommonModule, IonicModule], exports: [AjfPageSliderModule$1, AjfPageSlider] });
-AjfPageSliderModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfPageSliderModule, imports: [[AjfPageSliderModule$1, CommonModule, IonicModule], AjfPageSliderModule$1] });
+AjfPageSliderModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfPageSliderModule, declarations: [AjfPageSlider], imports: [CommonModule, AjfPageSliderModule$1, IonicModule], exports: [AjfPageSlider, AjfPageSliderModule$1] });
+AjfPageSliderModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfPageSliderModule, imports: [[CommonModule, AjfPageSliderModule$1, IonicModule], AjfPageSliderModule$1] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfPageSliderModule, decorators: [{
             type: NgModule,
             args: [{
-                    imports: [AjfPageSliderModule$1, CommonModule, IonicModule],
+                    imports: [CommonModule, AjfPageSliderModule$1, IonicModule],
                     declarations: [AjfPageSlider],
-                    exports: [AjfPageSliderModule$1, AjfPageSlider],
+                    exports: [AjfPageSlider, AjfPageSliderModule$1],
                 }]
         }] });
 
