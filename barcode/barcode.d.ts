@@ -20,11 +20,19 @@
  *
  */
 import { AjfBarcode } from '@ajf/core/barcode';
-import { ChangeDetectorRef, Renderer2 } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, OnDestroy, Renderer2 } from '@angular/core';
+import { IonSlides } from '@ionic/angular';
 import * as i0 from "@angular/core";
 export declare const BARCODE_CONTROL_VALUE_ACCESSOR: any;
-export declare class AjfBarcodeComponent extends AjfBarcode {
+export declare class AjfBarcodeComponent extends AjfBarcode implements AfterViewInit, OnDestroy {
+    slides: IonSlides;
+    private _currentTab;
+    get currentTab(): string;
+    private _slidesSub;
     constructor(cdr: ChangeDetectorRef, renderer: Renderer2);
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
+    selectTab(tab: 'image' | 'camera'): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AjfBarcodeComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AjfBarcodeComponent, "ajf-barcode", never, {}, {}, never, never>;
 }
