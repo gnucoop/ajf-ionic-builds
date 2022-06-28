@@ -1,7 +1,7 @@
-import * as i1$6 from '@ajf/core/reports';
+import * as i1$7 from '@ajf/core/reports';
 import { AjfBaseWidgetComponent, AjfWidgetType, AjfWidgetService as AjfWidgetService$1, AjfReportWidget as AjfReportWidget$1, AjfReportRenderer as AjfReportRenderer$1, AjfReportsModule as AjfReportsModule$1 } from '@ajf/core/reports';
 import * as i0 from '@angular/core';
-import { Component, ChangeDetectionStrategy, ViewEncapsulation, Injectable, NgModule } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation, Injectable, Input, NgModule } from '@angular/core';
 import * as i1 from '@ajf/core/chart';
 import { AjfChartModule } from '@ajf/core/chart';
 import * as i2 from '@angular/common';
@@ -18,9 +18,12 @@ import { AjfMapModule } from '@ajf/core/map';
 import * as i1$4 from '@ajf/core/page-break';
 import { AjfPageBreakModule } from '@ajf/core/page-break';
 import { BehaviorSubject } from 'rxjs';
-import * as i1$5 from '@ajf/core/table';
+import * as i1$5 from '@ajf/core/heat-map';
+import { AjfHeatMapModule } from '@ajf/core/heat-map';
+import * as i1$6 from '@ajf/core/table';
 import { AjfTableModule } from '@ajf/core/table';
 import * as i3$1 from '@ngneat/transloco';
+import * as i3$2 from '@ionic/angular';
 import { AjfTranslocoModule } from '@ajf/core/transloco';
 
 /**
@@ -243,13 +246,46 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImpor
  * If not, see http://www.gnu.org/licenses/.
  *
  */
+class AjfHeatMapWidgetComponent extends AjfBaseWidgetComponent {
+    constructor(cdr, el) {
+        super(cdr, el);
+    }
+}
+AjfHeatMapWidgetComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfHeatMapWidgetComponent, deps: [{ token: i0.ChangeDetectorRef }, { token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component });
+AjfHeatMapWidgetComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.2.5", type: AjfHeatMapWidgetComponent, selector: "ng-component", usesInheritance: true, ngImport: i0, template: "<ajf-heat-map *ngIf=\"instance\"\n    [idProp]=\"instance.idProp\"\n    [features]=\"instance.features\"\n    [values]=\"instance.values\"\n    [startColor]=\"instance.startColor\"\n    [endColor]=\"instance.endColor\"\n    [highlightColor]=\"instance.highlightColor\"\n    [showVisualMap]=\"instance.showVisualMap\"></ajf-heat-map>\n", styles: ["ajf-widget ajf-heat-map{flex:1;height:100%}\n"], components: [{ type: i1$5.AjfHeatMap, selector: "ajf-heat-map", inputs: ["features", "startColor", "endColor", "highlightColor", "values", "idProp", "showVisualMap"], outputs: ["featureSelected"] }], directives: [{ type: i2.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfHeatMapWidgetComponent, decorators: [{
+            type: Component,
+            args: [{ changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: "<ajf-heat-map *ngIf=\"instance\"\n    [idProp]=\"instance.idProp\"\n    [features]=\"instance.features\"\n    [values]=\"instance.values\"\n    [startColor]=\"instance.startColor\"\n    [endColor]=\"instance.endColor\"\n    [highlightColor]=\"instance.highlightColor\"\n    [showVisualMap]=\"instance.showVisualMap\"></ajf-heat-map>\n", styles: ["ajf-widget ajf-heat-map{flex:1;height:100%}\n"] }]
+        }], ctorParameters: function () { return [{ type: i0.ChangeDetectorRef }, { type: i0.ElementRef }]; } });
+
+/**
+ * @license
+ * Copyright (C) Gnucoop soc. coop.
+ *
+ * This file is part of the Advanced JSON forms (ajf).
+ *
+ * Advanced JSON forms (ajf) is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the License,
+ * or (at your option) any later version.
+ *
+ * Advanced JSON forms (ajf) is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with Advanced JSON forms (ajf).
+ * If not, see http://www.gnu.org/licenses/.
+ *
+ */
 class AjfTableWidgetComponent extends AjfBaseWidgetComponent {
     constructor(cdr, el) {
         super(cdr, el);
     }
 }
 AjfTableWidgetComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfTableWidgetComponent, deps: [{ token: i0.ChangeDetectorRef }, { token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component });
-AjfTableWidgetComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.2.5", type: AjfTableWidgetComponent, selector: "ng-component", usesInheritance: true, ngImport: i0, template: " <ajf-table *ngIf=\"instance\" [data]=\"instance.data\"></ajf-table>\n", styles: [""], components: [{ type: i1$5.AjfTable, selector: "ajf-table", inputs: ["data", "cellpadding"] }], directives: [{ type: i2.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
+AjfTableWidgetComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.2.5", type: AjfTableWidgetComponent, selector: "ng-component", usesInheritance: true, ngImport: i0, template: " <ajf-table *ngIf=\"instance\" [data]=\"instance.data\"></ajf-table>\n", styles: [""], components: [{ type: i1$6.AjfTable, selector: "ajf-table", inputs: ["data", "cellpadding"] }], directives: [{ type: i2.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfTableWidgetComponent, decorators: [{
             type: Component,
             args: [{ changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: " <ajf-table *ngIf=\"instance\" [data]=\"instance.data\"></ajf-table>\n", styles: [""] }]
@@ -322,6 +358,9 @@ const defaultWidgetsFactory = () => {
     defaultWidgets[AjfWidgetType.Column] = { component: AjfColumnWidgetComponent };
     defaultWidgets[AjfWidgetType.Formula] = { component: AjfFormulaWidgetComponent };
     defaultWidgets[AjfWidgetType.ImageContainer] = { component: AjfImageContainerWidgetComponent };
+    defaultWidgets[AjfWidgetType.PaginatedList] = { component: AjfPaginatedListWidgetComponent };
+    defaultWidgets[AjfWidgetType.Dialog] = { component: AjfDialogWidgetComponent };
+    defaultWidgets[AjfWidgetType.HeatMap] = { component: AjfHeatMapWidgetComponent };
     return defaultWidgets;
 };
 class AjfWidgetService extends AjfWidgetService$1 {
@@ -342,7 +381,7 @@ class AjfReportWidget extends AjfReportWidget$1 {
     }
 }
 AjfReportWidget.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfReportWidget, deps: [{ token: i0.Renderer2 }, { token: AjfWidgetService }], target: i0.ɵɵFactoryTarget.Component });
-AjfReportWidget.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.2.5", type: AjfReportWidget, selector: "ajf-widget", usesInheritance: true, ngImport: i0, template: "<ng-template ajf-widget-host></ng-template>\n", styles: ["ajf-widget{display:flex;flex:1 1 auto;box-sizing:border-box}ajf-widget>ng-component{flex:1 1 auto;display:flex;align-items:center;box-sizing:border-box;background-color:transparent}\n"], directives: [{ type: i1$6.AjfWidgetHost, selector: "[ajf-widget-host]" }], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
+AjfReportWidget.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.2.5", type: AjfReportWidget, selector: "ajf-widget", usesInheritance: true, ngImport: i0, template: "<ng-template ajf-widget-host></ng-template>\n", styles: ["ajf-widget{display:flex;flex:1 1 auto;box-sizing:border-box}ajf-widget>ng-component{flex:1 1 auto;display:flex;align-items:center;box-sizing:border-box;background-color:transparent}\n"], directives: [{ type: i1$7.AjfWidgetHost, selector: "[ajf-widget-host]" }], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfReportWidget, decorators: [{
             type: Component,
             args: [{ selector: 'ajf-widget', encapsulation: ViewEncapsulation.None, changeDetection: ChangeDetectionStrategy.OnPush, template: "<ng-template ajf-widget-host></ng-template>\n", styles: ["ajf-widget{display:flex;flex:1 1 auto;box-sizing:border-box}ajf-widget>ng-component{flex:1 1 auto;display:flex;align-items:center;box-sizing:border-box;background-color:transparent}\n"] }]
@@ -370,10 +409,132 @@ class AjfLayoutWidgetComponent extends AjfBaseWidgetComponent {
     }
 }
 AjfLayoutWidgetComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfLayoutWidgetComponent, deps: [{ token: i0.ChangeDetectorRef }, { token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component });
-AjfLayoutWidgetComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.2.5", type: AjfLayoutWidgetComponent, selector: "ng-component", usesInheritance: true, ngImport: i0, template: "<div *ngIf=\"instance\" class=\"ajf-columns\">\n    <div *ngFor=\"let column of instance.widget.columns; let idx = index\"\n        [ngStyle]=\"{'flex-grow': column > -1 ? 1 : null, 'flex-basis' : column > -1 ? (column * 100) + '%' : null}\"\n        class=\"ajf-column\">\n        <ng-container *ngIf=\"allcolumnsRendered$|async\">\n            <ajf-widget *ngIf=\"(instance|ajfGetColumnContent:idx) as cc\" [instance]=\"cc!\">\n            </ajf-widget>\n        </ng-container>\n    </div>\n</div>\n", styles: [".ajf-columns{flex:1 1 auto;display:flex;align-items:inherit;box-sizing:border-box}.ajf-columns>.ajf-column{box-sizing:border-box;display:flex;align-items:inherit;flex-shrink:1}\n"], components: [{ type: AjfReportWidget, selector: "ajf-widget" }], directives: [{ type: i2.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { type: i2.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { type: i2.NgStyle, selector: "[ngStyle]", inputs: ["ngStyle"] }], pipes: { "async": i2.AsyncPipe, "ajfGetColumnContent": i1$6.AjfGetColumnContentPipe }, changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
+AjfLayoutWidgetComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.2.5", type: AjfLayoutWidgetComponent, selector: "ng-component", usesInheritance: true, ngImport: i0, template: "<div *ngIf=\"instance\" class=\"ajf-columns\">\n    <div *ngFor=\"let column of instance.widget.columns; let idx = index\"\n        [ngStyle]=\"{'flex-grow': column > -1 ? 1 : null, 'flex-basis' : column > -1 ? (column * 100) + '%' : null}\"\n        class=\"ajf-column\">\n        <ng-container *ngIf=\"allcolumnsRendered$|async\">\n            <ajf-widget *ngIf=\"(instance|ajfGetColumnContent:idx) as cc\" [instance]=\"cc!\">\n            </ajf-widget>\n        </ng-container>\n    </div>\n</div>\n", styles: [".ajf-columns{flex:1 1 auto;display:flex;align-items:inherit;box-sizing:border-box}.ajf-columns>.ajf-column{box-sizing:border-box;display:flex;align-items:inherit;flex-shrink:1}\n"], components: [{ type: AjfReportWidget, selector: "ajf-widget" }], directives: [{ type: i2.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { type: i2.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { type: i2.NgStyle, selector: "[ngStyle]", inputs: ["ngStyle"] }], pipes: { "async": i2.AsyncPipe, "ajfGetColumnContent": i1$7.AjfGetColumnContentPipe }, changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfLayoutWidgetComponent, decorators: [{
             type: Component,
             args: [{ changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: "<div *ngIf=\"instance\" class=\"ajf-columns\">\n    <div *ngFor=\"let column of instance.widget.columns; let idx = index\"\n        [ngStyle]=\"{'flex-grow': column > -1 ? 1 : null, 'flex-basis' : column > -1 ? (column * 100) + '%' : null}\"\n        class=\"ajf-column\">\n        <ng-container *ngIf=\"allcolumnsRendered$|async\">\n            <ajf-widget *ngIf=\"(instance|ajfGetColumnContent:idx) as cc\" [instance]=\"cc!\">\n            </ajf-widget>\n        </ng-container>\n    </div>\n</div>\n", styles: [".ajf-columns{flex:1 1 auto;display:flex;align-items:inherit;box-sizing:border-box}.ajf-columns>.ajf-column{box-sizing:border-box;display:flex;align-items:inherit;flex-shrink:1}\n"] }]
+        }], ctorParameters: function () { return [{ type: i0.ChangeDetectorRef }, { type: i0.ElementRef }]; } });
+class AjfDialogWidgetComponent extends AjfBaseWidgetComponent {
+    constructor(cdr, el, _modalCtrl) {
+        super(cdr, el);
+        this._modalCtrl = _modalCtrl;
+    }
+    ngOnDestroy() {
+        if (this._modal) {
+            this._modal.dismiss();
+        }
+    }
+    openDialog() {
+        if (this.instance == null || this.instance.content.length === 0) {
+            return;
+        }
+        this._modalCtrl
+            .create({
+            component: AjfDialogModal,
+            componentProps: {
+                content: this.instance.content,
+            },
+        })
+            .then(modal => {
+            this._modal = modal;
+            modal.present();
+        });
+    }
+}
+AjfDialogWidgetComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfDialogWidgetComponent, deps: [{ token: i0.ChangeDetectorRef }, { token: i0.ElementRef }, { token: i3$2.ModalController }], target: i0.ɵɵFactoryTarget.Component });
+AjfDialogWidgetComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.2.5", type: AjfDialogWidgetComponent, selector: "ng-component", usesInheritance: true, ngImport: i0, template: "<a *ngIf=\"instance\" class=\"ajf-dialog-toggle\" (click)=\"openDialog()\">\n  <ajf-widget [instance]=\"instance.toggle\"></ajf-widget>\n</a>\n", styles: [".ajf-dialog-toggle{display:block;cursor:pointer}\n"], components: [{ type: AjfReportWidget, selector: "ajf-widget" }], directives: [{ type: i2.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfDialogWidgetComponent, decorators: [{
+            type: Component,
+            args: [{ changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: "<a *ngIf=\"instance\" class=\"ajf-dialog-toggle\" (click)=\"openDialog()\">\n  <ajf-widget [instance]=\"instance.toggle\"></ajf-widget>\n</a>\n", styles: [".ajf-dialog-toggle{display:block;cursor:pointer}\n"] }]
+        }], ctorParameters: function () { return [{ type: i0.ChangeDetectorRef }, { type: i0.ElementRef }, { type: i3$2.ModalController }]; } });
+class AjfDialogModal {
+    constructor() {
+        this.content = [];
+    }
+}
+AjfDialogModal.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfDialogModal, deps: [], target: i0.ɵɵFactoryTarget.Component });
+AjfDialogModal.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.2.5", type: AjfDialogModal, selector: "ng-component", inputs: { content: "content" }, ngImport: i0, template: "<ajf-widget *ngFor=\"let instance of content\" [instance]=\"instance\"></ajf-widget>\n", styles: [""], components: [{ type: AjfReportWidget, selector: "ajf-widget" }], directives: [{ type: i2.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfDialogModal, decorators: [{
+            type: Component,
+            args: [{ changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: "<ajf-widget *ngFor=\"let instance of content\" [instance]=\"instance\"></ajf-widget>\n", styles: [""] }]
+        }], propDecorators: { content: [{
+                type: Input
+            }] } });
+class AjfPaginatedListWidgetComponent extends AjfBaseWidgetComponent {
+    constructor(cdr, el) {
+        super(cdr, el);
+        this._currentPage = 0;
+        this._pages = 0;
+        this._currentContent = [];
+        this._canGoForward = false;
+        this._canGoBackward = false;
+    }
+    get currentPage() {
+        return this._currentPage;
+    }
+    get pages() {
+        return this._pages;
+    }
+    get currentContent() {
+        return this._currentContent;
+    }
+    get canGoForward() {
+        return this._canGoForward;
+    }
+    get canGoBackward() {
+        return this._canGoBackward;
+    }
+    ngOnChanges(changes) {
+        if (changes['instance']) {
+            this._updateCurrentContent();
+        }
+    }
+    ngOnInit() {
+        this._updateCurrentContent();
+    }
+    goToPage(direction) {
+        const diff = direction === 'next' ? 1 : -1;
+        const newPage = this._currentPage + diff;
+        if (newPage <= 0 || newPage > this._pages) {
+            return;
+        }
+        this._currentPage = newPage;
+        this._canGoForward = newPage < this._pages;
+        this._canGoBackward = newPage > 1;
+        this._fillCurrentContent();
+    }
+    _updateCurrentContent() {
+        this._canGoBackward = false;
+        if (this.instance == null || this.instance.content.length === 0) {
+            this._currentPage = 0;
+            this._pages = 0;
+        }
+        else {
+            this._currentPage = 1;
+            const { content } = this.instance;
+            const { pageSize } = this.instance.widget;
+            this._pages = Math.ceil(content.length / pageSize);
+            this._canGoForward = this._pages > 1;
+        }
+        this._fillCurrentContent();
+    }
+    _fillCurrentContent() {
+        if (this.instance == null || this.instance.content.length === 0) {
+            this._currentContent = [];
+            return;
+        }
+        const { content } = this.instance;
+        const { pageSize } = this.instance.widget;
+        const start = (this._currentPage - 1) * pageSize;
+        this._currentContent = content.slice(start, start + pageSize);
+        this._cdr.markForCheck();
+    }
+}
+AjfPaginatedListWidgetComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfPaginatedListWidgetComponent, deps: [{ token: i0.ChangeDetectorRef }, { token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component });
+AjfPaginatedListWidgetComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.2.5", type: AjfPaginatedListWidgetComponent, selector: "ng-component", usesInheritance: true, usesOnChanges: true, ngImport: i0, template: "<div class=\"ajf-paginated-list\" *ngIf=\"instance && pages > 0\">\n  <div class=\"ajf-paginated-list-title-container\">\n    <div class=\"ajf-paginated-list-title\">{{ instance.widget.title }}</div>\n    <div class=\"ajf-spacer\"></div>\n    <div class=\"ajf-paginated-list-paginator\">\n      <a (click)=\"goToPage('previous')\" class=\"ajf-paginated-list-btn ajf-paginated-list-back-btn\"\n          [class.ajf-paginated-list-btn-disabled]=\"canGoBackward === false\"></a>\n      <div class=\"ajf-paginated-list-paginator-page\">{{ currentPage }}</div>\n      <div class=\"ajf-paginated-list-paginator-separator\"></div>\n      <div class=\"ajf-paginated-list-paginator-pages\">{{ pages }}</div>\n      <a (click)=\"goToPage('next')\" class=\"ajf-paginated-list-btn ajf-paginated-list-forward-btn\"\n        [class.ajf-paginated-list-btn-disabled]=\"canGoForward === false\"></a>\n    </div>\n  </div>\n  <div class=\"ajf-paginated-list-item\" *ngFor=\"let item of currentContent\">\n    <ajf-widget [instance]=\"item\"></ajf-widget>\n  </div>\n</div>\n", styles: [".ajf-paginated-list-title-container{display:flex;align-items:center}.ajf-spacer{flex:1 0 auto}.ajf-paginated-list-btn{cursor:pointer;display:block;width:32px;height:32px;position:relative}.ajf-paginated-list-btn:after{width:100%;height:100%;display:flex;justify-content:center;align-items:center}.ajf-paginated-list-paginator-separator{width:16px;height:32px;position:relative}.ajf-paginated-list-paginator-separator:after{width:100%;height:100%;display:flex;justify-content:center;align-items:center;content:\"/\"}.ajf-paginated-list-btn-disabled{opacity:.5;cursor:default}.ajf-paginated-list-back-btn:after{content:\"<\"}.ajf-paginated-list-forward-btn:after{content:\">\"}.ajf-paginated-list-paginator{display:flex;align-items:center}.ajf-paginated-list-paginator>*{margin:0 .5em}\n"], components: [{ type: AjfReportWidget, selector: "ajf-widget" }], directives: [{ type: i2.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { type: i2.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfPaginatedListWidgetComponent, decorators: [{
+            type: Component,
+            args: [{ changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: "<div class=\"ajf-paginated-list\" *ngIf=\"instance && pages > 0\">\n  <div class=\"ajf-paginated-list-title-container\">\n    <div class=\"ajf-paginated-list-title\">{{ instance.widget.title }}</div>\n    <div class=\"ajf-spacer\"></div>\n    <div class=\"ajf-paginated-list-paginator\">\n      <a (click)=\"goToPage('previous')\" class=\"ajf-paginated-list-btn ajf-paginated-list-back-btn\"\n          [class.ajf-paginated-list-btn-disabled]=\"canGoBackward === false\"></a>\n      <div class=\"ajf-paginated-list-paginator-page\">{{ currentPage }}</div>\n      <div class=\"ajf-paginated-list-paginator-separator\"></div>\n      <div class=\"ajf-paginated-list-paginator-pages\">{{ pages }}</div>\n      <a (click)=\"goToPage('next')\" class=\"ajf-paginated-list-btn ajf-paginated-list-forward-btn\"\n        [class.ajf-paginated-list-btn-disabled]=\"canGoForward === false\"></a>\n    </div>\n  </div>\n  <div class=\"ajf-paginated-list-item\" *ngFor=\"let item of currentContent\">\n    <ajf-widget [instance]=\"item\"></ajf-widget>\n  </div>\n</div>\n", styles: [".ajf-paginated-list-title-container{display:flex;align-items:center}.ajf-spacer{flex:1 0 auto}.ajf-paginated-list-btn{cursor:pointer;display:block;width:32px;height:32px;position:relative}.ajf-paginated-list-btn:after{width:100%;height:100%;display:flex;justify-content:center;align-items:center}.ajf-paginated-list-paginator-separator{width:16px;height:32px;position:relative}.ajf-paginated-list-paginator-separator:after{width:100%;height:100%;display:flex;justify-content:center;align-items:center;content:\"/\"}.ajf-paginated-list-btn-disabled{opacity:.5;cursor:default}.ajf-paginated-list-back-btn:after{content:\"<\"}.ajf-paginated-list-forward-btn:after{content:\">\"}.ajf-paginated-list-paginator{display:flex;align-items:center}.ajf-paginated-list-paginator>*{margin:0 .5em}\n"] }]
         }], ctorParameters: function () { return [{ type: i0.ChangeDetectorRef }, { type: i0.ElementRef }]; } });
 
 /**
@@ -435,36 +596,42 @@ class AjfReportsModule {
 AjfReportsModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfReportsModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
 AjfReportsModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfReportsModule, declarations: [AjfChartWidgetComponent,
         AjfColumnWidgetComponent,
+        AjfDialogModal,
+        AjfDialogWidgetComponent,
         AjfFormulaWidgetComponent,
+        AjfHeatMapWidgetComponent,
         AjfImageContainerWidgetComponent,
         AjfImageWidgetComponent,
         AjfLayoutWidgetComponent,
         AjfMapWidgetComponent,
         AjfPageBreakWidgetComponent,
+        AjfPaginatedListWidgetComponent,
         AjfReportRenderer,
         AjfReportWidget,
         AjfTableWidgetComponent,
         AjfTextWidgetComponent], imports: [AjfChartModule,
         AjfCommonModule,
+        AjfHeatMapModule,
         AjfImageModule,
         AjfMapModule,
         AjfPageBreakModule,
         AjfTableModule,
         AjfTextModule,
+        AjfTranslocoModule,
         CommonModule,
-        AjfReportsModule$1,
-        AjfTranslocoModule], exports: [AjfReportRenderer, AjfReportWidget] });
+        AjfReportsModule$1], exports: [AjfReportRenderer, AjfReportWidget] });
 AjfReportsModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfReportsModule, imports: [[
             AjfChartModule,
             AjfCommonModule,
+            AjfHeatMapModule,
             AjfImageModule,
             AjfMapModule,
             AjfPageBreakModule,
             AjfTableModule,
             AjfTextModule,
+            AjfTranslocoModule,
             CommonModule,
             AjfReportsModule$1,
-            AjfTranslocoModule,
         ]] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfReportsModule, decorators: [{
             type: NgModule,
@@ -472,24 +639,29 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImpor
                     imports: [
                         AjfChartModule,
                         AjfCommonModule,
+                        AjfHeatMapModule,
                         AjfImageModule,
                         AjfMapModule,
                         AjfPageBreakModule,
                         AjfTableModule,
                         AjfTextModule,
+                        AjfTranslocoModule,
                         CommonModule,
                         AjfReportsModule$1,
-                        AjfTranslocoModule,
                     ],
                     declarations: [
                         AjfChartWidgetComponent,
                         AjfColumnWidgetComponent,
+                        AjfDialogModal,
+                        AjfDialogWidgetComponent,
                         AjfFormulaWidgetComponent,
+                        AjfHeatMapWidgetComponent,
                         AjfImageContainerWidgetComponent,
                         AjfImageWidgetComponent,
                         AjfLayoutWidgetComponent,
                         AjfMapWidgetComponent,
                         AjfPageBreakWidgetComponent,
+                        AjfPaginatedListWidgetComponent,
                         AjfReportRenderer,
                         AjfReportWidget,
                         AjfTableWidgetComponent,
@@ -525,5 +697,5 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImpor
  * Generated bundle index. Do not edit.
  */
 
-export { AjfChartWidgetComponent, AjfColumnWidgetComponent, AjfFormulaWidgetComponent, AjfImageContainerWidgetComponent, AjfImageWidgetComponent, AjfLayoutWidgetComponent, AjfMapWidgetComponent, AjfPageBreakWidgetComponent, AjfReportRenderer, AjfReportWidget, AjfReportsModule, AjfTableWidgetComponent, AjfTextWidgetComponent, AjfWidgetService };
+export { AjfChartWidgetComponent, AjfColumnWidgetComponent, AjfDialogModal, AjfDialogWidgetComponent, AjfFormulaWidgetComponent, AjfImageContainerWidgetComponent, AjfImageWidgetComponent, AjfLayoutWidgetComponent, AjfMapWidgetComponent, AjfPageBreakWidgetComponent, AjfPaginatedListWidgetComponent, AjfReportRenderer, AjfReportWidget, AjfReportsModule, AjfTableWidgetComponent, AjfTextWidgetComponent, AjfWidgetService };
 //# sourceMappingURL=ajf-ionic-reports.mjs.map
