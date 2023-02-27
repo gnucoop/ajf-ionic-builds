@@ -5,9 +5,9 @@ export class AjfSelectHasSearchBarPipe {
         return instance.filteredChoices && instance.filteredChoices.length > searchThreshold;
     }
 }
-AjfSelectHasSearchBarPipe.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfSelectHasSearchBarPipe, deps: [], target: i0.ɵɵFactoryTarget.Pipe });
-AjfSelectHasSearchBarPipe.ɵpipe = i0.ɵɵngDeclarePipe({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfSelectHasSearchBarPipe, name: "ajfSelectHasSearchBar" });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfSelectHasSearchBarPipe, decorators: [{
+AjfSelectHasSearchBarPipe.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfSelectHasSearchBarPipe, deps: [], target: i0.ɵɵFactoryTarget.Pipe });
+AjfSelectHasSearchBarPipe.ɵpipe = i0.ɵɵngDeclarePipe({ minVersion: "14.0.0", version: "15.0.4", ngImport: i0, type: AjfSelectHasSearchBarPipe, name: "ajfSelectHasSearchBar" });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfSelectHasSearchBarPipe, decorators: [{
             type: Pipe,
             args: [{ name: 'ajfSelectHasSearchBar' }]
         }] });

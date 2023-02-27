@@ -1,6 +1,6 @@
 {
   "name": "@ajf/ionic",
-  "version": "13.2.15-89c1a7d7",
+  "version": "15.0.0-932730d4",
   "description": "",
   "repository": {
     "type": "git",
@@ -13,13 +13,13 @@
   },
   "homepage": "https://github.com/gnucoop/ajf#readme",
   "peerDependencies": {
-    "@ajf/core": "13.2.15",
-    "@angular/animations": "^13.2.5",
-    "@angular/cdk": "^13.2.5",
-    "@angular/core": "^13.2.5",
-    "@angular/common": "^13.2.5",
-    "@angular/forms": "^13.2.5",
-    "@angular/platform-browser": "^13.2.5",
+    "@ajf/core": "15.0.0",
+    "@angular/animations": "^15.0.4",
+    "@angular/cdk": "^15.0.3",
+    "@angular/core": "^15.0.4",
+    "@angular/common": "^15.0.4",
+    "@angular/forms": "^15.0.4",
+    "@angular/platform-browser": "^15.0.4",
     "@gic/angular": "^5.8.1",
     "@ionic/angular": "5.8.1"
   },
@@ -31,13 +31,13 @@
   "esm2020": "esm2020/ajf-ionic.mjs",
   "fesm2020": "fesm2020/ajf-ionic.mjs",
   "fesm2015": "fesm2015/ajf-ionic.mjs",
-  "typings": "ajf-ionic.d.ts",
+  "typings": "index.d.ts",
   "exports": {
     "./package.json": {
       "default": "./package.json"
     },
     ".": {
-      "types": "./ajf-ionic.d.ts",
+      "types": "./index.d.ts",
       "esm2020": "./esm2020/ajf-ionic.mjs",
       "es2020": "./fesm2020/ajf-ionic.mjs",
       "es2015": "./fesm2015/ajf-ionic.mjs",
@@ -45,7 +45,7 @@
       "default": "./fesm2020/ajf-ionic.mjs"
     },
     "./barcode": {
-      "types": "./barcode/ajf-ionic-barcode.d.ts",
+      "types": "./barcode/index.d.ts",
       "esm2020": "./esm2020/barcode/ajf-ionic-barcode.mjs",
       "es2020": "./fesm2020/ajf-ionic-barcode.mjs",
       "es2015": "./fesm2015/ajf-ionic-barcode.mjs",
@@ -53,7 +53,7 @@
       "default": "./fesm2020/ajf-ionic-barcode.mjs"
     },
     "./calendar": {
-      "types": "./calendar/ajf-ionic-calendar.d.ts",
+      "types": "./calendar/index.d.ts",
       "esm2020": "./esm2020/calendar/ajf-ionic-calendar.mjs",
       "es2020": "./fesm2020/ajf-ionic-calendar.mjs",
       "es2015": "./fesm2015/ajf-ionic-calendar.mjs",
@@ -61,7 +61,7 @@
       "default": "./fesm2020/ajf-ionic-calendar.mjs"
     },
     "./checkbox-group": {
-      "types": "./checkbox-group/ajf-ionic-checkbox-group.d.ts",
+      "types": "./checkbox-group/index.d.ts",
       "esm2020": "./esm2020/checkbox-group/ajf-ionic-checkbox-group.mjs",
       "es2020": "./fesm2020/ajf-ionic-checkbox-group.mjs",
       "es2015": "./fesm2015/ajf-ionic-checkbox-group.mjs",
@@ -69,7 +69,7 @@
       "default": "./fesm2020/ajf-ionic-checkbox-group.mjs"
     },
     "./forms": {
-      "types": "./forms/ajf-ionic-forms.d.ts",
+      "types": "./forms/index.d.ts",
       "esm2020": "./esm2020/forms/ajf-ionic-forms.mjs",
       "es2020": "./fesm2020/ajf-ionic-forms.mjs",
       "es2015": "./fesm2015/ajf-ionic-forms.mjs",
@@ -77,7 +77,7 @@
       "default": "./fesm2020/ajf-ionic-forms.mjs"
     },
     "./image": {
-      "types": "./image/ajf-ionic-image.d.ts",
+      "types": "./image/index.d.ts",
       "esm2020": "./esm2020/image/ajf-ionic-image.mjs",
       "es2020": "./fesm2020/ajf-ionic-image.mjs",
       "es2015": "./fesm2015/ajf-ionic-image.mjs",
@@ -85,7 +85,7 @@
       "default": "./fesm2020/ajf-ionic-image.mjs"
     },
     "./node-icon": {
-      "types": "./node-icon/ajf-ionic-node-icon.d.ts",
+      "types": "./node-icon/index.d.ts",
       "esm2020": "./esm2020/node-icon/ajf-ionic-node-icon.mjs",
       "es2020": "./fesm2020/ajf-ionic-node-icon.mjs",
       "es2015": "./fesm2015/ajf-ionic-node-icon.mjs",
@@ -93,7 +93,7 @@
       "default": "./fesm2020/ajf-ionic-node-icon.mjs"
     },
     "./page-slider": {
-      "types": "./page-slider/ajf-ionic-page-slider.d.ts",
+      "types": "./page-slider/index.d.ts",
       "esm2020": "./esm2020/page-slider/ajf-ionic-page-slider.mjs",
       "es2020": "./fesm2020/ajf-ionic-page-slider.mjs",
       "es2015": "./fesm2015/ajf-ionic-page-slider.mjs",
@@ -101,7 +101,7 @@
       "default": "./fesm2020/ajf-ionic-page-slider.mjs"
     },
     "./reports": {
-      "types": "./reports/ajf-ionic-reports.d.ts",
+      "types": "./reports/index.d.ts",
       "esm2020": "./esm2020/reports/ajf-ionic-reports.mjs",
       "es2020": "./fesm2020/ajf-ionic-reports.mjs",
       "es2015": "./fesm2015/ajf-ionic-reports.mjs",
@@ -109,7 +109,7 @@
       "default": "./fesm2020/ajf-ionic-reports.mjs"
     },
     "./time": {
-      "types": "./time/ajf-ionic-time.d.ts",
+      "types": "./time/index.d.ts",
       "esm2020": "./esm2020/time/ajf-ionic-time.mjs",
       "es2020": "./fesm2020/ajf-ionic-time.mjs",
       "es2015": "./fesm2015/ajf-ionic-time.mjs",

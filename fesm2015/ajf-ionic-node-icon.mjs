@@ -28,11 +28,11 @@ import { AjfNodeIcon as AjfNodeIcon$1 } from '@ajf/core/node-icon';
  */
 class AjfNodeIcon extends AjfNodeIcon$1 {
 }
-AjfNodeIcon.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfNodeIcon, deps: null, target: i0.ɵɵFactoryTarget.Component });
-AjfNodeIcon.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.2.5", type: AjfNodeIcon, selector: "ajf-node-icon", usesInheritance: true, ngImport: i0, template: "<ng-template [ngIf]=\"node\">\n  <i [ngClass]=\"[fontSet, fontIcon]\"></i>\n</ng-template>\n", styles: [""], directives: [{ type: i1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { type: i1.NgClass, selector: "[ngClass]", inputs: ["class", "ngClass"] }], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfNodeIcon, decorators: [{
+AjfNodeIcon.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfNodeIcon, deps: null, target: i0.ɵɵFactoryTarget.Component });
+AjfNodeIcon.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.0.4", type: AjfNodeIcon, selector: "ajf-node-icon", usesInheritance: true, ngImport: i0, template: "<ng-template [ngIf]=\"node\">\n  <i [ngClass]=\"[fontSet, fontIcon]\"></i>\n</ng-template>\n", styles: [""], dependencies: [{ kind: "directive", type: i1.NgClass, selector: "[ngClass]", inputs: ["class", "ngClass"] }, { kind: "directive", type: i1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfNodeIcon, decorators: [{
             type: Component,
-            args: [{ selector: 'ajf-node-icon', encapsulation: ViewEncapsulation.None, changeDetection: ChangeDetectionStrategy.OnPush, template: "<ng-template [ngIf]=\"node\">\n  <i [ngClass]=\"[fontSet, fontIcon]\"></i>\n</ng-template>\n", styles: [""] }]
+            args: [{ selector: 'ajf-node-icon', encapsulation: ViewEncapsulation.None, changeDetection: ChangeDetectionStrategy.OnPush, template: "<ng-template [ngIf]=\"node\">\n  <i [ngClass]=\"[fontSet, fontIcon]\"></i>\n</ng-template>\n" }]
         }] });
 
 /**
@@ -58,10 +58,10 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImpor
  */
 class AjfNodeIconModule {
 }
-AjfNodeIconModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfNodeIconModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-AjfNodeIconModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfNodeIconModule, declarations: [AjfNodeIcon], imports: [CommonModule, IonicModule], exports: [AjfNodeIcon] });
-AjfNodeIconModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfNodeIconModule, imports: [[CommonModule, IonicModule]] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfNodeIconModule, decorators: [{
+AjfNodeIconModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfNodeIconModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
+AjfNodeIconModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "15.0.4", ngImport: i0, type: AjfNodeIconModule, declarations: [AjfNodeIcon], imports: [CommonModule, IonicModule], exports: [AjfNodeIcon] });
+AjfNodeIconModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfNodeIconModule, imports: [CommonModule, IonicModule] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfNodeIconModule, decorators: [{
             type: NgModule,
             args: [{
                     imports: [CommonModule, IonicModule],

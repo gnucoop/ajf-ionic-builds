@@ -33,5 +33,5 @@ export declare class AjfNumberFieldComponent extends CoreComponent implements On
     ngOnInit(): void;
     setValue(value: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AjfNumberFieldComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AjfNumberFieldComponent, "ng-component", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AjfNumberFieldComponent, "ng-component", never, {}, {}, never, never, false, never>;
 }

@@ -23,9 +23,9 @@ import { Directive } from '@angular/core';
 import * as i0 from "@angular/core";
 export class AjfFormPage {
 }
-AjfFormPage.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfFormPage, deps: [], target: i0.ɵɵFactoryTarget.Directive });
-AjfFormPage.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.2.5", type: AjfFormPage, selector: "[ajfFormPage]", ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfFormPage, decorators: [{
+AjfFormPage.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfFormPage, deps: [], target: i0.ɵɵFactoryTarget.Directive });
+AjfFormPage.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "15.0.4", type: AjfFormPage, selector: "[ajfFormPage]", ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfFormPage, decorators: [{
             type: Directive,
             args: [{ selector: '[ajfFormPage]' }]
         }] });

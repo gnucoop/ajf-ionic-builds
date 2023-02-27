@@ -24,20 +24,20 @@ import { AjfRange } from '@ajf/core/range';
 import { ChangeDetectionStrategy, Component, Inject, ViewEncapsulation, } from '@angular/core';
 import * as i0 from "@angular/core";
 import * as i1 from "@ajf/core/forms";
-import * as i2 from "@ionic/angular";
-import * as i3 from "@angular/common";
-import * as i4 from "@angular/forms";
+import * as i2 from "@angular/common";
+import * as i3 from "@angular/forms";
+import * as i4 from "@ionic/angular";
 import * as i5 from "./warning-alert-service";
 export class AjfRangeFieldComponent extends AjfRange {
     constructor(cdr, service, was) {
         super(cdr, service, was);
     }
 }
-AjfRangeFieldComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfRangeFieldComponent, deps: [{ token: i0.ChangeDetectorRef }, { token: i1.AjfFormRendererService }, { token: AJF_WARNING_ALERT_SERVICE }], target: i0.ɵɵFactoryTarget.Component });
-AjfRangeFieldComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.2.5", type: AjfRangeFieldComponent, selector: "ajf-range", usesInheritance: true, ngImport: i0, template: "<ion-range\n  snaps=\"true\"\n  ticks=\"true\"\n  debounce=\"500\"\n  *ngIf=\"control|async as ctrl\"\n  [attr.aria-label]=\"name\"\n  [formControl]=\"ctrl!\"\n  [name]=\"name\"\n  [step]=\"step\"\n  [min]=\"start\"\n  [max]=\"end\"\n></ion-range>\n", styles: [""], components: [{ type: i2.IonRange, selector: "ion-range", inputs: ["color", "debounce", "disabled", "dualKnobs", "max", "min", "mode", "name", "pin", "snaps", "step", "ticks", "value"] }], directives: [{ type: i3.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { type: i2.SelectValueAccessor, selector: "ion-range, ion-select, ion-radio-group, ion-segment, ion-datetime" }, { type: i4.NgControlStatus, selector: "[formControlName],[ngModel],[formControl]" }, { type: i4.FormControlDirective, selector: "[formControl]", inputs: ["formControl", "disabled", "ngModel"], outputs: ["ngModelChange"], exportAs: ["ngForm"] }], pipes: { "async": i3.AsyncPipe }, changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfRangeFieldComponent, decorators: [{
+AjfRangeFieldComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfRangeFieldComponent, deps: [{ token: i0.ChangeDetectorRef }, { token: i1.AjfFormRendererService }, { token: AJF_WARNING_ALERT_SERVICE }], target: i0.ɵɵFactoryTarget.Component });
+AjfRangeFieldComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.0.4", type: AjfRangeFieldComponent, selector: "ajf-range", usesInheritance: true, ngImport: i0, template: "<ion-range\n  snaps=\"true\"\n  ticks=\"true\"\n  debounce=\"500\"\n  *ngIf=\"control|async as ctrl\"\n  [attr.aria-label]=\"name\"\n  [formControl]=\"ctrl!\"\n  [name]=\"name\"\n  [step]=\"step\"\n  [min]=\"start\"\n  [max]=\"end\"\n></ion-range>\n", styles: [""], dependencies: [{ kind: "directive", type: i2.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "directive", type: i3.NgControlStatus, selector: "[formControlName],[ngModel],[formControl]" }, { kind: "component", type: i4.IonRange, selector: "ion-range", inputs: ["color", "debounce", "disabled", "dualKnobs", "max", "min", "mode", "name", "pin", "snaps", "step", "ticks", "value"] }, { kind: "directive", type: i4.SelectValueAccessor, selector: "ion-range, ion-select, ion-radio-group, ion-segment, ion-datetime" }, { kind: "directive", type: i3.FormControlDirective, selector: "[formControl]", inputs: ["formControl", "disabled", "ngModel"], outputs: ["ngModelChange"], exportAs: ["ngForm"] }, { kind: "pipe", type: i2.AsyncPipe, name: "async" }], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfRangeFieldComponent, decorators: [{
             type: Component,
-            args: [{ selector: 'ajf-range', changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: "<ion-range\n  snaps=\"true\"\n  ticks=\"true\"\n  debounce=\"500\"\n  *ngIf=\"control|async as ctrl\"\n  [attr.aria-label]=\"name\"\n  [formControl]=\"ctrl!\"\n  [name]=\"name\"\n  [step]=\"step\"\n  [min]=\"start\"\n  [max]=\"end\"\n></ion-range>\n", styles: [""] }]
+            args: [{ selector: 'ajf-range', changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: "<ion-range\n  snaps=\"true\"\n  ticks=\"true\"\n  debounce=\"500\"\n  *ngIf=\"control|async as ctrl\"\n  [attr.aria-label]=\"name\"\n  [formControl]=\"ctrl!\"\n  [name]=\"name\"\n  [step]=\"step\"\n  [min]=\"start\"\n  [max]=\"end\"\n></ion-range>\n" }]
         }], ctorParameters: function () { return [{ type: i0.ChangeDetectorRef }, { type: i1.AjfFormRendererService }, { type: i5.AjfWarningAlertService, decorators: [{
                     type: Inject,
                     args: [AJF_WARNING_ALERT_SERVICE]

@@ -24,5 +24,5 @@ import * as i0 from "@angular/core";
 export declare class AjfCheckboxGroupItem<T> extends CoreCheckboxGroupItem<T> {
     constructor(checkboxGroup: AjfCheckboxGroup<T>);
     static ɵfac: i0.ɵɵFactoryDeclaration<AjfCheckboxGroupItem<any>, [{ optional: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AjfCheckboxGroupItem<any>, "ajf-checkbox-group-item", never, {}, {}, never, ["*"]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AjfCheckboxGroupItem<any>, "ajf-checkbox-group-item", never, {}, {}, never, ["*"], false, never>;
 }

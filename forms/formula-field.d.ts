@@ -34,5 +34,5 @@ export declare class AjfFormulaFieldComponent extends AjfBaseFieldComponent<AjfF
     ngOnDestroy(): void;
     onChange(event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AjfFormulaFieldComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AjfFormulaFieldComponent, "ng-component", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AjfFormulaFieldComponent, "ng-component", never, {}, {}, never, never, false, never>;
 }

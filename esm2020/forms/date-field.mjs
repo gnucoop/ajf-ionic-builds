@@ -23,21 +23,21 @@ import { AJF_WARNING_ALERT_SERVICE, AjfBaseFieldComponent, } from '@ajf/core/for
 import { ChangeDetectionStrategy, Component, Inject, ViewEncapsulation, } from '@angular/core';
 import * as i0 from "@angular/core";
 import * as i1 from "@ajf/core/forms";
-import * as i2 from "@ionic/angular";
-import * as i3 from "@ajf/ionic/calendar";
-import * as i4 from "@angular/common";
-import * as i5 from "@angular/forms";
+import * as i2 from "@ajf/ionic/calendar";
+import * as i3 from "@angular/common";
+import * as i4 from "@angular/forms";
+import * as i5 from "@ionic/angular";
 import * as i6 from "./warning-alert-service";
 export class AjfDateFieldComponent extends AjfBaseFieldComponent {
     constructor(cdr, service, was) {
         super(cdr, service, was);
     }
 }
-AjfDateFieldComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfDateFieldComponent, deps: [{ token: i0.ChangeDetectorRef }, { token: i1.AjfFormRendererService }, { token: AJF_WARNING_ALERT_SERVICE }], target: i0.ɵɵFactoryTarget.Component });
-AjfDateFieldComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.2.5", type: AjfDateFieldComponent, selector: "ng-component", usesInheritance: true, ngImport: i0, template: "<ion-item>\n  <ajf-calendar\n      *ngIf=\"control|async as ctrl\"\n      selectionMode=\"day\"\n      [dateOnlyForDay]=\"true\"\n      [minDate]=\"instance!.node.minDate|ajfDateValue\"\n      [maxDate]=\"instance!.node.maxDate|ajfDateValue\"\n      [formControl]=\"ctrl!\"></ajf-calendar>\n</ion-item>\n", styles: [""], components: [{ type: i2.IonItem, selector: "ion-item", inputs: ["button", "color", "detail", "detailIcon", "disabled", "download", "href", "lines", "mode", "rel", "routerAnimation", "routerDirection", "target", "type"] }, { type: i3.AjfCalendarComponent, selector: "ajf-calendar" }], directives: [{ type: i4.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { type: i5.NgControlStatus, selector: "[formControlName],[ngModel],[formControl]" }, { type: i5.FormControlDirective, selector: "[formControl]", inputs: ["formControl", "disabled", "ngModel"], outputs: ["ngModelChange"], exportAs: ["ngForm"] }], pipes: { "ajfDateValue": i1.AjfDateValuePipe, "async": i4.AsyncPipe }, changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfDateFieldComponent, decorators: [{
+AjfDateFieldComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfDateFieldComponent, deps: [{ token: i0.ChangeDetectorRef }, { token: i1.AjfFormRendererService }, { token: AJF_WARNING_ALERT_SERVICE }], target: i0.ɵɵFactoryTarget.Component });
+AjfDateFieldComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.0.4", type: AjfDateFieldComponent, selector: "ng-component", usesInheritance: true, ngImport: i0, template: "<ion-item>\n  <ajf-calendar\n      *ngIf=\"control|async as ctrl\"\n      selectionMode=\"day\"\n      [dateOnlyForDay]=\"true\"\n      [minDate]=\"instance!.node.minDate|ajfDateValue\"\n      [maxDate]=\"instance!.node.maxDate|ajfDateValue\"\n      [formControl]=\"ctrl!\"></ajf-calendar>\n</ion-item>\n", styles: [""], dependencies: [{ kind: "component", type: i2.AjfCalendarComponent, selector: "ajf-calendar" }, { kind: "directive", type: i3.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "directive", type: i4.NgControlStatus, selector: "[formControlName],[ngModel],[formControl]" }, { kind: "component", type: i5.IonItem, selector: "ion-item", inputs: ["button", "color", "detail", "detailIcon", "disabled", "download", "href", "lines", "mode", "rel", "routerAnimation", "routerDirection", "target", "type"] }, { kind: "directive", type: i4.FormControlDirective, selector: "[formControl]", inputs: ["formControl", "disabled", "ngModel"], outputs: ["ngModelChange"], exportAs: ["ngForm"] }, { kind: "pipe", type: i3.AsyncPipe, name: "async" }, { kind: "pipe", type: i1.AjfDateValuePipe, name: "ajfDateValue" }], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfDateFieldComponent, decorators: [{
             type: Component,
-            args: [{ changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: "<ion-item>\n  <ajf-calendar\n      *ngIf=\"control|async as ctrl\"\n      selectionMode=\"day\"\n      [dateOnlyForDay]=\"true\"\n      [minDate]=\"instance!.node.minDate|ajfDateValue\"\n      [maxDate]=\"instance!.node.maxDate|ajfDateValue\"\n      [formControl]=\"ctrl!\"></ajf-calendar>\n</ion-item>\n", styles: [""] }]
+            args: [{ changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: "<ion-item>\n  <ajf-calendar\n      *ngIf=\"control|async as ctrl\"\n      selectionMode=\"day\"\n      [dateOnlyForDay]=\"true\"\n      [minDate]=\"instance!.node.minDate|ajfDateValue\"\n      [maxDate]=\"instance!.node.maxDate|ajfDateValue\"\n      [formControl]=\"ctrl!\"></ajf-calendar>\n</ion-item>\n" }]
         }], ctorParameters: function () { return [{ type: i0.ChangeDetectorRef }, { type: i1.AjfFormRendererService }, { type: i6.AjfWarningAlertService, decorators: [{
                     type: Inject,
                     args: [AJF_WARNING_ALERT_SERVICE]

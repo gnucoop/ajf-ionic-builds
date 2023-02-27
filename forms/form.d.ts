@@ -45,5 +45,5 @@ export declare class AjfFormRenderer extends CoreFormRenderer implements AfterVi
     static ngAcceptInputType_saveDisabled: BooleanInput;
     static ngAcceptInputType_readonly: BooleanInput;
     static ɵfac: i0.ɵɵFactoryDeclaration<AjfFormRenderer, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AjfFormRenderer, "ajf-form", never, { "topBar": "topBar"; }, {}, never, ["[ajfFormTopToolbarButtons]", "[ajfFormSaveButton]", "[ajfFormStartMessageTitle]", "[ajfFormStartMessage]", "[ajfFormEndMessageTitle]", "[ajfFormEndMessage]"]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AjfFormRenderer, "ajf-form", never, { "topBar": "topBar"; }, {}, never, ["[ajfFormTopToolbarButtons]", "[ajfFormSaveButton]", "[ajfFormStartMessageTitle]", "[ajfFormStartMessage]", "[ajfFormEndMessageTitle]", "[ajfFormEndMessage]"], false, never>;
 }

@@ -34,5 +34,5 @@ export declare class AjfBarcodeComponent extends AjfBarcode implements AfterView
     ngOnDestroy(): void;
     selectTab(tab: 'image' | 'camera'): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AjfBarcodeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AjfBarcodeComponent, "ajf-barcode", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AjfBarcodeComponent, "ajf-barcode", never, {}, {}, never, never, false, never>;
 }

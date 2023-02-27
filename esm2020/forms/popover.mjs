@@ -27,9 +27,9 @@ export class AjfPopover {
         this.hint = '';
     }
 }
-AjfPopover.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfPopover, deps: [], target: i0.ɵɵFactoryTarget.Component });
-AjfPopover.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.2.5", type: AjfPopover, selector: "ajf-ion-popover", inputs: { hint: "hint" }, ngImport: i0, template: `<span>{{hint}}</span>`, isInline: true, changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.2.5", ngImport: i0, type: AjfPopover, decorators: [{
+AjfPopover.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfPopover, deps: [], target: i0.ɵɵFactoryTarget.Component });
+AjfPopover.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.0.4", type: AjfPopover, selector: "ajf-ion-popover", inputs: { hint: "hint" }, ngImport: i0, template: `<span>{{hint}}</span>`, isInline: true, changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.0.4", ngImport: i0, type: AjfPopover, decorators: [{
             type: Component,
             args: [{
                     selector: 'ajf-ion-popover',
