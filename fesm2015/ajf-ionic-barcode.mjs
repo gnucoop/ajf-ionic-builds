@@ -48,6 +48,7 @@ class AjfBarcodeComponent extends AjfBarcode {
         return this._currentTab;
     }
     ngAfterViewInit() {
+        this.initVideoStreams();
         if (this.slides == null) {
             return;
         }
@@ -63,6 +64,7 @@ class AjfBarcodeComponent extends AjfBarcode {
         });
     }
     ngOnDestroy() {
+        this.stopCurrentStream();
         this._slidesSub.unsubscribe();
     }
     selectTab(tab) {
